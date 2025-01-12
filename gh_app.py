@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 # page setup
 gh_about_page = st.Page(
     page="views/gh_about.py",

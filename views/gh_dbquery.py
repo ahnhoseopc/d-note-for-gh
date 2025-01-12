@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas
+
 import oracledb
 import sqlalchemy
 
@@ -31,14 +32,16 @@ def get_query(query_name):
         config_data = toml.load(f)
         return config_data["database"][query_name]
 
+st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }</style>", unsafe_allow_html=True)
+
 query_name = "query_15"
 sql_rtn = st.text_area("SQL", value=get_query(query_name),height=400)
 df_rtn = None
 
-col1, col2, col3 = st.columns([20,3,3])
+col1, col2, col3 = st.columns([20,2,2])
 
 with col1:
-    query_name = st.text_input("Query Name", value=query_name, key="query_name")
+    query_name = st.text_input("Query Name", value=query_name, key="query_name", label_visibility = "collapsed")
 
 with col2:
     if st.button("Run Query"):
