@@ -43,19 +43,19 @@ from OCMOPR06
 
 query_15 = """
 select 
-OCM32STATUS ,                                  /* STATUS */
-OCM32IDNOA  , OCM32IDNOB    , OCM32LWDAT    ,  /* 환자번호, 타급종구분, 래원 및 입원 */
-OCM32IOCD   , OCM32BHCD     ,                  /* I/O구분, 급종 */
-OCM32HPDAT  , OCM32RTDAT    ,                  /* 입원일, 퇴원일 */
-OCM32KWA    , OCM32WARD	    ,                  /* 성별, BEDNO */
-OCM32CHIEFCOMP, OCM32FINALDX, OCM32OP       ,  /* CHIEF COMPLAINTS, FINAL DX, TREATMENT OP */
-OCM32MEDICAL, OCM32FOLLOW	, OCM32OTHER    ,  /* TREATMENT MEDICAL, FOLLOW-UP PLAN, OTHER REMARKS */
-OCM32SPTH   , OCM32SEX      , OCM32AGE	    ,  /* 주치의(진료과장), 성별, 나이 */
-OCM32RTRSTCD, OCM32RTTYPECD , OCM32RTHSPNM	,  /* 치료결과코드, 퇴원형태코드, 전원병원명 */
-OCM32RTCMT  , OCM32SCNDDX   ,                  /* 기타CMT, 부진단명 */
-OCM32PI     , OCM32PHX      , OCM32DM       ,
-OCM32TBC    , OCM32HT       , OCM32AST      ,
-OCM32SYSDAT , OCM32SYSTM    ,                  /* 등록날짜. 등록시간, 담당의(레지턴트,가정) */
-OCM32RGCD   , OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과장), 중요검사소견 */
+    OCM32STATUS ,                                  /* STATUS */
+    OCM32IDNOA  , OCM32IDNOB    , OCM32LWDAT    ,  /* 환자번호, 타급종구분, 래원 및 입원 */
+    OCM32IOCD   , OCM32BHCD     ,                  /* I/O구분, 급종 */
+    OCM32HPDAT  , OCM32RTDAT    ,                  /* 입원일, 퇴원일 */
+    OCM32KWA    , OCM32WARD	    ,                  /* 성별, BEDNO */
+    OCM32CHIEFCOMP, OCM32FINALDX, OCM32OP       ,  /* CHIEF COMPLAINTS, FINAL DX, TREATMENT OP */
+    OCM32MEDICAL, OCM32FOLLOW	, OCM32OTHER    ,  /* TREATMENT MEDICAL, FOLLOW-UP PLAN, OTHER REMARKS */
+    OCM32SPTH   , OCM32SEX      , OCM32AGE	    ,  /* 주치의(진료과장), 성별, 나이 */
+    OCM32RTRSTCD, OCM32RTTYPECD , OCM32RTHSPNM	,  /* 치료결과코드, 퇴원형태코드, 전원병원명 */
+    OCM32RTCMT  , OCM32SCNDDX   ,                  /* 기타CMT, 부진단명 */
+    OCM32PI     , OCM32PHX      , OCM32DM       ,
+    OCM32TBC    , OCM32HT       , OCM32AST      ,
+    OCM32SYSDAT , OCM32SYSTM    ,                  /* 등록날짜. 등록시간, 담당의(레지턴트,가정) */
+    OCM32RGCD   , OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과장), 중요검사소견 */
 from OCMRTN32
 """
