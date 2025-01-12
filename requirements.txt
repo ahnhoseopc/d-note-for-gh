@@ -1,3 +1,6 @@
-streamlit
+ipykernel
+oracledb
 pandas
 requests
+SQLAlchemy
+streamlit
