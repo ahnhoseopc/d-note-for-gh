@@ -7,14 +7,15 @@ gh_about_page = st.Page(
     page="views/gh_about.py",
     title="About Good Hospital",
     icon=":material/account_circle:",
-    default=True
+    default=False
 )
 
 gh_dbquery_page = st.Page(
     page="views/gh_dbquery.py",
     title="Database Query",
     icon=":material/bar_chart:",
-    default=False
+    url_path="gh_dbquery?query_name=query_1",
+    default=True
 )
 
 gh_dnote_page = st.Page(
