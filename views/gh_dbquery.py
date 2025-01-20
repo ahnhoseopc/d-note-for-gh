@@ -1,57 +1,67 @@
+import utils.base as base
+import utils.config as config
+import utils.db as db
+
 import streamlit as st
-import pandas
 
-import oracledb
-import sqlalchemy
+def new_query():
+    st.session_state.query_name = "query_" + base.get_random_string(4)
+    st.session_state.query_sql = ""
+    st.experimental_rerun() # Force a re-render to update the selectbox
 
-def get_sql_engine():
-    HOST = st.secrets["GHDB_HOST"]
-    PORT = st.secrets["GHDB_PORT"]
-    USER = st.secrets["GHDB_USER"]
-    PASS = st.secrets["GHDB_PASS"]
-
-    con = oracledb.connect(user=USER, password=PASS, host=HOST, port=PORT)
-    engine = sqlalchemy.create_engine("oracle+oracledb://", creator= lambda : con)
-    return engine
-
-import toml
-from pathlib import Path
-
-def save_query(query_name, query):
-    config_path = Path(".streamlit", "config.toml")
-    with open(config_path, "r", encoding="utf-8") as f:
-        config_data = toml.load(f)
-        config_data["database"][query_name] = query
-
-    with open(config_path, "w", encoding="utf-8") as f:
-        toml.dump(config_data, f)
-
-def get_query(query_name):
-    config_path = Path(".streamlit", "config.toml")
-    with open(config_path, "r", encoding="utf-8") as f:
-        config_data = toml.load(f)
-        return config_data["database"][query_name]
+def on_change_query_name():
+    st.session_state.query_sql = config.get_query(st.session_state.query_name)
 
 st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }</style>", unsafe_allow_html=True)
 
-query_name = "query_15"
-sql_rtn = st.text_area("SQL", value=get_query(query_name),height=400)
+if "query_sql" not in st.session_state:
+    query_list = config.get_query_list()
+    query_sql = config.get_query("query_01")
+    st.session_state.query_list = query_list
+
+sql_rtn = st.text_area("SQL", key="query_sql", height=400)
 df_rtn = None
 
-col1, col2, col3 = st.columns([20,2,2])
+col1, col2, col3, col4 = st.columns([16,2,2,2])
 
 with col1:
-    query_name = st.text_input("Query Name", value=query_name, key="query_name", label_visibility = "collapsed")
+    query_name = st.selectbox("Query Name", options=st.session_state.query_list, key="query_name", on_change=on_change_query_name, label_visibility="collapsed")
 
 with col2:
-    if st.button("Run Query"):
-        engine = get_sql_engine()
-        df_rtn = pandas.read_sql(sql_rtn, engine)
+    if st.button("New Query"):
+        new_query()
 
 with col3:
     if st.button("Save Query"):
-        save_query(query_name, sql_rtn)
+        config.save_query(query_name, sql_rtn)
 
+with col4:
+    if st.button("Run Query"):
+        st.session_state.df_rtn = db.run_sql(sql_rtn)
 
-if df_rtn is not None:
-    st.dataframe(df_rtn)
+col1, col2 = st.columns([16,6])
+
+def on_select():
+    with col2:
+        print(st.session_state.selected_row)
+        if "selection" in st.session_state.selected_row:
+            if "rows" in st.session_state.selected_row["selection"]:
+                if len(st.session_state.selected_row["selection"]["rows"]) > 0:
+                    print(st.session_state.selected_row["selection"]["rows"][0])
+                    dict = st.session_state.df_rtn.iloc[st.session_state.selected_row["selection"]["rows"][0]]
+                    #print(dict)
+                    st.dataframe(dict, use_container_width=True)
+
+# from st_aggrid import AgGrid, GridOptionsBuilder
+
+if "df_rtn" in st.session_state and st.session_state.df_rtn is not None:
+    # # AgGrid 옵션 빌더
+    # gb = GridOptionsBuilder.from_dataframe(df_rtn)
+    # gb.configure_selection('single')  # 단일 행 선택
+    # grid_options = gb.build()
+
+    # # AgGrid 표시
+    # grid_response = AgGrid(df_rtn, gridOptions=grid_options, height=300, width='100%')
+    # selected_row = grid_response['selected_rows']
+    with col1:
+        st.dataframe(st.session_state.df_rtn, on_select=on_select, selection_mode="single-row", key="selected_row")
