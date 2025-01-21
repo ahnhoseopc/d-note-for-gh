@@ -50,8 +50,9 @@ def on_select():
                 if len(st.session_state.selected_row["selection"]["rows"]) > 0:
                     rownum = st.session_state.selected_row["selection"]["rows"][0]
                     dict = st.session_state.df_rtn.iloc[rownum]
-                    if "odr03odrcmt" in dict:
-                        dict.odr03odrcmt = base.decode_rtf(dict.odr03odrcmt)
+
+                    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
+                    dict = dict.map(decode_rtf)
 
                     # st.dataframe(dict, use_container_width=True)
                     json_str = dict.to_json(orient="index")
