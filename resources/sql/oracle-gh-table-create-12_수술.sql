@@ -1,10 +1,11 @@
 --
 -- RUN AS SYSTEM
 --
--- CREATE USER hoseop IDENTIFIED BY "mypasswd!@";
+-- CREATE USER hoseop IDENTIFIED BY "mypasswd!@" DEFAULT TABLESPACE users;
 -- GRANT CREATE SESSION TO hoseop;
 -- GRANT CREATE TABLE TO hoseop;
 -- ALTER USER hoseop QUOTA UNLIMITED ON users;
+-- ALTER USER hoseop DEFAULT tablespace USERS;
 
 --
 -- RUN AS HOSEOP

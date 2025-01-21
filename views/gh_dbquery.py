@@ -16,8 +16,9 @@ st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }
 
 if "query_sql" not in st.session_state:
     query_list = config.get_query_list()
-    query_sql = config.get_query("query_01")
+    query_sql = config.get_query(query_list[0])
     st.session_state.query_list = query_list
+    st.session_state.query_sql = query_sql
 
 sql_rtn = st.text_area("SQL", key="query_sql", height=400)
 df_rtn = None
@@ -39,7 +40,7 @@ with col4:
     if st.button("Run Query"):
         st.session_state.df_rtn = db.run_sql(sql_rtn)
 
-col1, col2 = st.columns([16,6])
+col1, col2 = st.columns([2,2])
 
 def on_select():
     with col2:
@@ -47,21 +48,17 @@ def on_select():
         if "selection" in st.session_state.selected_row:
             if "rows" in st.session_state.selected_row["selection"]:
                 if len(st.session_state.selected_row["selection"]["rows"]) > 0:
-                    print(st.session_state.selected_row["selection"]["rows"][0])
-                    dict = st.session_state.df_rtn.iloc[st.session_state.selected_row["selection"]["rows"][0]]
-                    #print(dict)
-                    st.dataframe(dict, use_container_width=True)
+                    rownum = st.session_state.selected_row["selection"]["rows"][0]
+                    dict = st.session_state.df_rtn.iloc[rownum]
+                    if "odr03odrcmt" in dict:
+                        dict.odr03odrcmt = base.decode_rtf(dict.odr03odrcmt)
+
+                    # st.dataframe(dict, use_container_width=True)
+                    json_str = dict.to_json(orient="index")
+                    st.json(json_str)
 
 # from st_aggrid import AgGrid, GridOptionsBuilder
 
 if "df_rtn" in st.session_state and st.session_state.df_rtn is not None:
-    # # AgGrid 옵션 빌더
-    # gb = GridOptionsBuilder.from_dataframe(df_rtn)
-    # gb.configure_selection('single')  # 단일 행 선택
-    # grid_options = gb.build()
-
-    # # AgGrid 표시
-    # grid_response = AgGrid(df_rtn, gridOptions=grid_options, height=300, width='100%')
-    # selected_row = grid_response['selected_rows']
     with col1:
         st.dataframe(st.session_state.df_rtn, on_select=on_select, selection_mode="single-row", key="selected_row")
