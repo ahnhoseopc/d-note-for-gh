@@ -9,21 +9,31 @@ with tab1:
 
     col1, col2 = st.columns([1, 1])
     with col1:
-        col11, col12, col13 = st.columns([2, 1, 2])
+        col11, col12, col13, col14 = st.columns([2, 2 , 1, 1])
         with col11:
             st.text_input("등록번호:", key="patient-id-or")
         with col12:
-            if st.button("조회"):
-                df = note.call_db("query_AE_P", st.session_state["patient-id-or"])
+            st.date_input("내원일", datetime.date(2024, 7, 1), key="admsn-date-or")
         with col13:
+            if st.button("조회"):
+                df = note.call_db_patient_record("query_AE_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
+        with col14:
             if st.button("작성"):
                 result = note.call_api(st.session_state["op-prompt"], "op-draft")
                 st.session_state["op-draft"] = result
 
-        st.text_area("Prompt", height=250, key="op-prompt")
+        st.text_area("Prompt", height=150, key="op-prompt")
+
+        df_ae = note.call_db_patient_record("query_AE_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
+        df_or = note.call_db_patient_record("query_OR_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
+        df_pn = note.call_db_patient_record("query_PN_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
+
         st.write("입원기록지")
+        st.write(df_ae.to_json(orient="index"))
         st.write("수술기록지")
+        st.write(df_or.to_json(orient="index"))
         st.write("경과기록지")
+        st.write(df_pn.to_json(orient="index"))
         st.write("검사결과")
 
     with col2:
@@ -58,24 +68,27 @@ with tab2:
     with col1:
         col11, col12, col13, col14 = st.columns([1, 1, 1, 2])
         with col11:
-            st.text_input("등록번호:", key="patient-id-rt")
+            st.text_input("등록번호:", "18273645", key="patient-id-rt")
         with col12:
-            st.date_input("내원일일", datetime.date(2024, 7, 1), key="admsn-date")
+            st.date_input("내원일", datetime.datetime.today(), key="admsn-date-rt")
         with col13:
-            if st.button("조회"):
-                df_ae = note.call_db("query_AE_P", st.session_state["patient-id-rt"])
-                df_or = note.call_db("query_OR_P", st.session_state["patient-id-rt"])
-                df_pn = note.call_db("query_PN_P", st.session_state["patient-id-rt"])
+            if st.button("조회", key="search-rt"):
+                df_ae = note.call_db_patient_record("query_AE_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
+                df_or = note.call_db_patient_record("query_OR_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
+                df_pn = note.call_db_patient_record("query_PN_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
         with col14:
-            if st.button("작성"):
+            if st.button("작성", key="write-rt"):
                 result = note.call_api(st.session_state["op-prompt"], "op-draft")
                 st.session_state["op-draft"] = result
 
         st.text_area("Prompt", height=250, key="rt-prompt")
-        st.write("환자번호")
-        st.write("환자명")
-        st.write("성별")
-        st.write("나이")
+        st.write("입원원기록지")
+        st.write(df_ae.to_json(orient="index"))
+        st.write("수술기록지")
+        st.write(df_or.to_json(orient="index"))
+        st.write("경과기록지")
+        st.write(df_pn.to_json(orient="index"))
+        st.write("검사결과")
 
     with col2:
         st.write("환자정보")
