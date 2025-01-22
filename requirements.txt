@@ -1,5 +1,6 @@
 ipykernel
-oracledb
+#oracledb
+cx_Oracle
 pandas
 requests
 SQLAlchemy

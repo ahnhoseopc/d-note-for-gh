@@ -16,8 +16,9 @@ st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }
 
 if "query_sql" not in st.session_state:
     query_list = config.get_query_list()
-    query_sql = config.get_query("query_01")
+    query_sql = config.get_query(query_list[0])
     st.session_state.query_list = query_list
+    st.session_state.query_sql = query_sql
 
 sql_rtn = st.text_area("SQL", key="query_sql", height=400)
 df_rtn = None
@@ -37,10 +38,29 @@ with col3:
 
 with col4:
     if st.button("Run Query"):
-        df_rtn = db.run_sql(sql_rtn)
+        st.session_state.df_rtn = db.run_sql(sql_rtn)
 
-st.write(st.session_state.query_list)
-st.write(st.session_state.query_name)
+col1, col2 = st.columns([2,2])
 
-if df_rtn is not None:
-    st.dataframe(df_rtn)
+def on_select():
+    with col2:
+        print(st.session_state.selected_row)
+        if "selection" in st.session_state.selected_row:
+            if "rows" in st.session_state.selected_row["selection"]:
+                if len(st.session_state.selected_row["selection"]["rows"]) > 0:
+                    rownum = st.session_state.selected_row["selection"]["rows"][0]
+                    dict = st.session_state.df_rtn.iloc[rownum]
+                    # if "odr03odrcmt" in dict:
+                    #     dict.odr03odrcmt = base.decode_rtf(dict.odr03odrcmt)
+                    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
+                    dict = dict.map(decode_rtf)
+
+                    # st.dataframe(dict, use_container_width=True)
+                    json_str = dict.to_json(orient="index")
+                    st.json(json_str)
+
+# from st_aggrid import AgGrid, GridOptionsBuilder
+
+if "df_rtn" in st.session_state and st.session_state.df_rtn is not None:
+    with col1:
+        st.dataframe(st.session_state.df_rtn, on_select=on_select, selection_mode="single-row", key="selected_row")
