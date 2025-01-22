@@ -10,7 +10,8 @@ def new_query():
     st.experimental_rerun() # Force a re-render to update the selectbox
 
 def on_change_query_name():
-    st.session_state.query_sql = config.get_query(st.session_state.query_name)
+    if "query_name" in st.session_state:
+        st.session_state.query_sql = config.get_query(st.session_state.query_name)
 
 st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }</style>", unsafe_allow_html=True)
 
