@@ -9,13 +9,17 @@ PORT = st.secrets["GHDB_PORT"]
 SVCN = st.secrets["GHDB_SVCN"]
 USER = st.secrets["GHDB_USER"]
 PASS = st.secrets["GHDB_PASS"]
+CLNT = st.secrets["ORACLE_CLNT_PATH"]
+
+if CLNT == "":
+    CLNT = r"C:\instantclient_23_6"
+    #CLNT = r"D:\UTIL\DK\instantclient_12_1"
+    CLNT = r"D:\UTIL\DK\instantclient_11_2"
+    #CLNT = r"D:\UTIL\DK\instantclient_10_2"
+    CLNT = r"C:\oracle\instantclient_23_6"
+    CLNT = r"C:\instantclient_23_6"
 
 import os
-#CLNT = r"D:\UTIL\DK\instantclient_12_1"
-CLNT = r"D:\UTIL\DK\instantclient_11_2"
-#CLNT = r"D:\UTIL\DK\instantclient_10_2"
-CLNT = r"C:\oracle\instantclient_23_6"
-
 os.environ["ORACLE_HOME"] = CLNT
 os.environ["PATH"] = CLNT + ";" + os.environ["PATH"]
 os.environ["NLS_CHARACTERSET"]="KO16MSWIN949"
