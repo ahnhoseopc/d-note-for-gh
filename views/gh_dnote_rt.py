@@ -24,6 +24,7 @@ def on_select():
 def rt_summary_source():
     global df_ae, df_ay, df_or, df_pn, df_rt
 
+    df_doctors = note.run_sql("SELECT * FROM doctors")
     
     col11,col12 = st.columns([1, 1])
     with col11:
@@ -81,6 +82,7 @@ def rt_summary_source():
 def rt_summary_target():
     global df_ae, df_ay, df_or, df_pn, df_rt
 
+    st.header("퇴원요약지 (Discharge Summary)")
     if df_rt is None or len(df_rt) == 0:
         st.write("환자정보")
         st.write("의료진정보")

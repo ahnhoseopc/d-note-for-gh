@@ -1,7 +1,5 @@
 import views.gh_dnote_op as op
 import views.gh_dnote_rt as rt
-
-import utils.base as base
 import utils.note as note
 
 import streamlit as st
@@ -27,7 +25,6 @@ with tab1:
     st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
 
 with tab2:
-    st.header("퇴원요약지 (Discharge Summary)")
     col1, colm, col2 = st.columns([5, 1, 5])
     with colm:
         if st.button("⇨", key="write-rt"):

@@ -24,6 +24,15 @@ def call_api(prompt, data):
     result = base.get_random_string(100)
     return reponses
 
+def call_db_doctors(query_name):
+    query = config.get_query(query_name)
+    query = query.replace("$patient_id", patient_id)
+    query = query.replace("$admsn_date", admsn_date)
+
+    print(query)
+    result = run_sql(query)
+    return result
+
 def collect_op_info(prompt, patient_id, admsn_date):
     df_ae = call_db("query_AE_P", patient_id, admsn_date)
     df_or = call_db("query_OR_P", patient_id, admsn_date)
