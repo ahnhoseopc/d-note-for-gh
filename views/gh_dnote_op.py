@@ -1,5 +1,4 @@
 import utils.note as note
-import datetime
 
 import streamlit as st
 
@@ -9,15 +8,16 @@ df_or = None
 df_pn = None
 df_rt = None
 
-def on_select():
+def on_select_patient():
+    global df_ae, df_ay, df_or, df_pn, df_rt
+
     if "selected-patient-op" in st.session_state:
         selected_row = st.session_state["selected-patient-op"]
         if selected_row and "selection" in selected_row and "rows" in selected_row["selection"] and len(selected_row["selection"]["rows"]) > 0:
+            idnoa = st.session_state.op_patients["idnoa"][selected_row["selection"]["rows"][0]]
+            lwdat = st.session_state.op_patients["lwdat"][selected_row["selection"]["rows"][0]]
 
-            idnoa = st.session_state.op_patients["환자번호"][selected_row["selection"]["rows"][0]]
-            lwdat = st.session_state.op_patients["내원일"][selected_row["selection"]["rows"][0]]
-
-            note.collect_rt_info(st.session_state["op-prompt"], idnoa, lwdat)
+            df_ae, df_ay, df_or, df_pn, df_rt = note.collect_rt_info(st.session_state["prompt-op"], idnoa, lwdat)
     pass
 
 def op_record_source():
@@ -25,39 +25,22 @@ def op_record_source():
     
     col11,col12 = st.columns([1, 1])
     with col11:
-        dept = st.selectbox("진료과", options=["GY","EN"], key="dept", placeholder="진료과", label_visibility="collapsed")
+        if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
+            st.session_state.doctors_by_dept = note.get_doctors_by_dept()
+
+        depts = st.session_state.doctors_by_dept["kwa"].unique()
+        st.selectbox("진료과", options=depts, key="dept-op", placeholder="진료과", label_visibility="collapsed")
+
     with col12:
-        doctors_by_dept = {"GY":["001324","020341"], "EN":["120321","100321"]}
-        if dept:
-            dockers = doctors_by_dept[dept]
-        else:
-            dockers = []
-        st.selectbox("진료의", options=dockers, placeholder="진료의", label_visibility="collapsed")
+        doctors = st.session_state.doctors_by_dept[st.session_state.doctors_by_dept["kwa"]==st.session_state["dept-op"]]["spth"]
+        spth = st.selectbox("진료의", options=doctors, key="doctor-op", placeholder="진료의", label_visibility="collapsed")
+        st.session_state.op_patients = note.get_patient_by_doctor(spth)
 
-    st.session_state.op_patients = {"환자번호":["123456", "234567", "345678"], "내원일":["20241001", "20241002", "20241003"]}
-
-    st.dataframe(st.session_state.op_patients, on_select=on_select, selection_mode="single-row", height=140, use_container_width=True, key="selected-patient-op")
+    st.dataframe(st.session_state.op_patients, on_select=on_select_patient, selection_mode="single-row", height=140, use_container_width=True, key="selected-patient-op")
 
     st.divider()
 
-    # col11, col12, col13 = st.columns([2, 2, 1])
-    # with col11:
-    #     st.text_input("등록번호:", key="patient-id-or")
-    # with col12:
-    #     st.date_input("내원일", datetime.date(2024, 7, 1), key="admsn-date-or")
-    # with col13:
-    #     if st.button("조회"):
-    #         df_ae = note.call_db_patient_record("query_AE_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
-    #         df_or = note.call_db_patient_record("query_OR_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
-    #         df_pn = note.call_db_patient_record("query_PN_P", st.session_state["patient-id-or"], st.session_state["admsn-date-or"])
-
-    #         import utils.base as base
-    #         decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
-    #         df_pn = df_pn.map(decode_rtf)
-
-    # st.divider()
-
-    st.text_area("Prompt", height=150, key="op-prompt")
+    st.text_area("Prompt", height=150, key="prompt-op")
 
     st.write("입원기록지")
     if df_ae is not None:
@@ -73,8 +56,8 @@ def op_record_source():
 def op_record_target():
     global df_ae, df_ay, df_or, df_pn, df_rt
 
-    if df_rt is None:
-        st.header("수술기록지 (Operation Record)")
+    st.header("수술기록지 (Operation Record)")
+    if df_rt is None or len(df_rt) == 0:
         st.subheader("환자정보")
         st.subheader("의료진정보")
         st.write("Surgeon")

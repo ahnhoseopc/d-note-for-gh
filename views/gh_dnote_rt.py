@@ -1,6 +1,4 @@
-import utils.base as base
 import utils.note as note
-import datetime
 
 import streamlit as st
 
@@ -10,58 +8,43 @@ df_or = None
 df_pn = None
 df_rt = None
 
-def on_select():
+def on_select_patient():
+    global df_ae, df_ay, df_or, df_pn, df_rt
+
     if "selected-patient-rt" in st.session_state:
         selected_row = st.session_state["selected-patient-rt"]
         if selected_row and "selection" in selected_row and "rows" in selected_row["selection"] and len(selected_row["selection"]["rows"]) > 0:
 
-            idnoa = st.session_state.op_patients["환자번호"][selected_row["selection"]["rows"][0]]
-            lwdat = st.session_state.op_patients["내원일"][selected_row["selection"]["rows"][0]]
+            idnoa = st.session_state.rt_patients["idnoa"][selected_row["selection"]["rows"][0]]
+            lwdat = st.session_state.rt_patients["lwdat"][selected_row["selection"]["rows"][0]]
 
-            note.collect_rt_info(st.session_state["op-prompt"], idnoa, lwdat)
+            df_ae, df_ay, df_or, df_pn, df_rt = note.collect_rt_info(st.session_state["prompt-rt"], idnoa, lwdat)
+    pass
+
+def on_change_doctor():
     pass
 
 def rt_summary_source():
     global df_ae, df_ay, df_or, df_pn, df_rt
 
-    df_doctors = note.run_sql("SELECT * FROM doctors")
-    
     col11,col12 = st.columns([1, 1])
     with col11:
-        dept = st.selectbox("진료과", options=["GY","EN"], key="dept-rt", placeholder="진료과", label_visibility="collapsed")
+        if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
+            st.session_state.doctors_by_dept = note.get_doctors_by_dept()
+
+        depts = st.session_state.doctors_by_dept["kwa"].unique()
+        st.selectbox("진료과", options=depts, key="dept-rt", placeholder="진료과", label_visibility="collapsed")
+
     with col12:
-        doctors_by_dept = {"GY":["001324","020341"], "EN":["120321","100321"]}
-        if dept:
-            dockers = doctors_by_dept[dept]
-        else:
-            dockers = []
-        st.selectbox("진료의", options=dockers, key="doctors-rt", placeholder="진료의", label_visibility="collapsed")
+        doctors = st.session_state.doctors_by_dept[st.session_state.doctors_by_dept["kwa"]==st.session_state["dept-rt"]]["spth"]
+        st.selectbox("진료의", options=doctors, key="doctor-rt", placeholder="진료의", label_visibility="collapsed", on_change=on_change_doctor)
+        st.session_state.rt_patients = note.get_patient_by_doctor(st.session_state["doctor-rt"])
 
-    st.session_state.op_patients = {"환자번호":["123456", "234567", "345678"], "내원일":["20241001", "20241002", "20241003"]}
-
-    st.dataframe(st.session_state.op_patients, on_select=on_select, selection_mode="single-row", height=140, use_container_width=True, key="selected-patient-rt")
+    st.dataframe(st.session_state.rt_patients, on_select=on_select_patient, selection_mode="single-row", height=140, use_container_width=True, key="selected-patient-rt")
 
     st.divider()
 
-    # col11, col12, col13 = st.columns([2, 2, 1])
-    # with col11:
-    #     st.text_input("등록번호:", "18273645", key="patient-id-rt")
-    # with col12:
-    #     st.date_input("내원일", datetime.datetime.today(), key="admsn-date-rt")
-    # with col13:
-    #     if st.button("조회", key="search-rt"):
-    #         df_ae = note.call_db_patient_record("query_AE_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
-    #         df_ay = note.call_db_patient_record("query_AY_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
-    #         df_or = note.call_db_patient_record("query_OR_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
-    #         df_pn = note.call_db_patient_record("query_PN_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
-    #         df_rt = note.call_db_patient_record("query_RT_P", st.session_state["patient-id-rt"], st.session_state["admsn-date-rt"])
-
-    #         decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
-    #         df_pn = df_pn.map(decode_rtf)
-
-    # st.divider()
-
-    st.text_area("Prompt", height=150, key="rt-prompt")
+    st.text_area("Prompt", height=150, key="prompt-rt")
     st.write("입원기록지")
     if df_ae is not None and len(df_ae) > 0:
         st.json(df_ae.to_json(orient="records"))
