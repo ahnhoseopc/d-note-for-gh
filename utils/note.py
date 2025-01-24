@@ -26,7 +26,7 @@ def get_patient_by_doctor(spth):
     print(query)
     return run_sql(query)
 
-def collect_op_info(prompt, patient_id, admsn_date):
+def collect_or_source(patient_id, admsn_date):
     df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
     df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
     df_pn = get_medical_note("query_PN_P", patient_id, admsn_date)
@@ -34,9 +34,15 @@ def collect_op_info(prompt, patient_id, admsn_date):
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
     df_pn = df_pn.map(decode_rtf)
 
-    return df_ae, df_or, df_pn
+    op_info = {
+        "ae":df_ae.to_dict(orient="records"), 
+        "or":df_or.to_dict(orient="records"), 
+        "pn":df_pn.to_dict(orient="records")
+        }
 
-def collect_rt_info(prompt, patient_id, admsn_date):
+    return op_info
+
+def collect_rt_source(patient_id, admsn_date):
     df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
     df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
     df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
@@ -46,11 +52,16 @@ def collect_rt_info(prompt, patient_id, admsn_date):
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
     df_pn = df_pn.map(decode_rtf)
 
-    return df_ae, df_ay, df_or, df_pn, df_rt
+    rt_info = {
+        "ae":df_ae.to_dict(orient="records"), 
+        "ay":df_ay.to_dict(orient="records"), 
+        "or":df_or.to_dict(orient="records"), 
+        "pn":df_pn.to_dict(orient="records"), 
+        "rt":df_rt.to_dict(orient="records")
+        }
+
+    return rt_info
 
 def call_api(prompt, data):
-    # Replace this with your actual API call
-    # For demonstration purposes, we'll just return a random string
     reponses = genai.generate([prompt, data])
-    result = base.get_random_string(100)
     return reponses

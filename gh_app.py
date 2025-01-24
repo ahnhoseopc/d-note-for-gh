@@ -5,7 +5,7 @@ st.set_page_config(layout="wide")
 # page setup
 gh_about_page = st.Page(
     page="views/gh_about.py",
-    title="About Good Hospital",
+    title="About Good Hospitals",
     icon=":material/account_circle:",
     default=False
 )

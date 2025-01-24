@@ -1,11 +1,12 @@
-import base64
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting
 
 model = None
 
-def init_genai():
-    vertexai.init(project="dk-medical-solutions", location="us-central1")
+def init_genai(project="dk-medical-solutions"):
+    vertexai.init(project=project, location="us-central1")
+
+init_genai()
 
 def get_model_gemini_2_0_flash_exp(si):
     global model
@@ -81,6 +82,6 @@ safety_settings = [
 ]
 
 if __name__ == "__main__":
-    responses = generate("""신장질병 종류가 얼마나 되는가.""")
+    responses = generate(["""신장질병 종류가 얼마나 되는가."""])
     for response in responses:
         print(response.text, end="")
