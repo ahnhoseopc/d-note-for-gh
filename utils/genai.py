@@ -35,11 +35,11 @@ def get_model_medlm_large(si):
     return model
 
 SI = """답을 질문내용, 응답내용을 포함하는 json 포맷으로 해.답변시 정확한 진단은 의사에게 확인하라는 내용은 응답내용에서 제외하고 별도의 json 필드 "주의" 라는 필드에 표시하도록 해."""
-
-def get_model(si=SI, MODEL="medlmx"):
-    if MODEL == "medlm":
+MODEL="medlmx"
+def get_model(si=SI, model_name=MODEL):
+    if model_name == "medlm":
         return get_model_medlm_large(si)
-    elif MODEL == "gemini-1.5-pro-002":
+    elif model_name == "gemini-1.5-pro-002":
         return get_model_gemini_1_5_pro_002(si)
     else:
         return get_model_gemini_2_0_flash_exp(si)
