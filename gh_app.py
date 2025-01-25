@@ -32,8 +32,11 @@ pg = st.navigation(
 )
 
 # shared on all pages
-st.logo("assets/dk_logo.png")
-st.sidebar.text("Provided by DK+")
+st.logo("assets/gh_logo.png", size="large")
+with st.sidebar:
+    cols = st.columns([3,1])
+    with cols[0]: st.text("Provided by ")
+    with cols[1]: st.image("assets/dk_logo.png", width=40)
 
 # Run Navigation
 pg.run()
