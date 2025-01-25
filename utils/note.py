@@ -48,6 +48,12 @@ def collect_rt_source(patient_id, admsn_date):
     df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
     df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
     df_pn = get_medical_note("query_PN_P", patient_id, admsn_date)
+
+    df_je = get_medical_note("query_JE_P", patient_id, admsn_date)
+    df_te = get_medical_note("query_TE_P", patient_id, admsn_date)
+    df_ce = get_medical_note("query_CE_P", patient_id, admsn_date)
+    df_yt = get_medical_note("query_YT_P", patient_id, admsn_date)
+
     df_rt = get_medical_note("query_RT_P", patient_id, admsn_date)
 
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
@@ -58,6 +64,12 @@ def collect_rt_source(patient_id, admsn_date):
         "ay":df_ay.to_dict(orient="records"), 
         "or":df_or.to_dict(orient="records"), 
         "pn":df_pn.to_dict(orient="records"), 
+
+        "je":df_je.to_dict(orient="records"), 
+        "te":df_te.to_dict(orient="records"), 
+        "ce":df_ce.to_dict(orient="records"), 
+        "yt":df_yt.to_dict(orient="records"), 
+
         "rt":df_rt.to_dict(orient="records")
         }
 

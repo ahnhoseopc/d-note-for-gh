@@ -40,13 +40,13 @@ def op_record_source():
     if or_info is not None:
         st.write("입원기록지")
         if len(or_info["ae"]):
-            st.json(or_info["ae"])
+            st.json(or_info["ae"], expanded=1)
         st.write("수술기록지")
         if len(or_info["or"]):
-            st.json(or_info["or"])
+            st.json(or_info["or"], expanded=1)
         st.write("경과기록지")
         if len(or_info["pn"]):
-            st.json(or_info["pn"])
+            st.json(or_info["pn"], expanded=1)
         st.write("검사결과")
 
 def op_record_target():

@@ -33,29 +33,37 @@ def rt_summary_source():
         idnoa = st.session_state.rt_patients["idnoa"][selected_row["selection"]["rows"][0]]
         lwdat = st.session_state.rt_patients["lwdat"][selected_row["selection"]["rows"][0]]
 
-        rt_info = note.collect_or_source(idnoa, lwdat)
+        rt_info = note.collect_rt_source(idnoa, lwdat)
 
     st.divider()
 
     if rt_info is not None:
         st.write("입원기록지")
         if "ae" in rt_info and len(rt_info["ae"]) > 0:
-            st.json(rt_info["ae"])
+            st.json(rt_info["ae"], expanded=1)
         if "ay" in rt_info and len(rt_info["ay"]) > 0:
-            st.json(rt_info["ay"])
+            st.json(rt_info["ay"], expanded=1)
 
         st.write("수술기록지")
         if "or" in rt_info and len(rt_info["or"]) > 0:
-            st.json(rt_info["or"])    
+            st.json(rt_info["or"], expanded=1)    
         st.write("경과기록지")
         if "pn" in rt_info and len(rt_info["pn"]) > 0:
-            st.json(rt_info["pn"])
+            st.json(rt_info["pn"], expanded=1)
 
         st.write("검사결과")
-        st.write("퇴원요약")
-        
+        if "je" in rt_info and len(rt_info["je"]) > 0:
+            st.json(rt_info["je"], expanded=1)
+        if "te" in rt_info and len(rt_info["te"]) > 0:
+            st.json(rt_info["te"], expanded=1)
+        if "ce" in rt_info and len(rt_info["ce"]) > 0:
+            st.json(rt_info["ce"], expanded=1)
+        if "yt" in rt_info and len(rt_info["yt"]) > 0:
+            st.json(rt_info["yt"], expanded=1)
+
+        st.write("퇴원요약")        
         if "rt" in rt_info and len(rt_info["rt"]) > 0:
-            st.json(rt_info["rt"])
+            st.json(rt_info["rt"], expanded=1)
 
 def rt_summary_target():
     st.text_area("Prompt", height=150, key="rt-prompt")
