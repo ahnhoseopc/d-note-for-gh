@@ -1,6 +1,7 @@
 import views.gh_dnote_op as op
 import views.gh_dnote_rt as rt
 import utils.note as note
+import json
 
 import streamlit as st
 
@@ -13,11 +14,12 @@ with tab1:
     with colm:
         if st.button("➡️", key="or-write"):
             st.session_state["or-result"] = ""
-            responses = note.call_api(st.session_state["or-prompt"], rt.rt_info)
+            responses = note.call_api(st.session_state["or-prompt"], json.dumps(op.or_info, indent=4))
             if responses is not None:
+                response_container = st.empty()
                 for response in responses:
                     if response is not None:
-                        st.caption(response)
+                        response_container.markdown(response.text)
                         # st.session_state["or-result"] += response.text
 
     with col1:
@@ -33,7 +35,7 @@ with tab2:
     with colm:
         if st.button("⇨", key="rt-write"):
             st.session_state["rt-result"] = ""
-            responses = note.call_api(st.session_state["rt-prompt"], rt.rt_info)
+            responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt.rt_info))
             if responses is not None:
                 for response in responses:
                     if response is not None:

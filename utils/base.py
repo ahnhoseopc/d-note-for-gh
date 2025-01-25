@@ -26,3 +26,9 @@ def decode_rtf(rtf_text):
     decoded_text = bytes(rtf_cleaned, "latin1").decode("cp949", errors="ignore")  # Decode with Korean charset
     decoded_text = unquote(decoded_text, encoding='euc-kr')
     return decoded_text
+
+def ifnull(value1, value2):
+    """
+    Returns default_value if value is None, otherwise returns value.
+    """
+    return value2 if value1 is None else value1

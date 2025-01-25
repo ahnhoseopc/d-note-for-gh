@@ -1,3 +1,4 @@
+import utils.base as base
 import utils.note as note
 
 import streamlit as st
@@ -63,7 +64,7 @@ def op_record_target():
         st.subheader("진단정보")
         st.write("Preoperative Diagnosis")
         st.write("Postoperative Diagnosis")
-        st.subheader("수술술정보")
+        st.subheader("수술정보")
         st.write("Name of Operation")
         st.write("Procedures & Findings")
         st.write("수술 중 특이사항")
@@ -74,28 +75,81 @@ def op_record_target():
         st.write("Drains (Y/N)")
         st.write("작성일시")
     else:
-        st.write("주호소/입원사유")
-        st.caption(or_info["or"]["ocm32chiefcomp"][0])
-        st.write("주진단명 (Final Diagnosis)")
-        st.caption(or_info["or"]["ocm32finaldx"][0])
-        st.write("부진단명 (Secondary Diagnosis)")
-        st.caption(or_info["or"]["ocm32scnddx"][0])
+        patient_op_report = or_info["or"][0]
+        st.subheader("환자정보")
+        st.write("등록번호")
+        st.caption(patient_op_report["ocm06idnoa"])
 
-        st.write("수술명 (Treatment Op.)")
-        st.caption(or_info["or"]["ocm32op"][0])
-        st.write("처치명 (Treatment Medical)")
-        st.caption(or_info["or"]["ocm32medical"][0])
+        st.subheader("의료진정보")
+        cols = st.columns(3)
+        with cols[0]:
+            st.write("Surgeon")
+            st.caption(base.ifnull(patient_op_report["ocm06kwa"], "<na>") + " / "
+                        + base.ifnull(patient_op_report["ocm06spth"], "<na>") + " / "
+                        + str(base.ifnull(patient_op_report["ocm06rgcd"], 0)))
+        with cols[1]:
+            st.write("PA")
+            st.write("Nurse")
+        with cols[2]:
+            st.write("Anesthesiologist")
+            st.write("Method of Anesthesia")
 
-        st.write("중요검사소견 (Abnormal Finding or Lab)")
-        st.caption(or_info["or"]["ocm32problem"][0])
-        st.write("추후관리계획 (Follow-up Plan)")
-        st.caption(or_info["or"]["ocm32follow"][0])
-        st.write("경과요약 (Progress Summary)")
-        st.caption(or_info["or"]["ocm32other"][0])
+        st.subheader("진단정보")
+        patient_op_cmta = patient_op_report["ocm06cmta"]
+        patient_op_cmta_comp = patient_op_cmta.split("|")
+        st.caption(patient_op_report["ocm06cmta"])
 
-        st.write("치료결과 (Result)")
-        st.caption(or_info["or"]["ocm32rtrstcd"][0])
-        st.write("퇴원형태 (Type of Discharge)")
-        st.caption(or_info["or"]["ocm32rttypecd"][0])
-        st.write("퇴원약 (Medicine)")
+        st.write("Preoperative Diagnosis")
+        st.caption(patient_op_cmta_comp[7])
+        st.write("Postoperative Diagnosis")
+        st.caption(patient_op_cmta_comp[11])
 
+        st.subheader("수술정보")
+        st.write("Name of Operation")
+        st.caption(patient_op_cmta_comp[8])
+
+        st.write("Procedures & Findings")
+        st.caption(patient_op_report["ocm06cmtb"])
+        st.write("수술 중 특이사항")
+        memo = patient_op_report["ocm06memo"]
+        st.caption(memo)
+        if memo is None or memo[0] == 'N':
+            memo = "무"
+        else:
+            memo = "유 : " + memo[2:]
+        st.caption(memo)
+
+        st.subheader("수술정보")
+        cols = st.columns(4)
+        with cols[0]:
+            st.write("출혈정도")
+            st.caption("alarm: " + base.ifnull(patient_op_report["ocm06alarm"],"<na>"))
+        with cols[1]:
+            st.write("패드확인 (유/무)")
+            st.caption("cmplyn: " + base.ifnull(patient_op_report["cmplyn"],"<na>"))
+            st.caption("emdv: " + base.ifnull(patient_op_report["ocm06emdv"],"<na>"))
+        with cols[2]:
+            st.write("Tissue of Path. (Y/N)")
+            st.caption("tissueexmn: " + base.ifnull(patient_op_report["ocm06tissueexmn"],"<na>"))
+            st.caption("tissueexmncnts: " + base.ifnull(patient_op_report["ocm06tissueexmncnts"],"<na>"))
+        with cols[3]:
+            st.write("Drains (Y/N)")
+            st.caption("drngpipe: " + base.ifnull(patient_op_report["ocm06drngpipe"],"<na>"))
+            st.caption("drngpipecnts: " + base.ifnull(patient_op_report["ocm06drngpipecnts"],"<na>"))
+        
+        cols = st.columns(2)
+        with cols[0]:
+            st.write("수술일시")
+            st.caption(base.ifnull(patient_op_report["ocm06opdat"], "<na>") + " 시작:" 
+                    + base.ifnull(patient_op_report["ocm06opstarttm"], "<na>") + " ~ 종료:"
+                    + base.ifnull(patient_op_report["ocm06opendtm"], "<na>"))
+        with cols[1]:
+            st.write("작성일시")
+            st.caption(patient_op_report["ocm06sysdat"] + " " + patient_op_report["ocm06systm"])
+        
+        st.write("치료계획")
+        st.caption(patient_op_report["ocm06mdtrplan"])
+        st.write("수술경과")
+        st.caption(patient_op_report["ocm06opprgr"])
+        st.write("PLCR")
+        st.caption(patient_op_report["ocm06pclr"])
