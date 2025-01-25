@@ -10,14 +10,16 @@ def new_query():
     st.experimental_rerun() # Force a re-render to update the selectbox
 
 def on_change_query_name():
-    st.session_state.query_sql = config.get_query(st.session_state.query_name)
+    if "query_name" in st.session_state:
+        st.session_state.query_sql = config.get_query(st.session_state.query_name)
 
 st.markdown("<style>.stTextArea>div>div>textarea { font-family: 'Courier New'; }</style>", unsafe_allow_html=True)
 
 if "query_sql" not in st.session_state:
     query_list = config.get_query_list()
-    query_sql = config.get_query("query_01")
+    query_sql = config.get_query(query_list[0])
     st.session_state.query_list = query_list
+    st.session_state.query_sql = query_sql
 
 sql_rtn = st.text_area("SQL", key="query_sql", height=400)
 df_rtn = None
@@ -37,10 +39,20 @@ with col3:
 
 with col4:
     if st.button("Run Query"):
-        df_rtn = db.run_sql(sql_rtn)
+        st.session_state.df_rtn = db.run_sql(sql_rtn)
 
-st.write(st.session_state.query_list)
-st.write(st.session_state.query_name)
+if "df_rtn" in st.session_state and st.session_state.df_rtn is not None:
+    col1, col2 = st.columns([2,2])
+    with col1:
+        selected_row= st.dataframe(st.session_state.df_rtn, on_select="rerun", selection_mode="single-row", key="selected_row")
 
-if df_rtn is not None:
-    st.dataframe(df_rtn)
+    with col2:
+        if selected_row and len(selected_row["selection"]["rows"]) > 0:
+            rownum = selected_row["selection"]["rows"][0]
+            dict = st.session_state.df_rtn.iloc[rownum]
+
+            decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
+            dict = dict.map(decode_rtf)
+
+            json_str = dict.to_json(orient="index")
+            st.json(json_str)

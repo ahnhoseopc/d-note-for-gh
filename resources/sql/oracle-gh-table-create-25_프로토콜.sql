@@ -1,0 +1,46 @@
+-- JAIN_OCS.OMTCST24(각종프로토콜)
+
+DROP TABLE OMTCST24 ;
+
+CREATE TABLE OMTCST24 (
+OMT24STATUS CHAR(2 BYTE) NULL, -- STATUS
+OMT24KWA CHAR(2 BYTE) NOT NULL, -- 과
+OMT24SPTH CHAR(6 BYTE) NOT NULL, -- 의사코드
+OMT24SLPID CHAR(10 BYTE) NOT NULL, -- 전표ID         CLI= "방사선 임상소견 PROTOCOL"        LIB= "검사 임상소견 PROTOCOL"        MDC= "투약 의사지시 PROTOCOL"        OPR= "수술 RECORD PROTOCOL"        AGR= "소견서 PROTOCOL"         "IMP", "COR", "COR_IMP", "IMPHIS", "IMPPHY" = "임상소견 PROTOCOL"        CstHead="Consultation 내용요약"        CstBrief= "Consultation Brief History"        CstRst= "Consultation 상세내용"        ADM= "Admission Note"        DIS= "Discharge Summary"        DIC= "단어장"        GITA= "기  타"
+OMT24CODE CHAR(20 BYTE) NOT NULL, -- 코드
+OMT24CODENM VARCHAR2(100 BYTE) NULL, -- 코드명
+OMT24CMT VARCHAR2(4000 BYTE) NULL, -- 손견
+OMT24CMTB VARCHAR2(4000 BYTE) NULL --
+);
+
+ALTER TABLE OMTCST24 ADD CONSTRAINT PK_OMTCST24
+PRIMARY KEY (OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE);
+
+
+INSERT INTO OMTCST24 (OMT24STATUS, OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE, OMT24CODENM, OMT24CMT)
+VALUES ('AA', 'AA', 'AA1234', 'CLI', 'CL001', '방사선 임상소견', '환자의 방사선 검사 결과 특이 소견 없음');
+
+INSERT INTO OMTCST24 (OMT24STATUS, OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE, OMT24CODENM, OMT24CMT)
+VALUES ('BB', 'BB', 'BB1234', 'LIB', 'LB001', '검사 임상소견', '환자의 혈액 검사 결과 정상');
+
+INSERT INTO OMTCST24 (OMT24STATUS, OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE, OMT24CODENM, OMT24CMT)
+VALUES ('CC', 'CC', 'CC1234', 'MDC', 'MD001', '투약 의사지시', '환자에게 진통제 투여');
+
+INSERT INTO OMTCST24 (OMT24STATUS, OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE, OMT24CODENM, OMT24CMT)
+VALUES ('DD', 'DD', 'DD1234', 'OPR', 'OP001', '수술 RECORD', '환자의 수술 경과 정상');
+
+INSERT INTO OMTCST24 (OMT24STATUS, OMT24KWA, OMT24SPTH, OMT24SLPID, OMT24CODE, OMT24CODENM, OMT24CMT)
+VALUES ('EE', 'EE', 'EE1234', 'AGR', 'AG001', '소견서', '환자의 상태 호전');
+
+COMMIT;
+
+SELECT
+OMT24STATUS -- STATUS
+, OMT24KWA -- 과
+, OMT24SPTH -- 의사코드
+, OMT24SLPID -- 전표ID         CLI= "방사선 임상소견 PROTOCOL"        LIB= "검사 임상소견 PROTOCOL"        MDC= "투약 의사지시 PROTOCOL"        OPR= "수술 RECORD PROTOCOL"        AGR= "소견서 PROTOCOL"         "IMP", "COR", "COR_IMP", "IMPHIS", "IMPPHY" = "임상소견 PROTOCOL"        CstHead="Consultation 내용요약"        CstBrief= "Consultation Brief History"        CstRst= "Consultation 상세내용"        ADM= "Admission Note"        DIS= "Discharge Summary"        DIC= "단어장"        GITA= "기  타"
+, OMT24CODE -- 코드
+, OMT24CODENM -- 코드명
+, OMT24CMT -- 손견
+, OMT24CMTB --
+FROM OMTCST24;

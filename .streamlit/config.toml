@@ -3,12 +3,3 @@ primaryColor = "#d33682"
 backgroundColor = "#002b36"
 secondaryBackgroundColor = "#586e75"
 textColor = "#fff"
-
-[client]
-toolbarModel = "minimal"
-
-[database]
-query_01 = "select\n    OCM01IDNOA  , OCM01NAMEA    ,                  /* 환자번호, 이름 */\n    OCM01SYSDAT , OCM01SYSTM                       /* 날짜, 시간 */                              /* 이미지파일명 */\nfrom OCMPTN01\n"
-query_02 = "select\n    OCM02RGCD   , OCM02RGNM     ,                  /* 수술지구분 */\n    OCM02HPDAT  , OCM02RTDAT    ,                  /* 환자번호, 타급종구분 */\n    OCM02SYSDAT , OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */\nfrom OCMDCT02\n"
-query_12 = "select\n    OCM06STATUS\t,                                  /* 수술지구분 */\n    OCM06IDNOA\t, OCM06IDNOB    ,                  /* 환자번호, 타급종구분 */\n    OCM06LWDAT\t, OCM06OPDAT    , OCM06SEQNO    ,  /* 내원 및 입원일, 수술일, 순서 */\n    OCM06IOCD   , OCM06DV       ,                  /* IO구분, 구분, */\n    OCM06CMTA\t, OCM06CMTB     , OCM06CMTC   \t,  /* 마취방법, 수술기록1, 수술기록2 */\n    OCM06RGCD   , OCM06SYSTM    , OCM06SYSDAT\t,  /* 등록의, 등록시간, 등록일 */\n    OCM06IMGFILE10                                 /* 이미지파일명 */\nfrom OCMOPR06\nWHERE OCM06STATUS = 'CPG'"
-query_15 = "select\n    OCM32STATUS ,                                  /* STATUS */\n    OCM32IDNOA  , OCM32IDNOB    , OCM32LWDAT    ,  /* 환자번호, 타급종구분, 래원 및 입원 */\n    OCM32IOCD   , OCM32BHCD     ,                  /* I/O구분, 급종 */\n    OCM32HPDAT  , OCM32RTDAT    ,                  /* 입원일, 퇴원일 */\n    OCM32KWA    , OCM32WARD\t    ,                  /* 성별, BEDNO */\n    OCM32CHIEFCOMP, OCM32FINALDX, OCM32OP       ,  /* CHIEF COMPLAINTS, FINAL DX, TREATMENT OP */\n    OCM32MEDICAL, OCM32FOLLOW\t, OCM32OTHER    ,  /* TREATMENT MEDICAL, FOLLOW-UP PLAN, OTHER REMARKS */\n    OCM32SPTH   , OCM32SEX      , OCM32AGE\t    ,  /* 주치의(진료과장), 성별, 나이 */\n    OCM32RTRSTCD, OCM32RTTYPECD , OCM32RTHSPNM\t,  /* 치료결과코드, 퇴원형태코드, 전원병원명 */\n    OCM32RTCMT  , OCM32SCNDDX   ,                  /* 기타CMT, 부진단명 */\n    OCM32PI     , OCM32PHX      , OCM32DM       ,\n    OCM32TBC    , OCM32HT       , OCM32AST      ,\n    OCM32SYSDAT , OCM32SYSTM    ,                  /* 등록날짜. 등록시간, 담당의(레지턴트,가정) */\n    OCM32RGCD   , OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과장), 중요검사소견 */\nfrom OCMRTN32\n"
