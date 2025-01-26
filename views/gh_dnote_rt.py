@@ -66,8 +66,27 @@ def rt_summary_source():
             st.json(rt_info["rt"], expanded=1)
 
 def rt_summary_target():
+    with st.expander("기존 수술기록지", expanded=True):
+        if rt_info is not None:
+            st.write("수술기록지")
+            if "rt" in rt_info and len(rt_info["rt"]):
+                st.json(rt_info["rt"], expanded=1)
+            if "rt-current" in rt_info and  len(rt_info["rt-current"]):
+                st.json(rt_info["rt-current"], expanded=1)
+
     st.text_area("Prompt", height=150, key="rt-prompt")
 
+    with st.columns([3,1,3])[1]:
+        if st.button("⇨", key="rt-write"):
+            st.session_state["rt-result"] = ""
+            responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt.rt_info))
+            if responses is not None:
+                for response in responses:
+                    if response is not None:
+                        st.caption(response)
+                        # st.session_state["or-result"] += response.text
+               # st.session_state["rt-result"] += response.text
+            
     st.header("퇴원요약지 (Discharge Summary)")
     if rt_info is None or "rt" not in rt_info or len(rt_info["rt"]) == 0:
         st.write("환자정보")
