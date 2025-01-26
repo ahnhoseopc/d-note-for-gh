@@ -1,5 +1,6 @@
 import utils.base as base
 import utils.note as note
+import json
 
 import streamlit as st
 
@@ -79,7 +80,7 @@ def rt_summary_target():
     with st.columns([3,1,3])[1]:
         if st.button("⇨", key="rt-write"):
             st.session_state["rt-result"] = ""
-            responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt.rt_info))
+            responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt_info["rt-source"], indent=4))
             if responses is not None:
                 for response in responses:
                     if response is not None:

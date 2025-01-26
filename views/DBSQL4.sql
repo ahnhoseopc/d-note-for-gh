@@ -43,10 +43,9 @@ ORDER BY OMT24KWA , OMT24SPTH DESC, OMT24CODE;
 
 select * from jain_ocs.OCMOPR06
 where ocm06opdat = '20241017' 
-and ocm06cmta like '%단순%'
---and ocm06kwa = 'GS'
-;
+AND ocm06cmta like '%단순%';
 
+/*
 1. specimen 
 Rt.lobe(permanent Bx.의뢰함)
 2.LN dissection : 
@@ -77,3 +76,4 @@ Lt.sup.,inf. parathyroid were preserved
 EBL : 30cc/a little
 sponge count correct? yes
 
+*/
