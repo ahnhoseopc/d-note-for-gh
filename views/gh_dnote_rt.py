@@ -45,7 +45,7 @@ def rt_summary_source():
 
     with st.expander("퇴원요약지 소스 (DB)", expanded=False):
         # Source data display
-        if rt_info is not None:
+        if rt_info:
             st.write("입원기록지")
             if "ae" in rt_info and len(rt_info["ae"]) > 0:
                 st.json(rt_info["ae"], expanded=1)
@@ -71,11 +71,11 @@ def rt_summary_source():
 
     with st.expander("퇴원요약지 기존", expanded=False):
         st.write("퇴원요약지 (DB)")
-        if "rt" in rt_info and len(rt_info["rt"]) > 0:
+        if rt_info and "rt" in rt_info and len(rt_info["rt"]) > 0:
             st.json(rt_info["rt"], expanded=1)
 
         st.write("퇴원요약지 (표시항목)")
-        if "rt-current" in rt_info and len(rt_info["rt-current"]) > 0:
+        if rt_info and "rt-current" in rt_info and len(rt_info["rt-current"]) > 0:
             st.json(rt_info["rt-current"], expanded=1)
 
     with st.expander("퇴원요약지 양식", expanded=False):
@@ -109,27 +109,26 @@ def rt_summary_source():
             st.write("퇴원약 (Medicine)")
 
 
-RT_PROMPT_DEFAULT = """
+RT_PROMPT_DEFAULT = """환자의 주호소, 주진단명, 부진단명, 수술명, 처치명, 중요검사소견, 추후관리계획, 경과요약, 치료결과, 퇴원형태, 퇴원약을 확인하여 퇴원요약지를 작성하라.
 
-환자의 주호소, 주진단명, 부진단명, 수술명, 처치명, 중요검사소견, 추후관리계획, 경과요약, 치료결과, 퇴원형태, 퇴원약을 확인하여 퇴원요약지를 작성하라.
-중요검사소견은 입원기간내에 시행한 조직검사결과를 그대로 옮겨오도록 한다.
+1. 중요검사소견은 입원기간내에 시행한 조직검사결과를 원본 데이터 그대로 옮겨오도록 한다.
 
-경과요약은 입원사유와 수술내용, 검사결과, 경과기록을 각 한줄씩 작성하도록 한다.
+2. 경과요약은 입원사유와 수술내용, 검사결과, 경과기록을 각 한줄씩 작성하도록 한다.
 
 입원사유는 "date of admission", "chief compaints" 와 "present illness", "impression" 등을 참고하여 작성하고
 수술내용은 "operation"속성 내의 "operation date", "operation data", "operation procedures and findings", "operation notes"등을 참고한다. "operation"속성이 없으면 작성하지 않는다.
 검사결과는 검사일과 입원기간내의 조직검사결과를 요약하여 특이사항여부를 한줄로 요약한다.
 경과기록은 퇴원일과 함께 "progress notes"내의 날짜별 기록을 참고하여 환자의 경과의 변화를 한줄로 요약한다. 검사결과와 이상소견여부를 확인하도록 한다.
 
-날짜는 "[2025-01-01]" 형식으로 표시한다."""
+3. 날짜는 "[2025-01-01]" 형식으로 표시한다."""
 
 def rt_summary_target():
     # 퇴원요약지 생성 프롬프트
     st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
 
     # 퇴원요약지 작성 버튼
-    if st.button("➡️", key="rt-write"):
-        with st.expander("AI지원 프로시저 프로토콜", expanded=True):
+    if st.button("➡️ 퇴원요약지 작성", key="rt-write"):
+        with st.expander("AI지원 퇴원요약지 초안", expanded=True):
             response_container = st.empty()
             st.session_state["rt-result"] = ""
             try:

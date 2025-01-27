@@ -208,6 +208,12 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
         "objective": {
             "review of systems": None if len(df_ae) > 0 else df_ay["ocm41ros"][0] if len(df_ay) > 0 else None,
             "other review of systems": df_ae["ocm31rosother"][0] if len(df_ae) > 0 else df_ay["ocm41rosother"][0] if len(df_ay) > 0 else None,
+            "lab-result": {
+                "diagnostic test": df_je[['scp42odrdat', 'scp42spmdat', 'scp42sugacd', 'scp42result','scp42rstcd']].to_dict(orient="records"),
+                "biopsy test": df_te[['sap06odrdat', 'sap06rstdat', 'sap06gross']].to_dict(orient="records"),
+                "cytology test": df_ce[['sap08odrdat', 'sap08rstdat', 'sap08diag']].to_dict(orient="records"),
+                "video reading": df_yt[['srd04odrdat', 'srd04rddat', 'srd04find', 'srd04imp']].to_dict(orient="records"),
+                },
             },
 
         "assessment": {

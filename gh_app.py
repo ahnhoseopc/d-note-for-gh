@@ -14,14 +14,14 @@ gh_dbquery_page = st.Page(
     page="views/gh_dbquery.py",
     title="Database Query",
     icon=":material/bar_chart:",
-    default=True
+    default=False
 )
 
 gh_dnote_page = st.Page(
     page="views/gh_dnote.py",
     title="D-Note",
     icon=":material/smart_toy:",
-    default=False
+    default=True
 )
 
 pg = st.navigation(
