@@ -150,11 +150,16 @@ def collect_or_source(patient_id, admsn_date, kwa, spth):
 #
 # Discharge Summary Report (퇴원요약지)
 #
-def collect_rt_source(patient_id, admsn_date):
+def collect_rt_source(patient_id, admsn_date, kwa, spth):
     df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
     df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
     df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
     df_pn = get_medical_note("query_PN_P", patient_id, admsn_date)
+
+    df_pt_r = get_medical_note("query_PT_R", None, None, kwa, spth)
+
+    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
+    df_pt_r = df_pt_r.map(decode_rtf)
 
     df_je = get_medical_note("query_JE_P", patient_id, admsn_date)
     df_te = get_medical_note("query_TE_P", patient_id, admsn_date)
@@ -165,6 +170,110 @@ def collect_rt_source(patient_id, admsn_date):
 
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
     df_pn = df_pn.map(decode_rtf)
+
+    rt_source = {
+            "patient": {
+            "patient id": patient_id,
+            "date of admission": admsn_date,
+
+            "sex": df_ae["ocm31sex"][0] if len(df_ae) > 0 else df_ay["ocm41sex"][0] if len(df_ay) > 0 else None,
+            "age": df_ae["ocm31age"][0] if len(df_ae) > 0 else df_ay["ocm41age"][0] if len(df_ay) > 0 else None,
+            },
+        "clinical staff": {
+            "department": df_ae["ocm31kwa"][0] if len(df_ae) > 0 else df_ay["ocm41kwa"][0] if len(df_ay) > 0 else None,
+            "doctor in charge": df_ae["ocm31spth"][0] if len(df_ae) > 0 else df_ay["ocm41spth"][0] if len(df_ay) > 0 else None,
+            "physician assistant": None,
+            "nurse": None,
+            "anesthesiologist": None,
+            "method of anesthesia": None,
+            },
+
+        "subjective": {
+            "chief complaints": df_ae["ocm31cc"][0] if len(df_ae) > 0 else df_ay["ocm41cc"][0] if len(df_ay) > 0 else None,
+            "pain": df_ae["ocm31pain2"][0] if len(df_ae) > 0 else df_ay["ocm41pain2"][0] if len(df_ay) > 0 else None,
+            "onset": df_ae["ocm31onset"][0] if len(df_ae) > 0 else df_ay["ocm41onset"][0] if len(df_ay) > 0 else None,
+
+            "present illness": df_ae["ocm31pi"][0] if len(df_ae) > 0 else df_ay["ocm41pi"][0] if len(df_ay) > 0 else None,
+
+            "obsteric gpal": None if len(df_ae) > 0 else base.ifnull(df_ay["ocm41ohg"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41ohp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41oha"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41ohl"][0],"<na>") if len(df_ay) > 0 else None,
+            "menstrual history": None if len(df_ae) > 0 else base.ifnull(df_ay["ocm41lmp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41pmp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41interval"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41menache"][0],"<na>") if len(df_ay) > 0 else None,
+
+            "past medical history": df_ae["ocm31pmhx"][0] if len(df_ae) > 0 else df_ay["ocm41phx"][0] if len(df_ay) > 0 else None,
+            "admission-operation history": None if len(df_ae) > 0 else df_ay["ocm41adm"][0] if len(df_ay) > 0 else None,
+
+            "social history": df_ae["ocm31soc"][0] if len(df_ae) > 0 else df_ay["ocm41shx"][0] if len(df_ay) > 0 else None,
+            "family history": df_ae["ocm31family"][0] if len(df_ae) > 0 else df_ay["ocm41fhx"][0] if len(df_ay) > 0 else None,
+            },
+        
+        "objective": {
+            "review of systems": None if len(df_ae) > 0 else df_ay["ocm41ros"][0] if len(df_ay) > 0 else None,
+            "other review of systems": df_ae["ocm31rosother"][0] if len(df_ae) > 0 else df_ay["ocm41rosother"][0] if len(df_ay) > 0 else None,
+            },
+
+        "assessment": {
+            "impression": df_ae["ocm31imp"][0] if len(df_ae) > 0 else df_ay["ocm41imp"][0] if len(df_ay) > 0 else None,
+            "diagnosis": [None],
+            },
+        "plan": {
+            "operation name": None,
+            "treatment plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
+            "discharge plan": df_ae["ocm31rtplan"][0] if len(df_ae) > 0 else df_ay["ocm41rtplan"][0] if len(df_ay) > 0 else None,
+            "educational plan": df_ae["ocm31edu"][0] if len(df_ae) > 0 else df_ay["ocm41edct"][0] if len(df_ay) > 0 else None,
+            },
+
+        "report date": df_ae["ocm31sysdat"][0] if len(df_ae) > 0 else df_ay["ocm41sysdat"][0] if len(df_ay) > 0 else None,
+        "report time": df_ae["ocm31systm"][0] if len(df_ae) > 0 else df_ay["ocm41systime"][0] if len(df_ay) > 0 else None,
+
+        "operation": {
+            "operation date": df_or["ocm06opdat"][0] if len(df_or) > 0 else None,
+            "operation data": df_or["ocm06cmta"][0] if len(df_or) > 0 else None,
+            "operation procedures and findings": df_or["ocm06cmtb"][0] if len(df_or) > 0 else None,
+            "operation notes": df_or["ocm06memo"][0] if len(df_or) > 0 else None,
+            "medical treatment plan": df_or["ocm06mdtrplan"][0] if len(df_or) > 0 else None,
+            },
+
+        "progress notes": df_pn[['odr03odrdat', 'odr03odrcmt']].to_dict(orient="records"),
+
+        "protocols of doctor": df_pt_r.to_dict(orient="records")
+    }
+
+    rt_current = {
+        "patient": {
+            "patient id": patient_id,
+            "date of admission": admsn_date,
+            
+            "sex": df_rt["ocm32sex"][0] if len(df_rt) > 0 else None,
+            "age": df_rt["ocm32age"][0] if len(df_rt) > 0 else None,
+            },
+        "clinical staff": {
+            "department": df_rt["ocm32kwa"][0] if len(df_rt) > 0 else None,
+            "doctor in charge": df_rt["ocm32spth"][0] if len(df_rt) > 0 else None,
+            "doctor assistant": str(df_rt["ocm32rgcd"][0]) if len(df_rt) > 0 else None,
+        },
+        "clinical dates": {
+            "date of admission": df_rt["ocm32hpdat"][0] if len(df_rt) > 0 else None,
+            #"date of operation": df_rt["ocm32opdat"][0] if len(df_rt) > 0 else None,
+            "date of discharge": df_rt["ocm32rtdat"][0] if len(df_rt) > 0 else None,
+        },
+        "summary": {
+            "chief complaints": df_rt["ocm32chiefcomp"][0] if len(df_rt) > 0 else None,
+            "final diagnosis": df_rt["ocm32finaldx"][0] if len(df_rt) > 0 else None,
+            "secondary diagnosis": df_rt["ocm32scnddx"][0] if len(df_rt) > 0 else None,
+            "treatment operation": df_rt["ocm32op"][0] if len(df_rt) > 0 else None,
+            "treatment medication": df_rt["ocm32medical"][0] if len(df_rt) > 0 else None,
+            "abnormal findings and lab result": df_rt["ocm32problem"][0] if len(df_rt) > 0 else None,
+    
+            "follow-up plan": df_rt["ocm32follow"][0] if len(df_rt) > 0 else None,
+            "progress summary": df_rt["ocm32other"][0] if len(df_rt) > 0 else None,
+            "treatment result": df_rt["ocm32rtrstcd"][0] if len(df_rt) > 0 else None,
+            "type of discharge": df_rt["ocm32rttypecd"][0] if len(df_rt) > 0 else None,
+            "discharge comments": df_rt["ocm32rtcmt"][0] if len(df_rt) > 0 else None,
+            "medicine": [],
+
+            "report date": df_rt["ocm32sysdat"][0] if len(df_rt) > 0 else None,
+            "report time": df_rt["ocm32systm"][0] if len(df_rt) > 0 else None,
+        }
+    }
 
     rt_info = {
         "ae":df_ae.to_dict(orient="records"), 
@@ -177,7 +286,10 @@ def collect_rt_source(patient_id, admsn_date):
         "ce":df_ce.to_dict(orient="records"), 
         "yt":df_yt.to_dict(orient="records"), 
 
-        "rt":df_rt.to_dict(orient="records")
+        "rt":df_rt.to_dict(orient="records"),
+
+        "rt-source": rt_source,
+        "rt-current": rt_current
         }
 
     return rt_info
@@ -185,5 +297,6 @@ def collect_rt_source(patient_id, admsn_date):
 def call_api(prompt, data):
     print("prompt: " + prompt)
     print("data: " + data)
+
     reponses = genai.generate([prompt, data])
     return reponses
