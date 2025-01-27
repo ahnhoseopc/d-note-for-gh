@@ -25,7 +25,7 @@ def get_doctors_by_dept():
 def get_patient_by_doctor(spth):
     query_name = "query_PTNT"
     query = config.get_query(query_name)
-    query = query.replace("$spth", spth)
+    query = query.replace("$spth", base.ifnull(spth,""))
     return run_sql(query)
 
 #
