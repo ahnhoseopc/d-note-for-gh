@@ -1,6 +1,23 @@
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting
 
+import streamlit as st
+
+import os
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
+
+import google.auth
+def get_access_token():
+    """
+    Retrieves an access token using Google default credentials.
+
+    Returns:
+        str: The access token.
+    """
+    credentials, project = google.auth.default()
+    credentials.refresh(google.auth.transport.requests.Request())
+    return credentials.token
+
 model = None
 
 def init_genai(project="dk-medical-solutions"):
