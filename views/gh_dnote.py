@@ -26,4 +26,4 @@ with tab2:
 
 cols = st.columns(7)
 with cols[3]:
-    st.image("https://www.moonhwa.or.kr/moonhwa/images/main02/img_symbol0302.png", width=500)
+    st.image("https://www.moonhwa.or.kr/moonhwa/images/main02/img_symbol0302.png", width=300)

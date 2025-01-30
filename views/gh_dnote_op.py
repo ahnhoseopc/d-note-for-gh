@@ -76,12 +76,19 @@ def op_record_target():
     st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
 
     # 수술기록지 작성 버튼
-    if st.button("➡️ 수술기록지 초안 작성", key="or-write"):
+    cols = st.columns([3, 4])
+    with cols[0]:
+        or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write")
+
+    with cols[1]:
+        st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
+
+    if or_write:
         with st.expander("AI지원 프로토콜 선택", expanded=True):
             response_container = st.empty()
             st.session_state["or-result"] = ""
             try:
-                responses = note.call_api(st.session_state["or-prompt"], json.dumps(or_info["or-source"], indent=4))
+                responses = note.call_api(st.session_state["or-prompt"], json.dumps(or_info["or-source"], indent=4), st.session_state["ai-model-or"].lower())
                 for response in responses:
                     st.session_state["or-result"] += response.text
                     response_container.caption(st.session_state["or-result"])

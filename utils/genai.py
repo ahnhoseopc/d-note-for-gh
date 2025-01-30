@@ -56,6 +56,7 @@ SI = """답변시 정확한 진단은 의사에게 확인하라는 내용은 제
 # """답을 질문내용, 응답내용을 포함하는 json 포맷으로 해.답변시 정확한 진단은 의사에게 확인하라는 내용은 응답내용에서 제외하고 별도의 json 필드 "주의" 라는 필드에 표시하도록 해."""
 MODEL="medlm"
 MODEL="gemini-pro"
+MODEL="gemini-flash"
 
 def get_model(si=SI, model_name=MODEL):
     if model_name == "medlm":
@@ -65,9 +66,9 @@ def get_model(si=SI, model_name=MODEL):
     else:
         return get_model_gemini_2_0_flash_exp(si)
 
-def generate(prompts):
+def generate(prompts, model):
     print(prompts)
-    model = get_model()
+    model = get_model(model_name=model)
     responses = model.generate_content(
         prompts,
         generation_config=generation_config,
