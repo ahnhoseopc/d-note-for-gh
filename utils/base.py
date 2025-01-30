@@ -7,14 +7,23 @@ def get_random_string(length):
     #result_str = ''.join(random.choice(string.ascii_letters + string.digits + "!@#$%^&*?") for i in range(length))
     return result_str
 
+import json
+
+def is_json_format(data):
+    try:
+        json.loads(data)
+        return True
+    except (ValueError, TypeError):
+        return False
+
 import re
 
-def is_rtf_format(string):
+def is_rtf_format(data):
     """
     문자열이 RTF 형식인지 확인하는 함수.
     """
     # RTF는 항상 '{\rtf'로 시작
-    return bool(re.match(r'^{\\rtf', string.strip()))
+    return bool(re.match(r'^{\\rtf', data.strip()))
 
 from urllib.parse import unquote
 

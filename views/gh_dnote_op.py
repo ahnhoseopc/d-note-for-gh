@@ -68,7 +68,7 @@ def op_record_source():
 
 OR_PROMPT_DEFAULT = """입력된 데이터의 "present illness" 와 "plan"을 확인하여 "operation name"을 추정하라.
 추정된 "operation name"을 참조하여 "protocols of doctor"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
-응답으로 "present illness" 와 "plan", "operation name"과 "code", "code name", "protocol"을 제시하라.
+응답으로 "present illness" 와 "plan", "operation name"과 "code", "code name", "protocol"을 json format으로 제시하라.
 """
 
 def op_record_target():
@@ -92,9 +92,12 @@ def op_record_target():
                 for response in responses:
                     st.session_state["or-result"] += response.text
                     response_container.caption(st.session_state["or-result"])
+
+                if base.is_json_format(st.session_state["or-result"]):
+                    response_container.caption(json.loads(st.session_state["or-result"]))
+
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
-            print("or-result= ", st.session_state["or-result"])
 
     # 수술기록지 결과 비교: 기존 vs 신규
     with st.expander("수술기록지 신규", expanded=False):

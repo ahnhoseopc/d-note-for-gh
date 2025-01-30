@@ -143,6 +143,9 @@ def rt_summary_target():
                 for response in responses:
                     st.session_state["rt-result"] += response.text
                     response_container.caption(st.session_state["rt-result"])
+
+                if base.is_json_format(st.session_state["or-result"]):
+                    response_container.caption(json.loads(st.session_state["or-result"]))
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
             print("rt-result= ", st.session_state["rt-result"])

@@ -13,7 +13,8 @@ def get_medical_note(query_name, patient_id, admsn_date, kwa=None, spth=None):
         query = query.replace("$patient_id", patient_id).replace("$admsn_date", admsn_date)
     if kwa is not None and spth is not None:
         query = query.replace("$kwa", kwa).replace("$spth", spth)
-    print(query_name , "=" , query)
+    #print(query_name , "=" , query)
+    print("query_name" , "=" , query_name)
     return run_sql(query)
 
 def get_doctors_by_dept():
@@ -176,7 +177,7 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
     df_pn = df_pn.map(decode_rtf)
 
     rt_source = {
-            "patient": {
+        "patient": {
             "patient id": patient_id,
             "date of admission": admsn_date,
 
@@ -199,8 +200,8 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
 
             "present illness": df_ae["ocm31pi"][0] if len(df_ae) > 0 else df_ay["ocm41pi"][0] if len(df_ay) > 0 else None,
 
-            "obsteric gpal": None if len(df_ae) > 0 else base.ifnull(df_ay["ocm41ohg"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41ohp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41oha"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41ohl"][0],"<na>") if len(df_ay) > 0 else None,
-            "menstrual history": None if len(df_ae) > 0 else base.ifnull(df_ay["ocm41lmp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41pmp"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41interval"][0],"<na>")+'/'+base.ifnull(df_ay["ocm41menache"][0],"<na>") if len(df_ay) > 0 else None,
+            "obsteric gpal": None if len(df_ae) > 0 else {"gravidity":base.ifnull(df_ay["ocm41ohg"][0],"<na>"), "preterm":base.ifnull(df_ay["ocm41ohp"][0],"<na>"), "abortion":base.ifnull(df_ay["ocm41oha"][0],"<na>"), "living":base.ifnull(df_ay["ocm41ohl"][0],"<na>")} if len(df_ay) > 0 else None,
+            "menstrual history": None if len(df_ae) > 0 else {"last menstrual period":base.ifnull(df_ay["ocm41lmp"][0],"<na>"), "previous menstrual period":base.ifnull(df_ay["ocm41pmp"][0],"<na>"), "menstrual cycle":base.ifnull(df_ay["ocm41interval"][0],"<na>"), "menache":base.ifnull(df_ay["ocm41menache"][0],"<na>")} if len(df_ay) > 0 else None,
 
             "past medical history": df_ae["ocm31pmhx"][0] if len(df_ae) > 0 else df_ay["ocm41phx"][0] if len(df_ay) > 0 else None,
             "admission-operation history": None if len(df_ae) > 0 else df_ay["ocm41adm"][0] if len(df_ay) > 0 else None,
@@ -224,6 +225,7 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
             "impression": df_ae["ocm31imp"][0] if len(df_ae) > 0 else df_ay["ocm41imp"][0] if len(df_ay) > 0 else None,
             "diagnosis": [None],
             },
+        
         "plan": {
             "operation name": None,
             "treatment plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
@@ -305,8 +307,8 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
     return rt_info
 
 def call_api(prompt, data, model):
-    print("prompt: " + prompt)
-    print("data: " + data)
+    print("prompt: " + len(prompt))
+    print("data: " + len(data))
 
     reponses = genai.generate([prompt, data], model)
     return reponses

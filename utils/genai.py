@@ -67,7 +67,6 @@ def get_model(si=SI, model_name=MODEL):
         return get_model_gemini_2_0_flash_exp(si)
 
 def generate(prompts, model):
-    print(prompts)
     model = get_model(model_name=model)
     responses = model.generate_content(
         prompts,
