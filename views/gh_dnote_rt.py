@@ -9,12 +9,12 @@ rt_info = None
 def rt_summary_source():
     global rt_info
 
+    # Get the list of doctors by department
+    if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
+        st.session_state.doctors_by_dept = note.get_doctors_by_dept()
+
     col11,col12 = st.columns([1, 1])
     with col11:
-        # Get the list of doctors by department
-        if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
-            st.session_state.doctors_by_dept = note.get_doctors_by_dept()
-
         # Get the list of departments
         depts = st.session_state.doctors_by_dept["kwa"].unique()
         kwa = st.selectbox("진료과", options=depts, key="rt-dept", placeholder="진료과", label_visibility="collapsed")
@@ -22,7 +22,7 @@ def rt_summary_source():
     with col12:
         # Get the list of doctors for the selected department
         doctors = st.session_state.doctors_by_dept[st.session_state.doctors_by_dept["kwa"]==st.session_state["rt-dept"]]["spth"]
-        spth = st.selectbox("진료의", options=doctors, key="rt-doctor", placeholder="진료의", label_visibility="collapsed", on_change="rerun")
+        spth = st.selectbox("진료의", options=doctors, key="rt-doctor", placeholder="진료의", label_visibility="collapsed")
         
         # Get the list of patients for the selected doctor
         st.session_state.rt_patients = note.get_patient_by_doctor(spth)

@@ -9,12 +9,12 @@ or_info = None
 def op_record_source():
     global or_info
     
+    # Get the list of doctors by department
+    if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
+        st.session_state.doctors_by_dept = note.get_doctors_by_dept()
+
     col11,col12 = st.columns([1, 1])
     with col11:
-        # Get the list of doctors by department
-        if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
-            st.session_state.doctors_by_dept = note.get_doctors_by_dept()
-
         # Get the list of departments
         depts = st.session_state.doctors_by_dept["kwa"].unique()
         kwa = st.selectbox("진료과", options=depts, key="op-dept", placeholder="진료과", label_visibility="collapsed")

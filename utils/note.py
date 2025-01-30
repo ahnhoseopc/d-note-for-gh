@@ -158,6 +158,11 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
 
     df_pt_r = get_medical_note("query_PT_R", None, None, kwa, spth)
 
+    split_field = ["Chief Complaints","Final Diagnosis","Secondary Diagnosis","Treatment Operation","Treatment Medical","Abnormal Findings and/or Lab Result","Follow-up Plan","Progress Summary",],
+    split_protocol = lambda x: dict(zip(split_field, x.split("|") if type(x) == str else x))
+    split_protocol = lambda x: list(zip(split_field, x.split("|") if type(x) == str else x))
+    df_pt_r["protocol"] = df_pt_r["protocol"].map(split_protocol)
+
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
     df_pt_r = df_pt_r.map(decode_rtf)
 
