@@ -1,3 +1,4 @@
+import datetime
 import utils.base as base
 import utils.note as note
 import json
@@ -94,96 +95,107 @@ def op_record_target():
                     response_container.caption(st.session_state["or-result"])
 
                 if base.is_json_format(st.session_state["or-result"]):
-                    response_container.caption(json.loads(st.session_state["or-result"]))
+                    json_result = json.loads(st.session_state["or-result"])
+                    operation_name = json_result["operation name"]
+                    operation_protocol = json_result["protocol"]
+                    response_container.caption(json_result)
 
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
 
     # 수술기록지 결과 비교: 기존 vs 신규
+    or_draft = None
     with st.expander("수술기록지 신규", expanded=False):
         if "or-result" in st.session_state:
             result = st.session_state["or-result"]
             st.caption(result)
 
+        if or_info and "or" in or_info and len(or_info["or"]):
+            or_draft = note.generate_or_draft(or_info["or"][0], operation_name, operation_protocol)
+            st.json(or_draft)
+
     # 수술기록지 결과 포맷
-    with st.expander("수술기록지 양식", expanded=False):
-        st.header("수술기록지 (Operation Record)")
-        if or_info is not None and len(or_info["or"]) > 0:
-            patient_op_report = or_info["or"][0]
-            st.subheader("환자정보")
-            st.write("등록번호")
-            st.caption(patient_op_report["ocm06idnoa"])
+    with st.expander("수술기록지 신규", expanded=False):
+        display_report(or_draft)
+    with st.expander("수술기록지 기존", expanded=False):
+        display_report(or_info["or-current"] if or_info and "or-current" in or_info else None)
 
-            st.subheader("의료진정보")
-            cols = st.columns(3)
-            with cols[0]:
-                st.write("Surgeon")
-                st.caption(base.ifnull(patient_op_report["ocm06kwa"], "<na>") + " / "
-                            + base.ifnull(patient_op_report["ocm06spth"], "<na>") + " / "
-                            + str(base.ifnull(patient_op_report["ocm06rgcd"], 0)))
-            with cols[1]:
-                st.write("PA")
-                st.write("Nurse")
-            with cols[2]:
-                st.write("Anesthesiologist")
-                st.write("Method of Anesthesia")
+def display_report(or_instance):
+    st.header("수술기록지 (Operation Record)")
 
-            st.subheader("진단정보")
-            patient_op_cmta = patient_op_report["ocm06cmta"]
-            patient_op_cmta_comp = patient_op_cmta.split("|")
-            st.caption(patient_op_report["ocm06cmta"])
+    if or_instance is None:
+        st.write("수술기록지가 없습니다.")
+        return
 
-            st.write("Preoperative Diagnosis")
-            st.caption(patient_op_cmta_comp[7])
-            st.write("Postoperative Diagnosis")
-            st.caption(patient_op_cmta_comp[11])
+    st.subheader("환자정보")
+    st.write("등록번호")
+    st.caption(or_instance["patient"]["patient id"])
 
-            st.subheader("수술정보")
-            st.write("Name of Operation")
-            st.caption(patient_op_cmta_comp[8])
+    st.subheader("의료진정보")
+    cols = st.columns(3)
+    with cols[0]:
+        st.write("Surgeon")
+        st.caption(base.ifnull(or_instance["clinical staff"]["department"], "<na>") + " / "
+                 + base.ifnull(or_instance["clinical staff"]["doctor in charge"], "<na>") + " / "
+             + str(base.ifnull(or_instance["clinical staff"]["doctor assistant"], 0)))
+    with cols[1]:
+        st.write("PA")
+        st.write("Nurse")
+    with cols[2]:
+        st.write("Anesthesiologist")
+        st.write("Method of Anesthesia")
 
-            st.write("Procedures & Findings")
-            st.caption(patient_op_report["ocm06cmtb"])
-            st.write("수술 중 특이사항")
-            memo = patient_op_report["ocm06memo"]
-            st.caption(memo)
-            if memo is None or memo[0] == 'N':
-                memo = "무"
-            else:
-                memo = "유 : " + memo[2:]
-            st.caption(memo)
+    st.subheader("진단정보")
+    st.write("Preoperative Diagnosis")
+    st.caption(or_instance["operation data"][7] if or_instance["operation data"] else None)
+    st.write("Postoperative Diagnosis")
+    st.caption(or_instance["operation data"][11] if or_instance["operation data"] else None)
 
-            st.subheader("수술정보")
-            cols = st.columns(4)
-            with cols[0]:
-                st.write("출혈정도")
-                st.caption("alarm: " + base.ifnull(patient_op_report["ocm06alarm"],"<na>"))
-            with cols[1]:
-                st.write("패드확인 (유/무)")
-                st.caption("cmplyn: " + base.ifnull(patient_op_report["cmplyn"],"<na>"))
-                st.caption("emdv: " + base.ifnull(patient_op_report["ocm06emdv"],"<na>"))
-            with cols[2]:
-                st.write("Tissue of Path. (Y/N)")
-                st.caption("tissueexmn: " + base.ifnull(patient_op_report["ocm06tissueexmn"],"<na>"))
-                st.caption("tissueexmncnts: " + base.ifnull(patient_op_report["ocm06tissueexmncnts"],"<na>"))
-            with cols[3]:
-                st.write("Drains (Y/N)")
-                st.caption("drngpipe: " + base.ifnull(patient_op_report["ocm06drngpipe"],"<na>"))
-                st.caption("drngpipecnts: " + base.ifnull(patient_op_report["ocm06drngpipecnts"],"<na>"))
-            
-            cols = st.columns(2)
-            with cols[0]:
-                st.write("수술일시")
-                st.caption(base.ifnull(patient_op_report["ocm06opdat"], "<na>") + " 시작:" 
-                        + base.ifnull(patient_op_report["ocm06opstarttm"], "<na>") + " ~ 종료:"
-                        + base.ifnull(patient_op_report["ocm06opendtm"], "<na>"))
-            with cols[1]:
-                st.write("작성일시")
-                st.caption(patient_op_report["ocm06sysdat"] + " " + patient_op_report["ocm06systm"])
-            
-            st.write("치료계획")
-            st.caption(patient_op_report["ocm06mdtrplan"])
-            st.write("수술경과")
-            st.caption(patient_op_report["ocm06opprgr"])
-            st.write("PLCR")
-            st.caption(patient_op_report["ocm06pclr"])
+    st.subheader("수술정보")
+    st.write("Name of Operation")
+    st.caption(or_instance["operation data"][8] if or_instance["operation data"] else None)
+    st.write("Procedures & Findings")
+    st.caption(or_instance["operation procedures and findings"])
+
+    st.write("수술 중 특이사항")
+    memo = or_instance["operation notes"]
+    if memo is None or memo[0] == 'N':
+        memo = "무"
+    else:
+        memo = "유 : " + memo[2:]
+    st.caption(memo)
+
+    st.subheader("수술정보")
+    cols = st.columns(4)
+    with cols[0]:
+        st.caption("alarm: <>")
+        st.caption(or_instance["additional data"]["alarm"])
+    with cols[1]:
+        st.write("패드확인 (유/무)")
+        st.caption("cmplyn: <>")
+        st.caption(or_instance["additional data"]["cmplyn"])
+        st.caption("emdv: <>")
+        st.caption(or_instance["additional data"]["emdv"])
+        st.caption("pclr: <>")
+        st.caption(or_instance["additional data"]["pclr"])
+    with cols[2]:
+        st.write("Tissue of Path. (Y/N)")
+        st.caption(or_instance["operation check"]["tissue examination"])
+        st.caption(or_instance["operation check"]["tissue examination contents"])
+    with cols[3]:
+        st.write("Drains (Y/N)")
+        st.caption(or_instance["operation check"]["drain pipe"])
+        st.caption(or_instance["operation check"]["drain pipe contents"])
+    
+    cols = st.columns(2)
+    with cols[0]:
+        st.write("수술일시")
+        st.caption(f"{or_instance['operation date']} {or_instance['operation start time']} ~ {or_instance['operation end time']}") 
+    with cols[1]:
+        st.write("작성일시")
+        st.caption(f"{or_instance['report date']} {or_instance['report time']}")
+    
+    st.write("치료계획")
+    st.caption(or_instance["medical treatment plan"])
+    st.write("수술경과")
+    st.caption(or_instance["operation progress"])
