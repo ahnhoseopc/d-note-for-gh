@@ -134,6 +134,7 @@ def rt_summary_target():
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
 
+    protocol = ""
     if rt_write:
         with st.expander("AI지원 퇴원요약지 초안", expanded=True):
             response_container = st.empty()
@@ -145,12 +146,11 @@ def rt_summary_target():
                     response_container.caption(st.session_state["rt-result"])
 
                 if base.is_json_format(st.session_state["or-result"]):
-                    response_container.caption(json.loads(st.session_state["or-result"]))
+                    result_json = json.loads(st.session_state["rt-result"])
+                    response_container.caption(result_json)
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
             print("rt-result= ", st.session_state["rt-result"])
 
     with st.expander("퇴원요약지 신규", expanded=False):
-        if "rt-result" in st.session_state:
-            result = st.session_state["rt-result"]
-            st.caption(result)
+        st.caption(protocol)

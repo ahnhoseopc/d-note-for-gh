@@ -307,8 +307,8 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
     return rt_info
 
 def call_api(prompt, data, model):
-    print("prompt: " + len(prompt))
-    print("data: " + len(data))
+    print("prompt size: " + str(len(prompt)))
+    print("input data size: " + str(len(data)))
 
     reponses = genai.generate([prompt, data], model)
     return reponses

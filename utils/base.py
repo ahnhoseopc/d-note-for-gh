@@ -10,10 +10,12 @@ def get_random_string(length):
 import json
 
 def is_json_format(data):
+    # print("json output: ", data)
     try:
         json.loads(data)
         return True
-    except (ValueError, TypeError):
+    except (ValueError, TypeError) as ex:
+        print("json error", ex)
         return False
 
 import re
