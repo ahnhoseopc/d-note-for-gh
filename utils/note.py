@@ -32,6 +32,50 @@ def get_patient_by_doctor(spth):
 #
 # Operation Report (수술기록지)
 #
+def generate_or_draft(or_record, or_operation_name, or_protocol):
+    or_instance = {
+        "patient": {
+            "patient id": or_record["ocm06idnoa"],
+            "date of admission": or_record["ocm06lwdat"],
+            },
+        "clinical staff": {
+            "department": or_record["ocm06kwa"],
+            "doctor in charge": or_record["ocm06spth"],
+            "doctor assistant": or_record["ocm06rgcd"],
+            },
+
+        "operation data": "today()",
+        "preoperative diagnosis": "수술전진단명",
+        "operation name": or_operation_name,
+        "postoperative diagnosis": "수술후진단명",
+        "operation procedures and findings": or_protocol,
+        "operation notes": "N$",
+
+        "additional data": {
+            "alarm": "",
+            "cmplyn": "",
+            "emdv": "",
+            "pclr": "",
+            },
+        "operation check": {
+            "tissue examination": "",
+            "tissue examination contents": "",
+            "drain pipe": "",
+            "drain pipe contents": "",
+            },
+ 
+        "operation date": "today()",
+        "operation start time": "now()",
+        "operation end time": "now()",
+        "report date": "today()",
+        "report time": "now()",
+
+        "medical treatment plan": "<na>",
+        "operation progress": "<na>",
+    }
+
+    return or_instance
+
 def collect_or_source(patient_id, admsn_date, kwa, spth):
     df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
     df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
