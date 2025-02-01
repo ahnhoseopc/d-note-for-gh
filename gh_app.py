@@ -13,21 +13,28 @@ gh_about_page = st.Page(
 gh_dbquery_page = st.Page(
     page="views/gh_dbquery.py",
     title="Database Query",
-    icon=":material/bar_chart:",
+    icon=":material/data_object:",
     default=False
 )
 
 gh_dnote_page = st.Page(
     page="views/gh_dnote.py",
     title="D-Note",
-    icon=":material/smart_toy:",
+    icon=":material/clinical_notes:",
     default=True
+)
+
+gh_dqna_page = st.Page(
+    page="views/gh_dqna.py",
+    title="D-QnA",
+    icon=":material/question_exchange:",
+    default=False
 )
 
 pg = st.navigation(
     {
         "Info": [gh_about_page],
-        "Projects": [gh_dbquery_page, gh_dnote_page],
+        "Projects": [gh_dbquery_page, gh_dnote_page, gh_dqna_page],
     }
 )
 

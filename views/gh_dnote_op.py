@@ -1,4 +1,5 @@
 import datetime
+import re
 import utils.base as base
 import utils.note as note
 import json
@@ -65,6 +66,9 @@ def op_record_source():
             if len(or_info["or-current"]):
                 st.json(or_info["or-current"], expanded=1)
 
+    with st.expander("수술기록지 기존", expanded=False):
+        display_report(or_info["or-current"] if or_info and "or-current" in or_info else None)
+
     return "op-record-source"
 
 OR_PROMPT_DEFAULT = """입력된 데이터의 "present illness" 와 "plan"을 확인하여 "operation name"을 추정하라.
@@ -86,16 +90,21 @@ def op_record_target():
 
     if or_write:
         with st.expander("AI지원 프로토콜 선택", expanded=True):
-            response_container = st.empty()
             st.session_state["or-result"] = ""
+            response_text = ""
+            response_container = st.empty()
             try:
                 responses = note.call_api(st.session_state["or-prompt"], json.dumps(or_info["or-source"], indent=4), st.session_state["ai-model-or"].lower())
                 for response in responses:
-                    st.session_state["or-result"] += response.text
-                    response_container.caption(st.session_state["or-result"])
+                    response_text += response.text
+                    response_container.caption(response_text)
 
-                if base.is_json_format(st.session_state["or-result"]):
-                    json_result = json.loads(st.session_state["or-result"])
+                st.session_state["or-result"] = response_text
+
+                response_text = re.sub(r"```json\s*|\s*```", "", response_text).strip()
+
+                if base.is_json_format(response_text):
+                    json_result = json.loads(response_text)
                     operation_name = json_result["operation name"]
                     operation_protocol = json_result["protocol"]
                     response_container.caption(json_result)
@@ -110,15 +119,13 @@ def op_record_target():
             result = st.session_state["or-result"]
             st.caption(result)
 
-        if or_info and "or" in or_info and len(or_info["or"]):
-            or_draft = note.generate_or_draft(or_info["or"][0], operation_name, operation_protocol)
-            st.json(or_draft)
+            if or_info and "or" in or_info and len(or_info["or"]):
+                or_draft = note.generate_or_draft(or_info["or"][0], operation_name, operation_protocol)
+                st.json(or_draft)
 
     # 수술기록지 결과 포맷
     with st.expander("수술기록지 신규", expanded=False):
         display_report(or_draft)
-    with st.expander("수술기록지 기존", expanded=False):
-        display_report(or_info["or-current"] if or_info and "or-current" in or_info else None)
 
 def display_report(or_instance):
     st.header("수술기록지 (Operation Record)")
@@ -147,13 +154,13 @@ def display_report(or_instance):
 
     st.subheader("진단정보")
     st.write("Preoperative Diagnosis")
-    st.caption(or_instance["operation data"][7] if or_instance["operation data"] else None)
+    st.caption(or_instance["operation data"][7] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else or_instance["operation data"])
     st.write("Postoperative Diagnosis")
-    st.caption(or_instance["operation data"][11] if or_instance["operation data"] else None)
+    st.caption(or_instance["operation data"][11] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else None)
 
     st.subheader("수술정보")
     st.write("Name of Operation")
-    st.caption(or_instance["operation data"][8] if or_instance["operation data"] else None)
+    st.caption(or_instance["operation data"][8] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else None)
     st.write("Procedures & Findings")
     st.caption(or_instance["operation procedures and findings"])
 

@@ -44,7 +44,7 @@ def generate_or_draft(or_record, or_operation_name, or_protocol):
             "doctor assistant": or_record["ocm06rgcd"],
             },
 
-        "operation data": "today()",
+        "operation data": ["0","1","2","3","4","5","6","<pre operation diagnosis>","<operation name>","9","10","<post operation diagnosis>","12","13","14","15","16","17"],
         "preoperative diagnosis": "수술전진단명",
         "operation name": or_operation_name,
         "postoperative diagnosis": "수술후진단명",

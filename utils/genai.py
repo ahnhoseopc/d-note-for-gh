@@ -58,6 +58,13 @@ MODEL="medlm"
 MODEL="gemini-pro"
 MODEL="gemini-flash"
 
+def set_model(model_name):
+    global MODEL
+    if model_name in ["medlm", "gemini-pro", "gemini-flash"]:
+        MODEL = model_name
+    else:
+        raise ValueError("Invalid model name")
+
 def get_model(si=SI, model_name=MODEL):
     if model_name == "medlm":
         return get_model_medlm_large(si)
