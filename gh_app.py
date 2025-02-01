@@ -21,14 +21,14 @@ gh_dnote_page = st.Page(
     page="views/gh_dnote.py",
     title="D-Note",
     icon=":material/clinical_notes:",
-    default=True
+    default=False
 )
 
 gh_dqna_page = st.Page(
     page="views/gh_dqna.py",
     title="D-QnA",
     icon=":material/question_exchange:",
-    default=False
+    default=True
 )
 
 pg = st.navigation(
