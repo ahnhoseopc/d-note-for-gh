@@ -17,17 +17,19 @@ if CLNT == "":
     #CLNT = r"D:\UTIL\DK\instantclient_11_2"
     #CLNT = r"D:\UTIL\DK\instantclient_10_2"
     #CLNT = r"C:\oracle\instantclient_23_6"
-    CLNT = r"C:\instantclient_23_6"
+    CLNT = r"C:/instantclient_23_6"
 
 import os
-os.environ["ORACLE_HOME"] = CLNT
-os.environ["PATH"] = CLNT + ";" + os.environ["PATH"]
+if "ORACLE_HOME" not in os.environ:
+    os.environ["ORACLE_HOME"] = CLNT
+    os.environ["PATH"] = CLNT + ";" + os.environ["PATH"]
+
 os.environ["NLS_CHARACTERSET"]="KO16MSWIN949"
 #os.environ["NLS_LANG"]="AMERICAN_AMERICA.AL32UTF8"
 
 try:
     if "oracle" not in st.session_state:
-        ora.init_oracle_client(lib_dir=CLNT)
+        ora.init_oracle_client(lib_dir=os.environ["ORACLE_HOME"])
         st.session_state["oracle"] = True
 except:
     pass

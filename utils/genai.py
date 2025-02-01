@@ -4,7 +4,8 @@ from vertexai.generative_models import GenerativeModel, Part, SafetySetting
 import streamlit as st
 
 import os
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
+if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
 
 import google.auth
 def get_access_token():

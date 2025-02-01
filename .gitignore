@@ -1,5 +1,7 @@
 .venv
 .vscode
+.history
+.env
 **/__pycache__
 .streamlit/secrets.toml
 .streamlit/gcp_credentials*.json

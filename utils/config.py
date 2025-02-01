@@ -1,6 +1,10 @@
+import json
 import toml
 from pathlib import Path
 
+# -----------------------------------------------------------------------
+# DB Query Collection
+# -----------------------------------------------------------------------
 QUERY_CONFIG_TOML = "dbquery.toml"
 
 def save_query(query_name, query):
@@ -31,3 +35,22 @@ def get_query_list(): # MODIFY TO RETRIEVE THE LIST DIRECTLY
     with open(config_path, "r", encoding="utf-8") as f:
         config_data = toml.load(f)
         return list( config_data.get("database").keys() )  # Return empty list if not found
+
+# -----------------------------------------------------------------------
+# Chat History Json
+# -----------------------------------------------------------------------
+def get_chat_filename(user_id, chat_name):
+    return ".".join([user_id + "_" + chat_name, "json"])
+
+def save_chat_history(user_id, chat_name, messages):
+    Path(".history").mkdir(parents=True, exist_ok=True)
+    config_path = Path(".history", get_chat_filename(user_id, chat_name))
+    with open(config_path, "w", encoding="utf-8") as f:
+        f.write(json.dumps(messages))
+
+def get_chat_history(user_id, chat_name):
+    config_path = Path(".history", get_chat_filename(user_id, chat_name))
+    with open(config_path, "r", encoding="utf-8") as f:
+        messages_string = f.read()
+    messages = json.loads(messages_string)
+    return messages
