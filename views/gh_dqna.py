@@ -33,7 +33,7 @@ if "messages" not in st.session_state:
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
         st.markdown(message["parts"][0]["text"])
 
 # Accept user input
@@ -41,11 +41,11 @@ if prompt := st.chat_input("Medical situation?"):
     doctor_message = {"role": "user", "parts": [{"text": prompt}]}
 
     # Display user message in chat message container
-    with st.chat_message("doctor"):
+    with st.chat_message("doctor", avatar="👩‍⚕️"):
         st.markdown(prompt)
 
     # Display assistant response in chat message container
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="💻"):
         st.write_stream(generate_content(doctor_message, st.session_state.messages))
 
     # Add user message to chat history
