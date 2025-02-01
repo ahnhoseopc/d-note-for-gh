@@ -10,19 +10,29 @@ SVCN = st.secrets["GHDB_SVCN"]
 USER = st.secrets["GHDB_USER"]
 PASS = st.secrets["GHDB_PASS"]
 
-import os
-#CLNT = r"D:\UTIL\DK\instantclient_12_1"
-CLNT = r"D:\UTIL\DK\instantclient_11_2"
-#CLNT = r"D:\UTIL\DK\instantclient_10_2"
+CLNT = st.secrets["ORACLE_CLNT_PATH"]
 
-os.environ["ORACLE_HOME"] = CLNT
-os.environ["PATH"] = CLNT + ";" + os.environ["PATH"]
+if CLNT == "":
+    #CLNT = r"D:\UTIL\DK\instantclient_12_1"
+    #CLNT = r"D:\UTIL\DK\instantclient_11_2"
+    #CLNT = r"D:\UTIL\DK\instantclient_10_2"
+    #CLNT = r"C:\oracle\instantclient_23_6"
+    CLNT = r"C:/instantclient_23_6"
+
+import os
+if "ORACLE_HOME" not in os.environ:
+    os.environ["ORACLE_HOME"] = CLNT
+    os.environ["PATH"] = CLNT + ";" + os.environ["PATH"]
+
 os.environ["NLS_CHARACTERSET"]="KO16MSWIN949"
 #os.environ["NLS_LANG"]="AMERICAN_AMERICA.AL32UTF8"
 
-if "oracle" not in st.session_state:
-    ora.init_oracle_client(lib_dir=CLNT)
-    st.session_state["oracle"] = True
+try:
+    if "oracle" not in st.session_state:
+        ora.init_oracle_client(lib_dir=os.environ["ORACLE_HOME"])
+        st.session_state["oracle"] = True
+except:
+    pass
 
 def get_sql_engine():
     DSN = ora.makedsn(host=HOST,port=PORT,service_name=SVCN)

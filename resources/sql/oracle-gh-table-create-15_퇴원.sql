@@ -1,10 +1,11 @@
 --
 -- RUN AS SYSTEM
 --
--- CREATE USER hoseop IDENTIFIED BY "mypasswd!@";
+-- CREATE USER hoseop IDENTIFIED BY "mypasswd!@" DEFAULT TABLESPACE users;
 -- GRANT CREATE SESSION TO hoseop;
 -- GRANT CREATE TABLE TO hoseop;
 -- ALTER USER hoseop QUOTA UNLIMITED ON users;
+-- ALTER USER hoseop DEFAULT tablespace USERS;
 
 --
 -- RUN AS HOSEOP
@@ -39,7 +40,7 @@ create table OCMRTN32 (
     OCM32RTHSPNM	VARCHAR2 (100 Byte)	,	/* 전원병원명 */
     OCM32RTCMT  	VARCHAR2 (100 Byte)	,	/* 기타CMT */
     OCM32SCNDDX 	VARCHAR2 (3000 Byte),	/* 부진단명 */
-    OCM32P      	VARCHAR2 (600 Byte)	,	
+    OCM32PI     	VARCHAR2 (600 Byte)	,	
     OCM32PHX    	VARCHAR2 (600 Byte)	,	
     OCM32DM     	VARCHAR2 (1 Byte)	,	
     OCM32TBC    	VARCHAR2 (1 Byte)	,	

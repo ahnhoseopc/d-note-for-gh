@@ -5,3 +5,4 @@ pandas
 requests
 SQLAlchemy
 streamlit
+google-cloud-aiplatform
