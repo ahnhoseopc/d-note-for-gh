@@ -13,7 +13,6 @@ def get_medical_note(query_name, patient_id, admsn_date, kwa=None, spth=None):
         query = query.replace("$patient_id", patient_id).replace("$admsn_date", admsn_date)
     if kwa is not None and spth is not None:
         query = query.replace("$kwa", kwa).replace("$spth", spth)
-    #print(query_name , "=" , query)
     print("query_name" , "=" , query_name)
     return run_sql(query)
 
@@ -351,8 +350,5 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
     return rt_info
 
 def call_api(prompt, data, model):
-    print("prompt size: " + str(len(prompt)))
-    print("input data size: " + str(len(data)))
-
     reponses = genai.generate([prompt, data], model)
     return reponses

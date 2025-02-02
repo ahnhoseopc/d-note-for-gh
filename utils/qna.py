@@ -48,13 +48,23 @@ def summarize_title(messages):
 
     return summary_title
 
-def save_history(user_id, chat_id, messages):
-    chat_name = summarize_title(messages)
+def delete_history(user_id, chat_id):
+    config.delete_chat_history(user_id, chat_id)
+    return
+
+def save_history(user_id, chat_id, chat_name, messages):
     conversation = {"chat_name": chat_name, "messages": messages}
 
     config.save_chat_history(user_id, chat_id, conversation)
     return chat_name
 
-def get_history(user_id, chat_id):
-    conversation = config.get_chat_history(user_id, chat_id)
-    return conversation["messages"], conversation["chat_name"]
+def get_chat_list(user_id):
+    chat_list = config.get_chat_list(user_id)
+    return chat_list
+
+def get_chat_messages(user_id, chat_id):
+    conversation = config.get_chat_content(user_id, chat_id)
+    if conversation is None:
+        return [], ""
+    else:
+        return conversation["messages"], conversation["chat_name"]
