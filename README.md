@@ -26,6 +26,7 @@ set TAG=gcr.io/%PROJECT_ID%/%APP%
 
 # Cloud build
 gcloud builds submit --secret id=creds,src=.streamlits/secrets.toml --project=%PROJECT_ID% --tag %TAG%
+gcloud builds submit --project=%PROJECT_ID% --tag %TAG%
 
 # Cloud Run deployment
 gcloud run deploy %APP% --project %PROJECT_ID% --image %TAG% --platform managed --region %REGION% --allow-unauthenticated --port 8501
