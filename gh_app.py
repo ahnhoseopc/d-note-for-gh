@@ -34,7 +34,8 @@ gh_dqna_page = st.Page(
 pg = st.navigation(
     {
         "Info": [gh_about_page],
-        "Projects": [gh_dbquery_page, gh_dnote_page, gh_dqna_page],
+        "DK Medical Agents": [gh_dnote_page, gh_dqna_page],
+        "Configuration (Admin)": [gh_dbquery_page],
     }
 )
 

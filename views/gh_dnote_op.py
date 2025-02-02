@@ -88,6 +88,8 @@ def op_record_target():
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
+    operation_name, operation_protocol = "", ""
+    
     if or_write:
         with st.expander("AI지원 프로토콜 선택", expanded=True):
             st.session_state["or-result"] = ""
