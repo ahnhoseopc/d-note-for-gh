@@ -51,6 +51,6 @@ def save_chat_history(user_id, chat_name, messages):
 def get_chat_history(user_id, chat_name):
     config_path = Path(".history", get_chat_filename(user_id, chat_name))
     with open(config_path, "r", encoding="utf-8") as f:
-        messages_string = f.read()
-    messages = json.loads(messages_string)
-    return messages
+        chat_string = f.read()
+    chat = json.loads(chat_string)
+    return chat

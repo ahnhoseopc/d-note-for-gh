@@ -1,3 +1,4 @@
+import random
 import streamlit as st
 
 st.set_page_config(layout="wide")
@@ -31,17 +32,28 @@ gh_dqna_page = st.Page(
     default=True
 )
 
-pg = st.navigation(
-    {
-        "Info": [gh_about_page],
-        "DK Medical Agents": [gh_dnote_page, gh_dqna_page],
-        "Configuration (Admin)": [gh_dbquery_page],
-    }
-)
-
 # shared on all pages
 st.logo("assets/gh_logo.png", size="large")
-with st.sidebar:
+
+with st.sidebar.container():
+    pg = st.navigation(
+        {
+            "Info": [gh_about_page],
+            "DK Medical Agents": [gh_dnote_page, gh_dqna_page],
+            "Configuration (Admin)": [gh_dbquery_page],
+        }
+    )
+
+# sidebar_slot = st.sidebar.container(height=300)
+
+# if "sidebar_slot" not in st.session_state:
+#     st.session_state.sidebar_slot = sidebar_slot
+
+with st.sidebar.container():
+    cols = st.columns([1,1,1])
+    with cols[0]: st.metric("Grade", value=random.randint(80,99))
+    with cols[1]: st.metric("Index", value=random.randint(80,99))
+    with cols[2]: st.metric("Count", value=random.randint(150,199))
     cols = st.columns([3,1])
     with cols[0]: st.text("Provided by ")
     with cols[1]: st.image("assets/dk_logo.png", width=40)

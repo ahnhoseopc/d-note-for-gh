@@ -3,7 +3,7 @@ import utils.config as config
 import utils.genai as genai
 import datetime
 
-def generate_conversation_id(user_id):
+def generate_chat_id(user_id):
     time_string = datetime.datetime.today().strftime('%Y%m%d_%H%M%S')
     rand_string = base.get_random_string(4)
 
@@ -48,13 +48,13 @@ def summarize_title(messages):
 
     return summary_title
 
-def save_history(user_id, conversation_id, messages):
-    conversation_name = summarize_title(messages)
-    conversation = {"conversation_name": conversation_name, "messages": messages}
+def save_history(user_id, chat_id, messages):
+    chat_name = summarize_title(messages)
+    conversation = {"chat_name": chat_name, "messages": messages}
 
-    config.save_chat_history(user_id, conversation_id, conversation)
-    return conversation_name
+    config.save_chat_history(user_id, chat_id, conversation)
+    return chat_name
 
-def get_history(user_id, conversation_id):
-    conversation = config.get_chat_history(user_id, conversation_id)
-    return conversation.messages, conversation.conversation_name
+def get_history(user_id, chat_id):
+    conversation = config.get_chat_history(user_id, chat_id)
+    return conversation["messages"], conversation["chat_name"]
