@@ -39,11 +39,11 @@ def rt_summary_source():
 
     st.divider()
 
-    with st.expander("퇴원요약 소스 (선정항목)", expanded=True):
+    with st.expander("소스 의료정보 (API입력항목)", expanded=True):
         if rt_info:
             st.json(rt_info["rt-source"], expanded=1)
 
-    with st.expander("퇴원요약지 소스 (DB)", expanded=False):
+    with st.expander("소스 의료정보 (DB원본)", expanded=False):
         # Source data display
         if rt_info:
             st.write("입원기록지")
@@ -69,17 +69,17 @@ def rt_summary_source():
             if "yt" in rt_info and len(rt_info["yt"]) > 0:
                 st.json(rt_info["yt"], expanded=1)
 
-    with st.expander("퇴원요약지 기존", expanded=False):
+    with st.expander("기존 퇴원요약지", expanded=False):
         st.write("퇴원요약지 (DB)")
         if rt_info and "rt" in rt_info and len(rt_info["rt"]) > 0:
             st.json(rt_info["rt"], expanded=1)
 
-        st.write("퇴원요약지 (표시항목)")
-        if rt_info and "rt-current" in rt_info and len(rt_info["rt-current"]) > 0:
-            st.json(rt_info["rt-current"], expanded=1)
+        # st.write("퇴원요약지 (항목)")
+        # if rt_info and "rt-current" in rt_info and len(rt_info["rt-current"]) > 0:
+        #     st.json(rt_info["rt-current"], expanded=1)
 
-    with st.expander("퇴원요약지 양식", expanded=False):
-        st.header("퇴원요약지 (Discharge Summary)")
+    with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
+        st.write("퇴원요약지 (Discharge Summary)")
         if rt_info and "rt" in rt_info and len(rt_info["rt"]):
             patient_rt_report = rt_info["rt"][0]
 
@@ -147,10 +147,10 @@ def rt_summary_target():
 
                 if base.is_json_format(st.session_state["rt-result"]):
                     result_json = json.loads(st.session_state["rt-result"])
-                    response_container.caption(result_json)
+                    response_container.json(result_json)
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
             print("rt-result= ", st.session_state["rt-result"])
 
-    with st.expander("퇴원요약지 신규", expanded=False):
-        st.caption(protocol)
+    # with st.expander("퇴원요약지 신규", expanded=False):
+    #     st.caption(protocol)
