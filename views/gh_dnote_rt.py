@@ -145,7 +145,7 @@ def rt_summary_target():
                     st.session_state["rt-result"] += response.text
                     response_container.caption(st.session_state["rt-result"])
 
-                if base.is_json_format(st.session_state["or-result"]):
+                if base.is_json_format(st.session_state["rt-result"]):
                     result_json = json.loads(st.session_state["rt-result"])
                     response_container.caption(result_json)
             except Exception as e:
