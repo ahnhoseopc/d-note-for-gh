@@ -1,3 +1,5 @@
+import forms.login as login
+
 import random
 import streamlit as st
 
@@ -49,14 +51,14 @@ with st.sidebar.container():
 # if "sidebar_slot" not in st.session_state:
 #     st.session_state.sidebar_slot = sidebar_slot
 
-with st.sidebar.container():
-    cols = st.columns([1,1,1])
-    with cols[0]: st.metric("Grade", value=random.randint(80,99))
-    with cols[1]: st.metric("Index", value=random.randint(80,99))
-    with cols[2]: st.metric("Count", value=random.randint(150,199))
-    cols = st.columns([3,1])
-    with cols[0]: st.text("Provided by ")
-    with cols[1]: st.image("assets/dk_logo.png", width=40)
+# with st.sidebar.container():
+#     cols = st.columns([1,1,1])
+#     with cols[0]: st.metric("Grade", value=random.randint(80,99))
+#     with cols[1]: st.metric("Index", value=random.randint(80,99))
+#     with cols[2]: st.metric("Count", value=random.randint(150,199))
+#     cols = st.columns([3,1])
+#     with cols[0]: st.text("Provided by ")
+#     with cols[1]: st.image("assets/dk_logo.png", width=40)
 
 # Run Navigation
 pg.run()
