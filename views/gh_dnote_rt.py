@@ -69,7 +69,7 @@ def rt_summary_source():
             if "yt" in rt_info and len(rt_info["yt"]) > 0:
                 st.json(rt_info["yt"], expanded=1)
 
-    with st.expander("기존 퇴원요약지", expanded=False):
+    with st.expander("기존 퇴원요약지 (DB)", expanded=False):
         st.write("퇴원요약지 (DB)")
         if rt_info and "rt" in rt_info and len(rt_info["rt"]) > 0:
             st.json(rt_info["rt"], expanded=1)

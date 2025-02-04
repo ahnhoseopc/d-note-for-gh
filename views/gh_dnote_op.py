@@ -41,11 +41,11 @@ def op_record_source():
 
     st.divider()
 
-    with st.expander("수술기록지 소스 (선정항목)", expanded=True):
+    with st.expander("소스 의료정보 (API입력항목)", expanded=True):
         if or_info:
             st.json(or_info["or-source"], expanded=1)
 
-    with st.expander("수술기록지 소스 (DB)", expanded=False):
+    with st.expander("소스 의료정보 (DB원본)", expanded=False):
         # Source data display
         if or_info is not None:
             st.write("입원기록지")
@@ -57,16 +57,16 @@ def op_record_source():
             if len(or_info["pt"]):
                 st.json(or_info["pt"], expanded=1)
 
-    with st.expander("수술기록지 기존", expanded=False):
+    with st.expander("기존 수술기록지 (DB)", expanded=False):
         if or_info is not None:
-            st.write("수술기록지 DB")
+            st.write("수술기록지 (DB)")
             if "or" in or_info and len(or_info["or"]):
                 st.json(or_info["or"], expanded=1)
-            st.write("수술기록지 표시항목")
-            if len(or_info["or-current"]):
-                st.json(or_info["or-current"], expanded=1)
+            # st.write("수술기록지 표시항목")
+            # if len(or_info["or-current"]):
+            #     st.json(or_info["or-current"], expanded=1)
 
-    with st.expander("수술기록지 기존", expanded=False):
+    with st.expander("기존 수술기록지 (문서양식))", expanded=False):
         display_report(or_info["or-current"] if or_info and "or-current" in or_info else None)
 
     return "op-record-source"
