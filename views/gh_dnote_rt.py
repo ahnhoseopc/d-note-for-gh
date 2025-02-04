@@ -39,7 +39,7 @@ def rt_summary_source():
 
     st.divider()
 
-    with st.expander("소스 의료정보 (API입력항목)", expanded=True):
+    with st.expander("소스 의료정보 (API입력데이터)", expanded=True):
         if rt_info:
             st.json(rt_info["rt-source"], expanded=1)
 

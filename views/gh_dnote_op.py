@@ -41,7 +41,7 @@ def op_record_source():
 
     st.divider()
 
-    with st.expander("소스 의료정보 (API입력항목)", expanded=True):
+    with st.expander("소스 의료정보 (API입력데이터)", expanded=True):
         if or_info:
             st.json(or_info["or-source"], expanded=1)
 
