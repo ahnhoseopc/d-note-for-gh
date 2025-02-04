@@ -19,63 +19,35 @@ def get_access_token():
     credentials.refresh(google.auth.transport.requests.Request())
     return credentials.token
 
-model = None
-
 def init_genai(project="dk-medical-solutions"):
     vertexai.init(project=project, location="us-central1")
 
 init_genai()
 
-def get_model_gemini_2_0_flash_exp(si):
-    global model
-    if model is None:
-        model = GenerativeModel(
-            "gemini-2.0-flash-exp",
-            system_instruction=[si]
-        )
-    return model
-
-def get_model_gemini_1_5_pro_002(si):
-    global model
-    if model is None:
-        model = GenerativeModel(
-            "gemini-1.5-pro-002",
-            system_instruction=[si]
-        )
-    return model
-
-def get_model_medlm_large(si):
-    global model
-    if model is None:
-        model = GenerativeModel(
-            "medlm-large-1.5@001",
-            system_instruction=[si]
-        )
-    return model
-
 SI = """답변시 정확한 진단은 의사에게 확인하라는 내용은 제외하고 표시해줘.""" 
 # """답을 질문내용, 응답내용을 포함하는 json 포맷으로 해.답변시 정확한 진단은 의사에게 확인하라는 내용은 응답내용에서 제외하고 별도의 json 필드 "주의" 라는 필드에 표시하도록 해."""
-MODEL="medlm"
-MODEL="gemini-pro"
-MODEL="gemini-flash"
+MODEL={
+    "gemini-flash":"gemini-2.0-flash-exp",
+    "gemini-pro":"gemini-1.5-pro-002", 
+    "medlm":"medlm-large-1.5@001"
+    }
 
-def set_model(model_name):
-    global MODEL
-    if model_name in ["medlm", "gemini-pro", "gemini-flash"]:
-        MODEL = model_name
-    else:
-        raise ValueError("Invalid model name")
+model = {"gemini-flash":None, "gemini-pro":None, "medlm":None}
 
-def get_model(si=SI, model_name=MODEL):
-    if model_name == "medlm":
-        return get_model_medlm_large(si)
-    elif model_name == "gemini-pro":
-        return get_model_gemini_1_5_pro_002(si)
-    else:
-        return get_model_gemini_2_0_flash_exp(si)
+def get_model(model_name, si=SI):
+    global model
+    if model_name not in model.keys():
+        print(f"{model_name} not valid, use ")
+        model_name = list(model.keys())[0]
 
-def generate(prompts, model):
-    model = get_model(model_name=model)
+    if model[model_name] is None:
+        model[model_name] = GenerativeModel( MODEL[model_name], system_instruction=[si] )
+
+    print(model_name, model[model_name]._model_name)
+    return model[model_name]
+
+def generate(prompts, model_name):
+    model = get_model(model_name=model_name)
     responses = model.generate_content(
         prompts,
         generation_config=generation_config,

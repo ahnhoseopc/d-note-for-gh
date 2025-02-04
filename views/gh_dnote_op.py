@@ -107,9 +107,9 @@ def op_record_target():
 
                 if base.is_json_format(response_text):
                     json_result = json.loads(response_text)
-                    operation_name = json_result["operation name"]
-                    operation_protocol = json_result["protocol"]
-                    response_container.caption(json_result)
+                    operation_name = json_result["operation name"] if "operation name" in json_result else response_text
+                    operation_protocol = json_result["protocol"] if "protocol" in json_result else response_text
+                    response_container.json(json_result)
 
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
