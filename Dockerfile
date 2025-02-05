@@ -29,9 +29,9 @@ WORKDIR $APP_HOME
 COPY resources/install/config.toml $APP_HOME/.streamlit/config.toml
 COPY resources/install/dbquery.toml $APP_HOME/.streamlit/dbquery.toml
 COPY resources/install/secrets.toml $APP_HOME/.streamlit/secrets.toml
-COPY resources/install/gcp_credentials_dk_dnote_ghmh.json $APP_HOME/.streamlit/gcp_credentials_dk_dnote_ghmh.json
+COPY resources/install/gcp_credentials.json $APP_HOME/.streamlit/gcp_credentials.json
 
-ENV GOOGLE_APPLICATION_CREDENTIALS=$APP_HOME/.streamlit/gcp_credentials_dk_dnote_ghmh.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=$APP_HOME/.streamlit/gcp_credentials.json
 
 # Copy the requirements file into the container
 COPY requirements.txt  $APP_HOME/requirements.txt
@@ -46,4 +46,4 @@ ENV HOSTNAME "0.0.0.0"
 EXPOSE 8501
 
 # Command to run the application
-CMD ["streamlit", "run", "gh_app.py"]
+CMD ["streamlit", "run", "gh_app.py", ">>", ".history/gh_app.log", "2>&1"]
