@@ -142,7 +142,7 @@ def rt_summary_target():
     # 수술기록지 작성 버튼
     cols = st.columns([3, 4])
     with cols[0]:
-        rt_write = st.button("➡️ 퇴원요약지 초안 작성", key="rt-write")
+        rt_write = st.button("➡️ 퇴원요약지 경과 요약", key="rt-write")
 
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
@@ -150,8 +150,9 @@ def rt_summary_target():
     protocol = ""
     if rt_write:
         with st.expander("AI지원 퇴원요약지 초안", expanded=True):
-            response_container = st.empty()
             st.session_state["rt-result"] = ""
+            response_container = st.empty()
+            response_container.caption(st.session_state["rt-result"])
             try:
                 responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt_info["rt-source"], indent=4), st.session_state["ai-model-rt"].lower())
                 for response in responses:
