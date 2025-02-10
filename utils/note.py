@@ -3,6 +3,8 @@ import utils.base as base
 import utils.db as db
 import utils.genai as genai
 
+import streamlit as st
+
 def run_sql(query_sql):
     return db.run_sql(query_sql)
 
@@ -16,12 +18,14 @@ def get_medical_note(query_name, patient_id, admsn_date, kwa=None, spth=None):
     print("query_name" , "=" , query_name)
     return run_sql(query)
 
+@st.cache_data()
 def get_doctors_by_dept():
     query_name = "query_DOCT"
     query = config.get_query(query_name)
 
     return run_sql(query)
 
+@st.cache_data()
 def get_patient_by_doctor(spth):
     query_name = "query_PTNT"
     query = config.get_query(query_name)
