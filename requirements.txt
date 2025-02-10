@@ -6,3 +6,7 @@ requests
 SQLAlchemy
 streamlit
 google-cloud-aiplatform
+fastapi
+uvicorn
+google.generativeai
+asyncio
