@@ -10,10 +10,10 @@ ALTER USER hoseop DEFAULT tablespace USERS;
 --
 -- RUN AS HOSEOP
 --
-drop table OCMDCT02 ;
+drop table JAIN_OCS.OCMDCT02 ;
 
 /* 수숧기록지 */
-create table OCMDCT02 (
+create table JAIN_OCS.OCMDCT02 (
     OCM02RGCD   CHAR (6 Byte)	    ,	/* 담당의(레지던트,진료과장) */
     OCM02RGNM   VARCHAR (40 Byte)   ,   /* 담당의이름 */
 
@@ -26,31 +26,31 @@ create table OCMDCT02 (
     CONSTRAINT OCMDCT02_PK PRIMARY KEY (OCM02RGCD) /* 담당의 */
 );
 
-INSERT INTO OCMDCT02 (
+INSERT INTO JAIN_OCS.OCMDCT02 (
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
 ) VALUES ('000123', '박의사', '20200106', '', '20200106', '11:23:45');
 
-INSERT INTO OCMDCT02 (
+INSERT INTO JAIN_OCS.OCMDCT02 (
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
 ) VALUES ('000023', '최의사', '20150106', '20231106', '20200106', '11:23:45');
 
-INSERT INTO OCMDCT02 (
+INSERT INTO JAIN_OCS.OCMDCT02 (
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
 ) VALUES ('100123', '안의사', '20180106', '', '20200106', '11:23:45');
 
-INSERT INTO OCMDCT02 (
+INSERT INTO JAIN_OCS.OCMDCT02 (
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
 ) VALUES ('200123', '오의사', '20210106', '', '20200106', '11:23:45');
 
-INSERT INTO OCMDCT02 (
+INSERT INTO JAIN_OCS.OCMDCT02 (
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
@@ -62,8 +62,8 @@ select                                   /* 수술지구분 */
     OCM02RGCD	, OCM02RGNM     ,                  /* 수술지구분 */
     OCM02HPDAT	, OCM02RTDAT	,                  /* 환자번호, 타급종구분 */
     OCM02SYSDAT	, OCM02SYSTM                       /* 내원 및 입원일, 수술일, 순서 */
-from OCMDCT02;
+from JAIN_OCS.OCMDCT02;
 
-select * from all_tables;
+
 
 

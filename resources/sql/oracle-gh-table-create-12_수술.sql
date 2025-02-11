@@ -10,10 +10,10 @@
 --
 -- RUN AS HOSEOP
 --
-drop table OCMOPR06 ;
+drop table JAIN_OCS.OCMOPR06 ;
 
 /* 수숧기록지 */
-create table OCMOPR06 (
+create table JAIN_OCS.OCMOPR06 (
     OCM06STATUS	    VARCHAR2 (3 Byte)	    , /* STATUS(OPG : GY수술기록지, OP2:일반수술기록지) */
     OCM06IDNOA	    CHAR (7 Byte)	NOT NULL, /* 환자번호 */
     OCM06IDNOB	    CHAR (1 Byte)	NOT NULL, /* 타급종구분 */
@@ -77,7 +77,7 @@ create table OCMOPR06 (
     CONSTRAINT constraint_name PRIMARY KEY (OCM06IDNOA, OCM06IDNOB, OCM06LWDAT, OCM06OPDAT, OCM06SEQNO)
 );
 
-INSERT INTO OCMOPR06 (
+INSERT INTO JAIN_OCS.OCMOPR06 (
     OCM06STATUS	,                                  /* 수술지구분 */
     OCM06IDNOA	, OCM06IDNOB	,                  /* 환자번호, 타급종구분 */
     OCM06LWDAT	, OCM06OPDAT	, OCM06SEQNO	,  /* 내원 및 입원일, 수술일, 순서 */
@@ -88,7 +88,7 @@ INSERT INTO OCMOPR06 (
 ) VALUES ('OPG', '1028541', '1', '20241106', '20241107', 1, 
           'I', 'A', '마취방법', '수술기록1', '수술기록2', 
           000123, '11:23:45', '20241105', '이미지파일');
-INSERT INTO OCMOPR06 (
+INSERT INTO JAIN_OCS.OCMOPR06 (
     OCM06STATUS	,                                  /* 수술지구분 */
     OCM06IDNOA	, OCM06IDNOB	,                  /* 환자번호, 타급종구분 */
     OCM06LWDAT	, OCM06OPDAT	, OCM06SEQNO	,  /* 내원 및 입원일, 수술일, 순서 */
@@ -99,7 +99,7 @@ INSERT INTO OCMOPR06 (
 ) VALUES ('OPG', '1028542', '1', '20241106', '20241107', 1, 
           'I', 'A', '마취방법', '수술기록1', '수술기록2', 
           000123, '11:23:45', '20241105', '이미지파일');
-INSERT INTO OCMOPR06 (
+INSERT INTO JAIN_OCS.OCMOPR06 (
     OCM06STATUS	,                                  /* 수술지구분 */
     OCM06IDNOA	, OCM06IDNOB	,                  /* 환자번호, 타급종구분 */
     OCM06LWDAT	, OCM06OPDAT	, OCM06SEQNO	,  /* 내원 및 입원일, 수술일, 순서 */
@@ -110,7 +110,7 @@ INSERT INTO OCMOPR06 (
 ) VALUES ('OPG', '1028543', '1', '20241106', '20241107', 1, 
           'I', 'A', '마취방법', '수술기록1', '수술기록2', 
           000123, '11:23:45', '20241105', '이미지파일');
-INSERT INTO OCMOPR06 (
+INSERT INTO JAIN_OCS.OCMOPR06 (
     OCM06STATUS	,                                  /* 수술지구분 */
     OCM06IDNOA	, OCM06IDNOB	,                  /* 환자번호, 타급종구분 */
     OCM06LWDAT	, OCM06OPDAT	, OCM06SEQNO	,  /* 내원 및 입원일, 수술일, 순서 */
@@ -121,7 +121,7 @@ INSERT INTO OCMOPR06 (
 ) VALUES ('OPG', '1028544', '1', '20241106', '20241107', 1, 
           'I', 'A', '마취방법', '수술기록1', '수술기록2', 
           000123, '11:23:45', '20241105', '이미지파일');
-INSERT INTO OCMOPR06 (
+INSERT INTO JAIN_OCS.OCMOPR06 (
     OCM06STATUS	,                                  /* 수술지구분 */
     OCM06IDNOA	, OCM06IDNOB	,                  /* 환자번호, 타급종구분 */
     OCM06LWDAT	, OCM06OPDAT	, OCM06SEQNO	,  /* 내원 및 입원일, 수술일, 순서 */
@@ -142,7 +142,7 @@ select OCM06STATUS	,                                  /* 수술지구분 */
     OCM06CMTA	, OCM06CMTB	    , OCM06CMTC   	,  /* 마취방법, 수술기록1, 수술기록2 */
     OCM06RGCD   , OCM06SYSTM    , OCM06SYSDAT	,  /* 등록의, 등록시간, 등록일 */
     OCM06IMGFILE10                                 /* 이미지파일명 */
-from OCMOPR06;
-select * from all_tables;
+from JAIN_OCS.OCMOPR06;
+--select * from all_tables;
 
 

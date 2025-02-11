@@ -33,7 +33,7 @@ def dma_run():
     )
 
     gh_api_page = st.Page(
-        page="views/callapi.py",
+        page="views/gh_dapi.py",
         title="D-API",
         icon=":material/question_exchange:",
         default=True
@@ -55,14 +55,28 @@ def dma_run():
     pg.run()
     pass
 
+print(f"gh_app.__name__: {__name__}")
+
 import utils.api as api
 from threading import Thread
 
+if "Fastapi" not in st.session_state:
+    st.session_state["Fastapi"] = "stopped"
+
+print(f"Fastapi 1: {st.session_state["Fastapi"]}")
+
 # 메인 실행
 if __name__ == "__main__":
+    print(f"Fastapi 2: {st.session_state["Fastapi"]}")
+
     # FastAPI 서버 실행 (별도 스레드)
-    api_thread = Thread(target=api.run_fastapi, daemon=True)
-    api_thread.start()
+    if st.session_state["Fastapi"] == "stopped":
+        print(f">>> Fastapi start running")
+        api_thread = Thread(target=api.run_fastapi, daemon=True)
+        api_thread.start()
+        st.session_state["Fastapi"] = "running"
+        print(f"Fastapi 3: {st.session_state["Fastapi"]}")
     
     # Streamlit UI 실행
     dma_run()
+    pass
