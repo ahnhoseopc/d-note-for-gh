@@ -1,0 +1,1253 @@
+,ocm06status,ocm06idnoa,ocm06idnob,ocm06lwdat,ocm06opdat,ocm06seqno,ocm06iocd,ocm06dv,ocm06cmta,ocm06cmtb,ocm06rgcd,ocm06systm,ocm06sysdat,ocm06imgfile10,ocm06imgcord11,ocm06imgcord12,ocm06imgcord13,ocm06imgfile20,ocm06imgcord21,ocm06imgcord22,ocm06imgcord23,ocm06imgfile30,ocm06imgcord31,ocm06imgcord32,ocm06imgcord33,ocm06imgfile40,ocm06imgcord41,ocm06imgcord42,ocm06imgcord43,ocm06imgfile50,ocm06imgcord51,ocm06imgcord52,ocm06imgcord53,ocm06imgfile60,ocm06imgcord61,ocm06imgcord62,ocm06imgcord63,ocm06cmtc,ocm06memo,ocm06obstopnn,ocm06hmrrdgre,ocm06reopyn,ocm06kwa,ocm06spth,ocm06tissueexmn,ocm06drngpipe,ocm06alarm,cmplyn,ocm06emdv,ocm06drngpipecnts,ocm06tissueexmncnts,ocm06pclr,ocm06mdtrplan,ocm06opprgr,ocm06opendtm,ocm06opstarttm,rgstdt,ocm06rgstno
+0,OP2,0233137, ,20241223,20241224,1,I, ,"001319||| |||0|D34		0	갑상선의 양성 신생물	D34
+|	Lt.thyroid lobectomy.
+|2||D34	갑상선의 양성 신생물	
+|1|1$|0||||0|0|1|0|","1. specimen 
+Lt.lobe(permanent Bx.의뢰함)
+2.parathyroid : Rt.sup.,inf. parathyroid were preserved
+Lt.sup.,inf. parathyroid were preserved
+3. Strap muscle invasion(-)
+4. Trachea invasion/capsule invasion(-/-)
+5. Recurrent laryngeal N/surounding structure (intact/intact)
+6. Q block 1.5g/hemoblock/Megaderm/tacoseal 2ea/veraseal 2 4ml/Megashield 3cc
+
+@1. The patient was placed in comfortable supine position
+2. The 8cm sized incision was done by 15 knife
+3. The plastysma m. was divided with the cutting cautery.
+4. The strap m. are separated.
+5. The thyroid lobe(Lt.) was exposed by mobilizing the strap m.(sternohyoid and sternothyroid m.)
+6. The middle vein was exposed, divided, and ligated.
+7. Baccock clamps were applied to inferior and superior aspects of the thyroid lobe(Rt.&Lt.) to facilitate medical retraciting on the gland
+8. Superior pole vessels were divided individually, and then ligated without external laryngeal nerve and vocal cord injury.
+9. A gentle dissection with Hoyt clamp was used to exposure the parathyroid gland, inferior thyroid a. and recurrent laryngeal n.
+10. The branches of the inferior thyroid artery were divided at the surface of the thyroid gland
+11. The inferior thyroid vein was ligated and divided
+12. The dissection of thyroid from the trachea was performed with cautery by division of loose connective tissue.
+13. After identifying the parathyroid gland, inferior artery and recurrent laryngeal n. thr thyroid was divided so that the isthmus included in the specimen.
+14. Barovac 100cc was inserted. After indenification of no bleeding, fascia and skin was closed with vicryl 3-0 and vicryl 4-0, PDS 5-0, silk 6-0, skin stapler ,allevyn thin 10*10.
+
+EBL : 30cc/a little
+sponge count correct? yes
+",1319,13:44:08,20241224,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+1,PN2,0340414, ,20170906,20170906,50,,,GS,,,105413  ,20170906,COMMENTS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,PN2,0340414, ,20241209,20241209,50,,,GS,,,163144  ,20241209,COMMENTS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3,OP2,0340414, ,20250108,20250109,1,I, ,"001306|||001516|||0|D0510		0	RUI breast DCIS 	D0510
+|	RUI breast partial mastectomy with SLNB 
+|2||D0510	Intraductal carcinoma in situ of breast, right	
+|1|2|0|09:10|11:00||0|0|0|0|","indigocarmine dye injection into subcut tissue (Rt. areolar), 5 cc 
+--> massage (+)
+
+----------------------------
+
+Skin prep. under General Anestheisa on Supine position 
+
+--> Rt. circum areola & radial incision : 2시 방향
+    & Rt. axillary incision made, SLN biosy done (1 portion)
+
+--> RUO breast subcut. dissection with AUtoForce device
+    RUO breast partial mastectomy (BCS), nipple sparing 
+     : extent to RUI
+       send to pathol. request for nipple surgical margin
+       surgical margin : 1H / 2H / 3H / 4H / 5H / 6H / 7H / 8H / 9H / 10H / 11H / 12H   
+
+
+--> 병리과 answer : SLN - tumor negative 
+                    nipple surgical margin negative
+                    surgical margin 12개 모두 negative 
+               
+--> bleeding control & irrigation 
+
+--> residual breast tissue flap  을 만들어서 dead space 로 당겨서 채움
+    & subcut dissection 하여 skin 모양을 자연스럽게 맞춤 
+
+--> main wound & axillary space - ARISTA x 3 apply
+
+--> skin suture
+
+--> op. finish without drain@",1306,11:07:55,20250109,0340414_0_20250108_20250109_1_0.JPG,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+4,OP2,0340414, ,20250108,20250110,1,I, ,"001306||||||0|N63A		0	1. LUO-1   2. LUO-2   breast mass	N63A
+|28511M	Vacuum Assist Breast Excision (VABB, VABE, MMT)
+|7||N63A	달리 명시되지 않은 유방의 결절	
+|1|2|0|14:20|14:30||0|0|0|0|","skin preparation
+
+--> pre-MMT sono 로 lesion 확인 & localization
+
+--> skin block with 0.2 % lidocaine (diluted 1:10)
+    with 1:100000 epinephrine 
+
+--> 5mm skin puncture with 18G needle
+
+--> insert long spinal-needle thru skin puncture site, just beneath the breast mass
+
+--> MMT probe insert same position
+
+--> LUO x 2 mass removed as planed (see figure)
+
+--> compress & stapler appl. on skin puncture site
+
+--> post procedure bleeding : some (++)
+
+--> check CXR : NS
+    
+--> compressive bandage
+
+--> removed mass : sent pathologic request 
+
+--> Adm. 
+
+
+----------------------
+
+lidocaine 사용량 :
+0.2% diluted conc.  (about 2 mg/cc) ---> total 70 cc inj. (140 mg)
+@",1306,14:25:01,20250110,0340414_0_20250108_20250110_1_0.JPG,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+5,OP2,0340414, ,20250203,20250204,1,I, ,"001306|||001515|||0|D0511		0	LUO breast DCIS 	D0511
+|	LUO breast partial mastectomy with SLNB 
+	Rt. breast revision 
+|2||D0511	Intraductal carcinoma in situ of breast, left	
+|1|2|0|15:45|17:15||0|0|0|0|","indigocarmine dye injection into subcut tissue (Lt. areolar), 5 cc 
+--> massage (+)
+
+----------------------------
+
+Skin prep. under General Anestheisa on Supine position 
+
+--> Lt. radial incision : 2H 방향
+    & Lt. axillary incision made, SLN biosy done (3 portion)
+
+--> LUO breast subcut. dissection with AutoForce device 
+    LUO breast partial mastectomy (BCS), nipple sparing 
+     : send to pathol. request for nipple surgical margin
+                                 & surgical margin 1H~12H
+
+--> 병리과 answer : SLN - tumor negative 
+                   nipple surgical margin negative
+                   All surgical margin (12개) negative 
+               
+--> bleeding control & irrigation 
+
+--> residual breast tissue flap  을 만들어서 dead space 로 당겨서 채움
+    & subcut dissection 하여 skin 모양을 자연스럽게 맞춤 
+
+--> Rt. breast revision 
+
+    RUI 의 이전 수술 scar 로 incision made 
+    upper margin 을 1,5 cm 폭으로 길게 excision 함 
+    bleeding control 
+    Megastat apply
+    subcut & skin suture 
+    BaroVac 100 cc 
+
+--> LUO main wound : Megastat apply 
+    axillary space : Megastat apply
+    
+--> LUO & Lt. axillary subcut & skin suture
+
+--> op. finish 
+     Lt. side : no drain 
+     Rt. side : BaroVac 100 cc 
+@",1306,17:26:40,20250204,0340414_0_20250203_20250204_1_0.JPG,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+6,OP2,0372609, ,20241206,20241206,1,I, ,"001607||| |||0|N840A		0	자궁내막의 폴립	N840A
+|	
+	
+	
+	hysteropolypectomy
+|0||N840A	자궁내막의 폴립	
+|1|2|0||||0|0|0|0|","자궁내막의 폴립(+)@IV마취하에 내막의 폴립을 자궁경하에 forceps와 curettage로 제거함. 
+EBL:없음 
+gauze:OK",1607,13:50:05,20241206,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+7,PN2,0386384, ,20240902,20240902,50,,,GS,,,145213  ,20240902,COMMENTS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+8,OP2,0386384, ,20240910,20240910,1,O, ,"001306||||||0|N63A		0	1. RUO microcalc. mass	N63A
+N63A		0	2. LUO  3. LLO  breast mass 	N63A
+|	Stereotactic microcalc. localization 
+28511M	Vacuum Assist Breast Excision (VABB, VABE, MMT)
+|7||N63A	Nodule<s> NOS in breast	
+|1|2|0|11:05|11:45||0|0|0|0|","Stereotactic localization of microcalcification on RUO
+
+  : use hook wire 
+    under MMG guide 
+
+------------------------------
+
+skin preparation
+
+--> pre-MMT sono 로 lesion 확인 & localization
+
+--> skin block with 0.2 % lidocaine (diluted 1:10)
+    with 1:100000 epinephrine 
+
+--> 5mm skin puncture with 18G needle
+
+--> insert long spinal-needle thru skin puncture site, just beneath the breast mass
+
+--> MMT probe insert same position
+
+--> RUO microcalc. VABE done 
+      : 조직 x-ray 사진으로 microcalcification 확인함
+
+--> Lt. x 2 mass removed as planed (see figure)
+
+--> compress & stapler appl. on skin puncture site
+
+--> post procedure bleeding : some (++)
+
+--> check CXR : NS
+    
+--> compressive bandage
+
+--> removed mass : sent pathologic request 
+
+--> Adm. & observation 
+
+
+----------------------
+
+lidocaine 사용량 :
+0.2% diluted conc.  (about 2 mg/cc) ---> total 140 cc inj. (280 mg)
+@",1306,11:48:41,20240910,0386384_0_20240910_20240910_1_0.JPG,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+9,OP2,0386384, ,20241217,20241218,1,I, ,"001319||| |||0|C73		0	갑상선의 악성 신생물	C73
+|	Total thyroidectomy,ccnd.Ex&Bx. of lateral neck LN, Lt.
+|2||C73	갑상선의 악성 신생물	
+|1|1$|0||||0|0|0|1|","1. specimen 
+Rt.lobe(permanent Bx.의뢰함)
+Lt.lobe(permanent Bx.의뢰함)
+2.LN dissection : 
+D&P node (permanent Bx. 의뢰함)
+Lt.level 3,4,4-1 LN (Frozen: negative, permanent Bx. 의뢰함)
+Lt.level 6,7(permanent Bx.의뢰함)
+Rt.level 6 LN (permanent Bx. 의뢰함)
+3. parathyroid : Rt.sup.,inf. parathyroid were preserved
+Lt.sup.,inf. parathyroid were preserved
+4. Strap muscle invasion(-)
+5. Trachea invasion/capsule invasion(-/-)
+6. Recurrent laryngeal N/surounding structure (intact/intact)
+7. Q block 1.5g/hemoblock/Megaderm/tacoseal 2ea/veraseal 2, 4ml 각 1ea/Megashield 3cc
+
+@1. The patient was placed in comfortable supine position
+2. The 6cm sized incision was done by 15 knife
+3. The plastysma m. was divided with the cutting cautery.
+4. The strap m. are separated. Lt.lateral neck LN level 3, 4, 4-1 Ex.Bx.함.
+5. The thyroid lobe(Rt.) was exposed by mobilizing the strap m.(sternohyoid and sternothyroid m.)
+6. The middle vein was exposed, divided, and ligated.
+7. Baccock clamps were applied to inferior and superior aspects of the thyroid lobe(Rt.&Lt.) to facilitate medical retraciting on the gland
+8. Superior pole vessels were divided individually, and then ligated without external laryngeal nerve and vocal cord injury.
+9. A gentle dissection with Hoyt clamp was used to exposure the parathyroid gland, inferior thyroid a. and recurrent laryngeal n.
+10. The branches of the inferior thyroid artery were divided at the surface of the thyroid gland
+11. The inferior thyroid vein was ligated and divided
+12. The dissection of thyroid from the trachea was performed with cautery by division of loose connective tissue.
+13. After identifying the parathyroid gland, inferior artery and recurrent laryngeal n. thr thyroid was divided so that the isthmus included in the specimen.
+14. After identifying Recurrent laryngeal n. tracheoesophageal groove, pretracheal. paratracheal ant.sup. mediastinal LN, was dissected.
+15. In the same way, Lt. thyroid gland was resected.
+16. Barovac 100cc was inserted. After indenification of no bleeding, fascia and skin was closed with vicryl 3-0 and vicryl 4-0, PDS 5-0, silk 6-0, skin stapler ,allevyn thin 10*10.
+
+EBL : 30cc/a little
+sponge count correct? yes
+",1319,16:41:39,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+10,OP2,0444265, ,20241215,20241216,1,I, ,"001607||| |||0|D271		0	난소의 양성 신생물, 왼쪽	D271
+D259		0	상세불명의 자궁의 평활근종	D259
+N838B		0	난관주위 낭종	N838B
+K660		0	복막유착	K660
+K660C		0	장<의> 유착	K660C
+K660F		0	대망<의> 유착	K660F
+|	Endo(A)BSO
+|2||D271	난소의 양성 신생물, 왼쪽	
+D259	상세불명의 자궁의 평활근종	
+|1|2|0||||0|0|0|0|","자궁의 작은 근종이있다,자궁의 우하방은 이 전 수술로 장과 유착이 있다,좌우측 adnexa의 장과 복막과의 유착이 심하다.좌측 난소는 10cm가량의 점액성 낭종이다, 우측 난소는 퇴화되어있고,난관주위 낭종이 있다.@4trochar
+유착박리후 좌측 난소난관제거함.endo pouch사용.우측 난소난관제거함.
+irrigation:500ml 
+Gauze:OK
+Medicurtain 5ml 
+No Drain",1607,09:53:46,20241216,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+11,OPG,0570072, ,20180608,20180608,1,I, ,001601||||||0|||0|||1||0|2018-06-08  |2018-06-08  |400 cc||1|0|0|0|,"@
+      June. 8  2018                                       문화숙, 김상갑 M.D
+      General w.intubation by 신창석 M.D                   최숙진 R.N. 
+
+
+            preop diagnosis    large adnexal cyst, R/O serous or pseudocyst. 
+
+            post diagnosis     Same as the aboves R/O pseudocyst.
+                               pelvic adhesion, appendicitis
+
+            name operation     Endoscopic RSO
+                               pelvic adhesiolysis, appendectomy
+
+
+  Operative fingings; Uterus ; normal sised, posterior wall, adherent to cyst and bowel 
+		  Right large cyst, cystic fluid; 1000 cc, light brown color
+                   right tube and ovary; not identified
+                   left tube; previously removed status
+  		   left ovary adherent to pelvic wall.   
+                   appendix; enlogated, distal part buried in adhesion, congested,                                    appendicitis or periappendicitis
+                   Upper abdominal cavity; normal.  
+
+procedures
+  With the patient in the lithotomy position, 2.5 cm hole was made and the Alexis wound retractor was used for self retractor. Laparoscopic examination revealed above description. 3 more hores were made for adhesiolysis, RSO and appendectomy. Fluid in the cul-de-sac was collected for cytologic examination. First the cystic content was aspirated and the color was mahogany color revealing high possibility of pseudocyst. The amount aspirated was 1000 cc. For right salpingooophorectomy, all the surrounding adhesions were dissected. A hole was made between the round round ligament and tube and a hole was made below the right infundibulopelvic ligament. Two ligations was made, one on infundibulopelvic ligament and the other one, on the uteroovarian ligament and tube. Then right salpingooophorectomy was uneventfully performed. Both side of the stump was double endoligated. Right ureteral pathway was followed. Appendectomy was done due to the possibility of appendicitis of periappendictis. Endoscopic examination of the pelvic cavity comfirmed hemostasis. Pelvic irrigation was done with normal saline 200 cc. The blood loss was 400 cc. The gauze count was correct. No bleeding was confirmed, through the endoscopic visualization. The patient tolerated well through out the whole procedure. The specimen was seen by the patient's husband. recurrence of pseudocyst is always possible. op time :1 hr 30 min
+
+",1601,18:24:53,20180608,0570072_0_20180608.입원_20180608_1_0.jpg,,,,,,,,0570072_0_20180608.입원_20180608_1_2.jpg,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+12,OPG,0570072, ,20200713,20200713,1,I, ,001601||||||0|||0|||1||0|2020-07-13  |2020-07-13  |5 cc||0|0|0|0|,"@July 13, 2020                                     문화숙 M.D.
+     Mask ventilation by 김준용 MD                     이미지 R.N.        
+
+              pre op diagnosis        Endometrial polyp
+                                     
+              post op diagnosis       Same as the above, submucosal myoma  
+                   
+              name of operation       Hysteroscopic submucosal myomectomyh 
+                                        endomerial polypectomy. 
+                                      sonoguided. 
+                      
+
+              Hysteroscopic fingings; TVS 자궁의 굴곡의 방향 : 전굴
+                             자궁의 장축  54mm · 횡축  41mm
+                             자궁의 이상종물 : 무 
+                             자궁내막의 두께 : 19 x 12  mm · 이상종물 : polyp
+                             좌·우 난소의 이상종물 : right 28 x 15mm  left 29 mm  
+                             더글라스와 액체저류 : 무
+                             해부학적 이상소견 : polyp
+                  uterine cavity length; 9 cm
+                  endometrial polyp from anterior and posterior wall
+                  submucosal myoma type 1 from anteior wall
+
+
+Procedure 
+   With the patient in the lithotomy position, TVS confirmed the uterus and uterine cavitary status.  vaginal cavity and vulvar area were cleansed, painted and drapped. Operative speculum was placed in the vaginal cavity and the cervix was grasped with tenaculum. Sounding into the uterine cavity through the cervical os and the uterine cavity was 9 cm. The cervix was already dilated and the hysteroscope was penetrated into the uterine cavity and inside of the cavity was well visualized. Both tubal ostium was normal. All the endometrial polyps were removed using soft placenta forceps. The myoma was grasped with placenta forceps and the myoma was removed after  procedure of grasping and pulling with placenta forceps. Total use of normal saline was 100 cc. Operation time; 10 min. The patient's mother  saw the specimen. The specimen was sent for pathologic examination. 설명 박주영 간호사. 
+the aggregated size; myoma : 0.5 x 0.3 x 0.1 cm, polyp : 2 x 1.5 x 0.5 cm
+",1601,17:59:00,20200713,0570072_0_20200713_20200713_1_0.jpg,,,,0570072_0_20200713_20200713_1_1.jpg,,,,0570072_0_20200713_20200713_1_2.jpg,,,,0570072_0_20200713_20200713_1_3.jpg,,,,0570072_0_20200713_20200713_1_4.jpg,,,,0570072_0_20200713_20200713_1_5.jpg,,,,,N$,,,,,,,,,,,,,,,,,,,
+13,OPG,0570072, ,20241224,20241224,1,I, ,001601||||||0|||0|||1||0|2024-12-24 17:50   |2024-12-24 18:00   |2 cc||0|0|0|0|,"@Dec, 24, 2024                                              문화숙 M.D.
+     Mask ventilation by 류지흠 M.D                              박정현 R.N.
+              pre op diagnosis        submucosal myoma
+                                      R/O polyp
+
+              post op diagnosis       Same as the aboves,
+                                      sujbmucosal myoma and  endometrial polyp
+
+              name of operation       Hysteroscopic submucosal myomectomy
+                                      endometrial polypectomy, 
+                                      sono guided. 
+
+      Hysteroscopic fingings; TVs : 자궁의 굴곡의 방향 : 전굴
+                                    자궁의 장축 59 mm · 횡축 54 mm
+                                    자궁의 이상종물 : 무 
+                                    자궁내막의 두께 : mm · 이상종물 : 13 x 13
+                                    좌·우 난소의 이상종물 : 무  
+                                    RSO status,  Left cystic: 40 x 31 mm
+                                    더글라스와 액체저류 : 무
+                                    해부학적 이상소견 : polyp
+                        uterine cavity length; A-V 7 cm
+                        both tubal ostia normal
+                        endometrial polyp from anterior and posterior wall
+                        submucosal myoma from superior wall 
+
+Procedure 
+    TVS confirmed the uterus and uterine cavitary status. With the patient in the lithotomy position, vaginal cavity and vulvar area were cleansed, painted and drapped. Operative speculum was placed in the vaginal cavity and the cervix was grasped with tenaculum. Sounding into the uterine cavity through the cervical os and the uterine cavity was 9 cm. The cervix was already dilated and the hysteroscope was penetrated into the uterine cavity and inside of the cavity was well visualized. Both tubal ostium was normal. All the endometrial polyps were removed using soft placenta forceps. The myoma was grasped with placenta forceps and the myoma was removed after reopeatative procedure of grasping and pulling with placenta forceps. Total use of normal saline was 200 cc. Operation time ; 10 min. The patient's husband saw the specimen. The specimen was sent for pathologic examination.  
+aggregated size; myoma : 1.5 x 1 x 1 cm,  polyp :  1.5 x 1.5 x 0.3",1601,18:17:09,20241224,0570072_0_20241224_20241224_1_0.jpg,,,,0570072_0_20241224_20241224_1_1.jpg,,,,0570072_0_20241224_20241224_1_2.jpg,,,,0570072_0_20241224_20241224_1_3.jpg,,,,0570072_0_20241224_20241224_1_4.jpg,,,,0570072_0_20241224_20241224_1_5.jpg,,,,,N$,,,,,,,,,,,,,,,,,,,
+14,OP2,0642544, ,20241205,20241206,1,I, ,"002806||| |||0|J350		0	만성 편도염	J350
+|	편도절제술
+|2||J350	만성 편도염	
+|1|2|0||||0|0|0|0|","1. 전신 마취 하에서 환자는 supine position을 취하고 neck을 extension.  
+2. Routine skin preparation과 draping.
+3. McIver mouth gag를 장착하고 1:100,000 epinephrine이 mix된 lidocaine으로 양측 tonsil의 ant. pillar와 upper pole에 각각 inject.
+4. No.12 knife로 ant. pillar site에 incision을 가한 후 양측 tonsil들을 upper pole에서부터 lower pole 방향으로 bipolar coagulator와 scissor 그리고 pillar retractor를 이용하여 박리 후 절제.
+5. H2O2 gauze로 packing 이후 bipolar coagulator로 bleeding control을 시행 하였으며 출혈은 없음 확인@",2806,10:54:06,20241206,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+15,OP2,0661513, ,20221005,20221005,1,I, ,"002517||| |||0|L0300		0	손가락의 연조직염	L0300
+S617		0	손목 및 손의 다발성 열린상처	S617
+|	I&D
+|0||L0300	손가락의 연조직염	
+S617	손목 및 손의 다발성 열린상처	
+|2|2|0||||0|0|0|0|","우측 전완부 2부위 
+
+우측 4수지 
+
+근농양. cellulitis 
+
+
+I&D 3부위
+
+손목 및 손의 다발성 열린상처
+
+힘줄손상, 연조직염으로 근육층포함, 기타근농양 배농술을(를) 시행하였음.@",2517,16:43:28,20221005,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+16,OP2,0661513, ,20221008,20221008,1,I, ,"002517||| |||0|L0300		0	손가락의 연조직염	L0300
+S617		0	손목 및 손의 다발성 열린상처	S617
+|	I&D, suture 
+|0||L0300	손가락의 연조직염	
+S617	손목 및 손의 다발성 열린상처	
+|2|2|0||||0|0|0|0|","3부위 근농양제거 염증제거 봉합술
+
+손목 및 손의 다발성 열린상처
+
+힘줄손상, 연조직염으로 근육층포함, 기타근농양 배농술을(를) 시행하였음.@",2517,11:03:59,20221008,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+17,OP2,0661513, ,20240719,20240719,1,I, ,"002517||| |||0|L0311		0	다리의 연조직염	L0311D
+|	I&D (Rt lower leg)
+|0||L0311D	다리의 연조직염	
+|2|2|0||||0|0|0|0|","Rt. lowerleg cellulitis
+I&D@",2517,18:07:35,20240719,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+18,OP2,0661513, ,20240824,20240827,1,I, ,"002517||| |||0|L0311		0	다리의 연조직염	L0311D
+|	I&D (Rt lower leg)
+|0||L0311D	다리의 연조직염	
+|2|2|0||||0|0|0|0|","Rt. lowerleg cellulitis
+I&D@",2517,14:22:08,20240827,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+19,OP2,0661513, ,20241217,20241218,1,I, ,"002517||| |||0|L0311		0	발목의 연조직염	L0311A
+|	I&D (Lt. ankle)
+|0||L0311A	발목의 연조직염	
+|2|2|0||||0|0|0|0|","Lt. ankle cellulitis
+I&D@",2517,12:24:45,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+20,OP2,0675537, ,20241217,20241218,1,I, ,"001419||| |||0|S0220		0	비골의 골절, 폐쇄성	S0220
+|	비골 골절 재건
+|2||S0220	비골의 골절, 폐쇄성	
+|2|2|0||||0|0|0|0|","#. 성형외과 비관혈적 정복술 기록지
+
+1. 수술명 : 폐쇄성 비골 골절 --> 비관혈적 정복술 (closed reduction)
+
+2. 마취 : 전신마취
+
+
+#. 수술 과정
+
+1. 먼저 환자는 수술복으로 환복을 하였고
+
+      수술방 테이블에 supine position 으로 누웠다
+
+2. 마취과 전문의에 의해서 전신 마취를 시행받았고
+
+      endotracheal tube 는 빠지지 않도록 단단히 고정되었다
+
+3. 안면부를 포비돈 요액으로 소독을 하였고 
+
+	코 안의 경우에도 마찬가지로 포비돈 용액으로 소독을 마쳤다
+
+4. 환부를 제외하고 소독된 포를 이용하여 모두 덮어 멸균 상태를 유지하였다
+
+5. 먼저 환부에 대해서 CT 에서 확인된 골절 부위를 표시하였고
+
+      사진을 촬영하여 기록으로 남겼다
+
+6. 비경을 이용하여 코안의 내부를 확인하고
+
+      듀얼 패티(지혈 솜)을 에피네프린에 적신 상태에서
+
+      코 안에 패킹을 함으로써
+
+      코 안 점막이 에피네프린에 의해 수축되어
+
+      수술 시 코 안의 출혈이 줄어들도록 하였다.
+
+      5분간 기다린 다음
+
+      견인기를 골절된 부위까지만 코 안으로 삽입하여 
+
+      골절의 반대측 방향으로 밀어올려 뼈를 정복하였다
+
+7. 이때 반대편 손가락으로 촉진을 하면서 정복 여부를 수차례 확인하였다
+
+8. 정복된 비골이 위치를 잘 유지할 수 있도록
+
+      메로셀을 반으로 잘라서 
+
+		1> 오른쪽 콧 구멍에 : 2겹
+
+		2> 왼쪽 콧 구멍 : 2겹 
+
+		의 메로셀을 넣어 부풀려서 
+
+		코 안의 비골이 정복된 위치에 위치하도록 하였다.
+
+11. 항생제를 포함하는 식염수를 도포하여 메로셀이 부풀어 뼈를 아래에서 받히고 있도록 하였다
+
+12. 코의 겉 표면은 충격 혹은 손으로 건드리는 것을 막기 위해서
+
+      부목을 설치하여 수술을 종료하였다
+@",1419,13:13:54,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+21,OPG,0836815, ,20241111,20241111,1,I, ,001601||||||0|||0|||1||0|2024-11-11 16:15   |2024-11-11 17:05   |10 cc||0|0|0|0|,"@Nov. 11, 2024                                              문화숙 M.D.
+     Mask ventilation by 김진실 M.D                             박정현 R.N.
+           
+              pre op diagnosis        Submucosal myoma
+                                      R/O polyp
+
+              post op diagnosis       Same as the aboves,
+                                      endometrial polyp
+
+              name of operation       Resectoscopic submucosal myomectomy, partial 
+                                      endometrial polypectomy, sono guided. 
+
+      Hysteroscopic fingings; TVs : 자궁의 굴곡의 방향 : 전굴
+                                   자궁의 장축 72 mm · 횡축 58 mm
+                                   자궁의 이상종물 : sm 32 x 28 
+                                   자궁내막의 두께 : mm · 이상종물 : 무
+                                   좌·우 난소의 이상종물 : 무  
+                                   Right : mm      Left : mm
+                                   더글라스와 액체저류 : 무
+                                   해부학적 이상소견 : 무
+                        uterine cavity length; A-V 8 cm
+                        both tubal ostia normal
+                        submucosal myoma from left posterior wall
+Procedure 
+   TVS confirmed the uterus and uterine cavitary status. With the patient in the lithotomy position, vaginal cavity and vulvar area were cleansed, painted and drapped. Operative speculum was placed in the vaginal cavity and the cervix was grasped with tenaculum. Sounding into the uterine cavity through the cervical os and the uterine cavity was 8 cm. The cervix was already dilated and the hysteroscope was penetrated into the uterine cavity and inside of the cavity was well visualized. Hysteroscopic findings were as the above description. All the endometrial polyp was removed using soft placenta forceps. The myoma was not grasped with placenta forceps and the hysteroscope was changed to resectoscope and the media, to urion. The myoma was removed after reopeatative procedure of making incision with electrical loop from surface to the inside of the myoma. and removed with placenta forceps. Total use of normal saline was 150 cc, urosol 1500 cc. deficit; 50 cc. Operation time; 50 min. The patient's mother and younger brother saw the specimen. The specimen was sent for pathologic examination.  
+the aggregated size; myoma : 4.5 x 4.5 x 1 cm, polyp :  1 x 1 x 0.3 cm.",1601,17:21:31,20241111,0836815_0_20241111_20241111_1_0.jpg,,,,0836815_0_20241111_20241111_1_1.jpg,,,,,,,,0836815_0_20241111_20241111_1_3.jpg,,,,0836815_0_20241111_20241111_1_4.jpg,,,,0836815_0_20241111_20241111_1_5.jpg,,,,,N$,,,,,,,,,,,,,,,,,,,
+22,OPG,0836815, ,20241227,20241227,1,I, ,001601||||||0|||0|||1||0|2024-12-27 16:25   |2024-12-27 16:40   |3 cc||0|0|0|0|,"@Dec, 27, 2024                                              문화숙 M.D.
+     Mask ventilation by 이한빛 M.D                              박정현 R.N.
+
+              pre op diagnosis        Submucosal myoma
+                                      R/O polyp
+
+              post op diagnosis       Same as the aboves,
+                                      endometrial polyp
+
+              name of operation       Resectoscopic submucosal myomectomy        
+                                      endometrial polypectomy
+                                      sono guided. 
+ 
+              Hysteroscopic fingings; TVs : 
+                                   자궁의 굴곡의 방향 : 전굴
+                                   자궁의 장축 72 mm · 횡축 63 mm
+                                   자궁의 이상종물 : right anterior im 61 x 49 mm
+                                   자궁내막의 두께 : 13.5 mm 
+                                   이상종물 : sm 19 x 14 mm
+                                   좌·우 난소의 이상종물 : 무  
+                                   Right : mm , Left : 48 x 36 mm
+                                   더글라스와 액체저류 : 무
+                                   해부학적 이상소견 : sm 19 x 14 mm
+                           uterine cavity lengthp A-V 9 cm
+                           type II from posterior inferior wall
+                           enddometrial polyp from anterior wall
+
+Procedure 
+   TVS confirmed the uterus and uterine cavitary status. With the patient in the lithotomy position, vaginal cavity and vulvar area were cleansed, painted and drapped. Operative speculum was placed in the vaginal cavity and the cervix was grasped with tenaculum. Sounding into the uterine cavity through the cervical os and the uterine cavity was 9 cm. The cervix was already dilated and the hysteroscope was penetrated into the uterine cavity and inside of the cavity was well visualized. Hysteroscopic findings were as the above description. All the endometrial polyp was removed using soft placenta forceps. The myoma was not grasped with placenta forceps and the hysteroscope was changed to resectoscope and the media, to urion. The myoma was removed after reopeatative procedure of making incision with electrical loop from surface to the inside of the myoma. and removed with placenta forceps. Total use of normal saline was 200 cc, urosol 300 cc. deficit; 10 cc. Operation time; 15 min. The patient's younger brother saw the specimen. The specimen was sent for pathologic examination.  
+the aggregated size; myoma : 2.5 x 1.5 x 1 cm, polyp :  1.5  x 1 x 0.5 cm.",1601,17:20:25,20241227,0836815_0_20241227_20241227_1_0.jpg,,,,0836815_0_20241227_20241227_1_1.jpg,,,,0836815_0_20241227_20241227_1_2.jpg,,,,0836815_0_20241227_20241227_1_3.jpg,,,,0836815_0_20241227_20241227_1_4.jpg,,,,0836815_0_20241227_20241227_1_5.jpg,,,,,N$,,,,,,,,,,,,,,,,,,,
+23,OP2,0900993, ,20220611,20220611,1,I, ,"001653||| |||0|N840		0	자궁체부의 폴립	N840
+N939		0	상세불명의 이상 자궁 및 질 출혈	N939
+|	hystero polypectomy
+|0||N840	자궁체부의 폴립	
+N939	상세불명의 이상 자궁 및 질 출혈	
+|1|2|0||||0|0|1|0|","================================== Operative Findings ===================================
+
+1. Retroversion 7cm
+2. Both tubal ostia: normal
+3. Polypoid masses from the uterine cavity
+=================================== Operative Procedures ==================================
+
+ With the patient in the lithotomy position, vaginal cavity and vulvar area were cleansed, 
+painted and draped. Operative speculum was placed in the vaginal cavity and the cervix was 
+exposed. The cervix was grasped with tenaculum. Sounding into the uterine cavity through 
+the cervical os revealed uterus.
+
+ Hysteroscope was introduced into the uterine cavity after Hegar dilatation.
+Hysteroscopy was inserted, confirmed endometrial cavity, removal of polypoid mass was done.
+Distension media was normal saline.
+Tenaculum was removed and any bleeding from cervix was checked with gauze.
+
+ The patient tolerated the whole procedure well.
+
+Estimated blood loss: some
+Total use of normal saline was 300 cc, deficit was some.
+No. of gauze packing in the vagina: 1
+@",1653,11:38:48,20220611,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+24,OP2,0900993, ,20241203,20241204,1,I, ,"001607||| |||0|D259		0	상세불명의 자궁의 평활근종	D259
+K660		0	복막유착	K660
+|	TLH   BS
+|2||D259	상세불명의 자궁의 평활근종	
+|1|2|0||||0|0|0|0|","자궁은 400gm의 다발성 근종이다.양측 난소는 정상.좌측 난소는 측벽과 장과의 유착이 있다.@4trochar
+양측 나팔관 제거함. 양측 자궁동맥 suture cut and endoloop함. 
+AP colpotomy후 자궁제거후 cuff closure함. 
+Ureter:OK 
+EBL;100ml 
+Gauze:OK 
+irrigation:500ml 
+Medicurtain 5ml 
+No drain",1607,15:28:22,20241204,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+25,OP2,0912445, ,20241213,20241213,1,O, ,"001316||||||0|N63		0	유방의 상세불명의 덩이	N63
+|	Rt#1 Lt#2 VABE
+|7||N63	유방의 상세불명의 덩이	
+|1|2|0||||0|0|0|0|","Rt 10:00 4mm
+Rt 12:00 3mm
+Rt 2:00 8mm
+Lt 2:00 12mm
+Lt 5:00 5mm
+Lt 9:00 8mm@1 anesthesia: Local anesthesia is given 
+
+2 position
+the patient is placed in a comfortable supine position with the arm  on the involved side abducted approximately 90 degrees in order to give maximum exposure of the region 
+
+3 operative preparation :
+a routine skin prep is performed and the area is draped in a sterile manner
+
+4 incision and exposure
+ A suitable site for skin puncture some distance away from the lesion is chosen according to the position of the lesion in the breast and the Mammotome and ultrasound probe orientations preferred by the operator. Local anaesthetic is infiltrated into the skin and subcutaneous tissues, and a small skin incision no larger than the tip of the probe is made in the skin. Further local anaesthetic is then injected into the deeper tissue using a spinal or similar needle positioned under direct ultrasonic visualisation, infiltrating along the planned Mammotome track and around the lesion. Ten millilitres of 1% or 2% Xylocaine with 1 in 200 000 adrenaline is usually adequate. 
+
+The probe is inserted in 'positioning' mode, with the aperture closed. A blade on the tip of 8-gauge probe helps it to pass cleanly through the tissues. The probe is generally positioned so that the aperture (which can be readily identified on ultrasound, even in the closed position) lies immediately behind the lesion, although some larger lesions may be more easily removed by being transfixed by the probe. The system is then switched to 'sampling' mode, and lesion removal can begin. If the probe is correctly positioned posterior to the lesion, the mass can be seen being sucked into the specimen aperture as the 'forward' button l is depressed.
+
+Progress of lesion removal is usually well seen on ultrasound, although occasionally completeness of removal can be difficult to assess due to the presence of air and/or blood in the cavity.This is done by incrementally rotating the holster between samplings when the probe aperture is closed. In addition, elevation of the probe as the lesion is progressively removed may help the remaining part of the lesion to enter the aperture. 
+
+The number of cores required to obtain complete lesion removal is very variable, depending on the size of the lesion, the gauge of probe used and the position of the probe relative to the lesion.
+
+Following withdrawal of the probe, firm pressure is applied for several minutes to the area of tissue removal A pressure dressing is then applied. 
+
+the epidermis is approximated with nylon #5 
+the skin is cleaned dired and apply a simple gauze dressing and a surgical bra
+
+
+",1316,16:02:02,20241213,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+26,OP2,0912445, ,20241227,20241228,1,I, ,"002517||| |||0|S9250		0	기타 발가락의 골절, 폐쇄성	S9250
+S932		0	발목 및 발 부위의 인대의 파열	S932
+|	OR pinning (Rt. 4th toe)
+|0||S9250	기타 발가락의 골절, 폐쇄성	
+S932	발목 및 발 부위의 인대의 파열	
+|2|2|0||||0|0|0|0|","1. Fx head/neck portion of 4th P.P.Rt
+2. collateral lig injury
+1. OR pinning
+2. ligament repair@",2517,11:51:51,20241228,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+27,OP2,0912445, ,20250205,20250205,1,I, ,"002517||| |||0|Z470		0	골절판 및 기타 내부고정장치의 제거를 포함한 추적치료를 위하여 보건서비스와 접하고 있는 사람	Z470
+|	금속제거 (Rt. 4th toe)
+|0||Z470	골절판 및 기타 내부고정장치의 제거를 포함한 추적치료를 위하여 보건서비스와 접하고 있는 사람	
+|2|2|0||||0|0|0|0|","Rt. 4th toe metal
+metal removal@",2517,15:18:25,20250205,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+28,PN2,1017768, ,20241209,20241209,50,,,GS,,,112934  ,20241209,COMMENTS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+29,OP2,1017768, ,20241218,20241219,1,I, ,"001306|||001506|||0|D177		0	Rt chest lipoma (deep, muscle layer)	D177
+|	Lipoma Excision 
+|2||D177	기타 부위의 양성 지방종성 신생물	
+|1|2|0|09:10|09:40||0|0|0|0|","Skin prep. under General Anestheisa on Supine position 
+
+--> Rt. lateral chest oblique iincision 
+
+--> dissection of subcut. 
+
+--> divide & open serratus anterior fascia
+    found lipoma mass 
+
+--> excision of lipoma 
+    muscle 속에 파고 든 lipoma mass 까지 완전히 절제함 
+
+--> bleeding control, MegaStat appl.
+
+--> muscle & fascia repair 
+    subcut & skin suture
+
+--> op. finish without drain
+@",1306,09:51:29,20241219,1017768_0_20241218_20241219_1_0.JPG,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+30,OP2,1018708, ,20241223,20241224,1,I, ,"002806||| |||0|J324		0	만성 범부비동염	J324
+J310		0	만성 비염	J310
+J303		0	기타 알레르기비염	J303
+|	ESS
+|2||J324	만성 범부비동염	
+J310	만성 비염	
+J303	기타 알레르기비염	
+|2|2|0||||0|0|0|0|","1. 전신마취하에서 환자는 position을 취하고 routine skin prep 과 draping 시행 
+2. 1:100,000 epinephrine mixed lidocaine inject.
+3. Debrider를 이용하여 antrum 주변과 middle meatus주변의 비정상 점막과 polyp  제거 
+4. Lt uncinate process 제거 후 bullar ethmoidalis제거 
+5. Lt. MMA 시행
+6. Rt. MMA 
+7.Both. inf turbinate mucosal를 radiofrequency generator로 coblation 
+8. septum 및 turbinate 의 열상 및 혈종 등 이상 부위 없음을 확인하고 Merocel packing 시행
+
+both ESS both turbinectomy
+@",2806,10:21:29,20241224,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+31,OP2,1038926, ,20220406,20220406,1,I, ,"001316||| |||0|D2430		0	유방의 다발 양성 신생물, 오른쪽	D2430
+D2431		0	유방의 다발 양성 신생물, 왼쪽	D2431
+|	Vacuum Assist Breast Excision (VABB, VABE, MMT) Rt#3 Lt#3 
+|0||D2430	유방의 다발 양성 신생물, 오른쪽	
+D2431	유방의 다발 양성 신생물, 왼쪽	
+|1|2|0||||0|0|0|0|","Rt 10:00 5mm 5mm
+Rt 12:00 5mm
+Rt 12:00 4mm
+Rt SA 14mm IV
+Rt 8:00 7mm
+Rt 6:00 4mm
+Lt 10:00 8m
+Lt 12:00 5mm
+Lt 2:00 6mm IV 13mm IV
+Lt 7:00 3A 4mm@1 anesthesia: MAC anesthesia is given via an  EG tube 
+
+2 position
+the patient is placed in a comfortable supine position with the arm  on the involved side abducted approximately 90 degrees in order to give maximum exposure of the region 
+
+3 operative preparation :
+a routine skin prep is performed and the area is draped in a sterile manner
+
+4 incision and exposure
+ A suitable site for skin puncture some distance away from the lesion is chosen according to the position of the lesion in the breast and the Mammotome and ultrasound probe orientations preferred by the operator. Local anaesthetic is infiltrated into the skin and subcutaneous tissues, and a small skin incision no larger than the tip of the probe is made in the skin. Further local anaesthetic is then injected into the deeper tissue using a spinal or similar needle positioned under direct ultrasonic visualisation, infiltrating along the planned Mammotome track and around the lesion. Ten millilitres of 1% or 2% Xylocaine with 1 in 200 000 adrenaline is usually adequate. 
+
+The probe is inserted in 'positioning' mode, with the aperture closed. A blade on the tip of 8-gauge probe helps it to pass cleanly through the tissues. The probe is generally positioned so that the aperture (which can be readily identified on ultrasound, even in the closed position) lies immediately behind the lesion, although some larger lesions may be more easily removed by being transfixed by the probe. The system is then switched to 'sampling' mode, and lesion removal can begin. If the probe is correctly positioned posterior to the lesion, the mass can be seen being sucked into the specimen aperture as the 'forward' button l is depressed.
+
+Progress of lesion removal is usually well seen on ultrasound, although occasionally completeness of removal can be difficult to assess due to the presence of air and/or blood in the cavity.This is done by incrementally rotating the holster between samplings when the probe aperture is closed. In addition, elevation of the probe as the lesion is progressively removed may help the remaining part of the lesion to enter the aperture. 
+
+The number of cores required to obtain complete lesion removal is very variable, depending on the size of the lesion, the gauge of probe used and the position of the probe relative to the lesion.
+
+Following withdrawal of the probe, firm pressure is applied for several minutes to the area of tissue removal A pressure dressing is then applied. 
+
+the epidermis is approximated with nylon #5 
+the skin is cleaned dired and apply a simple gauze dressing and a surgical bra
+
+
+",1316,14:28:18,20220406,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+32,OP2,1038926, ,20241209,20241210,1,I, ,"001316||| |||0|C5031		0	유방의 하내사분의 악성 신생물, 왼쪽	C5031
+N601		0	미만성 낭성 유방병증	N601
+|	Lt BCS SLNB  Rt TE  Both Recon
+|2||C5031	유방의 하내사분의 악성 신생물, 왼쪽	
+N601	미만성 낭성 유방병증	
+|1|1$|0||||0|0|0|0|","Rt 10:00 5mm
+Rt 12:00 4mm
+Rt 6:00 5mm
+Rt 7:00 6mm
+Lt 2:00 5mm
+Lt 7:00 20mm@1 anesthesia: general anesthesia is given via an endotracheal tube Short acting muscle depolarizing agents are used for the intubations
+
+2 position
+the patient is placed in a comfortable supine position with the arm  on the involved side abducted approximately 90 degrees in order to give maximum exposure of the region 
+
+3 operative preparation :
+a routine skin prep is performed and the area is draped in a sterile manner
+
+4 incision and exposure
+injection of preoperative methylene blue for marking guided by U/S
+circumareolar incision is  made sharply with the scalel and carried through the dermis Any significant vessels should be secured with fine ligatures or controlled with electrocautery  
+the skin flap are elevated with army instruments. the dissection proceeds superiorly almost to the methylene blue dye. the glandular tissue of the breast is dissected and elevated. the dissection continues until central end of the mass. the specimen is oriented for the pathologist the wound irrigated and careful hemostasis is obtained. One closed suction drain is placed via separated stab incision and secured in position with nylon suture. the epidermis is approximated with nylon #5 
+
+circumareolar incision  was made to incorporate the nipple-areolar complex and the previous biopsy site. The skin incision was carried down to the subcutaneous fat but no further. Using traction and counter-traction, the upper flap was dissected from the chest wall medially to the medial margin, superiorly to superior margin, laterally to the lateral margin , and superolaterally to the insertion of the pectoralis major muscle. The lower flap was dissected in a similar manner down to the insertion of the pectoralis fascia overlying the fifth rib medially and laterally out to the latissimus dorsi. Bovie electrocautery was used for the majority of the dissection and hemostasis tying only the large vessels with 2-0 Vicryl. The breast was dissected from the pectoralis muscle beginning medially and progressing laterally removing the pectoralis fascia entirely. Once the lateral border of the pectoralis major muscle was identified, the pectoralis muscle was retracted medially and the interpectoral fat was removed with the specimen.
+sentinel LN biopsy  was then begun by incising the fascia overlying axilla proper allowing visualization of the axillary vein. The highest point of axillary dissection was then marked with a long stitch for identification by the surgical pathologist. The axilla was then cleared of its contents by sharp dissection. Small vessels entering the axillary vein were clipped and divided. The axilla was cleared down to the chest wall, and dissection was continued laterally to the subscapular vein. The long thoracic nerve was cleared identified lying against the chest and was carefully preserved. The long thoracic nerve represented the posterior most aspect of the dissection.
+",1316,11:59:15,20241210,,,,,,,,,,,,,,,,,,,,,,,,,"
+Two H-VAC 400cc  drains were inserted through separate stab incisions below the initial incision and cut to fit. The most posterior of the2 was directed into the axilla and the other directed anteriorly across the pectoralis major. These were secured to the skin using 2-0 silk, which was Roman-sandaled around the drain.
+
+
+5.marking the inframmary approach
+midline and inframammary fold
+raising the arms stimulates the higher position of the nipple after augmentation 
+1) skin incision  
+2) exposure of the lateral border of the pectoralis muscle
+3) subglandular dissection along the planned muscle incision to alongside the sternum
+4) muscle transection using electrocautery scissors
+5) after transecting the muscle
+6) blunt dissection laterally (elevating the pectoralis major off the pectoralis minor ) 
+  the remainder is sharply dissected
+7) placement of the definitive implant
+8) after placing a three point suture 
+9) three point fixation in the inframammary fold 
+the first suture at the level of the skin incision in the chest wall musculature
+10) second and third sutures in the Scarpa fascia
+the skin is incised and the incison is deepened vertically through the subcutaneous tissue to the chest wall.The Scapa fascia can already be identified at this stage. the dissection is still too inferior.the gland is dissected superioly over a distance of 3~4cm off the underlying chest wall or musclature (external oblique , serratus anterior, pectoralis major) this provides good visualization of the orgin of the pectoralis major at the  fifth and sixth ribs. the subglandular dissction carried medially to alongside the sternum is sharp, while the loose connective tissue overlying the lateral portion of the serratus anterior may be bluntly dissected. perforating vessels between the gland and muscle are coagulated after the inferior portion of the pectoralis major has been exposed, it is divide wih electrocautery , proceeding from its lateral margin nearly to the sternum. the stumps of the muscle fibers must be thoroughly coagulated. the pectoral muscle is elervated with a Langenbeck retractor and remaining muscle fibers arising from the chest wall are divided. digital separation of the pectralis major and minor is the best way to avoid inadvertent division of pectoralis minor muscle fibers. sharp dissection is done medially dissection superiorly can be done using a blunt technique
+
+All surgical counts were reported as correct.
+Having tolerated the procedure well, the patient was subsequently extubated and taken to the recovery room in good and stable condition",N$,,,,,,,,,,,,,,,,,,,
+33,OP2,1101366, ,20241223,20241224,1,I, ,"002702||| |||0|M9973		0	추간공의 결합조직 및 원반 협착, 요추부위	M9973
+|	L5-S1, Rt. laminotomy & Rt. foraminotomy/ extra-foraminotomy
+|2||M9973	추간공의 결합조직 및 원반 협착, 요추부위	
+|2|2|0||||0|0|0|0|","1. General anesthesia
+2. Prone position
+3. Clean drapping with fluid collecting bag
+4. Small skin incision
+5. L5-S1, Rt. laminotomy & Rt. foraminotomy/ extra-foraminotomy
+1) adhesion, severe
+2) inflammation, severe
+6. Bleeding control, irrigation
+7. Hemovac 100cc (x2)
+8. Suture
+@",2702,12:16:12,20241224,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+34,OP2,1125154, ,20241216,20241217,1,I, ,"001319||| |||0|C73		0	갑상선의 악성 신생물	C73
+|	Lt.thyroid lobectomy,ccnd.
+|2||C73	갑상선의 악성 신생물	
+|1|1$|0||||0|0|1|0|","1. specimen 
+Lt.lobe(permanent Bx.의뢰함)
+tumor margin(permanent Bx.의뢰함)
+2.LN dissection : 
+D&P node (permanent Bx. 의뢰함)
+Lt.level 6, 6-1 LN (permanent Bx. 의뢰함)
+3. parathyroid : Rt.sup.,inf. parathyroid were preserved
+Lt.sup.,inf. parathyroid were preserved
+4. Strap muscle invasion(-)
+5. Trachea invasion/capsule invasion(-/-)
+6. Recurrent laryngeal N/surounding structure (intact/intact)
+7. Q block 1.5g/hemoblock/Megaderm/tacoseal/veraseal 2ml/Megashield 3cc
+@1. The patient was placed in comfortable supine position
+2. The 6cm sized incision was done by 15 knife
+3. The plastysma m. was divided with the cutting cautery.
+4. The strap m. are separated.
+5. The thyroid lobe(Lt.) was exposed by mobilizing the strap m.(sternohyoid and sternothyroid m.)
+6. The middle vein was exposed, divided, and ligated.
+7. Baccock clamps were applied to inferior and superior aspects of the thyroid lobe(Rt.&Lt.) to facilitate medical retraciting on the gland
+8. Superior pole vessels were divided individually, and then ligated without external laryngeal nerve and vocal cord injury.
+9. A gentle dissection with Hoyt clamp was used to exposure the parathyroid gland, inferior thyroid a. and recurrent laryngeal n.
+10. The branches of the inferior thyroid artery were divided at the surface of the thyroid gland
+11. The inferior thyroid vein was ligated and divided
+12. The dissection of thyroid from the trachea was performed with cautery by division of loose connective tissue.
+13. After identifying the parathyroid gland, inferior artery and recurrent laryngeal n. thr thyroid was divided so that the isthmus included in the specimen.
+14. After identifying Recurrent laryngeal n. tracheoesophageal groove, pretracheal. paratracheal ant.sup. mediastinal LN, was dissected.
+15. Barovac 100cc was inserted. After indenification of no bleeding, fascia and skin was closed with vicryl 3-0 and vicryl 4-0, PDS 5-0, silk 6-0, skin stapler ,allevyn thin 10*10.
+
+EBL : 30cc/a little
+sponge count correct? yes
+",1319,17:14:40,20241217,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+35,OP2,1126005, ,20240920,20240920,1,I, ,"001608|||001514|004915||0|R1049		0	Unspecified abdominal pain	R1049
+K661		0	혈복강	K661
+N831A		0	출혈성 황체낭	N831A
+D271		0	난소의 양성 신생물, 왼쪽	D271
+|	laproscopic left ovary cyst enucleation
+|2||R1049	Unspecified abdominal pain	
+K661	혈복강	
+N831A	출혈성 황체낭	
+D271	난소의 양성 신생물, 왼쪽	
+|1|2|0||||0|0|0|0|","복강내에는 피가 300cc 정도 차 있었고 왼쪽 난소 한군데 구멍 난곳이 있었고 혈종이 막고 있었다. 또한 왼쪽 
+ 난소에는 3cm 정도 되는 기형종이  있었고 기형종 내에서 지방 조직과 머리카락이 들어 있었다. 오른쪽 난소는 크기는 정상이나 한군데 살짝 갈라진 곳이 있었고 약간의 출혈이 있었다. 양측 나팔관은 정상 모습이었고
+ 자궁도 정상모습 이었다. 상복부는 특이 소견 없었다
+
+@With the patient in the lithotomy position, 4 holes were made for the instruments entry. As entered into abdominal cavity, hemoperitoneum was noted in the ant. and post. cul-de-sac. The uterus was normal size. Left ovary had corpus luteum and was ruptured state.And left ovary had small dermoid cyst. Left salpinx and Right adnexa were glossly normal. Left ovary cyst enucleation was decided . We incised on left ovary and removed hemorrhagic corpus luteum and dermoid cyst. Bleeding point was cauterized with bipolar bovie. Blood loss was scanty. . Normal saline 2 liters irrigation was done. Gauze count was correct. The H-vac drain was inserted at pelvic cavity. The view of upper abdomen was normal. After confirming hemostasis all the instruments were withdrawn. The patient tolerated the whole procedure well. The specimen was sent for pathological examination 
+
+",1608,20:41:29,20240920,1126005_0_20240920_20240920_1_0.JPG,,,,1126005_0_20240920_20240920_1_1.JPG,,,,1126005_0_20240920_20240920_1_2.JPG,,,,1126005_0_20240920_20240920_1_3.JPG,,,,1126005_0_20240920_20240920_1_4.JPG,,,,1126005_0_20240920_20240920_1_5.JPG,,,,,N$,,,,,,,,,,,,,,,,,,,
+36,OP2,1126005, ,20241217,20241217,1,I, ,"001639||| |||0|K661		0	혈복강	K661
+N831A		0	출혈성 황체낭	N831A
+N803		0	골반복막의 자궁내막증	N803
+|	Laparoscopic right ovarian cystectomy
+	Electrocauterization for pelvic endometriotic foci
+	Ultrasound guidance
+|2||K661	혈복강	
+N831A	출혈성 황체낭	
+|1|1$|0||||0|0|0|0|","=================================== Operative Findings ===================================
+
+1. Uterus: grossly normal
+2. Right adnexa: bleeding from ovarian cyst, tube was grossly normal
+3. Left adnexa: grossly normal
+4. Upper abdomen: no remarkable finding
+5. adhesion (+): bowel + peritoneum near right trocar insertion site
+6. blood collection in abdomino-pelvic cavity about 500cc
+7. Ultrasound (가이드 40) was used to confirm the pelvic cavity.
+@
+=================================== Operative Procedures ==================================
+
+  With the patient in the lithotomy position, 4 holes were made for the instrumets entry. 
+As entered into the abdominal cavity, the pelvic and abdominal findings were as same as 
+the aboves.
+
+ Ruptured right ovarian cyst was noted, electrocoagulation was done for hemostasis. 
+Aspiration of blood from the lower abdomen and removal of blood clots were done. 
+After confirming hemostasis, all the instruments were withdrawn.
+
+ The patient tolerated the whole procedure well.
+
+Normal saline irrigation: 80 cc
+H-vac 100cc x 1
+Estimated blood loss: less than 10ml
+The count of gauze and operative instruments: correct
+
+scrub nurse: 이가희",1639,19:40:21,20241217,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+37,OP2,1126618, ,20241218,20241218,1,O, ,"001316||| |||0|N62		0	유방의 비대	N62
+|	Both Subcutaneous  Mastectomy
+|2||N62	유방의 비대	
+|1|2|0||||0|0|0|0|","여유증@circumareolar  incision was made to incorporate the nipple-areolar complex  The skin incision was carried down to the subcutaneous fat but no further. Using traction and counter-traction, the upper flap was dissected from the chest wall medially to the sternal border, superiorly to the clavicle, laterally to the anterior border of the latissimus dorsi muscle, and superolaterally to the insertion of the pectoralis major muscle. The lower flap was dissected in a similar manner down to the insertion of the pectoralis fascia overlying the fifth rib medially and laterally out to the latissimus dorsi. Bovie electrocautery was used for the majority of the dissection and hemostasis tying only the large vessels with 2-0 Vicryl. The breast was dissected from the pectoralis muscle beginning medially and progressing laterally removing the pectoralis fascia entirely. Once the lateral border of the pectoralis major muscle was identified, the pectoralis muscle was retracted medially and the interpectoral fat was removed with the specimen.
+The skin incision was approximated . A dressing was applied. The drains were placed on All surgical counts were reported as correct.
+Having tolerated the procedure well, the patient was subsequently extubated and taken to the recovery room in good and stable condition
+",1316,16:28:28,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+38,OP2,1130301, ,20241218,20241218,1,I, ,"001639|||001510|||0|D069A		0	중증 이형성에 대한 언급이 있거나 없는 자궁경부상피내신생물, 등급Ⅲ	D069A
+|	LEEP
+	IUD removal
+|0||D069A	중증 이형성에 대한 언급이 있거나 없는 자궁경부상피내신생물, 등급Ⅲ	
+|1|2|0||||0|0|0|0|","nulliparous cervix.
+squamocolumnar junction: outside of the cervix
+
+@Under intravenous sedation with intubation, the patient was placed on the operation table
+ with lithotomy position. Routine sterile preparation and drape was done as usual method 
+after douche of vagina.
+
+ After adequate exposure of uterine cervix with surgical speculum, the cervix was grasped 
+with tenaculum at 12 o'clock. Loop electrosurgical excision was done including all the
+squamocolumnar junction. Hemostasis was assured and additional hemostasis was done with 
+leep coagulator (high frequency surgical unit).
+
+ The patient tolerated the procedure well and was sent to the recovery room with stable 
+condition. 
+
+Albothyl soaked cotton ball x 1 and gauze x 1 were packed in the vaginal cavity.
+Estimated blood loss: some 
+
+scrub nurse: 박주영 R.N.",1639,09:16:01,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+39,OP2,1130870, ,20241119,20241120,1,I, ,"001316||| |||0|C5080		0	유방의 중복병변의 악성 신생물, 오른쪽	C5080
+N63		0	유방의 상세불명의 덩이	N63
+|	Rt BCS SLNB  Lt  TE  Both Recon
+|2||C5080	유방의 중복병변의 악성 신생물, 오른쪽	
+N63	유방의 상세불명의 덩이	
+|1|1$|0||||0|0|0|0|","c
+Breast ,right 9h CNB: invasive ductal ca grade2 and DCIS low grade
+@1 anesthesia: general anesthesia is given via an endotracheal tube Short acting muscle depolarizing agents are used for the intubations
+
+2 position
+the patient is placed in a comfortable supine position with the arm  on the involved side abducted approximately 90 degrees in order to give maximum exposure of the region 
+
+3 operative preparation :
+a routine skin prep is performed and the area is draped in a sterile manner
+
+4 incision and exposure
+injection of preoperative methylene blue for marking guided by U/S
+circumareolar incision is  made sharply with the scalel and carried through the dermis Any significant vessels should be secured with fine ligatures or controlled with electrocautery  
+the skin flap are elevated with army instruments. the dissection proceeds superiorly almost to the methylene blue dye. the glandular tissue of the breast is dissected and elevated. the dissection continues until central end of the mass. the specimen is oriented for the pathologist the wound irrigated and careful hemostasis is obtained. One closed suction drain is placed via separated stab incision and secured in position with nylon suture. the epidermis is approximated with nylon #5 
+
+circumareolar incision  was made to incorporate the nipple-areolar complex and the previous biopsy site. The skin incision was carried down to the subcutaneous fat but no further. Using traction and counter-traction, the upper flap was dissected from the chest wall medially to the medial margin, superiorly to superior margin, laterally to the lateral margin , and superolaterally to the insertion of the pectoralis major muscle. The lower flap was dissected in a similar manner down to the insertion of the pectoralis fascia overlying the fifth rib medially and laterally out to the latissimus dorsi. Bovie electrocautery was used for the majority of the dissection and hemostasis tying only the large vessels with 2-0 Vicryl. The breast was dissected from the pectoralis muscle beginning medially and progressing laterally removing the pectoralis fascia entirely. Once the lateral border of the pectoralis major muscle was identified, the pectoralis muscle was retracted medially and the interpectoral fat was removed with the specimen.
+sentinel LN biopsy  was then begun by incising the fascia overlying axilla proper allowing visualization of the axillary vein. The highest point of axillary dissection was then marked with a long stitch for identification by the surgical pathologist. The axilla was then cleared of its contents by sharp dissection. Small vessels entering the axillary vein were clipped and divided. The axilla was cleared down to the chest wall, and dissection was continued laterally to the subscapular vein. The long thoracic nerve was cleared identified lying against the chest and was carefully preserved. The long thoracic nerve represented the posterior most aspect of the dissection. 
+Two H-",1316,16:37:02,20241120,,,,,,,,,,,,,,,,,,,,,,,,,"VAC 400cc  drains were inserted through separate stab incisions below the initial incision and cut to fit. The most posterior of the2 was directed into the axilla and the other directed anteriorly across the pectoralis major. These were secured to the skin using 2-0 silk, which was Roman-sandaled around the drain.
+
+
+5.marking the inframmary approach
+midline and inframammary fold
+raising the arms stimulates the higher position of the nipple after augmentation 
+1) skin incision  
+2) exposure of the lateral border of the pectoralis muscle
+3) subglandular dissection along the planned muscle incision to alongside the sternum
+4) muscle transection using electrocautery scissors
+5) after transecting the muscle
+6) blunt dissection laterally (elevating the pectoralis major off the pectoralis minor ) 
+  the remainder is sharply dissected
+7) placement of the definitive implant
+8) after placing a three point suture 
+9) three point fixation in the inframammary fold 
+the first suture at the level of the skin incision in the chest wall musculature
+10) second and third sutures in the Scarpa fascia
+the skin is incised and the incison is deepened vertically through the subcutaneous tissue to the chest wall.The Scapa fascia can already be identified at this stage. the dissection is still too inferior.the gland is dissected superioly over a distance of 3~4cm off the underlying chest wall or musclature (external oblique , serratus anterior, pectoralis major) this provides good visualization of the orgin of the pectoralis major at the  fifth and sixth ribs. the subglandular dissction carried medially to alongside the sternum is sharp, while the loose connective tissue overlying the lateral portion of the serratus anterior may be bluntly dissected. perforating vessels between the gland and muscle are coagulated after the inferior portion of the pectoralis major has been exposed, it is divide wih electrocautery , proceeding from its lateral margin nearly to the sternum. the stumps of the muscle fibers must be thoroughly coagulated. the pectoral muscle is elervated with a Langenbeck retractor and remaining muscle fibers arising from the chest wall are divided. digital separation of the pectralis major and minor is the best way to avoid inadvertent division of pectoralis minor muscle fibers. sharp dissection is done medially dissection superiorly can be done using a blunt technique
+
+All surgical counts were reported as correct.
+Having tolerated the procedure well, the patient was subsequently extubated and taken to the recovery room in good and stable condition",N$,,,,,,,,,,,,,,,,,,,
+40,OP2,1130870, ,20241212,20241212,1,O, ,"001316||| |||0|Z511		0	신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람	Z511
+C5080		0	유방의 중복병변의 악성 신생물, 오른쪽	C5080
+|	C-port insertion
+|0||Z511	신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람	
+C5080	유방의 중복병변의 악성 신생물, 오른쪽	
+|2|2|0||||0|0|0|0|","Rt 9:00 IDC 
+Breast ,right 9h CNB: invasive ductal ca grade2 and DCIS low grade@1 anesthesia: MAC anesthesia is given via an  EG tube 
+
+2 position
+the patient is placed in a comfortable supine position with the arm  on the involved side abducted approximately 90 degrees in order to give maximum exposure of the region 
+
+3 operative preparation :
+a routine skin prep is performed and the area is draped in a sterile manner
+
+4 incision and exposure
+puncture of subclavian vein
+insertion of guide wire
+refined downward direction of guide wire under C arm
+insertion of canular catheter
+insertion of silicone line through canular catheter
+connect the port into silicon line
+inject heparin and refined backflow
+positioned chemoport and tagging suture of chemoport
+control of bleeding 
+sutured skin 
+",1316,14:33:41,20241212,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+41,OP2,1131426, ,20241218,20241218,1,I, ,"001639|||001510|||0|D259		0	상세불명의 자궁의 평활근종	D259
+|	Robotic myomectomy
+	Ultrasound guidance
+|2||D259	상세불명의 자궁의 평활근종	
+|1|2|0||||0|0|0|0|","============================ Operative Findings ============================
+1. Uterus: see figure
+2. Right adnexa: grossly normal
+3. Left adnexa: grossly normal
+4. Upper abdomen: no remarkable finding
+5. adhesion (-)
+6. Ultrasound (가이드 40) was used to confirm the pelvic cavity.
+7. Instruments: Large needle driver, Maryland bipolar forceps
+8. Adhesion barrier (Intergard) was applied at op. site.@=========================== Operative Procedures ===========================
+1. The patient was placed in lithotomy position.
+2. After creating a pneumoperitoneum using a Veress needle inserted at the 
+umbilicus, 3 holes were made for the instruments entry.
+3. After inspecting the surgical field, using an aspiration needle through an 
+assistant port, a diluted solution of vasopressin with a 0.02 U/mL concentration 
+was injected into the serosa and myometrium surrounding the myoma to achieve 
+hemostasis.
+4. At beginning, a large needle driver was held in the right arm, 
+and a Maryland bipolar forceps was held in the left arm.
+Myoma resection was performed with unipolar cautery and a tenaculum 
+in the assistant port.
+5. Continuous suturing was performed with 1-0 V-Loc and GLSORB to repair 
+the myometrium using a large needle driver in one robotic arm 
+and a Maryland bipolar forceps in the other.
+6. The suturing for defective uterine wall was individually performed 
+depending on the location and size of the myoma and the presence of 
+endometrium injury.
+7. After confirming hemostasis, all instruments were removed.
+8. There was no hemorrhage from the trocar insertion sites.
+9. The abdominal peritoneum and fascia were closed with GLSORB suture, 
+and the skin was approximated with vicryl suture.
+10. The patient tolerated the procedure well.
+
+Estimated blood loss: 200 cc
+The count of gauze and operative instruments: correct
+The weight of specimen: 50 gram
+Amount of diluted vasopressin: 80 cc
+
+scrub nurse: 전혜령 R.N.",1639,11:40:50,20241218,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+42,OPG,1131946, ,20241220,20241220,1,I, ,001601||||||0|||0|||1||0|2024-12-20 17:00   |2024-12-20 17:30   |30 cc||0|0|0|0|,"@Dec. 20, 2024                                          문화숙 M.D
+      General w.intubation by 신창석 M.D                     손채연  R.N 
+
+          pre op diagnosis     Right adnexal cyst, 
+                               R/O mucin borderline
+
+          post op diagnosis    Same as the aboves, 
+                              
+          name of operation    Single port endoscopic right ovary cystectomy,
+                               sonoguided
+
+         Operative fingings:  자궁의 굴곡의 방향 : 전굴
+                            자궁의 장축 51 mm · 횡축 32 mm
+                            자궁의 이상종물 : 23 x 15 mm
+                            자궁내막의 두께 : 9.6 mm · 이상종물 : 8 x 6 mm
+                            좌·우 난소의 이상종물 : 무  
+                            Right : 103 x 85 mm
+                            Left : normal
+                            더 글라스와 액체저류 : 무
+                            해부학적 이상소견 : ovary cyst                          
+             uterus; normal sized
+             both tubes and left ovary; normal,  
+             right ovary cyst, surface smooth, no adhesion, 
+                 cystic fluid; brown color, 515 cc
+
+Procedures
+    TVS confirmed the pelvic findings. With the patient in the lithotomy position,  Suprapubic 3 cm incision was made, Laparoscopic findings were as the above description. Peritoneal fluid was collected for cytologic examination (washing cytology).   Right ovary cystectomy was decided. Cystic fluid was aspirated and was brown color with the amount of 515 cc, revealing E/O borderline mujcinous cyst and with multichamber. After decompression, the right ovary could be put out of the pelvic cavity. Then right ovary cystectomy was uneventfully performed. Interruped sutures were placed for hemostasis as well as ovary closure using GL sorb. Endoscopic examination of the pelvic cavity comfirmed hemostasis. The blood loss was 30 cc. The gauze count was correct. Pelvic irrigation was done with normal saline 80cc. Dexamethasone 15 mg was left in the pelvic cavity. No bleeding was confirmed, through the endoscopic visualization. The patient tolerated well through out the whole procedure.  The mother of the patient saw the specimen.  The specimen was sent for pathologic examination. op time :  30 min  cytology : peritoneal fluid
+",1601,17:48:31,20241220,1131946_0_20241220_20241220_1_0.jpg,,,,1131946_0_20241220_20241220_1_1.jpg,,,,1131946_0_20241220_20241220_1_2.jpg,,,,1131946_0_20241220_20241220_1_3.jpg,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+43,OP2,1131969, ,20241226,20241227,1,I, ,"002806||| |||0|J342		0	편위된 비중격	J342
+J310		0	만성 비염	J310
+|	septo rf
+|2||J342	편위된 비중격	
+J310	만성 비염	
+|2|2|0||||0|0|0|0|","1. 전신 마취하에서 환자는 supine position을 취하고 routine skin prep 과 draping 시행
+2. 1:100,000 epinephrine mixed lidocaine을 columella, floor, ant. cartilaginous septum, dorsal cartilaginous septum, vomer, perpendicular plate에 inject.
+3. Rt. side hemitransfixion incision을 가하고 fleer elevator를 이용하여 mucoperichondrial과 mucoperiosteal flap을 elevate하고 박리면을 따라 후방으로 진행하여 ant. tunnel 형성. 
+4. Transfixion incision을 septal cartilage에 가한 후 maxillary crest와 septal cartilage 사이를 박리하여 Rt. side ant. tunnel하방에 inferior tunnel을 만들고 하나의 공간으로 만들어 cartilage를 분리 시킴
+5. Lt. side flap을 elevate한 후 Poster Ballenger로 골절 부위인 vomer와 perpendicular plate를 제거하고 kife로 deviated된 cartilage를 wedge resection. 
+6. Rt. side cartilage에 knife로 cross hatching incisoin 가함.
+7. 1:100,000 epinephrine mixed lidocaine으로 at Both. inf. turbinate에 inject. 
+8. Both. inf turbinate mucosal를 radiofrequency generator로 coblation 
+9.   Septal trasfixion incision site를 Vicyrl No 5-0로 suture 한 뒤 packing packing 시행@",2806,10:13:12,20241227,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+44,OP2,1132813, ,20241215,20241216,1,I, ,"002702||| |||0|M4316		0	척추전방전위증, 요추부	M4316
+M4806		0	척추협착, 요추부	M4806
+|	L3-4 ULBD, L4-5 PLIF
+|2||M4316	척추전방전위증, 요추부	
+M4806	척추협착, 요추부	
+|2|2|0||||0|0|0|0|","1. General anesthesia
+2. Prone position
+3. Clean drapping with fluid collecting bag
+4. Small skin incision
+5. L3-4 ULBD
+1) adhesion, severe
+2) inflammation, severe
+6. Bleeding control, irrigation
+7. Hemovac 100cc
+8. Suture
+
+--------------------------------
+
+1. Small skin incision
+2. L4-5 PLIF 
+1) Lt. laminotomy for bilateral decompression 
+: adhesion & inflmmmation, severe
+2) facetectomy/ discectomy
+3) Cage interbody insertion 
+: transversely lying 
+: autologous bone + allograft + DBM
+3. Percutaneous screw fixation (6.5mm X 45mm)
+4. Bleeding control, irrigation
+5. Hemovac 100cc
+6. Suture@",2702,17:13:18,20241216,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+45,OP2,1133213, ,20241203,20241204,1,I, ,"001419||| |||0|S0220		0	비골의 골절, 폐쇄성	S0220
+|	비골 골절 재건
+|2||S0220	비골의 골절, 폐쇄성	
+|2|2|0||||0|0|0|0|","#. 성형외과 비관혈적 정복술 기록지
+
+1. 수술명 : 폐쇄성 비골 골절 --> 비관혈적 정복술 (closed reduction)
+
+2. 마취 : 전신마취
+
+
+#. 수술 과정
+
+1. 먼저 환자는 수술복으로 환복을 하였고
+
+      수술방 테이블에 supine position 으로 누웠다
+
+2. 마취과 전문의에 의해서 전신 마취를 시행받았고
+
+      endotracheal tube 는 빠지지 않도록 단단히 고정되었다
+
+3. 안면부를 포비돈 요액으로 소독을 하였고 
+
+	코 안의 경우에도 마찬가지로 포비돈 용액으로 소독을 마쳤다
+
+4. 환부를 제외하고 소독된 포를 이용하여 모두 덮어 멸균 상태를 유지하였다
+
+5. 먼저 환부에 대해서 CT 에서 확인된 골절 부위를 표시하였고
+
+      사진을 촬영하여 기록으로 남겼다
+
+6. 비경을 이용하여 코안의 내부를 확인하고
+
+      듀얼 패티(지혈 솜)을 에피네프린에 적신 상태에서
+
+      코 안에 패킹을 함으로써
+
+      코 안 점막이 에피네프린에 의해 수축되어
+
+      수술 시 코 안의 출혈이 줄어들도록 하였다.
+
+      5분간 기다린 다음
+
+      견인기를 골절된 부위까지만 코 안으로 삽입하여 
+
+      골절의 반대측 방향으로 밀어올려 뼈를 정복하였다
+
+7. 이때 반대편 손가락으로 촉진을 하면서 정복 여부를 수차례 확인하였다
+
+8. 정복된 비골이 위치를 잘 유지할 수 있도록
+
+      메로셀을 반으로 잘라서 
+
+		1> 오른쪽 콧 구멍에 : 2겹
+
+		2> 왼쪽 콧 구멍 : 2겹 
+
+		의 메로셀을 넣어 부풀려서 
+
+		코 안의 비골이 정복된 위치에 위치하도록 하였다.
+
+11. 항생제를 포함하는 식염수를 도포하여 메로셀이 부풀어 뼈를 아래에서 받히고 있도록 하였다
+
+12. 코의 겉 표면은 충격 혹은 손으로 건드리는 것을 막기 위해서
+
+      부목을 설치하여 수술을 종료하였다
+#. 성형외과 비관혈적 정복술 기록지
+
+1. 수술명 : 폐쇄성 비골 골절 --> 비관혈적 정복술 (closed reduction)
+
+2. 마취 : 전신마취
+
+
+#. 수술 과정
+
+1. 먼저 환자는 수술복으로 환복을 하였고
+
+      수술방 테이블에 supine position 으로 누웠다
+
+2. 마취과 전문의에 의해서 전신 마취를 시행받았고
+
+      endotracheal tube 는 빠지지 않도록 단단히 고정되었다
+
+3. 안면부를 포비돈 요액으로 소독을 하였고 
+
+	코 안의 경우에도 마찬가지로 포비돈 용액으로 소독을 마쳤다
+
+4. 환부를 제외하고 소독된 포를 이용하여 모두 덮어 멸균 상태를 유지하였다
+
+5. 먼저 환부에 대해서 CT 에서 확인된 골절 부위를 표시하였고
+
+      사진을 촬영하여 기록으로 남겼다
+
+6. 비경을 이용하여 코안의 내부를 확인하고
+
+      듀얼 패티(지혈 솜)을 에피네프린에 적신 상태에서
+
+      코 안에 패킹을 함으로써
+
+      코 안 점막이 에피네프린에 의해 수축되어
+
+      수술 시 코 안의 출혈이 줄어들도록 하였다.
+
+      5분간 기다린 다음
+
+      견인기를 골절된 부위까지만 코 안으로 삽입하여 
+
+      골절의 반대측 방향으로 밀어올려 뼈를 정복하였다
+
+7. 이때 반대편 손가락으로 촉진을 하면서 정복 여부를 수차례 확인하였다
+
+8. 정복된 비골이 위치를 잘 유지할 수 있도록
+
+      메로셀을 반으로 잘라서 
+
+		1> 오른쪽 콧 구멍에 : 2겹
+
+		2> 왼쪽 콧 구멍 : 2겹 
+
+		의 메로셀을 넣어 부풀려서 
+
+		코 안의 비골이 정복된 위치에 위치하도록 하였다.
+
+11. 항생제를 포함하는 식염수를 도포하여 메로셀이 부풀어 뼈를 아래에서 받히고 있도록 하였다
+
+12. 코의 겉 표면은 충격 혹은 손으로 건드리는 것을 막기 위해서
+
+      부목을 설치하여 수술을 종료하였다
+@",1419,11:02:53,20241204,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+46,OP2,1133378, ,20241226,20241227,1,I, ,"002702||| |||0|M4806		0	척추협착, 요추부	M4806
+|	L4-5 ULBD
+|2||M4806	척추협착, 요추부	
+|2|2|0||||0|0|0|0|","1. General anesthesia
+2. Prone position
+3. Clean drapping with fluid collecting bag
+4. Small skin incision
+5. L4-5 ULBD
+1) adhesion, severe
+2) inflammation, severe
+6. Bleeding control, irrigation
+7. Hemovac 100cc
+8. Suture
+@",2702,16:45:39,20241227,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+47,OP2,1134945, ,20241222,20241223,1,I, ,"001419||| |||0|S0248		0	광대뼈 및 상악골의 기타 골절, 폐쇄성	S02480
+S0230		0	안와 바닥의 골절, 폐쇄성	S0230
+|	왼쪽 안면 골절 재건
+|2||S02480	광대뼈 및 상악골의 기타 골절, 폐쇄성	
+S0230	안와 바닥의 골절, 폐쇄성	
+|2|2|0||||0|0|0|0|","#. 성형외과 수술 기록지
+
+1. 수술명 : 
+	1> 상악골 골절 - 르포트  - 관혈적 정복술
+
+       2> 관골 골절 - 관혈적 정복술
+
+	3> 안와골절(바닥) - 관혈적 정복술 + 인공물 (medpor 1mm) 삽입술
+
+2. 절개 : 눈 아래 + 입 안
+
+
+#. 성형외과 
+1. 상악골 골절
+2. 관골 골절에 대해 관혈적 정복술,
+3. 안와 골절에 대한 관혈적 정복술 + 인공물 삽입술 에 대한 기록지
+
+
+1. 마취 : 전신 마취
+2. 소독 : 수술 부위 전체
+3. 절개
+	1> 눈 아래 subciliary approach
+	2> 입안 intraoral approach
+
+4. 박리
+	: infraorbital nerve 를 주의하면서
+		뼈막을 박리하여
+		골절 부위를 확인하였따
+
+5. 골절 정복
+
+	1> 상악골 골절 
+
+		부러진 상악골을 반대측으로 힘을 주어
+		정복하였다
+
+       2> 관골 골절 정복
+
+		부러진 관골을 반대측으로 힘을 주어
+		정복하였다
+
+
+	3> 안와 바닥 골절
+
+		골절 부위로 빨려내려간 안와 내용물을 원래 위치로 복원하였고
+		인공뼈를 받혀서 새롭게 안와 내용물이 흘러나가지 못하게 막았다
+
+
+6. 봉합
+
+7. 드레싱
+
+
+@",1419,11:56:56,20241223,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+48,OP2,1136161, ,20241230,20241230,1,I, ,"002517||| |||0|S8260		0	외측복사의 골절, 폐쇄성	S8260
+|	OR pinning (Rt. ankle)
+|0||S8260	외측복사의 골절, 폐쇄성	
+|2|2|0||||0|0|0|0|","Fx tip of lateral malleolar process.Rt
+OR pinning@",2517,14:28:52,20241230,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
+49,OP2,1136161, ,20250131,20250131,1,I, ,"002517||| |||0|Z470		0	골절판 및 기타 내부고정장치의 제거를 포함한 추적치료를 위하여 보건서비스와 접하고 있는 사람	Z470
+|	금속제거(Rt ankle)
+|0||Z470	골절판 및 기타 내부고정장치의 제거를 포함한 추적치료를 위하여 보건서비스와 접하고 있는 사람	
+|2|2|0||||0|0|0|0|","Rt. ankle metal
+metal removal@",2517,11:25:16,20250131,,,,,,,,,,,,,,,,,,,,,,,,,,N$,,,,,,,,,,,,,,,,,,,
