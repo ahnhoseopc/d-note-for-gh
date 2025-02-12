@@ -1,0 +1,1151 @@
+,srd04status,srd04idnoa,srd04idnob,srd04lwdat,srd04iocd,srd04odrdat,srd04odrno,srd04subno,srd04slpno,srd04rdspth,srd04rddoccd,srd04rdcd,srd04fncd,srd04rddat,srd04rdtime,srd04age,srd04find,srd04imp,srd04accessnumber
+0,,0233137, ,20241015,O,20241015,4,2,N40,,001913,,FN,20241015,9:05:51 ,51,"Neck CT
+
+Multiple thyroid nodules.
+About 6cm sized, heterogeneously enhancing mass in Lt. thyroid gland.
+  -- with tracheal deviation to the Rt. side.
+rec> USG correlation.
+
+No significantly enlarged cervical LN.
+No remarkable finding in the covered brain parenchyma.","
+",
+1,,0233137, ,20241022,O,20241022,1,64,L66,,,,RD,,,52,,,
+2,,0233137, ,20241022,O,20241022,1,62,N10,,001919,,FN,20241022,10:32:43,52,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+3,,0233137, ,20250107,O,20250107,1,1,N40,,001912,,FN,20250108,14:26:59,51,"CI : 2024-12-24 LT. lobectcomy (Invasive encapsulated follicular variant papillary thyroid carcinoma, PTC)
+
+Chest CT (CE):
+compared to 2022.3.28 chest CT
+
+s/p Lt. lobectomy of thyroid gland.
+
+1. Solid lung nodule in RML (2mm, #175).
+    -> R/O, benign. 
+        Rec) F/U at 1 year
+2. No mediastinal lymphadenopathy. No pleural effusion.
+3. Loculated fluid collection at op. site (1.1 x 1.7 x 2.4cm)
+     -> R/O, postop fluid collection.
+4. R/O, both hepatic cysts (~0.5cm).
+5. Left renal stone (0.1cm, #2-66).
+6. 0.8cm low-density splenic lesion.
+     -> ddx) splenic hemangioma, cyst.","
+",
+4,,0233137, ,20250211,O,20250211,1,62,N10,,001918,,FN,20250211,9:34:04 ,53,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+5,,0340414, ,20170906,O,20170906,1,1,N10,,001908,FN  ,FN,20170906,11:00:15,48,"mammography:
+
+breast pattern : 3
+
+no visible focal lesion in both breast
+  -- category 1
+
+rec) US for further evaluation, for obscured focal lesion ",,
+6,,0340414, ,20241024,I,20241024,8,28,N10,,001904,,FN,20241024,16:47:04,56,"mild ileus in central abdomen 
+post. colonoscopy state 
+ 
+
+rec>
+clinical correlation, f/u","
+",
+7,,0340414, ,20241221,O,20241221,3,1,N10,,001919,,FN,20241221,12:58:40,56,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+8,,0340414, ,20241223,O,20241223,1,1,N45,,001919,,FN,20241223,16:49:29,56,"Clinical information:  s/p CNB, RUI breast DCIS, 2024-12
+Sequences: axial fat-sat T2WI, axial T2WI, axial T1WI,  DWI, axial fat-sat T1WI, post CE axial T1WI (dynamic series), delayed post CE axial T1WI, MIP, MPR
+Contrast media: used
+
+Findings:
+5.3 x 7.4 x 3.0 cm, segmental clumped nonmass enhacnement with weak diffusion restriction, Rt 1-3 o`clock --> C6 (#1016/79-110)
+- kinetic curve: early fast and delayed wash-out
+- tumor margin
+ nipple: suspicious nipple invasion, chest wall(to pectoralis major): 2.2cm, skin: 1.2cm
+
+1.0 x 0.5 x 1.3 cm, focal heterogeneous nonmass enhacnement with diffusion restriction, Lt 1 o`clock --> C4b (#1016/88-102), probably corresponding to LUO lesion
+- kinetic curve: early fast and delayed wash-out
+Rec) Excisional Bx
+
+No abnormal LN in both axilla and intercostal spaces.
+
+Symmetric, minimal, background parenchymal enhancement","C4b
+Rec) Excisional Bx
+",
+9,,0340414, ,20250108,I,20250110,41,8,N10,,001919,,FN,20250205,8:49:05 ,56,"Clear both lungs.
+A staple in left breast area.
+subcutaneous emphyseam in right lateral chest wall.","
+",
+10,,0340414, ,20250203,I,20250205,31,1,N10,,001919,,FN,20250205,8:48:31 ,56,"s/p drain tube insertion in right breast area.
+
+subcutaneous emphyseam in left lateral chest wall.
+
+Clear both lungs.","
+",
+11,,0340414,9,20221020,O,20221020,1,11,L66,,,,RD,,,55,,,
+12,,0340414,9,20221020,O,20221020,1,12,N10,,001916,,FN,20221020,13:36:29,55,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음
+","Normal chest radiography
+",
+13,,0340414,9,20221020,O,20221020,1,13,N10,,001901,,FN,20221020,10:26:51,55,"Mammography
+
+heterogeneously dense breast, which may lower the sensitivity of mammography.
+benign calcificaiton,   both , C2
+
+
+유방촬영술이 조기 유방암 발견을 위해 매우 정확한 검사이나 모든 암이 발견되는 것은 아님. 유방실질 밀도가 높으므로 임상적 correlation 및 breast USG를 권장함 
+","
+",
+14,,0340414,9,20221020,O,20221020,3,15,L66,,,,RD,,,55,,,
+15,,0340414,9,20241024,O,20241024,1,16,N10,,001918,,FN,20241024,9:38:41 ,57,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+16,,0340414,9,20241024,O,20241024,1,17,N10,,001901,,FN,20241024,14:06:20,57,"Mammography
+
+heterogeneously dense breast, which may lower the sensitivity of mammography.
+asymmetry in RI omn RCC view,  C0 
+ - rec: cc & fu us
+benign calcificaiton, left    , C2
+
+
+
+유방촬영술이 조기 유방암 발견을 위해 매우 정확한 검사이나 모든 암이 발견되는 것은 아님. 유방실질 밀도가 높으므로 임상적 correlation 및 breast USG를 권장함 
+","
+",
+17,,0372609, ,20241106,O,20241106,1,1,N40,,001901,,FN,20241106,18:24:26,51,"LDCT 
+
+9.1cm sized calcified nodule in LUL 
+ - calcified granuloma, LUL 
+
+several lung nodule in 
+ - LUL : 2.7mm m(#112), 2.7mm (#114), 
+    LLL: 3.9mm (#214) 
+ - probable benign nodule 
+ - rec: cc & fu LDCT in 6-12mos
+
+normal cardiac configuration 
+no evidence of pleural effusion or pleural thickening 
+","
+",
+18,,0372609, ,20241122,O,20241122,2,47,N10,,001904,,FN,20241122,12:22:36,52,"at chest 
+
+no remarkabel interval changes in both lung fields 
+rec:
+clinical correlation, f/u","
+",
+19,,0372609,9,20241031,O,20241031,1,25,N10,,001919,,FN,20241031,11:16:06,52,"A sub-cm nodular opacity in LUL zone.
+Rec) Low dose chest CT
+
+Surgical clips in RML zone.","
+",
+20,,0386384, ,20240819,O,20240819,1,1,N40,,001913,,FN,20240819,12:43:13,51,"2024-08-13 o/s Neck CT.
+
+Diffusely enlarged thyroid gland with heterogeneous enhancement.
+  --> suspicion of diffuse parenchymal disease.
+Poor delineation of the thyroid nodules on this study
+rec> USG correlation.
+
+Multiple mildly enlarged LNs in Lt. level IV, both level VI and Lt. VII.
+  --> suspicion of reactive hyperplasia.
+
+No remarkable finding in the covered brain parenchyma.
+
+rec> clinical correlation.","
+",
+21,,0386384, ,20240819,O,20240819,1,2,N40,,001904,,FN,20240820,9:01:54 ,51,"
+
+외부필름 
+
+tiny lung nodules in RLL( ~4mm, subpleural  #60, # 50)
+  - indeterminate   r/o benign 
+    rec> f/u LDCT in 6~12 ms
+
+enlarged  lymph nodes in mediastinum :  2L 
+ -indeterminate  
+
+hepatic cysts (~4.2cm)
+r/o hepatic hemangioma, S7, 0.7cm
+hepatic calcification, S8
+
+** 함께 scan된 neck area는 같은 날 시행한 neck CT참고 바랍니다.
+
+rec> clinical correlation, f/u
+","
+",
+22,,0386384, ,20240902,O,20240902,1,1,N10,,001918,,FN,20240902,14:29:50,52,,"Rt upper outer : grouped amorphous calcifications --> C4a
+",
+23,,0386384, ,20240904,O,20240904,1,1,N45,,001918,,FN,20240904,13:55:53,51,"Clinical information: US/MG abnormality
+Sequences: axial fat-sat T2WI, axial T2WI, sagittal fat-sat T1WI,  DWI, axial fat-sat T1WI, post CE axial T1WI (dynamic series), post CE sagittal T1WI, delayed post CE axial T1WI, MIP, MPR
+Contrast material: used
+
+Findings:
+<Rt breast>
+1. US에서의 RUM 8mm mass, MG에서의 Rt upper outer C4 lesion과 correlation되는 소견은 보이지 않음.
+2. Rt SA (Se1018/87) : 0.5cm enhancing focus --> C3, US C3 lesion
+
+<Lt breast>
+1. Lt 12h (Se1018/60) 0.4cm enhancing focus with T2 bright high SI --> C3, probable US C3 lesion
+2. Lt 3h SA (Se2/20) : 0.5cm cyst --> C2 
+3. 이외의 US 상의 mass는 현 MR에서 구분되지 않음.
+
+No abnormal LN in both axilla, both internal mammary area and SCN.
+Hepatic cysts at liver S8","C3
+
+* US,MG상의 abnormality는 해당 category에 따른 management 바랍니다.
+",
+24,,0386384, ,20240910,O,20240910,1,2,N10,,001919,,FN,20240910,11:17:33,52,Localization is done.,"
+",
+25,,0386384, ,20240910,O,20240910,1,3,N10,,001919,,FN,20240910,11:39:20,53,Microcalcifications in specimen.,"
+",
+26,,0386384, ,20240910,O,20240910,1,13,N10,,001919,,FN,20240910,12:06:27,53,"Clear both lungs.
+Staples in both breast area.","
+",
+27,,0386384, ,20240925,O,20240925,5,201,L66,,,,RD,,,53,,,
+28,,0386384, ,20240925,O,20240925,5,1,N10,,001919,,FN,20240925,11:53:55,53,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+29,,0444265, ,20241205,O,20241205,3,1,N50,,,,EY,,,61,,,
+30,,0444265, ,20241205,O,20241205,4,37,N10,,001901,,FN,20241206,8:52:39 ,62,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+31,,0444265, ,20241215,O,20241215,1,1,N45,,001901,,FN,20241216,9:07:11 ,61,"Pelvis MR (CE)
+
+clinical information: ovarian cyston US
+images: axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+1. about 7 x 9.7 x 6.3cm sized  T1 low  SI  & T2 high SI multiseptated cystic mass abutting both ovares  at ant adnexa
+ - r/o borderline cystadenoma (suspicious due to subtle uneven septal wall thickening) , ovary (lt?) 
+   ddx: cystadenoma
+2. 2.1cm sized T2 intermediate, enhancign  SI solid lesion in rt ant wall of uterus 
+ - uterine myoma, rt ant wall (im), r/o adenomyoma 
+ - rec: cc & fu us 
+3. small amount of fluid collection in pelvic cavity 
+4. no significant lymphadenopathy 
+5. hydroureter, upper  (1.3cm in caliber)
+ - rec: cc & fu 
+6. 0.8cm sized r/o left renal cyst 
+7. multiple T2 high SI lesions in covered liver
+ - r/o hepatic cysts  r/o hepatic hemangioma
+   * limited study due to motion artifact 
+ - rec: Cc & fu 
+8. mild bladder wall thickening 
+ - r/o cystitis 
+ - rec: cc & fu
+
+rec: cc & fu","
+",
+32,,0570072, ,20180526,O,20180526,3,1,N45,,001904,FN  ,FN,20180526,10:37:12,41,"PELVIS MRI
+
+about 14x9.5x14.5cm sized huge cystic mass with uneven enhancing septa in pelvic cavity, probably from right adnexa 
+ - borderline natured cystic mass, pelvic cavity
+    r/o cystadenoma, borderline 
+
+small amount fluid collection in pelvic cavity
+
+no remarkable lymphadenopathy in pelvic cavity
+
+
+
+rec.:
+Clinical correlation and F/U ",,
+33,,0570072, ,20180529,O,20180529,2,35,N10,,001904,FN  ,FN,20180530,08:06:25,41,"The Chest 
+no active lung lesion 
+
+rec: clinical correlation and f/u",,
+34,,0570072, ,20200709,O,20200709,2,33,N10,,001912,,FN,20200709,9:32:05 ,43,"No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.","
+",
+35,,0570072, ,20241221,O,20241221,3,34,N10,,001901,,FN,20241221,8:54:45 ,47,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+36,,0642544, ,20241114,O,20241114,2,33,N10,,001912,,FN,20241114,16:44:10,29,"No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.","
+",
+37,,0661513, ,20221005,O,20221005,1,29,N10,,001914,,FN,20221005,14:04:51,34,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+38,,0661513, ,20221005,O,20221005,3,1,N45,,001914,,FN,20221005,13:41:54,34,,"Localized ill,defined swelling/edema of superficial soft tissue on dorsum of 4th finger, esp.  head/neck portion of 
+4th MC
+  --R/O: Superficial cellulitis pattern  with or without dorsal hood bursitis pattern,
+
+
+Clinical correlation is recomm.
+",
+39,,0661513, ,20230223,O,20230223,2,38,N10,,001901,,FN,20230223,15:09:52,34,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+40,,0661513, ,20240719,O,20240719,1,29,N10,,001914,,FN,20240720,10:42:01,37,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+41,,0661513, ,20240719,O,20240719,3,1,N45,,001914,,FN,20240720,8:25:32 ,37,,"Localized,diffusely superficial soft tissue in ant.medial aspect of right lower leg.
+ --R/O:localizedly superficial cellulitis pattern in ant and ant. medial side of right lower leg.
+ --no  discernible BME wthin adjacent bones,tibia and fibular bone
+
+
+Clinical correlation is recomm.
+",
+42,,0661513, ,20240824,I,20240824,1,1,N45,,001914,,FN,20240826,8:09:50 ,36,,"Unremarkable interval change,comparing with previous study on 2024-07-19
+",
+43,,0661513, ,20241217,O,20241217,1,29,N10,,001914,,FN,20241217,16:07:16,36,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+44,,0661513, ,20241217,O,20241217,2,1,N45,,001914,,FN,20241217,16:27:53,36,,"~Localized synovitis/bursitis pattern in lateral ankle,
+with small,lobulated cystic ganglion in pre-fibular region
+  --strains(grade I) of AITFL/PITFL
+~R/O: Mild Haggar bursitis pattern, post.calcaneal fat pad with localized swelling/edema/congestion in post. heel.
+
+
+Clinical correlation is recomm.
+",
+45,,0661513, ,20241217,I,20241217,10,2,N45,,001913,,FN,20241218,11:51:04,36,"CI: 기억력저하
+Pulse sequences: Axial T2 & FLAIR, 3D T1 (coronal, axial and sagittal), Coronal T2, SWI, TOF Brain angiography, Diffusion, Contrast enhanced 3D T1 (coronal, axial and sagittal)
+
+No significant focal lesion in the brain parenchyma or CSF space.
+No significant hemorrhage on SWI.
+No definite diffusion restriction on DWI/ADC map.
+No significant enhancing lesion in the brain.
+
+MR angiography>
+No significant steno-occlusive lesion or aneurysmal dilatation in the intracranial arteries.","No significant focal lesion in the brain.
+No significant enhancing lesion in the brain.
+No significant steno-occlusive lesion or aneurysmal dilatation in the intracranial arteries.
+
+",
+46,,0661513,9,20250201,O,20250201,1,22,N10,,001918,,FN,20250201,9:17:21 ,37,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+47,,0675537, ,20241214,O,20241214,1,1,N40,,001919,,FN,20241214,11:03:02,31,Clinical information: 코 골절 확인,"Both nasal bone fracture with displacement.
+",
+48,,0675537, ,20241214,O,20241214,3,31,N10,,001904,,FN,20241214,11:33:15,31,"The Chest 
+no active lung lesion 
+no cardiomegaly.
+
+rec) clinical correlation.
+","
+",
+49,,0675537, ,20241217,I,20241218,6,28,N10,,001918,,FN,20241219,9:03:38 ,30,,"s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+",
+50,,0675537, ,20241217,I,20241218,6,29,N10,,001918,,FN,20241219,9:03:38 ,30,,"s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+",
+51,,0675537, ,20241217,I,20241218,6,30,N40,,001918,,FN,20241219,9:03:34 ,30,,"s/p C/R of nasal bone fracture and external nasal splint application.
+Postop. change with packing materials in both nasal cavity.
+Otherwise, no unusual postop. finding.
+",
+52,,0836815, ,20241029,O,20241029,4,16,N10,,001912,,FN,20241029,14:14:45,43,"No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.","
+",
+53,,0836815, ,20241111,O,20241111,1,1,N45,,001912,,FN,20241111,13:03:26,42,"Clinical information: uterine myoma
+
+Pelvic MRI (CE);
+Axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+자궁전굴상태
+1. T2 low SI masses in uterine wall.
+-> probably uterine myomas.
+      - right lateral: IM type (6.1cm)
+      - left postserior: SM type (3.1cm)
+2. Endometrial thickness: 5mm
+3. Corpus luteal cyst in left ovary.
+4. No significant pelvic lymphadenopathy.
+     No hydronephrosis.
+
+Limited evaluation for scan-covered bowel and upper abdominal solid organs on MRI due to artifact.","
+",
+54,,0836815, ,20241221,O,20241221,1,27,N10,,001912,,FN,20241227,14:08:40,44,"No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.","
+",
+55,,0900993, ,20220530,O,20220530,3,45,N10,,001904,,FN,20220530,9:56:46 ,45,"The Chest 
+no active lung lesion 
+no cardiomegaly.
+
+rec) clinical correlation.
+","
+",
+56,,0900993, ,20241111,O,20241111,1,43,N10,,001901,,FN,20241112,8:51:43 ,48,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+57,,0900993, ,20241203,O,20241203,1,1,N45,,001904,,FN,20241204,9:26:09 ,47,"
+Pelvic MRI (CE);
+Axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+1. Multiple T2 low SI masses in uterine wall, probably uterine myomas.
+  - anterior:  SS type ( multiple, ~  9.4cm ,  IM  type ( multiple, ~2.1cm )
+  - posterior: IM ( multiple ~2cm) 
+
+2.  About 5.2x4.9cm T2 intermediate,  enhancing solid mass in post. wall of uterine cervix 
+    -> r/o uterine cervical leiomyomaddX>r/o uterine STUMP 
+
+3.About 1.5cm T1 high SI cyst in right ovary
+  -> r/o endometrioma vs hemorrhagic cyst 
+4. Endometrial thickness: 4mm
+4. Scanty pelvic fluid collection, probable reactive change 
+5. No significant pelvic lymphadenopathy.
+    No hydronephrosis.
+
+Limited evaluation for scan-covered bowel and upper abdominal solid organs on MRI due to artifact. 
+  
+ 
+","
+",
+58,,0900993,9,20170916,O,20170916,1,2,N10,,001910,FN  ,FN,20170916,11:23:26,39,"at MG
+grade 4
+benign calc, both, C2","C2, both
+
+rec> 1yr f/u US and MG",
+59,,0900993,9,20170916,O,20170916,1,19,N10,,001910,FN  ,FN,20170916,10:58:13,39, ,"at chest PA:
+No active lung lesion.
+
+rec> clinical correlation and f/u",
+60,,0912445, ,20241030,O,20241030,2,1,N10,,001918,,FN,20241030,10:47:37,44,"asx. screening
+
+at MG,
+breast composition c
+Rt upper outer : segmental fine pleomorphic calcifications --> C4b
+
+several benign calcifications, both-->C2
+no abnormal LN, both axillae","C4b
+Dense breast는 mammography로 evaluation하기 힘드므로 반드시 초음파를 시행하기 바람.
+",
+61,,0912445, ,20241227,I,20241227,3,29,N10,,001914,,FN,20241228,8:19:47 ,43,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+62,,0912445, ,20241227,I,20241227,4,1,N45,,001914,,FN,20241228,8:22:33 ,43,,"Acute spiral oblique fracture in  head/neck portion of 4th P.P.
+  ---localized swellinig/edema  of surrounded soft tissue around 4th P.P.
+  ---localized ill,defined BME within head/neck portion of 4th P.P.
+  ---R/O: Injury of collateral lig. & F.T.
+
+
+Clinical correlation is recomm.
+",
+63,,0912445, ,20241227,I,20241228,10,19,N10,,001914,,FN,20241228,12:42:19,44,"
+Post.Op.F/U study show no remarkable evidence of any specific  post.Op. immediate ,significant complication
+","S/P OR cortical pinning in 4th P.P.
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+64,,0912445, ,20241227,I,20241228,27,1,N10,,,,FN,,,43,,,
+65,,0912445, ,20250205,O,20250205,1,1,N10,,001914,,FN,20250205,10:08:58,44,"Post.Op.F/U study,without remarkable interval change,comparing with the previous study
+","No Remarkable interval change
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+66,,0912445, ,20250205,I,20250205,5,19,N10,,001914,,FN,20250205,15:58:59,44,,"No Remarkable interval change
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+67,,0912445, ,20250205,I,20250205,13,2,N10,,,,FN,,,43,,,
+68,,0912445,1,20241227,O,20241227,1,1,N10,,,,RD,,,44,,,
+69,,1017768, ,20241209,O,20241209,1,1,N10,,001919,,FN,20241209,11:37:27,52,"asx. screening
+
+at MG,
+breast composition c
+
+a skin calcification, Rt SA --> C2
+
+negative, Lt breast and both axillae","C2
+",
+70,,1017768, ,20241209,O,20241209,3,1,N10,,001919,,FN,20241209,12:18:07,52,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+71,,1017768, ,20241211,O,20241211,1,1,N45,,001914,,FN,20241212,7:24:50 ,51,,"C/W Intra-muscular lipoma,62.50mm H x 30.68mm W x 51.22m Depth, in right  chest wall,beween chest wall muscles - Seratus Ant.M & Pectalis minor M.
+--D.DX: Acessary Breast 
+--Thin walled,lomboid app.of exuberrant fatty mass,which is shown as bright S.I.on T1WI,dark S.I on 
+FS T2WI,Not enhancing lesion on Gd(+) study,Not invasive pattern  in right lower lateral chest wall.
+
+Clinical correlation is recomm.
+",
+72,,1018708, ,20241113,O,20241113,1,1,N10,,001913,,FN,20241113,15:06:35,44,"Mucoperiosteal thickening in both maxillary sinuses.
+  --> Suspicion of both maxillary sinusitis.
+","
+",
+73,,1018708, ,20241122,O,20241122,1,1,N10,,001913,,FN,20241122,13:18:05,44,"Mucoperiosteal thickening in both maxillary sinuses.
+  --> Suspicion of both maxillary sinusitis.
+","
+",
+74,,1018708, ,20241129,O,20241129,1,1,N10,,001913,,FN,20241129,17:03:49,44,"Mucoperiosteal thickening in both maxillary sinuses.
+  --> Suspicion of both maxillary sinusitis.
+","
+",
+75,,1018708, ,20241206,O,20241206,1,1,N10,,001913,,FN,20241206,16:32:26,44,"Mucoperiosteal thickening in both maxillary sinuses.
+  --> Suspicion of both maxillary sinusitis.
+","
+",
+76,,1018708, ,20241206,O,20241206,2,1,N40,,001913,,FN,20241206,16:34:02,43,"CI: 만성 부비동염
+
+Mucosal thickening with partial opacification in both maxillary, anterior ethmoid and frontal sinuses.
+  --> suspicion of sinusitis.
+
+Nasal septal deviation with spur formation to the Lt. side.
+
+rec> clinical correlation.
+","
+",
+77,,1018708, ,20241206,O,20241206,3,33,N10,,001904,,FN,20241207,10:36:45,44,"not full-inspiratory state 
+
+cardiomegaly
+
+
+rec> clinical correlation, f/u","
+",
+78,,1018708,9,20210720,O,20210720,1,16,N10,,001914,,FN,20210720,11:06:53,40,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+79,,1038926, ,20220312,O,20220312,1,19,N10,,001916,,FN,20220314,16:53:41,48,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음
+","Normal chest radiography
+",
+80,,1038926, ,20241125,O,20241125,2,1,L66,,,,RD,,,50,,,
+81,,1038926, ,20241202,O,20241202,1,1,N40,,,,EY,,,49,,,
+82,,1038926, ,20241202,O,20241202,1,2,N40,,001918,,FN,20241202,14:42:30,49,"Chest CT (CE)
+
+Clinical information : Preop evaluation, s/p CNB :  Lt IDC, 2024-11 (좌측 7시 : IDC)
+Prior study : 22.1.8 외부","1. New appearance of small 3mm nodules at LUL (Se3/57.59)
+=> Rec) f/u in 6 months (benign looking이나 새롭게 생긴 nodule로 f/u 권장)
+2. No significant mediastinal LN enlargement.
+",
+83,,1038926, ,20241202,O,20241202,1,3,N40,,001918,,FN,20241202,14:29:17,49,"abd CT (CE)
+
+Clinical information : Preop evaluation, s/p CNB :  Lt IDC, 2024-11 (좌측 7시 : IDC)
+Prior study : initial","1. No evidence of intraabdominal metastasis
+2. A 4.0cm thin walled left ovarian cyst (Se3/157)
+=> r/o Benign cyst such as functional cyst
+=> Rec) 추후 크기비교차 US (부인과) f/u필요함.
+3. Small probable physiologic ascities at the pelvic cavity.
+",
+84,,1038926, ,20241202,O,20241202,2,1,N10,,001918,,FN,20241202,11:57:22,49,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+85,,1038926, ,20241203,O,20241203,1,1,N45,,001918,,FN,20241203,14:11:22,49,"Breast MRI (CE)
+Clinical information: Preop evaluation, s/p CNB :  Lt IDC, 2024-11 (좌측 7시 : IDC)
+
+Sequence : Axial and sagittal T2fs, T1, DWI, dynamic CE T1 fl3d (pre, 1min x 6 times, /pre, 1st, 2nd and 6th post contrast), delayed  sagittal and aixal T1 fl3d, axial subtraction images (1st-pre, 2nd-pre, 3rd-pre and 6th-pre), reverse subtraction images (2nd-6th, 3rd-6th) and MIP images
+
+Breast density :  Heterogenous fibroglandular tissue
+BPE: Moderate (decreased sensitivity)
+
+Lt 8-9h (Se1057/87) 
+: 2.1x2.1cm, irregular, spiculated heterogeneously enhancing mass with diffusion restriction
+- kinetic curve: early fast and delayed wash-out
+=> C6, known breast cancer, Lt with skin invasion.
+(distance to nipple : 2.5cm, chest wall : 2.1cm, skin : invasion)
+
+Several cysts, both breasts.
+Symmetric, moderate, background parenchymal enhancement.
+No abnormal LN in both axilla, both internal mammary area and SCN.
+
+Rec) Clinical correlation.","C6, known breast cancer, Lt with skin invasion.
+",
+86,,1038926, ,20241204,O,20241204,1,1,N25,,RADIO ,,FN,20241211,14:55:49,49,"Whole body bone scan was obtained following administration of Tc-99m HDP (adult dose: 20 mCi, pediatric dose: minimum 4 mCi and adjusted according to the patient`s weight).
+
+Finding]
+
+전신에서 bone metastasis를 의심할 만한 abnormal bone lesion은 관찰되지 않음.
+
+
+
+No definite evidence of metastatic bone lesion.","
+",
+87,,1038926, ,20241209,I,20241211,7,13,N10,,001919,,FN,20241211,8:44:12 ,49,,"s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding.
+",
+88,,1038926, ,20250106,O,20250106,1,22,N10,,001919,,FN,20250106,10:01:06,51,,"s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding.
+
+Disappearance of subcutaneous emphysema.
+",
+89,,1038926, ,20250127,O,20250127,1,22,N10,,001919,,FN,20250127,11:28:29,51,"s/p drain tube removal in both breast area.
+
+Clear both lungs.","
+",
+90,,1038926,9,20221216,O,20221216,1,1,N10,,001901,,FN,20221216,14:52:49,48,"Mammography
+
+heterogeneously dense breast, which may lower the sensitivity of mammography.
+asymmetry at RI on RCC view, C0 
+ - rec;cc & fu us
+benign calcificaiton,  both   , C2
+
+
+유방촬영술이 조기 유방암 발견을 위해 매우 정확한 검사이나 모든 암이 발견되는 것은 아님. 유방실질 밀도가 높으므로 임상적 correlation 및 breast USG를 권장함 
+","
+",
+91,,1101366, ,20241219,O,20241219,1,1,N10,,001914,,FN,20241219,13:44:59,83,"~Scoliosis or Scolikyphosis
+~Facet jt.arthrosis and O.A. pattern 
+~Decrease in disc space of L-3/4,  L-4/5,L-5/S-1 disc spaces  ,without  segmental instability,during flexion and extension
+","~R/O: H.I.V.D.s at L-3/4,L-4/5,L-5/S-1 disc spaces with stenosis
+ Rec) Lumbar spne CT or MRI for better evaluation 
+
+",
+92,,1101366, ,20241219,O,20241219,1,2,N10,,001914,,FN,20241219,13:43:20,83,,"whole spine view
+",
+93,,1101366, ,20241219,O,20241219,1,3,N10,,001914,,FN,20241219,13:46:29,83,,"No remarkable abnormal findings
+
+Clinical correlation is recomm.
+
+Rec) US,CT,MRI for better evaluation ,if necessary
+",
+94,,1101366, ,20241221,O,20241221,1,1,N45,,001914,,FN,20241223,8:19:50 ,82,,"General Overview & Alignment
+~Slightly,HIVDs at C-3/4/5/6/7 disc spaces with slightly effacement of ant .theca sac
+~Underlying Deg.Lumbar spondylosis deformans & Facet jt. arthrosis
+
+~Multiple  intervertebral disc  disease and stenosis ,
+@ At L-2/3, L-3/4 disc level ; diffuse protruded disc,facet jt.arthrosis(both) and LFH with  moderate central stenosis/lateral stenosis
+  --R/O:bilateral L4 N. radiculopathies,combined.
+  --Lt.>Rt.
+@At L-4/5 disc level ; diffuse protruded  disc,facet jt.arthrosis(both) and  LFH with  severe central/lateral  stenosis.
+  ---bilateral L5 N.radiculopathies,combined
+  ---Lt.>Rt.
+@At L-5/S1disc level ; 
+   diffuse protruded  disc ,facet jt.arthrosis/LFH with
+  moderate central/lateral stenosis
+  ---bilateral S1 N.radiculopathies,combined.
+
+ ~  Deg. interspinous bursitis change (Baarstrup disease)  & post.interspinous enthesitis pattern of L-3/4,L-4/5 /L-5/S-1 levels
+    
+Rec) Clincial correlation with other radiographics 
+       Follow -Up study ,if clinically compatible with.
+ 
+ 
+
+",
+95,,1101366, ,20241223,O,20241223,1,32,N10,,001914,,FN,20241223,14:20:24,83,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+96,,1101366, ,20241223,O,20241223,2,1,L31,,,,WT,,,82,,,
+97,,1101366, ,20241223,O,20241223,2,6,L66,,,,RD,,,83,,,
+98,,1101366, ,20241223,O,20241223,2,7,N40,,001914,,FN,20241223,15:14:47,82,,"~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.(H.N.P.>> Protruded disc) at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+
+
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation
+",
+99,,1101366, ,20241223,I,20241223,7,1,N50,,,,EY,,,82,,,
+100,,1101366, ,20241223,I,20241224,32,1,N10,,001914,,FN,20241224,14:19:28,82,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits,except for cardiac dilatation /atherosclerotic change of great vessel.
+",
+101,,1101366, ,20241223,I,20241224,41,3,N10,,,,FN,,,82,,,
+102,,1101366, ,20241223,I,20241226,19,2,N10,,001914,,FN,20241226,11:11:33,82,"
+Post.Op.F/U study show no remarkable evidence of any specific  post.Op. immediate ,significant complication
+","S/P Op.
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+103,,1101366, ,20241223,I,20241226,19,1,N45,,001914,,FN,20241226,11:04:39,82,,"S/P Post.Op. ( L-5/S1 Rt.laminectomy with Rt.foraminotomy)
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+",
+104,,1125154, ,20240914,O,20240914,1,1,N40,,,,WT,,,23,,,
+105,,1125154, ,20240914,O,20240914,1,2,N40,,001901,,FN,20240914,13:44:10,23,"Chest CT  (CECT)
+
+0.7cm sized hypodense lesion in left lobe of thyroid gland 
+ - r/o thyroid nodule 
+ - rec: cc & us correlation 
+
+no evidence of SOL or pulmonary infiltrates throughout both lung.
+normal cardiac configuration 
+no evidence of pleural effusion or pleural thickening 
+
+1cm sized hypodense lesion in left hepatic lobe (S3) 
+ - r/o hepatic cyst, left lobe (S3)
+ - rec: cc & fu 
+
+rec: c/c & fu","
+",
+106,,1125154, ,20240914,O,20240914,1,3,N40,,001913,,FN,20240914,12:12:22,23,"Neck CT
+
+Lt. thyroid nodule.
+rec> USG correlation.
+
+No significantly enlarged cervical LN.
+No remarkable finding in the covered brain parenchyma.
+
+Small paratracheal air cyst, Rt.
+","
+",
+107,,1125154, ,20241018,O,20241018,1,65,L66,,,,RD,,,24,,,
+108,,1125154, ,20241018,O,20241018,1,63,N10,,001918,,FN,20241018,11:00:58,24,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+109,,1126005, ,20240920,I,20240920,7,27,N10,,001901,,FN,20240921,9:19:27 ,20,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+110,,1126005, ,20241217,I,20241217,8,27,N10,,001901,,FN,20241218,8:49:47 ,20,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+111,,1126618, ,20241025,O,20241025,1,1,N10,,001919,,FN,20241025,15:57:42,31,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+112,,1126618, ,20241218,I,20241219,4,13,N10,,001918,,FN,20241219,8:59:17 ,30,"폐실질에 이상소견 없음. 
+심장 크기와 모양은 정상임.
+흉막에 이상소견 없으며 cardiophrenic angle blunting 없음. 
+골구조물에 이상소견 없음","Normal chest radiography
+",
+113,,1130301, ,20241203,O,20241203,1,35,N10,,001901,,FN,20241203,12:40:42,30,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+114,,1130870, ,20241111,O,20241111,3,1,L66,,,,RD,,,48,,,
+115,,1130870, ,20241112,O,20241112,1,1,N40,,,,EY,,,48,,,
+116,,1130870, ,20241112,O,20241112,1,2,N40,,001918,,FN,20241112,11:07:54,48,"Chest CT (CE)
+
+Clinical information : Breast ,right 9h CNB: invasive ductal ca grade2 and DCIS low grade
+Prior study : initial","1. No evidence of intrathoracic metastasis
+2. Enhancing right breast mass -> known breast cancer, Rt
+3. Small right axillary LNs.
+4. Rt thyroid nodule, rec) US thyroid
+
+Rec) clinical correlation and f/u
+",
+117,,1130870, ,20241112,O,20241112,1,3,N40,,001918,,FN,20241112,11:06:11,48,"abd CT (CE)
+
+Clinical information : Breast ,right 9h CNB: invasive ductal ca grade2 and DCIS low grade
+Prior study : initial","1. No evidence of intraabdominal metastasis
+2. Fecal stasis at the rectosigmoid colon
+
+Rec) clinical correlation and f/u
+",
+118,,1130870, ,20241112,O,20241112,2,1,N10,,001919,,FN,20241112,10:05:02,48,"Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.","Normal chest radiograph.
+",
+119,,1130870, ,20241113,O,20241113,1,1,N45,,001918,,FN,20241114,14:38:45,48,"Breast MRI (CE)
+Clinical information: preop evaluation, s/p CNB : Rt IDC 2024-11
+
+Sequence : Axial and sagittal T2fs, T1, DWI, dynamic CE T1 fl3d (pre, 1min x 6 times, /pre, 1st, 2nd and 6th post contrast), delayed  sagittal and aixal T1 fl3d, axial subtraction images (1st-pre, 2nd-pre, 3rd-pre and 6th-pre), reverse subtraction images (2nd-6th, 3rd-6th) and MIP images
+
+Breast density :  Heterogenous fibroglandular tissue
+BPE: Mild
+
+Rt 9h (Se1018/53) 1.0x0.8cm, irregular, irregular, heterogeneous enhancing mass with diffusion restriction
+=> C6, known breast cancer, Rt.
+(nipple로 부터 거리 : 6.5cm, skin으로 부터 거리 2.4cm, chest wall로 부터 거리 3.2cm)
+
+Rt 12h SA (Se1026/44) 0.9x0.5cm, oval, circumscribed, homogeneously persistently enhancing mass with T2 bright high SI
+=> C3
+
+No abnormal LN in both axilla, both internal mammary area and SCN.","C6, known breast cancer, Rt.
+Rec) Clinical correlation.
+",
+120,,1130870, ,20241115,O,20241115,1,1,N25,,RADIO ,,FN,20241119,14:37:22,48,"Whole body bone scan was obtained following administration of Tc-99m HDP (adult dose: 20 mCi, pediatric dose: minimum 4 mCi and adjusted according to the patient`s weight).
+
+Finding]
+
+
+
+1. No definite evidence of metastatic bone lesion.
+2. Probable degenerative change of both knees(Lt>Rt)","
+",
+121,,1130870, ,20241119,I,20241121,7,13,N10,,001919,,FN,20241121,8:42:45 ,48,,"s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding.
+",
+122,,1130870, ,20241119,I,20241127,101,1,N10,,001914,,FN,20241127,11:54:01,48,,"No remarkable bony abnormal findings
+R/O: Bilateral Exotosis in medial side of prox.tibia
+* Clinical correlation is recomm.
+
+Rec) US,CT,or MRI for better evaluation ,if necessary
+
+",
+123,,1130870, ,20241119,I,20241127,108,1,N45,,001914,,FN,20241127,16:16:24,48,"
+","Deg.O.A.arthritides with 
+~Chronic synovitis pattern in supra-patella pouch and post. intercondylar fossa. 
+~Supra-trochlear & Hoffa`s fat pad congestion/edema with lateral patello-femoral impingement(+)
+  --joint effusion/irregular thickening of synovium
+  --congestion/edema in Hoffa`s fat space & supra-trochlear fat space
+  ---Narrowed space between patella and lateral femoral condyle.
+
+~MMPH & MM Post Root,complex tear,in post.medially,
+
+~Medial facet of patella, chondromalacia (gradeIII-IV)
+~Femoral trochlea, focal osteochondral injury(Grade III-IV)
+
+Osteophytes
+
+
+rec) Clinical correlation and follow-up, if clinically needed.
+",
+124,,1130870, ,20241212,I,20241212,4,22,N10,,001919,,FN,20241212,11:51:09,48,,"s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding.
+",
+125,,1130870, ,20250101,I,20250101,2,21,N10,,001918,,FN,20250102,9:03:26 ,48,,"Chemoport insertion state.
+No active lung lesion.
+",
+126,,1130870, ,20250122,I,20250122,1,22,N10,,001918,,FN,20250122,15:11:31,49,,"Chemoport insertion state.
+No active lung lesion.
+",
+127,,1130870, ,20250211,I,20250211,1,22,N10,,,,RD,,,49,,,
+128,,1131426, ,20241218,O,20241218,1,1,N45,,001912,,FN,20241218,11:29:43,39,"Clinical information: uterine myoma
+
+Pelvic MRI (CE);
+Axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+자궁전굴상태
+
+1. T2 low SI masses in uterine wall, probably uterine myomas.
+      - anterior: IM type (0.7cm)
+      - posterior: SS type (6.3cm)
+2. Endometrial thickness: 10mm
+3. Corpus luteal cyst in right ovary.
+4. No significant pelvic lymphadenopathy.
+    No hydronephrosis.
+5. 2.6cm T2 high SI lesion in right liver.
+    -> ddx) hepatic cyst, hemangioma.
+         Rec) USG
+6. Small pelvic ascites.
+
+Limited evaluation for scan-covered bowel and upper abdominal solid organs on MRI due to artifact.","
+",
+129,,1131426,`,20241127,O,20241127,3,35,N10,,,,RD,,,39,,,
+130,,1131946, ,20241203,O,20241203,3,1,N45,,001904,,FN,20241209,9:28:59 ,28,"
+외부필름 판독
+
+oval multiseptate cystic lesions with uneven SI of locules/ dependant high SI  and thick enhacing wall and septa in right adnexa
+ -> r/o borderline ovarian cystic tumor( such as borderline mucinous cystic tumor)
+       
+1.7cm corpus luteal cyst, left obary
+
+about 2.2cm uterine leiomyoma, right  wall  
+about 1.2cm r/o cellular uterine leiomyoma, subserosa. right ant. wall 
+endometrial thickness : 1cm
+ ->r/o physiologic thickening 
+
+scanty pelvic ascites
+mild enlarged LNs at left ext. iliac chain and both inguinal area
+ - indeterminate
+
+rec> clinical correlation, f/u","
+",
+131,,1131946, ,20241203,O,20241203,4,34,N10,,001901,,FN,20241204,8:33:25 ,29,"no active pulmonary infiltrates
+normal cardiovascular configuration
+
+rec:c/c & fu","
+",
+132,,1131969, ,20241119,O,20241119,1,1,N40,,001913,,FN,20241119,15:11:42,42,"CI: 비중격 만곡 수술 예정
+
+Nasal septal deviation with spur formation to the Lt. side.
+
+Periapical lucency with bone remodeling around the root of Lt. upper 2nd molar tooth.
+  -- with bony erosive change.
+  --> suspicion of radicular cyst.
+Mucosal thickening in Lt. maxllary sinus, floor.
+  --> r/o odongogenic sinusitis.
+
+Mild mucosal thickening in Rt. maxllary sinus.
+
+rec> clinical correlation.","
+",
+133,,1131969, ,20241209,O,20241209,1,33,N10,,001904,,FN,20241209,11:57:45,43,"at chest 
+
+cardiomegaly 
+no active lung lesion 
+
+
+
+rec.:
+clinical correlation, f/u","
+",
+134,,1132813, ,20241215,I,20241215,1,32,N10,,001914,,FN,20241216,9:25:44 ,73,,"No remarkable bony abnormal findings
+
+Clinical correlation is recomm.
+
+Rec) US or CT or MRI for better evaluation, if necessary
+",
+135,,1132813, ,20241215,I,20241215,2,2,N10,,001914,,FN,20241216,9:25:31 ,73,"~Scoliosis
+~Facet jt.arthrosis and O.A. pattern 
+~Decrease in disc space of   L-4/5,L-5/S-1 disc spaces  ,without  segmental instability,during flexion and extension
+
+","~R/O: H.I.V.D.s at L-4/5,L-5/S-1 disc spaces with stenosis
+ Rec) Lumbar spne CT or MRI for better evaluation 
+
+",
+136,,1132813, ,20241215,I,20241215,2,3,N10,,001914,,FN,20241216,9:23:39 ,73,,"whole spine view
+",
+137,,1132813, ,20241215,I,20241215,2,4,N10,,001914,,FN,20241216,9:25:37 ,73,,"No remarkable bony abnormal findings
+
+Clinical correlation is recomm.
+
+Rec) US or CT or MRI for better evaluation, if necessary
+",
+138,,1132813, ,20241215,I,20241215,2,1,N40,,001914,,FN,20241216,8:15:32 ,73,,"~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.s  at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+
+
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation
+",
+139,,1132813, ,20241215,I,20241215,2,5,N45,,001914,,FN,20241216,8:20:54 ,73,,"General Overview & Alignment
+~Slightly,HIVDs at C-3/4/5/6/7 disc spaces with slightly effacement of ant .theca sac
+~Underlying Deg.Lumbar spondylosis deformans & Facet jt. arthrosis
+~Pseudospondylolithesis of L4 on L5
+~Multiple  intervertebral disc  disease and stenosis ,
+@At L-2/3 disc level ;  mild facet jt.arthrosis (both)  with  mild  bilateral neuroforaminal stenosis 
+@ At L-3/4 disc level ; diffuse protruded disc,facet jt.arthrosis(both) and LFH with severe central stenosis/lateral stenosis
+  --bilateral L4 N. radiculopathies,combined.
+@At L-4/5 disc level ; diffuse protruded  disc + post.off-set of L5 from pseudospondylolithesis ,facet jt.arthrosis(both) and  LFH with  severe central/lateral  stenosis.
+  ---bilateral L5 N.radiculopathies,combined
+@At L-5/S1disc level ; 
+   diffuse protruded  disc ,facet jt.arthrosis/LFH with
+  moderate central/lateral stenosis
+  ---bilateral S1 N.radiculopathies,combined.
+
+ ~  Deg. interspinous bursitis change (Baarstrup disease)  & post.interspinous enthesitis pattern of L-3/4,L-4/5 /L-5/S-1 levels
+    
+Rec) Clincial correlation with other radiographics 
+       Follow -Up study ,if clinically compatible with.
+ 
+ 
+
+",
+140,,1132813, ,20241215,I,20241216,5,1,L31,,,,WT,,,73,,,
+141,,1132813, ,20241215,I,20241216,5,6,L66,,,,RD,,,73,,,
+142,,1132813, ,20241215,I,20241216,17,1,N50,,,,EY,,,73,,,
+143,,1132813, ,20241215,I,20241216,40,2,N10,,,,FN,,,73,,,
+144,,1132813, ,20241215,I,20241218,22,201,N10,,001914,,FN,20241219,8:19:40 ,73,"
+Post.Op.F/U study show no remarkable evidence of any specific  post.Op. immediate ,significant complication
+","S/P Op.
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+145,,1132813, ,20241215,I,20241218,22,202,N10,,001914,,FN,20241219,8:17:51 ,73,,"whole spine view
+",
+146,,1132813, ,20241215,I,20241218,22,1,N45,,001914,,FN,20241219,8:17:23 ,73,,"S/P Post.Op. (L-3/4 ULBD,L-4-5 PLIF  )
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+",
+147,,1132813, ,20241215,I,20241223,25,229,N10,,001914,,FN,20241223,13:45:55,73,"Post.Op.F/U study,without remarkable interval change,comparing with the previous study
+","No remarkable interval change
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+148,,1132813, ,20241215,I,20241223,25,230,N10,,001914,,FN,20241223,13:45:47,73,,"whole spine view
+",
+149,,1132813, ,20250206,O,20250206,1,1,N10,,001914,,FN,20250206,10:37:28,74,"Post.Op.F/U study,without remarkable interval change,comparing with the previous study
+","No remarkable interval change
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+150,,1132813, ,20250206,O,20250206,1,2,N10,,001914,,FN,20250206,10:37:39,74,,"whole spine view
+",
+151,,1133213, ,20241130,O,20241130,1,1,N40,,001919,,FN,20241130,11:37:45,18,Clinical information: 코 골절 확인,"Comminuted bilateral nasal bone fractures with displacement.
+",
+152,,1133213, ,20241130,O,20241130,3,31,N10,,001912,,FN,20241130,12:19:04,19,"No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.","
+",
+153,,1133213, ,20241203,I,20241204,6,28,N10,,001918,,FN,20241204,11:31:28,18,,"s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+",
+154,,1133213, ,20241203,I,20241204,6,29,N10,,001918,,FN,20241204,11:31:28,18,,"s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+",
+155,,1133213, ,20241203,I,20241204,6,30,N40,,001918,,FN,20241204,11:31:21,18,,"s/p C/R of nasal bone fracture and external nasal splint application.
+Postop. change with packing materials in both nasal cavity.
+Otherwise, no unusual postop. finding.
+",
+156,,1133378, ,20241226,O,20241226,1,32,N10,,001914,,FN,20241226,14:19:11,63,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+157,,1133378, ,20241226,O,20241226,2,1,L31,,,,WT,,,63,,,
+158,,1133378, ,20241226,I,20241226,2,6,L66,,,,RD,,,64,,,
+159,,1133378, ,20241226,O,20241226,2,7,N10,,001914,,FN,20241226,14:20:13,63,,"whole spine view
+",
+160,,1133378, ,20241226,O,20241226,2,8,N10,,001914,,FN,20241226,14:20:31,63,,"No remarkable abnormal findings
+
+Clinical correlation is recomm.
+
+Rec) US,CT,MRI for better evaluation ,if necessary
+",
+161,,1133378, ,20241226,O,20241226,2,9,N40,,001914,,FN,20241226,15:08:05,63,,"~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.s at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+
+
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation
+",
+162,,1133378, ,20241226,I,20241227,26,2,N10,,,,FN,,,63,,,
+163,,1133378, ,20241226,I,20241228,13,2,N10,,001914,,FN,20241228,9:46:53 ,63,"
+~Facet jt.arthrosis and O.A. pattern 
+~Decrease in disc space of   L-4/5,L-5/S-1 disc spaces     ,without  segmental instability,during flexion and extension
+
+","~R/O: H.I.V.D.s at L-4/5,L-5/S-1 disc spaces with stenosis
+ Rec) Lumbar spne CT or MRI for better evaluation 
+
+",
+164,,1133378, ,20241226,I,20241228,13,1,N45,,001914,,FN,20241228,9:32:22 ,63,,"S/P Post.Op. ( L-4/5 ULBD                              )
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+",
+165,,1134945, ,20241217,O,20241217,3,31,N10,,001904,,FN,20241217,11:45:35,56,"The Chest 
+no active lung lesion 
+no cardiomegaly.
+
+rec) clinical correlation.
+","
+",
+166,,1134945, ,20241222,I,20241223,7,44,N10,,001919,,FN,20241223,15:49:26,56,"s/p internal fixation at left maxillary sinus anterior wall.
+s/p patch insertion at left orbital inferior wall.
+- no unusual postop finding.","
+",
+167,,1134945, ,20241222,I,20241223,7,45,N40,,001919,,FN,20241223,15:49:51,56,Clinical information: 골절 수술후 사진,"s/p internal fixation at left maxillary sinus anterior wall.
+s/p patch insertion at left orbital inferior wall.
+- no unusual postop finding.
+",
+168,,1136161, ,20241230,O,20241230,1,1,N10,,001914,,FN,20241230,9:18:15 ,7,,"No remarkable abnormal findings
+
+Clinical correlation is recomm.
+
+Rec) US,CT,MRI for better evaluation ,if necessary
+",
+169,,1136161, ,20241230,O,20241230,1,201,N10,,001914,,FN,20241230,9:18:44 ,7,,"Soft tissue swelling/edema around right ankle
+
+;Clinical correlation is recomm.
+;Rec) US or CT or MRI  for better evaluation if necessary
+",
+170,,1136161, ,20241230,O,20241230,2,1,N45,,001914,,FN,20241230,10:51:19,6,,"Localzied swelling/edema of soft tissue around the lateral malleolar process
+ ~R/O: Acute occult microfracture in tip of lateral malleolar process
+~R/O; Acute occult microfracture /traumatic bony bruise within medial side of talus
+  --R/O: Full,thickness rupture  of ATFL /AITFL
+  --Partial rupture of  Ant.distal tibial syndesmosis
+  --excessive fluid collection in ALG space
+     R/O: Impending into AL impingement Synd.
+  --traumatic tenosynovitis pattern of Peroneal T.
+
+Clinical correlation is recomm.
+",
+171,,1136161, ,20241230,O,20241230,3,29,N10,,001914,,FN,20241230,11:59:33,7,"~No active infiltration  in both lung fields.
+~No evidence of abnormal mass lesion in both lung fields.
+~No discernible abnormal calcification  in both lung fields
+~No remarkable abnormality in mediastinum.
+~No evidence of abnormal C-P angle blunting
+","Within normal limits
+",
+172,,1136161, ,20241230,I,20241230,16,5,N10,,,,FN,,,6,,,
+173,,1136161, ,20241230,I,20241231,10,7,N10,,001914,,FN,20241231,8:22:50 ,6,"
+Post.Op.F/U study show no remarkable evidence of any specific  post.Op. immediate ,significant complication
+","S/P OR cortical pinning in lateral malleolar process.
+
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+174,,1136161, ,20250114,O,20250114,1,1,N10,,001914,,FN,20250114,15:18:28,7,"Post.Op.F/U study,without remarkable interval change,comparing with the previous study
+
+","No remarkable interval change
+
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+175,,1136161, ,20250121,O,20250121,1,1,N10,,001914,,FN,20250121,14:06:45,7,"Post.Op.F/U study,without remarkable interval change,comparing with the previous study
+
+","No remarkable interval change
+
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",
+176,,1136161, ,20250131,I,20250131,12,3,N10,,,,FN,,,6,,,
+177,,1136161, ,20250131,I,20250201,8,7,N10,,001914,,FN,20250201,10:53:14,6,,"No remarkable interval change
+
+~Clinical correlation is recomm .
+~F/U study is recomm.
+
+",

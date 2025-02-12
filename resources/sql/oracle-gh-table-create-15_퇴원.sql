@@ -10,10 +10,10 @@
 --
 -- RUN AS HOSEOP
 --
-drop table OCMRTN32 ;
+drop table JAIN_OCS.OCMRTN32 ;
 
 /* 퇴원원기록지 */
-create table OCMRTN32 (
+create table JAIN_OCS.OCMRTN32 (
     OCM32STATUS	CHAR (2 Byte)       	,	/* STATUS */
     OCM32IDNOA	CHAR (8 Byte)	NOT NULL,	/* 환자번호 */
     OCM32IDNOB	CHAR (8 Byte)	NOT NULL,	/* 타급종구분 */
@@ -56,7 +56,7 @@ create table OCMRTN32 (
     CONSTRAINT OCMRTN32_PK PRIMARY KEY (OCM32IDNOA, OCM32IDNOB, OCM32LWDAT) /*환자번호, 타급종구분, 래원 및 입원 */
 );
 
-INSERT INTO OCMRTN32 (
+INSERT INTO JAIN_OCS.OCMRTN32 (
 OCM32STATUS	,	/* STATUS */
 OCM32IDNOA	, OCM32IDNOB	, OCM32LWDAT	,  /* 환자번호, 타급종구분, 래원 및 입원 */
 OCM32IOCD	, OCM32BHCD	    ,                  /* I/O구분, 급종 */
@@ -78,7 +78,7 @@ OCM32RGCD	, OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과
           'PI600','PHX600','D','T','H','A',
           '20241110','12:30:40','000123','RTRSTTXT50','PROBLEM_CLOB');
 
-INSERT INTO OCMRTN32 (
+INSERT INTO JAIN_OCS.OCMRTN32 (
 OCM32STATUS	,	/* STATUS */
 OCM32IDNOA	, OCM32IDNOB	, OCM32LWDAT	,  /* 환자번호, 타급종구분, 래원 및 입원 */
 OCM32IOCD	, OCM32BHCD	    ,                  /* I/O구분, 급종 */
@@ -100,7 +100,7 @@ OCM32RGCD	, OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과
           'PI600','PHX600','D','T','H','A',
           '20241110','12:30:40','000123','RTRSTTXT50','PROBLEM_CLOB');
 
-INSERT INTO OCMRTN32 (
+INSERT INTO JAIN_OCS.OCMRTN32 (
 OCM32STATUS	,	/* STATUS */
 OCM32IDNOA	, OCM32IDNOB	, OCM32LWDAT	,  /* 환자번호, 타급종구분, 래원 및 입원 */
 OCM32IOCD	, OCM32BHCD	    ,                  /* I/O구분, 급종 */
@@ -122,7 +122,7 @@ OCM32RGCD	, OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과
           'PI600','PHX600','D','T','H','A',
           '20241110','12:30:40','000123','RTRSTTXT50','PROBLEM_CLOB');
 
-INSERT INTO OCMRTN32 (
+INSERT INTO JAIN_OCS.OCMRTN32 (
 OCM32STATUS	,	/* STATUS */
 OCM32IDNOA	, OCM32IDNOB	, OCM32LWDAT	,  /* 환자번호, 타급종구분, 래원 및 입원 */
 OCM32IOCD	, OCM32BHCD	    ,                  /* I/O구분, 급종 */
@@ -144,7 +144,7 @@ OCM32RGCD	, OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과
           'PI600','PHX600','D','T','H','A',
           '20241110','12:30:40','000123','RTRSTTXT50','PROBLEM_CLOB');
 
-INSERT INTO OCMRTN32 (
+INSERT INTO JAIN_OCS.OCMRTN32 (
 OCM32STATUS	,	/* STATUS */
 OCM32IDNOA	, OCM32IDNOB	, OCM32LWDAT	,  /* 환자번호, 타급종구분, 래원 및 입원 */
 OCM32IOCD	, OCM32BHCD	    ,                  /* I/O구분, 급종 */
@@ -182,6 +182,6 @@ OCM32PI     , OCM32PHX      , OCM32DM       ,
 OCM32TBC    , OCM32HT       , OCM32AST	    ,	
 OCM32SYSDAT	, OCM32SYSTM	,                  /* 등록날짜. 등록시간, 담당의(레지턴트,가정) */
 OCM32RGCD	, OCM32RTRSTTXT , OCM32PROBLEM     /* 담당의(레지던트,진료과장), 중요검사소견 */
-from OCMRTN32;
+from JAIN_OCS.OCMRTN32;
 
-select * from all_tables;
+-- select * from all_tables;

@@ -1,0 +1,543 @@
+,omt24status,omt24kwa,omt24spth,omt24slpid,omt24code,omt24codenm,omt24cmt,omt24cmtb
+0,,AL,111111,DIS       ,test                ,111111111,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 111111111
+\par 
+\par }
+",
+1,,AL,002001,DIS       ,01                  ,대상포진경과,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par \'c7\'d7\'b9\'d9\'c0\'cc\'b7\'af\'bd\'ba\'c1\'a6 \'b9\'d7 \'c1\'f8\'c5\'eb\'c1\'a6, \'b5\'b5\'c6\'f7\'c1\'a6\'bf\'cd \'b5\'e5\'b7\'b9\'bd\'cc,He-Ne\'c4\'a1\'b7\'e1,\'c8\'de\'bd\'c4 \'b9\'d7 \'be\'c8\'c1\'a4
+\par }
+",
+2,,AL,001721,DIS       ,1-4                 ,synovitis,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fprq5\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par \pard synovitis\f1\fs20 
+\par }
+",
+3,,AL,001721,DIS       ,1-6                 ,abnormal gait,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fprq5\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\lang1042\f0\fs20 abnormal gait\cf0\f1 
+\par }
+",
+4,,AL,001721,DIS       ,2-1                 ,head trauma,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 head trauma\fs20 
+\par }
+",
+5,,AL,001721,DIS       ,3                   ,신생아 초진기록지,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 1. C/C :
+\par 
+\par 2. P/I :
+\par 
+\par 3. Neonatal Hx.
+\par    1) DOB :           (AM/PM)
+\par    2) GA :            wks  ABO/RH :   
+\par    3) Type : ( Normal / c-sec )  ( full / pre / post )
+\par       term : ( a / s / l )   ga ( m / f )
+\par    4) Apgar score :
+\par    5) b.wt :            kg       Lengh :   cm     H.C :     cm
+\par    6) Prom (                     )
+\par    7) Meconium stain ( thick / thin / none )
+\par    
+\par 4. P/Ex.
+\par     G/A : Activity ( good / mod / poor )
+\par           Crying   ( good / mod / poor )
+\par     HEENT : AF - ( soft / Tense ) & ( not bulging / bulging / Sunken )
+\par             Cleft lip & cleft palate (        /          )
+\par     Chest : ( Regular / irregular ) HB
+\par             ( Clear   /  coarse / decreased )  BS
+\par     Abdomen : ( soft / rigid ) & ( not palpable / distended )
+\par               ( palpable / no palpable ) abd. mass
+\par     N/E : Moro    ( good / mod / poor )
+\par           Grasp   ( good / mod / poor )
+\par           Sucking ( good / mod / poor )
+\par     Other : None
+\par 
+\par 5. Impression : 
+\par 
+\par 6. Plan :
+\par 
+\par 7. pain assessment: 
+\par    1)\'c5\'eb\'c1\'f5\'c0\'af\'b9\'ab :  \'b9\'ab
+\par    2)\'c5\'eb\'c1\'f5\'b0\'ad\'b5\'b5 : NRS  0 \'c1\'a1. FPRS   0\'c1\'a1. FLACC   0\'c1\'a1.
+\par 
+\par \pard\fs20 
+\par }
+",
+6,,AL,001721,DIS       ,4                   ,소아청소년 초진기록지,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 1. C/C:
+\par 
+\par 2. P/I:  acutely illed
+\par 
+\par 3. P/Ex.: N-S
+\par    PHx:   N-S
+\par    FHx:   N-S
+\par    SHx:   N-S
+\par    Allergy Hx:  AD / AR / BA / Drug / bronchiolitis / urticaria
+\par    Vaccination  
+\par      : All vacination schedule was done
+\par        except (     )
+\par 
+\par 4. R.O.S
+\par      Fever (-) / Cough(-) / Sputum(-) / Rhinorrhea(-)
+\par      Anorexia(-) / Nausea(-) / Vomiting(-)
+\par      Diarrhea(-) / Constipation(-)    
+\par      Stool: normal, Urine: N/S
+\par 
+\par 5. Impression:
+\par 
+\par 6. Plan: Conservative care
+\par          OPD F/U care
+\par 
+\par 7. Pain assessment:
+\par    1)\'c5\'eb\'c1\'f5\'c0\'af\'b9\'ab :  \'b9\'ab
+\par    2)\'c5\'eb\'c1\'f5\'b0\'ad\'b5\'b5 : NRS  0 \'c1\'a1. FPRS   0\'c1\'a1. FLACC   0\'c1\'a1.
+\par \pard\fs20 
+\par }
+",
+7,,AL,001721,DIS       ,4-1                 ,Discharge with sx. improvement,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 Discharge with sx. improvement\f1\fs20 
+\par }
+",
+8,,AL,001701,DIS       ,8                   ,Lab ; 폐렴원인균 PCR,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fprq1\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 Lab ; CBC ; 
+\par       LFT ; GOT/normal 
+\par       CRP ; negative,   AMA ; negative,   ASO ; -, UA ; negative       
+\par       \'c6\'f3\'b7\'c5\'bf\'f8\'c0\'ce\'b1\'d5 PCR ; -, H. influenza  S. pneumonia
+\par       \'c8\'a3\'c8\'ed\'b1\'e2 \'b9\'d9\'c0\'cc\'b7\'af\'bd\'ba 14\'c1\'be ; -,\f1\fs20 
+\par }
+",
+9,,AL,001701,DIS       ,9                   ,Stool,"{\rtf1\ansi\ansicpg949\deff0{\fonttbl{\f0\fnil\fprq1\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 Lab ; CBC ; 
+\par       LFT ; GOT/normal
+\par       CRP ; -
+\par       Stool ; OB ; 
+\par              \'bc\'b3\'bb\'e7 \'b9\'d9\'c0\'cc\'b7\'af\'bd\'ba ; 
+\par 
+\par }
+",
+10,,AL,001701,DIS       ,91                  ,"입원 치료 중 구토, 설사, 복통 호전되어 퇴원합니다.","{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c0\'e5\'bf\'b0\'c0\'b8\'b7\'ce \'c0\'d4\'bf\'f8 \'c4\'a1\'b7\'e1 \'c1\'df \'bc\'f6\'be\'d7 \'b9\'d7 \'c1\'a4\'c0\'e5\'c1\'a6 \'ba\'b9\'bf\'eb\'c0\'b8\'b7\'ce 
+\par \'b1\'b8\'c5\'e4, \'bc\'b3\'bb\'e7, \'ba\'b9\'c5\'eb \'c1\'f5\'bc\'bc \'c8\'a3\'c0\'fc\'b5\'c7\'be\'ee \'c5\'f0\'bf\'f8\'c7\'d5\'b4\'cf\'b4\'d9.
+\par \'c7\'e2\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c0\'a7\'c7\'d8 \'bf\'dc\'b7\'a1 \'c1\'f8\'b7\'e1\'b8\'a6 \'c7\'ca\'bf\'e4\'b7\'ce \'c7\'d5\'b4\'cf\'b4\'d9.  
+\par }
+",
+11,,AL,001701,DIS       ,92                  ,입원 치료 중 기침 및 발열 증세가 호전되어 퇴원합니다,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'b1\'e2\'c4\'a7 \'b9\'d7 \'b9\'df\'bf\'ad\'b7\'ce \'b8\'f0\'bc\'bc\'b1\'e2\'b0\'fc\'c1\'f6\'bf\'b0 \'b1\'e2\'b0\'fc\'c1\'f6\'c6\'f3\'b7\'c5\'c0\'b8\'b7\'ce \'c0\'d4\'bf\'f8 \'c4\'a1\'b7\'e1 \'c1\'df 
+\par \'bc\'f6\'be\'d7 \'b9\'d7 \'c7\'d7\'bb\'fd\'c1\'a6 \'c5\'f5\'bf\'a9\'b7\'ce \'b1\'e2\'c4\'a7 \'b9\'d7 \'b9\'df\'bf\'ad\'c1\'f5\'bc\'bc\'b0\'a1 \'c8\'a3\'c0\'fc\'b5\'c7\'be\'ee \'c5\'f0\'bf\'f8\'c7\'d5\'b4\'cf\'b4\'d9.
+\par \'c7\'e2\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c0\'a7\'c7\'d8 \'bf\'dc\'b7\'a1 \'c1\'f8\'b7\'e1\'b8\'a6 \'c7\'ca\'bf\'e4\'b7\'ce \'c7\'d5\'b4\'cf\'b4\'d9.  
+\par }
+",
+12,,AL,001701,DIS       ,93                  ,입원 치료 중 발열 증세가 호전되어 퇴원합니다.,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}{\f1\fnil\fprq9\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'b9\'df\'bf\'ad\'b7\'ce \'c6\'ed\'b5\'b5\'bc\'b1\'b9\'e6\'b1\'a4\'bf\'b0 \'c1\'f8\'b4\'dc\'c7\'cf\'bf\'a1 \'c0\'d4\'bf\'f8 \'c4\'a1\'b7\'e1 \'c1\'df 
+\par \'bc\'f6\'be\'d7 \'b9\'d7 \'c7\'d7\'bb\'fd\'c1\'a6 \'c5\'f5\'bf\'a9\'b7\'ce \'b9\'df\'bf\'ad \'c1\'f5\'bc\'bc\'b0\'a1 \'c8\'a3\'c0\'fc\'b5\'c7\'be\'ee \'c5\'f0\'bf\'f8\'c7\'d5\'b4\'cf\'b4\'d9.
+\par \'c7\'e2\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c0\'a7\'c7\'d8 \'bf\'dc\'b7\'a1 \'c1\'f8\'b7\'e1\'b8\'a6 \'c7\'ca\'bf\'e4\'b7\'ce \'c7\'d5\'b4\'cf\'b4\'d9. \cf1\f1\fs18 
+\par \cf0\f0\fs20 
+\par }
+",
+13,,AL,001701,DIS       ,94                  ,"발열, 발진 증세가 호전되어 퇴원합니다.","{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}{\f1\fnil\fprq9\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+{\colortbl ;\red0\green0\blue0;}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'b9\'df\'bf\'ad \'b9\'d7 \'b9\'df\'c1\'f8\'c0\'b8\'b7\'ce \'bc\'f6\'c1\'b7\'b1\'b8 \'c1\'f8\'b4\'dc\'c7\'cf\'bf\'a1 \'c0\'d4\'bf\'f8 \'c4\'a1\'b7\'e1 \'c1\'df 
+\par \'bc\'f6\'be\'d7 \'b9\'d7 \'c7\'d8\'bf\'ad\'c1\'a6 \'c5\'f5\'bf\'a9\'b7\'ce \'b9\'df\'bf\'ad \'b9\'d7 \'b9\'df\'c1\'f8 \'c1\'f5\'bc\'bc\'b0\'a1 \'c8\'a3\'c0\'fc\'b5\'c7\'be\'ee \'c5\'f0\'bf\'f8\'c7\'d5\'b4\'cf\'b4\'d9.
+\par \'c7\'e2\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c0\'a7\'c7\'d8 \'bf\'dc\'b7\'a1 \'c1\'f8\'b7\'e1\'b8\'a6 \'c7\'ca\'bf\'e4\'b7\'ce \'c7\'d5\'b4\'cf\'b4\'d9. \cf1\f1\fs18 
+\par \cf0\f0\fs20 
+\par }
+",
+14,,AL,001657,DIS       ,0                   ,경과요약,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 op \'c8\'c4 \'b0\'e6\'b0\'fa \'be\'e7\'c8\'a3\'c7\'cf\'bf\'a9 \'c5\'f0\'bf\'f8\'c7\'d4.
+\par }
+",
+15,,AL,001655,DIS       ,0.진료기            ,진료기록지 참조,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c1\'f8\'b7\'e1\'b1\'e2\'b7\'cf\'c1\'f6 \'c2\'fc\'c1\'b6
+\par }
+",
+16,,AL,001650,DIS       ,퇴원 1              ,부인과,"{\rtf1\ansi\ansicpg949\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par Hypermenorrhea  and  dysmenorrhea
+\par 
+\par \'c1\'a4\'b1\'e2\'c0\'fb\'c0\'ce \'c3\'df\'c0\'fb\'b0\'cb\'bb\'e7
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'be\'c6 LAVH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'b0\'ed \'bb\'fd\'b8\'ae\'c5\'eb \'bd\'c9\'c7\'d8 LAVH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par 
+\par \'b1\'d9\'c1\'be \'c0\'fd\'c1\'a6\'b8\'b8 \'bf\'f8\'c7\'d8 \'b1\'d9\'c1\'be\'c1\'a6\'b0\'c5\'bc\'fa \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'b0\'cb\'c1\'f8\'bf\'a1\'bc\'ad \'b3\'ad\'bc\'d2 \'b3\'b6\'c1\'be \'b9\'df\'b0\'df \'b5\'c7\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'b3\'b6\'c1\'be\'c1\'a6\'b0\'c5\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'b0\'cb\'c1\'f8\'bf\'a1\'bc\'ad \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7 \'c6\'fa\'b8\'b3 \'c0\'c7\'bd\'c9\'b5\'c7\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9  \'c0\'da\'b1\'c3\'b0\'e6 \'bc\'f6\'bc\'fa\'b7\'ce \'c6\'fa\'b8\'b3 \'c1\'a6\'b0\'c5\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par Pap: HGSIL, \'c0\'d6\'be\'ee \'c0\'da\'b1\'c3\'b0\'e6\'ba\'ce \'bf\'f8\'c3\'df \'c0\'fd\'c1\'a6\'bc\'fa \'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'bf\'c0\'b8\'a5\'c2\'ca \'b3\'aa\'c6\'c8\'b0\'fc \'c0\'d3\'bd\'c5 \'c8\'ae\'c0\'ce \'b5\'c7\'be\'ee \'b3\'bb\'bd\'c3\'b0\'e6 \'bc\'f6\'bc\'fa\'b7\'ce \'b3\'aa\'c6\'c8\'b0\'fc \'c1\'a6\'b0\'c5\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \fs18\'c0\'da\'b1\'c3\'c5\'bb\'c3\'e2,\'b9\'e6\'b1\'a4\'b7\'f9,\'c1\'f7\'c0\'e5\'b7\'f9 \'c1\'f8\'b4\'dc \'b9\'de\'b0\'ed  TVH+AP repair \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \fs20 
+\par 
+\par VLPP    cmH2O        , Pad test:     gm
+\par 
+\par SUI \'c0\'d6\'be\'ee TOT \'bc\'f6\'bc\'fa\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par MUI \'c0\'d6\'be\'ee TOT \'bc\'f6\'bc\'fa\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par biopsy:      Leiomyoma              Adenomyosis              Endometriosis
+\par 
+\par }
+",
+17,,AL,001650,DIS       ,퇴원 2              ,산과,"{\rtf1\ansi\ansicpg949\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par NSVD
+\par RML episiotomy and episiorrhaphy
+\par 
+\par NSVD
+\par Median episiotomy and episiorrhaphy
+\par 
+\par second degree laceration on vulvar
+\par 
+\par NSVD
+\par primary repair on laceration site of vulvar
+\par 
+\par \'c1\'a4\'b1\'e2\'c0\'fb\'c0\'ce \'bb\'ea\'c8\'c4 \'b0\'fc\'b8\'ae
+\par 
+\par \'c1\'f8\'c5\'eb \'c0\'d6\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par \'be\'e7\'bc\'f6 \'c8\'ea\'b7\'af \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6\'bf\'a1 \'c1\'f8\'c5\'eb \'c0\'d6\'be\'ee \'c0\'da\'bf\'ac\'ba\'d0\'b8\'b8 \'bd\'c3\'b5\'b5\'c7\'cf\'b4\'d9 CPD \'b7\'ce \'c6\'c7\'b4\'dc \'b5\'c7\'be\'ee
+\par   \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6\'bf\'a1 \'be\'e7\'bc\'f6 \'c8\'ea\'b7\'af \'c0\'af\'b5\'b5\'ba\'d0\'b8\'b8\'c0\'b8\'b7\'ce \'c0\'da\'bf\'ac\'ba\'d0\'b8\'b8 \'bd\'c3\'b5\'b5\'c7\'cf\'b4\'d9 CPD \'b7\'ce \'c6\'c7\'b4\'dc \'b5\'c7\'be\'ee
+\par   \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6 \'b9\'d7 \'c0\'cc\'c0\'fc \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3 \'bc\'f6\'bc\'fa \'bb\'f3\'c5\'c2\'b7\'ce 
+\par  \'b9\'dd\'ba\'b9 \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par }
+",
+18,,AL,001642,DIS       ,01                  ,FT( weeks) with labor pain,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 FT( weeks) with labor pain
+\par }
+",
+19,,AL,001642,DIS       ,02                  ,FT( weeks) with amniotic membrane ruptur,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 FT( weeks) with amniotic membrane rupture\f1\fs20 
+\par }
+",
+20,,AL,001642,DIS       ,03                  ,FT( weeks)  for induction,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 FT( weeks)  for induction\f1\fs20 
+\par }
+",
+21,,AL,001642,DIS       ,04                  ,FT( weeks) for c/sec,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 FT( weeks) for c/sec\f1\fs20 
+\par }
+",
+22,,AL,001642,DIS       ,05                  ,FT( weeks) for repeat c/sec,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 FT( weeks) for repeat c/sec\f1\fs20 
+\par }
+",
+23,,AL,001642,DIS       ,06                  ,hysteroscopic endometrial polypectomy,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2;}{\f1\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 for hysteroscopic endometrial polypectomy\f1\fs20 
+\par }
+",
+24,,AL,001642,DIS       ,퇴-01               ,FT( weeks) with labor pain,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 [2225--] \'c0\'d3\'bd\'c5 \'c1\'d6 \'c0\'cf \'ba\'d0\'b8\'b8\'c1\'f8\'c5\'eb\'c0\'d6\'be\'ee \'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c0\'cc \'c0\'cc\'b7\'e7\'be\'ee\'c1\'b3\'b0\'ed \'ba\'d0\'b8\'b8\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 200ml \'c1\'a4\'b5\'b5\'bf\'b4\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9, 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb \'bf\'b9\'c1\'a4\'c0\'d3\fs20 
+\par }
+",
+25,,AL,001642,DIS       ,퇴-02               ,FT( weeks) with amniotic membrane ruptur,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 [2025--] \'c0\'d3\'bd\'c5 \'c1\'d6 \'c0\'cf \'be\'e7\'b8\'b7\'c6\'c4\'bc\'f6\'b5\'c7\'be\'ee \'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c0\'cc \'c0\'cc\'b7\'e7\'be\'ee\'c1\'b3\'b0\'ed \'ba\'d0\'b8\'b8\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 200ml \'c1\'a4\'b5\'b5\'bf\'b4\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9, 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb \'bf\'b9\'c1\'a4\'c0\'d3\fs20 
+\par }
+",
+26,,AL,001642,DIS       ,퇴-03               ,FT( weeks) for induction- N/D,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 [2025--] \'c0\'d3\'bd\'c5 \'c1\'d6 \'c0\'cf \'c0\'af\'b5\'b5\'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c0\'cc \'c0\'cc\'b7\'e7\'be\'ee\'c1\'b3\'b0\'ed \'ba\'d0\'b8\'b8\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 200ml \'c1\'a4\'b5\'b5\'bf\'b4\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9, 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb \'bf\'b9\'c1\'a4\'c0\'d3\fs20 
+\par }
+",
+27,,AL,001642,DIS       ,퇴-04               ,FT( weeks) for induction- C/S,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 [2025--] \'c0\'d3\'bd\'c5 \'c1\'d6 \'c0\'cf\'b5\'c8 \'bb\'ea\'b8\'f0\'b7\'ce \'c0\'af\'b5\'b5\'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'ba\'d0\'b8\'b8 \'bd\'c3\'c7\'e0\'b5\'c7\'be\'fa\'c0\'b8\'b8\'e7 \'bc\'f6\'bc\'fa\'c1\'df \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 800ml\'c1\'a4\'b5\'b5 \'b5\'c7\'be\'fa\'b0\'ed \'bc\'fa\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df\'be\'f8\'be\'fa\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9, 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'bf\'b9\'c1\'a4\'c0\'d3\fs20 
+\par }
+",
+28,,AL,001642,DIS       ,퇴-05               ,FT ( weeks) for repeat c/sec,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs18 [2025--] \'c0\'d3\'bd\'c5 \'c1\'d6 \'c0\'cf\'b5\'c8 \'bb\'ea\'b8\'f0\'b7\'ce \'c0\'e7\'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'bc\'f6\'bc\'fa\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'ba\'d0\'b8\'b8 \'bd\'c3\'c7\'e0\'b5\'c7\'be\'fa\'c0\'b8\'b8\'e7 \'bc\'f6\'bc\'fa\'c1\'df \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 800ml\'c1\'a4\'b5\'b5 \'b5\'c7\'be\'fa\'b0\'ed \'bc\'fa\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df\'be\'f8\'be\'fa\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9, 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'bf\'b9\'c1\'a4\'c0\'d3\fs20 
+\par }
+",
+29,,AL,001642,DIS       ,퇴-BA               ,Bartholin,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 Vulvar pain
+\par 4~5\'c0\'cf\'c0\'fc
+\par \'bb\'f3\'b1\'e2\'c1\'f5\'bb\'f3\'c0\'b8\'b7\'ce \'bf\'dc\'b7\'a1\'b3\'bb\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'f8\'c2\'fb\'c7\'d1\'b0\'e1\'b0\'fa \'b9\'d9\'c5\'e7\'b8\'b0\'b3\'f3\'be\'e7\'c0\'b8\'b7\'ce \'c1\'f8\'b4\'dc\'b5\'c7\'be\'ee \'c1\'b6\'b4\'eb\'bc\'fa\'b9\'de\'b1\'e2 \'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par Bartholin abscess
+\par Marsupialization
+\par [2025--] 4~5\'c0\'cf\'c0\'fc\'ba\'ce\'c5\'cd \'b9\'df\'bb\'fd\'c7\'d1 \'bf\'dc\'c0\'bd\'ba\'ce\'c5\'eb\'c1\'f5\'c0\'b8\'b7\'ce \'bf\'dc\'b7\'a1\'b3\'bb\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'f8\'c2\'fb\'c7\'d1\'b0\'e1\'b0\'fa \'b9\'d9\'c5\'e7\'b8\'b0\'b3\'f3\'be\'e7\'c0\'b8\'b7\'ce \'c1\'f8\'b4\'dc\'b5\'c7\'be\'ee \'c1\'b6\'b4\'eb\'bc\'fa \'b9\'de\'b1\'e2\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'b9\'d9\'c5\'e7\'b8\'b0\'c1\'b6\'b4\'eb\'bc\'fa \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'b8\'b8\'e7 \'bc\'f6\'bc\'fa\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df\'be\'f8\'be\'fa\'c0\'b8\'b8\'e7 \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba 10ml \'b9\'cc\'b8\'b8\'c0\'cc\'be\'fa\'c0\'bd
+\par [2125--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df \'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'bf\'b9\'c1\'a4\'c0\'cf\'bf\'a1 \'c5\'f0\'bf\'f8\'c7\'d4. 1\'c1\'d6\'c0\'cf\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'bf\'b9\'c1\'a4\'c0\'d3
+\par }
+",
+30,,AL,001642,DIS       ,퇴-MA               ,missed abortion,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 absent fetal heartbeat
+\par \'bb\'ea\'c0\'fc\'c1\'f8\'c2\'fb\'c1\'df \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'bd\'c3\'c7\'e0\'c7\'d1 \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7\'b0\'e1\'b0\'fa \'b0\'e8\'b7\'f9\'c0\'af\'bb\'ea\'c0\'b8\'b7\'ce \'c1\'f8\'b4\'dc\'b5\'c7\'be\'ee \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'bc\'d2\'c6\'c4\'bc\'fa\'c0\'bb \'b9\'de\'b1\'e2\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par Missed abortion
+\par Dilatation and curettage
+\par [2025--] \'bb\'ea\'c0\'fc\'c1\'f8\'c2\'fb\'c1\'df \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'bd\'c3\'c7\'e0\'c7\'d1 \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7\'b0\'e1\'b0\'fa \'b0\'e8\'b7\'f9\'c0\'af\'bb\'ea\'c0\'b8\'b7\'ce \'c1\'f8\'b4\'dc\'b5\'c7\'be\'ee \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'bc\'d2\'c6\'c4\'bc\'fa\'c0\'bb \'b9\'de\'b1\'e2\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'bc\'d2\'c6\'c4\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'b8\'b8\'e7 \'bc\'f6\'bc\'fa\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba \'bc\'d2\'b7\'ae\'c0\'cc\'be\'fa\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9. 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'bf\'b9\'c1\'a4\'c0\'d3
+\par }
+",
+31,,AL,001642,DIS       ,퇴-Mc               ,Mcdonald op,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 for Mcdonald cx suture operation
+\par IUP  weeks with IIOC
+\par Mcdonald cx suture operation
+\par \'c0\'cc\'c0\'fc \'c0\'d3\'bd\'c5\'bf\'a1\'bc\'ad \'c0\'da\'b1\'c3\'b0\'e6\'b0\'fc\'b9\'ab\'b7\'c2\'c1\'f5 \'c1\'f8\'b4\'dc\'b9\'de\'c0\'b8\'bd\'c5\'ba\'d0\'c0\'b8\'b7\'ce 2025\'b3\'e2 \'bf\'f9\'c0\'cf \'c0\'d4\'bf\'f8\'c7\'cf\'bc\'c5\'bc\'ad \'bf\'f9\'c0\'cf \'b8\'c6\'b5\'b5\'b3\'af\'b5\'e5 \'c0\'da\'b1\'c3\'b0\'e6\'b0\'fc\'ba\'c0\'c3\'e0\'bc\'fa\'b9\'de\'c0\'b8\'bd\'c3\'b0\'ed \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'c8\'c4 \'c1\'b6\'b1\'e2\'c1\'f8\'c5\'eb\'be\'f8\'b0\'ed \'b0\'e6\'b0\'fa\'be\'e7\'c8\'a3\'c7\'cf\'bf\'a9 \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9
+\par }
+",
+32,,AL,001642,DIS       ,퇴-end              ,endometrial biopsy,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 Vaginal bleeding
+\par 4~5\'c0\'cf\'c0\'fc
+\par \'bb\'f3\'b1\'e2\'c1\'f5\'bb\'f3\'c0\'b8\'b7\'ce \'bf\'dc\'b7\'a1\'b3\'bb\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'f8\'c2\'fb\'c7\'d1\'b0\'e1\'b0\'fa \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'ba\'b4\'c1\'f5\'c0\'cc \'c0\'c7\'bd\'c9\'b5\'c7\'be\'ee \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'c1\'b6\'c1\'f7\'b0\'cb\'bb\'e7 \'b9\'de\'b1\'e2\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par Uterine endometriopathy
+\par Uterine endometrial biopsy
+\par [2025--] 4~5\'c0\'cf \'c0\'fc\'ba\'ce\'c5\'cd \'bd\'c3\'c0\'db\'b5\'c8 \'c1\'fa\'c3\'e2\'c7\'f7\'c0\'bb \'c1\'d6\'bc\'d2\'b7\'ce \'bf\'dc\'b7\'a1\'b3\'bb\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'f8\'c2\'fb\'c7\'d1\'b0\'e1\'b0\'fa \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'ba\'b4\'c1\'f5\'c0\'cc \'c0\'c7\'bd\'c9\'b5\'c7\'be\'ee \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'c1\'b6\'c1\'f7\'b0\'cb\'bb\'e7\'b8\'a6 \'b9\'de\'b1\'e2\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'cf\'bd\'c9
+\par [2025--] \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7\'c1\'b6\'c1\'f7\'b0\'cb\'bb\'e7\'b8\'a6 \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'b8\'b8\'e7 \'bc\'f6\'bc\'fa\'c1\'df \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c3\'e2\'c7\'f7\'b7\'ae\'c0\'ba \'bc\'d2\'b7\'ae\'c0\'cc\'be\'fa\'c0\'bd
+\par [2025--] \'c0\'d4\'bf\'f8\'b1\'e2\'b0\'a3\'b5\'bf\'be\'c8 \'c6\'af\'c0\'cc\'bc\'d2\'b0\'df \'be\'f8\'be\'fa\'b0\'ed \'c8\'b0\'b7\'c2\'c2\'a1\'c8\'c4 \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c3\'ca\'c0\'bd\'c6\'c4\'b0\'cb\'bb\'e7 \'b9\'d7 \'c1\'f8\'c2\'fb\'b0\'e1\'b0\'fa \'c0\'cc\'bb\'f3\'bc\'d2\'b0\'df\'be\'f8\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9. 1\'c1\'d6\'c8\'c4 \'bf\'dc\'b7\'a1\'bf\'a1\'bc\'ad \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'bf\'b9\'c1\'a4\'c0\'d3
+\par }
+",
+33,,AL,001642,DIS       ,퇴-pre              ,preterm labor,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 2025\'b3\'e2 \'bf\'f9\'c0\'cf preterm labor (IUP weeks)\'b7\'ce \'c0\'d4\'bf\'f8\'c7\'cf\'bc\'c5\'bc\'ad \'be\'c8\'c1\'a4 \'b9\'d7 \'bc\'f6\'be\'d7,\'c0\'da\'b1\'c3\'bc\'f6\'c3\'e0\'be\'ef\'c1\'a6\'c1\'a6\'c4\'a1\'b7\'e1\'c8\'c4 \'c1\'b6\'b1\'e2\'c1\'f8\'c5\'eb\'c1\'f5\'bb\'f3\'bf\'cf\'c8\'ad\'b5\'c7\'be\'ee \'bf\'f9\'c0\'cf \'c5\'f0\'bf\'f8\'c7\'cf\'bd\'c9
+\par }
+",
+34,,AL,001640,DIS       ,1                   ,NSVD 경과 요약,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 #  IUP wks c labor pain  ROM \'c0\'b8\'b7\'ce \'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'d4.
+\par #  APM :  NSVD c RML Median episiotomy  LMF gm  A/S 8/9
+\par #  PPD#1 \'c3\'ca\'c0\'bd\'c6\'c4 \'b9\'d7 \'c1\'fa\'b0\'e6 \'b0\'cb\'bb\'e7 \'bd\'c3\'c7\'e0\'c7\'d4.
+\par #  PPD#2 \'c5\'f0\'bf\'f8\'c7\'d4.
+\par 
+\par }
+",
+35,,AL,001640,DIS       ,2                   ,C/SEC 경과 요약,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 #  IUP wks c labor pain  ROM \'c0\'b8\'b7\'ce \'ba\'d0\'b8\'b8\'c0\'a7\'c7\'d8 \'c0\'d4\'bf\'f8\'c7\'d4.
+\par #  C/SEC \'b0\'e1\'c1\'a4 -> APM :  LS C/SEC  LMF gm  A/S 8/9
+\par #  POD#1 
+\par #  POD#3 \'c3\'ca\'c0\'bd\'c6\'c4 \'b9\'d7 \'c1\'fa\'b0\'e6 \'b0\'cb\'bb\'e7 \'bd\'c3\'c7\'e0\'c7\'d4.
+\par #  POD#6 \'c3\'ca\'c0\'bd\'c6\'c4 \'b9\'d7 \'c1\'fa\'b0\'e6 \'b0\'cb\'bb\'e7 \'bd\'c3\'c7\'e0\'c7\'d4.
+\par #  POD#7 \'c5\'f0\'bf\'f8\'c7\'d4.
+\par 
+\par }
+",
+36,,AL,001640,DIS       ,3                   ,IUP wks,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 IUP wks c labor pain  ROM  CPD  \fs20 
+\par }
+",
+37,,AL,001639,DIS       ,0.진료기            ,진료기록지 참조,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c1\'f8\'b7\'e1\'b1\'e2\'b7\'cf\'c1\'f6 \'c2\'fc\'c1\'b6
+\par }
+",
+38,,AL,001609,DIS       ,1                   ,ABDOMINAL PAIN,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 ABDOMINAL PAIN
+\par }
+",
+39,,AL,001609,DIS       ,2                   ,"IUP 35.2WKS WITH DCDA,PRETERM LABOR","{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 IUP 35.2WKS WITH DCDA,PRETERM LABOR
+\par }
+",
+40,,AL,001609,DIS       ,3                   ,C/S,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 C/S
+\par }
+",
+41,,AL,001609,DIS       ,4                   ,".Normal
+","{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 .Normal
+\par 
+\par }
+",
+42,,AL,001609,DIS       ,5                   ,1주후 OPD F/U,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 1\'c1\'d6\'c8\'c4 OPD F/U
+\par }
+",
+43,,AL,001609,DIS       ,6                   ,본원 경과관찰중 쌍태아에 합병된 ABDOMINAL PAIN으로 C/S후 ,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'ba\'bb\'bf\'f8 \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb\'c1\'df \'bd\'d6\'c5\'c2\'be\'c6\'bf\'a1 \'c7\'d5\'ba\'b4\'b5\'c8 ABDOMINAL PAIN\'c0\'b8\'b7\'ce C/S\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4.
+\par }
+",
+44,,AL,001608,DIS       ,퇴원 1              ,부인과,"{\rtf1\ansi\ansicpg949\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par Hypermenorrhea  and  dysmenorrhea
+\par 
+\par \'c1\'a4\'b1\'e2\'c0\'fb\'c0\'ce \'c3\'df\'c0\'fb\'b0\'cb\'bb\'e7
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'be\'c6 TLH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'be\'c6  \'ba\'f3\'c7\'f7 \'c0\'d6\'be\'ee  TLH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'bc\'f6\'bc\'fa \'c8\'c4 \'c6\'af\'ba\'b0\'c7\'d1 \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'f3\'c7\'f7\'c0\'ba \'c3\'b6\'ba\'d0\'c1\'a6\'b7\'ce \'b1\'b3\'c1\'a4 \'c7\'cf\'b1\'e2\'b7\'ce \'c7\'d4
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'b0\'ed \'bb\'fd\'b8\'ae\'c5\'eb \'bd\'c9\'c7\'d8 TLH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'bc\'f6\'bc\'fa \'c8\'c4 \'c6\'af\'ba\'b0\'c7\'d1 \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'f3\'c7\'f7\'c0\'ba \'c3\'b6\'ba\'d0\'c1\'a6\'b7\'ce \'b1\'b3\'c1\'a4 \'c7\'cf\'b1\'e2\'b7\'ce \'c7\'d4
+\par 
+\par 
+\par \'bb\'fd\'b8\'ae \'b8\'b9\'be\'c6  \'ba\'f3\'c7\'f7 \'c0\'d6\'b0\'ed \'bb\'fd\'b8\'ae\'c5\'eb \'bd\'c9\'c7\'d8 SLH \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'bc\'f6\'bc\'fa \'c8\'c4 \'c6\'af\'ba\'b0\'c7\'d1 \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'f3\'c7\'f7\'c0\'ba \'c3\'b6\'ba\'d0\'c1\'a6\'b7\'ce \'b1\'b3\'c1\'a4 \'c7\'cf\'b1\'e2\'b7\'ce \'c7\'d4
+\par 
+\par \'bb\'fd\'b8\'ae \'b1\'e6\'be\'ee\'c1\'f6\'b0\'ed \'b1\'d9\'c1\'be \'c5\'a9\'b1\'e2 \'c1\'f5\'b0\'a1 \'c7\'cf\'bf\'a9    TLH  \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par 
+\par \'b1\'d9\'c1\'be \'c0\'fd\'c1\'a6\'b8\'b8 \'bf\'f8\'c7\'d8 \'b1\'d9\'c1\'be\'c1\'a6\'b0\'c5\'bc\'fa \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'b0\'cb\'c1\'f8\'bf\'a1\'bc\'ad \'b3\'ad\'bc\'d2 \'b3\'b6\'c1\'be \'b9\'df\'b0\'df \'b5\'c7\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'b3\'b6\'c1\'be\'c1\'a6\'b0\'c5\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \'b0\'cb\'c1\'f8\'bf\'a1\'bc\'ad \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7 \'c6\'fa\'b8\'b3 \'c0\'c7\'bd\'c9\'b5\'c7\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9  \'c0\'da\'b1\'c3\'b0\'e6 \'bc\'f6\'bc\'fa\'b7\'ce \'c6\'fa\'b8\'b3 \'c1\'a6\'b0\'c5\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par Pap: HGSIL, \'c0\'d6\'be\'ee \'c0\'da\'b1\'c3\'b0\'e6\'ba\'ce \'bf\'f8\'c3\'df \'c0\'fd\'c1\'a6\'bc\'fa \'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'bf\'c0\'b8\'a5\'c2\'ca \'b3\'aa\'c6\'c8\'b0\'fc \'c0\'d3\'bd\'c5 \'c8\'ae\'c0\'ce \'b5\'c7\'be\'ee \'b3\'bb\'bd\'c3\'b0\'e6 \'bc\'f6\'bc\'fa\'b7\'ce \'b3\'aa\'c6\'c8\'b0\'fc \'c1\'a6\'b0\'c5\'c7","\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par \fs18\'c0\'da\'b1\'c3\'c5\'bb\'c3\'e2,\'b9\'e6\'b1\'a4\'b7\'f9,\'c1\'f7\'c0\'e5\'b7\'f9 \'c1\'f8\'b4\'dc \'b9\'de\'b0\'ed  TVH+AP repair \'b9\'de\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \fs20 
+\par 
+\par VLPP    cmH2O        , Pad test:     gm
+\par 
+\par SUI \'c0\'d6\'be\'ee TOT \'bc\'f6\'bc\'fa\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par MUI \'c0\'d6\'be\'ee TOT \'bc\'f6\'bc\'fa\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa\'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par biopsy:      Leiomyoma              Adenomyosis              Endometriosis
+\par 
+\par  \'c8\'b2\'c3\'bc \'c3\'e2\'c7\'f7\'b7\'ce \'c0\'ce\'c7\'d1 \'c7\'cf\'ba\'b9\'c5\'eb\'c0\'b8\'b7\'ce \'c0\'fc\'bf\'f8 \'bf\'cd\'bc\'ad \'c3\'e2\'c7\'f7\'be\'e7\'c0\'cc \'bc\'f6\'bc\'fa \'c7\'d2\'c1\'a4\'b5\'b5\'b4\'c2 \'be\'c6\'b4\'cf\'be\'ee\'bc\'ad \'c1\'f6\'c7\'f7\'c1\'a6 \'bb\'e7\'bf\'eb\'c7\'cf\'b8\'e9\'bc\'ad \'b0\'e6\'b0\'fa \'ba\'b8\'b0\'ed \'b4\'f5 \'c3\'e2\'c7\'f7 \'be\'f8\'b4\'c2 \'b0\'cd \'c8\'ae\'c0\'ce\'c7\'cf\'b0\'ed \'c5\'f0\'bf\'f8\'c7\'d4
+\par 
+\par }
+"
+45,,AL,001608,DIS       ,퇴원 2              ,산과,"{\rtf1\ansi\ansicpg949\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par NSVD
+\par RML episiotomy and episiorrhaphy
+\par 
+\par NSVD
+\par Median episiotomy and episiorrhaphy
+\par 
+\par second degree laceration on vulvar
+\par 
+\par NSVD
+\par primary repair on laceration site of vulvar
+\par 
+\par \'c1\'a4\'b1\'e2\'c0\'fb\'c0\'ce \'bb\'ea\'c8\'c4 \'b0\'fc\'b8\'ae
+\par 
+\par \'c1\'f8\'c5\'eb \'c0\'d6\'be\'ee \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par \'be\'e7\'bc\'f6 \'c8\'ea\'b7\'af \'c0\'d4\'bf\'f8\'c7\'cf\'bf\'a9 \'c1\'fa\'bd\'c4\'ba\'d0\'b8\'b8\'c7\'cf\'b0\'ed \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb\'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4
+\par \'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6\'bf\'a1 \'c1\'f8\'c5\'eb \'c0\'d6\'be\'ee \'c0\'da\'bf\'ac\'ba\'d0\'b8\'b8 \'bd\'c3\'b5\'b5\'c7\'cf\'b4\'d9 CPD \'b7\'ce \'c6\'c7\'b4\'dc \'b5\'c7\'be\'ee
+\par   \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4.\'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6\'bf\'a1 \'be\'e7\'bc\'f6 \'c8\'ea\'b7\'af \'c0\'af\'b5\'b5\'ba\'d0\'b8\'b8\'c0\'b8\'b7\'ce \'c0\'da\'bf\'ac\'ba\'d0\'b8\'b8 \'bd\'c3\'b5\'b5\'c7\'cf\'b4\'d9 CPD \'b7\'ce \'c6\'c7\'b4\'dc \'b5\'c7\'be\'ee
+\par   \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4.\'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c","8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par \'c0\'d3\'bd\'c5  \'c1\'d6 \'b9\'d7 \'c0\'cc\'c0\'fc \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3 \'bc\'f6\'bc\'fa \'bb\'f3\'c5\'c2\'b7\'ce 
+\par  \'b9\'dd\'ba\'b9 \'c1\'a6\'bf\'d5\'c0\'fd\'b0\'b3\'b7\'ce \'ba\'d0\'b8\'b8\'c8\'c4 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'c8\'c4 \'c5\'f0\'bf\'f8\'c7\'d4.\'ba\'d0\'b8\'b8\'bd\'c3 \'c6\'af\'ba\'b0\'c7\'d1  \'b9\'ae\'c1\'a6 \'be\'f8\'be\'fa\'b0\'ed \'ba\'d0\'b8\'b8\'c8\'c4 vital sign \'be\'c8\'c1\'a4\'c0\'fb\'c0\'cc\'be\'fa\'b0\'ed \'c0\'da\'b1\'c3 \'bc\'f6\'c3\'e0 \'bb\'f3\'c5\'c2\'b5\'b5 \'be\'e7\'c8\'a3 \'c7\'cf\'bf\'b4\'b0\'ed, posaprtum sono \'bb\'f3 \'c0\'da\'b1\'c3\'b0\'ad\'b3\'bb \'c0\'dc\'b7\'f9\'c5\'c2\'b9\'dd\'b5\'b5 \'be\'f8\'c0\'bd\'c0\'bb \'c8\'ae\'c0\'ce\'c7\'d4
+\par 
+\par 
+\par }
+"
+46,,AL,001608,DIS       ,퇴원 3              ,진단서,"{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par   \'bb\'f3\'b1\'e2\'c0\'ce\'c0\'ba  2025\'b3\'e2  1\'bf\'f9 16  \'c0\'cf \'bb\'ea\'ba\'ce\'c0\'ce\'b0\'fa\'bf\'a1\'bc\'ad \'bb\'f3\'b1\'e2\'ba\'b4\'b8\'ed\'c0\'b8\'b7\'ce
+\par   \'ba\'b9\'b0\'ad\'b0\'e6\'c7\'cf \'c0\'fc\'c0\'da\'b1\'c3\'c1\'a6\'b0\'c5\'bc\'fa,\'c0\'af\'c2\'f8\'b9\'da\'b8\'ae\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd
+\par 
+\par   \'ba\'b9\'b0\'ad\'b0\'e6\'c7\'cf \'bf\'c0\'b8\'a5\'c2\'ca \'b3\'ad\'bc\'d2 \'b3\'b6\'c1\'be \'c0\'fd\'c1\'a6\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd
+\par 
+\par   \'ba\'b9\'b0\'ad\'b0\'e6\'c7\'cf \'bf\'de\'c2\'ca \'b3\'ad\'bc\'d2 \'b3\'b6\'c1\'be  \'c0\'fd\'c1\'a6\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd
+\par  
+\par   \'ba\'b9\'b0\'ad\'b0\'e6\'c7\'cf \'be\'e7\'c3\'f8 \'b3\'ad\'bc\'d2 \'b3\'b6\'c1\'be  \'c0\'fd\'c1\'a6\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd  
+\par 
+\par   \'c0\'da\'b1\'c3\'b0\'e6\'c7\'cf \'c0\'da\'b1\'c3\'b3\'bb\'b8\'b7 \'c6\'fa\'b8\'b3 \'c1\'a6\'b0\'c5\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd
+\par   
+\par   \'bc\'d2\'c6\'c4\'bc\'f6\'bc\'fa\'c0\'bb \'bd\'c3\'c7\'e0\'c7\'cf\'bf\'b4\'c0\'bd
+\par 
+\par }
+",
+47,,AL,001320,DIS       ,1                   ,입퇴원요약지,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c0\'d4\'c5\'f0\'bf\'f8\'bf\'e4\'be\'e0\'c1\'f6
+\par thyroid ca \'c1\'f8\'b4\'dc\'c0\'b8\'b7\'ce 2019.\'bf\'f9 \'bc\'f6\'bc\'fa \'c8\'c4 \'c6\'af\'ba\'b0\'c7\'d1 complication \'be\'f8\'c0\'cc \'c5\'f0\'bf\'f8\'c7\'d4
+\par op wound clear
+\par drain remove & steri-strip apply or 2 point suture(opd\'bf\'a1\'bc\'ad stich off
+\par 2019.\'bf\'f9 opd f/u rec.
+\par 
+\par 
+\par }
+",
+48,,AL,001319,DIS       ,1                   ,입퇴원요약지,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c0\'d4\'c5\'f0\'bf\'f8\'bf\'e4\'be\'e0\'c1\'f6
+\par thyroid ca \'c1\'f8\'b4\'dc\'c0\'b8\'b7\'ce 2019.\'bf\'f9 \'bc\'f6\'bc\'fa \'c8\'c4 \'c6\'af\'ba\'b0\'c7\'d1 complication \'be\'f8\'c0\'cc \'c5\'f0\'bf\'f8\'c7\'d4
+\par op wound clear
+\par drain remove & steri-strip apply or 2 point suture(opd\'bf\'a1\'bc\'ad stich off
+\par 2019.\'bf\'f9 opd f/u rec.
+\par 
+\par 
+\par }
+",
+49,,AL,001210,DIS       ,001                 ,퇴원기록지,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 1. \'c0\'d4\'bf\'f8\'bb\'e7\'c0\'af
+\par 
+\par 
+\par 2. \'c1\'f8\'b4\'dc\'b8\'ed
+\par 
+\par 
+\par 3. \'b0\'e6\'b0\'fa \'bf\'e4\'be\'e0
+\par 
+\par 
+\par 4. \'c1\'d6\'bf\'e4\'b0\'cb\'bb\'e7 \'bc\'d2\'b0\'df\fs20 
+\par \fs20 
+\par 
+\par 5. \'c5\'f0\'bf\'f8 \'be\'e0
+\par 
+\par 
+\par 6. \'c4\'a1\'b7\'e1\'b0\'e1\'b0\'fa
+\par  \'bf\'cf\'c4\'e8/\'b0\'e6\'c4\'e8/\'c8\'a3\'c0\'fc\'be\'c8\'b5\'ca/\'c4\'a1\'b7\'e1\'be\'c8\'c7\'d4/\'c1\'f8\'b4\'dc\'bb\'d3/
+\par 
+\par \fs20 7. \'c5\'f0\'bf\'f8\'c7\'fc\'c5\'c2
+\par  \'c5\'f0\'bf\'f8\'c1\'f6\'bd\'c3\'c8\'c4/\'c0\'da\'c0\'c7\'c5\'f0\'bf\'f8/\'c0\'fc\'bf\'f8/\'c5\'bb\'bf\'f8/\'bb\'e7\'b8\'c1
+\par }
+",
+50,,AL,001137,DIS       ,A01                 ,淪嘲澎綏舊 緇謬뵈,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'a4\'b7\'a4\'b7\'a4\'b7\'a4\'b7
+\par }
+",
+51,,AL,001127,DIS       ,010                 ,당일퇴원,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par }
+",
+52,,GS,999999,DIS       ,MMT                 ,MMT,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 RT/Lt MMT \'c8\'c4 n-s
+\par }
+",
+53,,IM,999999,DIS       ,KLH1                ,폐렴 처치명. ,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 antibiotics. 
+\par }
+",
+54,,OS,999999,DIS       ,1-1                 ,,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 
+\par }
+",
+55,,PD,999999,DIS       ,1                   ,F/U plan,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'bf\'dc\'b7\'a1 \'c4\'a1\'b7\'e1 \'b9\'d7 \'c3\'df\'c0\'fb\'b0\'fc\'c2\'fb
+\par }
+",
+56,,PD,999999,DIS       ,2                   ,diacharge note plan,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c8\'af\'be\'c6 \'bb\'f3\'b1\'e2 \'c1\'f8\'b4\'dc\'b8\'ed\'c0\'b8\'b7\'ce \'c0\'d4\'bf\'f8\'c8\'c4 \'b9\'df\'bf\'ad \'b9\'d7 \'c8\'a3\'c8\'ed\'b1\'e2 \'c1\'f5\'bc\'bc \'c8\'a3\'c0\'fc\'c8\'c4 \'c5\'f0\'bf\'f8. \'c7\'e2\'c8\'c4 \'bf\'dc\'b7\'a1 \'b0\'e6\'b0\'fa \'b0\'fc\'c2\'fb \'bf\'e4\'b8\'c1
+\par }
+",
+57,,PD,999999,DIS       ,3                   ,admission note,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20 lab check, chest XR \'c3\'d4\'bf\'b5, tamilfu, IV augmentin, nebulizer, adm
+\par }
+",
+58,,PD,999999,DIS       ,4                   ,치료목표,"{\rtf1\ansi\ansicpg949\deff0\deflang1033\deflangfe1042{\fonttbl{\f0\fnil\fcharset129 \'b1\'bc\'b8\'b2\'c3\'bc;}}
+\viewkind4\uc1\pard\lang1042\f0\fs20\'c7\'d8\'bf\'ad\'c1\'a6 \'be\'f8\'c0\'cc \'b9\'df\'bf\'ad \'c7\'cf\'b7\'e7\'c0\'cc\'bb\'f3 \'be\'f8\'b0\'ed \'c8\'a3\'c8\'ed\'b1\'e2 \'c1\'f5\'bb\'f3 \'b9\'d7 \'c0\'fc\'bd\'c5 \'c4\'c1\'b5\'f0\'bc\'c7 \'c8\'b8\'ba\'b9\'c8\'c4 \'c5\'f0\'bf\'f8
+\par }
+",

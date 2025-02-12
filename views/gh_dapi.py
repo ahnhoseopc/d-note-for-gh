@@ -1,5 +1,4 @@
-
-import services.apiroute as apiroute
+import services.dma_api as dma_api
 
 import streamlit as st
 import asyncio
@@ -27,8 +26,8 @@ def streamlit_ui():
     if st.button("Generate"):
         with st.spinner("Generating..."):
             try:
-                request = apiroute.GenerateRequest(prompt=prompt, model_name=model)
-                response = asyncio.run(apiroute.generate_text(request))
+                request = dma_api.GenerateRequest(prompt=prompt, model_name=model)
+                response = asyncio.run(dma_api.generate_text(request))
 
                 st.success("Generation successful!")
                 st.text_area("Response:", value=response["text"], height=200)

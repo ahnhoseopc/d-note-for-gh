@@ -1,0 +1,1179 @@
+,ocm32status,ocm32idnoa,ocm32idnob,ocm32lwdat,ocm32iocd,ocm32bhcd,ocm32hpdat,ocm32rtdat,ocm32kwa,ocm32ward,ocm32chiefcomp,ocm32finaldx,ocm32op,ocm32medical,ocm32follow,ocm32other,ocm32spth,ocm32sex,ocm32age,ocm32rtrstcd,ocm32rttypecd,ocm32rthspnm,ocm32rtcmt,ocm32scnddx,ocm32pi,ocm32phx,ocm32dm,ocm32tbc,ocm32ht,ocm32ast,ocm32sysdat,ocm32systm,ocm32rgcd,ocm32rtrsttxt,ocm32problem
+0,,0233137 ,        ,20241223,I,C1,20241223,20241228,GS,100204,R/O thyroid CA진단 받고 Lt. thyroid lobectomy 위해 adm,1. 갑상선의 악성 신생물,Lt.thyroid lobectomy.,,"외래진료 예정
+$0","R/O thyroid ca 진단으로 2024년 12월 24일  Lt.thyroid lobectomy 수술 후 특별한 complication 없이 퇴원함.op wound clear,drain remove & steri-strip apply.",001319,F,51,1 ,1 ,,,,,,,,,,20241227,14:26:00,001319,,"** 검체검사 **
+20241228 (선별)트리요도타이로닌(T3) : 46.2
+** 병리검사 **
+20241224 Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted is a left lobe of thyroid, measuring 6.5x5.0x4.0cm in dimensions and weighing 60g. A brown solid and cystic nodule (5.5cm) is present. Representative sections are blocked in A to O.  
+15HE)
+Ink code) green: posterior margin
+DIAGNOSIS:
+Thyroid gland, left, lobectomy:
+   1. Invasive encapsulated follicular variant papillary thyroid carcinoma, 
+        1) Tumor size: 5.5x4.0x3.2cm
+        2) Extrathyroidal extension (perithyroidal fat): not identified
+        3) Lymphovascular invasion: not identified
+        4) Resection margin: negative for tumor
+        5) Lymph node status: no metastasis in 2 lymph nodes (perithyroidal: 0/2)
+   2. Papillary thyroid carcinoma, 
+        1)  Tumor size: 0.3x0.2cm (upper)
+        2) Extrathyroidal extension (perithyroidal fat): not identified
+        3) Lymphovascular invasion: not identified
+        4) Resection margin: negative for tumor"
+1,,0340414 ,        ,20250108,O,C1,20250108,20250114,GS,101501,Adm for op. (RUI breast DCIS),"1. Intraductal carcinoma in situ of breast, right","1. RUI breast partial mastectomy with SLNB 
+2. VABE (2G) - LUO x 2  breast mass",,외래진료 예정$0,"RUI breast DCIS, LUO mass로 1. RUI breast partial mastectomy with SLNB 2. VABE (2G) - LUO x 2  breast mass 후 경과 양호하여 퇴원",001306,F,56,2 ,1 ,,,2. Cystic breast,,,,,,,20250113,08:50:18,001306,,"** 병리검사 **
+20250109 *(이원)Level D(파라핀블록 16개 이상) : C5607-
+
+병리번호 : S25-5086
+
+< Diagnosis >
+
+Breast, RUI, right, partial mastectomy: 
+
+  Ductal carcinoma in situ (residual)  
+
+    1) Post-biopsy status (refer to S24-246204)
+
+    2) 2.7 cm in diameter (pTis)
+
+    3) Histologic type (DCIS): Cribriform or Micropapillary type
+
+    4) Nuclear grade: high
+
+    5) Presence of necrosis
+
+    6) Presence of microcalcification 
+
+    7) Absence of lymphovascular invasion
+
+    8) Margin status
+
+           Superior margin: involved (DCIS: 0.6 cm)
+
+           Inferior margin: clear 
+
+           Lateral margin: clear
+
+           Medial margin: clear
+
+           Deep margin: clear 
+
+    9) Pathologic TNM stage (AJCC 8th ed.): pTis NX 
+
+Note)
+
+Result of tumor marker study (S24-246204): HER2 type
+20250110 *(이원)LevelC (1~9개) : C5603-
+
+병리번호 : S25-5097
+
+< Diagnosis >
+
+I.  Breast, LUO-1, left, VABE: 
+
+      Fibrocystic change
+
+      with 1) usual ductal hyperplasia, mild  
+
+           2) apocrine metaplasia
+
+II. Breast, LUO-2, left, VABE: 
+
+      Suggestive of Ductal carcinoma in situ (see note)
+
+      with 1) cribriform
+
+           2) low nuclear grade
+
+           3) absence of necrosis
+
+           4) about 7mm in diameter
+
+Note: Recommend Immunohistochemical study (p63, CK5/6, ER) to confirm diagnosis."
+2,,0340414 ,        ,20250203,I,C1,20250203,20250210,GS,100101,LUO breast DCIS,Lt. breast DCIS,"LUO breast partial mastectomy with SLNB 
+Rt. breast revision",,"외래진료 예정
+$0",Rt. breast DCIS 로 BCS with SLNB 한 환자로 입원중 LUO VABE 상 Lt. breast DCIS 발견되어 LUO breast partial mastectomy with SLNB Rt. breast revision 후 경과 양호하여 퇴원,001306,F,56,2 ,1 ,,,,,,,,,,20250208,08:55:16,001306,,
+3,,0372609 ,        ,20241206,I,C1,20241206,20241207,GY,080501,자궁내막의 폴립,자궁내막의 폴립,Hysteropolypectomy,,"외래진료 예정
+$0",자궁내막의 폴립으로 2024-12-6 Hysteropolypectomy후 안정가료후 퇴원합니다,001607,F,51,2 ,1 ,,,,,,,,,,20241206,13:41:56,001607,,"2024.11.22 CBC(Hb:14.0)
+2024.12.06 Biopsy
+< Pathological Diagnosis >
+Uterus, endometrium, hysteropolypectomy:
+   Endometrial polyp"
+4,,0386384 ,        ,20241217,I,C1,20241217,20241227,GS,090801,"R/O thyroid CA진단 받고 Total thyroidectomy,mRND. Lt 위해 adm
+",1. 갑상선의 악성 신생물,"Total thyroidectomy,ccnd.Ex&Bx. of lateral neck LN, Lt.",,"외래진료 예정
+$0","R/O thyroid ca 진단으로 2024년 12월 18일 Total thyroidectomy,ccnd.Ex&Bx. of lateral neck LN, Lt. 수술 후 특별한 complication 없이 퇴원함.op wound clear,drain remove & steri-strip apply.",001319,F,52,1 ,1 ,,,1. 림프구성 갑상선염,,,,,,,20241224,16:20:33,001319,,"** 검체검사 **
+20241227 (선별)갑상선자극홀몬(TSH) : 4.03
+20241223 (선별)트리요도타이로닌(T3) : 48.0
+20241218 부갑상선호르몬 : 3.8
+20241223 부갑상선호르몬 : < 2.4
+20241227 부갑상선호르몬 : 2.6
+20241223 항갑상선글로불린항체 : 13.1
+20241227 항갑상선글로불린항체 : 12.2
+** 병리검사 **
+20241218 Level D(파라핀블록 10~15개) - 조직병리검사(1장기당) : GROSS: Submitted are 7 parts. The first specimen is a right lobe of thyroid, measuring 5.0x2.5x1.5cm in dimensions and weighing 13g. Mass is not seen. Representative section is blocked in A. The 2nd specimen are lymph node with fatty tissue. Blocked in toto in B. The 3rd specimen is a left lobe of thyroid, measuring 5.0x4.0x2.0cm in dimensions and weighing 19g. Two gray solid nodules (upper 0.8cm, mid isthmic 1.1cm) are present. Representative sections are blocked in C and D. The 4th to 7 specimens are lymph node with fatty tissue. Blocked in toto in E to I. 
+Slide keys)
+   A: right thyroid,  B: right level VI,  C: left thyroid upper,
+   D: left thyroid isthmic,  E,F: left level VI,  G: left level VII,
+   H: left lateral LN,  I: D&P
+9HE, B,E,F,H,1recut)
+Ink code) green: posterior margin
+DIAGNOSIS:
+Thyroid gland, total thyroidectomy:
+   1. Papillary thyroid carcinoma (x2), left,
+        1) Tumor size: 0.8x0.6cm (upper), 1.1x1.0cm (mid isthmic)
+        2) Extrathyroidal extension (perithyroidal fat): present (isthmic)
+        3) Lymphovascular invasion: not identified
+        4) Resection margin: negative for tumor
+        5) Lymph node status: no metastasis in 16 lymph nodes (0/16)
+           [ right level VI: 0/5,  left level VI: 0/7,  left level VII: 0/2, 
+             D&P: 0/2 ]
+   2. Lymphocytic thyroiditis, both
+Soft tissue, neck, lateral, left, excision:
+   No tumor (0/0)"
+5,,0444265 ,        ,20241215,I,C1,20241215,20241218,GY,090901,좌측 난소의 혹,LT.ov mucinous cystadenoma,endo(A)BSO,,"외래진료 예정
+$0",좌측난소의 혹으로 2024-12-16 endo(A)BSO 시행후 안정가료후 퇴원합니다,001607,F,61,2 ,1 ,,,"both paratubal cyst
+장의 유착.복막 유착",,,,,,,20241216,09:57:28,001607,,"2024.12.17 CBC(Hb:13.5)
+2024.12.16 BIopsy
+< Pathological Diagnosis >
+Ovary and salpinx, left, endoscopic salpingo-oophorectomy:
+   1. Mucinous cystadenoma, ovary
+   2. Paratubal cyst
+
+02. Ovary and salpinx, right, endoscopic salpingo-oophorectomy:
+      Paratubal cyst"
+6,,0570072 ,        ,20180608,I,C1,20180608,20180615,GY,092003,"혹있어요
+",Rt. ovary pseudocyst,Endo(A) RSO + Appendectomy+Adhesiolysis,,"외래진료과내원(OPD. Follow/up)
+","- 입원, 수술일 : 2018.06.08 Endo(A) RSO + Appendectomy+Adhesiolysis
+
+- 퇴원일 : 2018.06.15",001601,F,41,2 ,1 ,,,"appendicitis
+pelvic adhesion",,,0,0,0,0,20180615,10:01:20,001601,,"Ovary and salpinx, right, endoscopic salpingo-oophorectomy:
+   1. Fibrous cystic wall and chronic inflammation (no lining epithelium, pseudocyst)
+   2. Salpinx, unremarkable
+
+
+Appendix, endoscopic appendectomy:
+
+   Acute appendicitis
+
+"
+7,,0570072 ,        ,20241224,I,C1,20241224,20241225,GY,092104,생리 끝나면 밑이 묵직하면서 빠지는 느낌있어 본원진료위해 내원하심,submucosal myoma,"Hysteroscopic submucosal myomectomy
+ endometrial polypectomy, 
+                                       
+",sono guided.,"외래진료 예정
+$0","[2024-12-24] 외래에서 경과 관찰 중 초음파 검사 상 자궁 근종 진단되어 자궁경 수술 위해 입원함.
+[2024-12-24] 자궁경하 근종 절제술 및 자궁 내막용종절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 소량이였음.
+[2024-12-25] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001601,F,48,2 ,1 ,,,"endometrial polyp
+",,,,,,,20241224,19:21:49,001601,,"** 병리검사 **
+20241224 *(씨젠)Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted are 2 parts. The first specimen as myoma is a piece of gray solid nodule, measuring 1.2x0.8x0.8cm in dimensions. Bisected and blocked in toto in A. The 2nd specimen as polyp are multiple pieces of brown soft tissue, measuring 2.0x2.0cm in toto. Blocked in toto in B.
+
+Slide keys) A: myoma,  B: polyp
+
+2HE)
+
+DIAGNOSIS:
+
+Uterus, myoma, hysteroscopic myomectomy:
+
+   Leiomyoma
+
+Uterus, polyp, hysteroscopic polypectomy:
+
+   Endometrial polyp"
+8,,0642544 ,        ,20241205,I,C1,20241205,20241210,EN,111303,목 불편,1. 만성 편도염,편도절제술,,"외래진료 예정
+$0","만성 편도염으로 수술위해 입원하여  양측 편도 절제술(24.12.06) 이후 수술부위 이상없음 확인되어 퇴원함
+",002806,M,28,2 ,1 ,,,,,,,,,,20241210,08:48:57,002806,,"** 병리검사 **
+20241206 *(이원)Level A - 조직병리검사(1장기당) : C5601-
+
+병리번호 : S24-240356
+
+< Gross >
+
+I.  Received in formalin is a product of tonsillectomy,
+
+    measuring 3.2x2.x2.0 cm. Blocked in A1-A.
+
+
+
+II. Received in formalin is a product of tonsillectomy,
+
+    measuring 3.0x3.0x2.0 cm. Blocked in B1-B2.
+
+
+
+
+
+
+
+< Diagnosis >
+
+I.  Tonsil, left, tonsillectomy;
+
+      Chronic hypertrophic tonsillitis
+
+
+
+II. Tonsil, right, tonsillectomy;
+
+      Chronic hypertrophic tonsillitis
+
+
+
+
+
+
+
+판독의 : 성모병리과의원 강미선MD 575(54123)
+
+
+
+※ 본 결과는 이원의료재단에서 성모병리진단센터에 재위탁한 검사 결과입니다.
+부산광역시 기장군 정관읍 정관로 232-60 영우빌딩 3F
+TEL 051-555-5885  FAX (051)555-8276$$$
+** 단순영상 **
+20241114 Chest PA(1) : No active lesion in both lungs.
+No cardiomegaly.
+
+Rec) clinical correlation.
+
+
+"
+9,,0661513 ,        ,20170927,I,C1,20170927,20170930,GY,080104,"IUP c vaginal spotting (+) , low abdominal discomfort",IUP c threatened abortion,none,sugest,"외래진료과내원(OPD. Follow/up)
+","2017.9.27 , IUP 확인후 절박유산 의진하에 입원.
+2017.9.30 , b-hcg (307) -> r/o complete abortion 으로 퇴원. ",001643,F,29,2 ,1 ,,,,,,0,0,0,0,20170930,12:14:29,001643,,"TVS) EM : 0.4 cm , GS (-) 
+B-HCG (307) "
+10,,0661513 ,        ,20221005,I,C1,20221005,20221006,OS,130901,Rt 4th finger pain,1. 손가락의 연조직염,I&D,,"외래진료 예정
+$0","Rt 4th finger. cat bite. 압통, 부종, 열감. 농양+++으로 정밀검사 후 I&D (2022.10.5) 수술 및 항생제치료 ,상처소독관리 후 경과호전 퇴원.",002517,F,34,2 ,1 ,,,1. 손목 및 손의 다발성 열린상처,,,,,,,20221006,08:55:42,002517,,"** 특수영상 **
+20221005 Hand MRI : Localized ill,defined swelling/edema of superficial soft tissue on dorsum of 4th finger, esp.  head/neck portion of 
+4th MC
+  --R/O: Superficial cellulitis pattern  with or without dorsal hood bursitis pattern,
+
+
+Clinical correlation is recomm.
+
+"
+11,,0661513 ,        ,20240719,I,C1,20240719,20240721,OS,510101,우측 다리 통증,1. 다리의 연조직염,I&D (Rt lower leg),,"외래진료 예정
+$0","7/12 타병원에서 수액 맞고 난 후 우측 다리 몽우리 만져지고 통증있어 내원하여 정밀검사 상 Rt. lowerleg cellulitis 소견으로 I&D (2024.7.19) 수술 및 항생제치료, 상처소독관리 후 퇴원. 
+
+",002517,F,36,2 ,1 ,,,,,,,,,,20240720,12:07:50,002517,,"** 특수영상 **
+20240719 (3T)Lower extremity MRI : Localized,diffusely superficial soft tissue in ant.medial aspect of right lower leg.
+ --R/O:localizedly superficial cellulitis pattern in ant and ant. medial side of right lower leg.
+ --no  discernible BME wthin adjacent bones,tibia and fibular bone
+Clinical correlation is recomm."
+12,,0661513 ,        ,20240824,I,C1,20240824,20240902,OS,130504,우측 아래다리 염증,1. 다리의 연조직염,I&D (Rt lower leg),,"외래진료 예정
+$0","Rt. lowerleg cellulitis-I&D (2024.7.19) 시행 후 염증 호전 없어 내원하여 정밀검사 및 I&D (2024.8.27) 수술 및 항생제치료, 상처소독관리 후 퇴원. ",002517,F,36,2 ,1 ,,,,,,,,,,20240902,08:58:08,002517,,"** 검체검사 **
+20240827 C-반응성단백-정량 : 0.55
+20240828 C-반응성단백-정량 : 0.39
+** 특수영상 **
+20240824 Lower extremity MRI : Unremarkable interval change,comparing with previous study on 2024-07-19"
+13,,0661513 ,        ,20241217,I,C1,20241217,20241221,OS,110505,"좌측 발목 통증 
+",1. 다리의 연조직염,I&D (Lt. ankle),,"외래진료 예정
+$0","좌측 발목 염증, 통증으로 내원하여 정밀검사 상 Lt. ankle cellulitis 소견으로 I&D (2024.12.18) 수술 및 항생제치료, 상처소독관리 후 퇴원.
+",002517,F,36,2 ,1 ,,,,,,,,,,20241220,15:59:58,002517,,"** 검체검사 **
+20241217 C-반응성단백-정량 : 0.96
+** 특수영상 **
+20241217 (3T)Ankle joint MRI : ~Localized synovitis/bursitis pattern in lateral ankle,
+with small,lobulated cystic ganglion in pre-fibular region
+  --strains(grade I) of AITFL/PITFL
+~R/O: Mild Haggar bursitis pattern, post.calcaneal fat pad with localized swelling/edema/congestion in post. heel.
+Clinical correlation is recomm."
+14,,0675537 ,        ,20241217,I,C1,20241217,20241223,PS,110801,코뼈 골절,1. 코뼈 골절,비골 골절 재건,,"외래진료 예정
+$0",상기환자 유리 문에 부딪히는 사고로 코뼈 골절 되어 본원 성형외과 진료후 수술적 치료 동의 하에 입원하여 비골 골절 재건 시행하였습니다. 상태호전되어 퇴원합니다. 외래에서 경과 관찰하겠습니다,001419,F,30,2 ,1 ,,,,,,,,,,20241221,11:20:59,001419,,"** 단순영상 **
+20241218 Nasalbone AP.Both Lat(3) : s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+
+20241218 Skull Series(4) : s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+
+** 특수영상 **
+20241214 Facial bone CT(3D가산포함) : Clinical information: 코 골절 확인
+Both nasal bone fracture with displacement.
+
+20241218 Facial bone CT(3D가산포함) : s/p C/R of nasal bone fracture and external nasal splint application.
+Postop. change with packing materials in both nasal cavity.
+Otherwise, no unusual postop. finding."
+15,,0836815 ,        ,20241111,I,C1,20241111,20241113,GY,099903,근종있어 본원진료위해 내원하심,1. Submucosal myoma," Resectoscopic submucosal myomectomy, 
+ partial endometrial polypectomy, ",sono guided. ,"외래진료 예정
+$0","[2024-11-11] 외래에서 경과 관찰 중 초음파 검사 상 자궁 근종 진단되어 자궁경 수술 위해 입원함.
+[2024-11-11] 자궁경하 근종 절제술 및 자궁내막용종 절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 소량이였음.
+[2024-11-13] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001601,F,42,2 ,1 ,,,1. endometrial polyp,,,,,,,20241111,23:36:35,001601,,"** 병리검사 **
+20241111 (위)Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted are 2 parts. The first specimen as myoma are multiple pieces of gray solid tissue, measuring 5.0x5.0x1.0cm in toto. Representative section is blocked in A. The 2nd specimen as polyp are multiple pieces of brown soft tissue, measuring 1.0x1.0cm in toto. Blocked in toto in B.
+
+Slide keys) A: myoma,  B: polyp
+
+2HE)
+
+DIAGNOSIS:
+
+Uterus, myoma, hysteroscopic myomectomy:
+
+   Leiomyoma
+
+
+
+Uterus, polyp, hysteroscopic polypectomy:
+
+   Endometrial polyp
+
+
+** 특수영상 **
+20241111 Pelvis MRI-Female(Enhance) : Clinical information: uterine myoma
+Pelvic MRI (CE);
+Axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+자궁전굴상태
+1. T2 low SI masses in uterine wall.
+-> probably uterine myomas.
+      - right lateral: IM type (6.1cm)
+      - left postserior: SM type (3.1cm)
+2. Endometrial thickness: 5mm
+3. Corpus luteal cyst in left ovary.
+4. No significant pelvic lymphadenopathy.
+     No hydronephrosis.
+
+Limited evaluation for scan-covered bowel and upper abdominal solid organs on MRI due to artifact."
+16,,0836815 ,        ,20241227,I,C1,20241227,20241229,GY,080201,근종있어 본원진료위해 내원하심,Submucosal myoma,"Resectoscopic submucosal myomectomy        
+endometrial polypectomy
+",sono guided.,"외래진료 예정
+$0","[2024-12-27] 외래에서 경과 관찰 중 초음파 검사 상 자궁 근종 진단되어 자궁경 수술 위해 입원함.
+[2024-12-27] 자궁경하 근종 절제술 및 자궁내막용종 절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 소량이였음.
+[2024-12-29] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001601,F,43,2 ,1 ,,,endometrial polyp,,,,,,,20241228,14:05:36,001601,,"** 병리검사 **
+20241227 Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted are 2 parts. The first specimen as myoma are multiple pieces of gray solid tissue, measuring 3.0x2.5x0.7cm in toto. The largest bisected and blocked in toto in A. The 2nd specimen as polyp are multiple pieces of brown soft tissue, measuring cm in toto. Blocked in toto in B.
+
+Slide keys) A: myoma,  B: polyp
+
+2HE)
+
+DIAGNOSIS:
+
+Uterus, myoma, hysteroscopic myomectomy:
+
+   Leiomyoma
+
+
+
+Uterus, polyp, hysteroscopic polypectomy:
+
+   Endometrial polyp"
+17,,0900993 ,        ,20220611,O,C1,20220611,20220612,GY,080305,비정상적인 질출혈,자궁내막폴립,자궁경수술 - 자궁내막폴립절제수술,자궁경수술후 수액요법,"외래진료 예정
+$0","비정상적인질출혈, 자궁내막폴립으로 자궁경수술 - 자궁내막폴립절제수술후 경과양호하여 퇴원",001653,F,44,2 ,1 ,,,,,,,,,,20220611,11:42:34,001653,,"** 병리검사 **
+20220611 Level B - 조직병리검사(1장기당) : GROSS: Submitted are multiple pieces of brown soft tissue, measuring 1.5x1.5cm in toto. Entirely embedded in A.
+1HE)
+
+DIAGNOSIS:
+
+Uterus, endometrium, hysteroscopic polypectomy:
+
+   1. Endometrial polyp
+
+   2. Disordered proliferative phase"
+18,,0900993 ,        ,20241203,I,C1,20241203,20241209,GY,091601,자궁의 혹,다발성근종,TLH  BS,,"외래진료 예정
+$0",다발성근종으로 2024-12-4TLH with BS후 안정가료후  퇴원합니다,001607,F,47,2 ,1 ,,,우측 난관주위 낭종,,,,,,,20241204,15:10:26,001607,,"2024.12.05 CBC(Hb:12.9)
+2024.12.04 Biopsy
+< Pathological Diagnosis >
+Uterus, total laparoscopic hysterectomy:
+   1. Leiomyoma, multiple, up to 8.5x7x6 cm
+   2. Secretory endometrium
+   3. Chronic cervicitis
+
+02. Salpinx, right, salpingectomy:
+      Paratubal cyst
+
+03. Salpinx, left, salpingectomy:
+      Congestion"
+19,,0912445 ,        ,20241227,I,C1,20241227,20241229,OS,100605,우측 4족지 통증,"1. 기타 발가락의 골절, 폐쇄성","OR pinning , ligament repair(Rt. 4th toe)",,"외래진료 예정
+$0","12/26 목욕탕 다리에 부딪히며  우측 4족지 통증있어 내원하여 정밀검사 상 1. Fx head/neck portion of 4th P.P.Rt  2. collateral lig injury소견으로 1.OR pinning 2. ligament repair (2024.12.28)수술 및 항생제치료, 상처소독관리 후 퇴원.
+",002517,F,43,2 ,1 ,,,1. 발목 및 발 부위의 인대의 파열,,,,,,,20241228,12:13:03,002517,,"** 특수영상 **
+20241227 Foot MRI : Acute spiral oblique fracture in  head/neck portion of 4th P.P.
+  ---localized swellinig/edema  of surrounded soft tissue around 4th P.P.
+  ---localized ill,defined BME within head/neck portion of 4th P.P.
+  ---R/O: Injury of collateral lig. & F.T.
+
+
+Clinical correlation is recomm.
+
+"
+20,,1017768 ,        ,20241218,O,C1,20241218,20241221,GS,101101,Rt. chest lipoma,Rt. chest lipoma (deep),Lipoma Excision,,"외래진료 예정
+$0",Rt. chest lipoma 로 Excision op. 후 경과 양호하여 퇴원,001306,F,51,2 ,1 ,,,,,,,,,,20241220,08:49:38,001306,,"** 병리검사 **
+20241219 *(이원)Level A - 조직병리검사(1장기당) : C5601-
+
+병리번호 : S24-253261
+
+< Diagnosis >
+
+Soft tissue, chest, right, excision:
+
+  Lipoma
+
+판독의 : 성모병리과의원 박도윤MD 534(50852)
+
+※ 본 결과는 이원의료재단에서 성모병리진단센터에 재위탁한 검사 결과입니다.
+부산광역시 기장군 정관읍 정관로 232-60 영우빌딩 3F
+TEL 051-555-5885  FAX (051)555-8276
+** 특수영상 **
+20241211 (3T)Chest MRI(Enhance) : C/W Intra-muscular lipoma,62.50mm H x 30.68mm W x 51.22m Depth, in right  chest wall,beween chest wall muscles - Seratus Ant.M & Pectalis minor M.
+--D.DX: Acessary Breast 
+--Thin walled,lomboid app.of exuberrant fatty mass,which is shown as bright S.I.on T1WI,dark S.I on 
+FS T2WI,Not enhancing lesion on Gd(+) study,Not invasive pattern  in right lower lateral chest wall.
+
+Clinical correlation is recomm."
+21,,1018708 ,        ,20241223,I,C1,20241223,20241226,EN,100901,코불편,1. 만성 범부비동염,both ESS rf,,"외래진료 예정
+$0",만성 부비동염으로 양측 내시경 부비동 수술 및 양측 하비갑개 절제술(24.12.24)후 수술부위 이상없음 확인되어 퇴원함,002806,M,43,2 ,1 ,,,"1. 만성 비염
+2. 코선반의 비대",,,,,,,20241226,09:38:33,002806,,"** 단순영상 **
+20241206 P.N.S Water""s View(1) : Mucoperiosteal thickening in both maxillary sinuses.
+  --> Suspicion of both maxillary sinusitis.
+
+
+
+** 특수영상 **
+20241206 P.N.S CT : CI: 만성 부비동염
+
+Mucosal thickening with partial opacification in both maxillary, anterior ethmoid and frontal sinuses.
+  --> suspicion of sinusitis.
+
+Nasal septal deviation with spur formation to the Lt. side.
+
+rec> clinical correlation.
+
+
+
+"
+22,,1038926 ,        ,20241209,I,C1,20241209,20241220,GS,102001,Rt TE Lt BCS SLNB Both recon 위해 adm,"1. 유방의 하내사분의 악성 신생물, 왼쪽",Lt BCS SLNB  Rt TE  Both Recon,1차 AC CTx,"외래진료 예정
+$0","2024 12/9 Rt TE Lt BCS SLNB Both recon위해 adm
+2024 12/10 Rt TE Lt BCS SLNB Both recon
+2024 12/11 Rt (130)cc, Lt (30)cc
+2024 12/13 Rt (25)cc, Lt (20)cc
+2024 12/15 Rt (5)cc, Lt (5)cc both vac R(+)
+2024 12/16 vac R site 1point suture(+) 1차 AC CTx
+2024 12/17 Dressing
+2024 12/19 Dressing
+2024 12/20 discharge OPD FU",001316,F,49,1 ,1 ,,,1. 미만성 낭성 유방병증,,,,,,,20241219,15:40:04,001316,,"** 병리검사 **
+20241210 *(이원)Level C (10개 이상) : C5604-
+
+병리번호 : S24-243919
+
+< Diagnosis >
+
+I.  Breast, right, total excision:
+
+      Fibrocystic change
+
+      with 1) usual ductal hyperplasia, moderate  
+
+           2) columnar cell change or columnar cell hyperplasia 
+
+           3) adenosis
+
+           4) papillary apocrine change or apocrine hyperplasia
+
+           5) duct ectasia
+
+           6) microcalcification
+
+II. Breast, 5h, right, total excision:
+
+      Fibrocystic change
+20241210 *(이원)Level D(파라핀블록 16개 이상) : C5607-
+
+병리번호 : S24-243920
+
+< Diagnosis >
+
+Dx (5 IHC )
+
+I.  Breast, left, breast conserving surgery: 
+
+      Invasive ductal carcinoma (residual)
+
+        1) Post-biopsy  status (refer to S24-213819)
+
+        2) 2.2 cm in diameter (pT2)
+
+        3) Histologic type (IDC): NOS type
+
+        4) Histologic grade: low high grade (2+2+1=5)
+
+        5) Absence of EIC
+
+        6) Presence of necrosis
+
+        7) Presence of microcalcification 
+
+        8) Absence of lymphovascular invasion
+
+        9) Stromal TILs: present (1 %)
+
+       10) Margin status
+
+           Superior margin: clear 
+
+           Inferior margin: clear 
+
+           Lateral margin: clear 
+
+           Medial margin: clear 
+
+           Deep margin: clear 
+
+       11) Lymph nodes: Lt, axillary, dissection:
+
+             □ No metastasis (0/13) (pN0)
+
+                (1A: 0/3, 1B: 0/4, level II: 0/6)
+
+       12) Pathologic TNM stage (AJCC 8th ed.): pT2 N0
+
+Note)
+
+1. In sections from mass 2, invasive cancer lesions are observed.
+
+2. Addendum for tumor marker study will follow.
+
+II. Breast, 6h, left, excision:
+
+      Fibrocytic change, compatible with "
+23,,1038926 ,        ,20250106,O,A9,20250106,20250108,GS,101602,2차 AC CTx 위해 adm.,1. 신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람,,2차 AC CTx ,"외래진료 예정
+$0","2025 1/6  2nd AC-T Ctx 입원 및 시행함
+2025 1/8  A/N/V/D 2/2/2/2 po intake : moderate 
+               discharge & OPD f/u",001316,F,50,1 ,1 ,,,"2. 유방의 하내사분의 악성 신생물, 왼쪽",,,,,,,20250107,16:19:54,001316,,"** 검체검사 **
+20250106 적혈구수 : 3.52
+20250106 헤마토크리트 : 33.5
+20250106 혈색소(광전비색법) : 10.5
+20250106 혈소판수 : 497
+20250106 혈소판수 - PCT : 0.42
+20250106 혈소판수 - PDW : 7.9
+** 단순영상 **
+20250106 Chest PA(1) : s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding.
+
+Disappearance of subcutaneous emphysema."
+24,,1101366 ,        ,20241223,I,F1,20241223,20241231,NS,110601,LBP with rt. buttock/thigh/leg pain,"1. 추간공의 결합조직 및 원반 협착, 요추부위","L5-S1, Rt. laminotomy & Rt. foraminotomy/ extra-foraminotomy","Dx
+PT","외래진료 예정
+$0","12/23 입원
+CI 협진
+허리 보조기는 인터넷구매예정 
+수술후 ICU turn
+플빅스정 3일중단 설명 - 12/22~
+12/24 동의서(환자)
+OP day 
+L5-S1 Rt.laminotomy & Rt.foraminotomy/extra-foraminotomy 
+12/26 MR +
+H/V removal 
+수술후 사진 설명함.
+12/27 CRP 0.34
+BUN/cr/eGFR 27.8/0.91/59
+Hb 11.4 
+12/28 OP site pain: on/off
+both buttock pain: decrease 
+both foot numbness: none 
+12/30 듀락칸 먹어도 불변 지속 - 레조트론 추가 
+CRP 1.04  Hb 11.3 
+OP site pain: on/off
+LBP: none 
+both leg numbness: none 
+12/31 S/O
+경과 호전되어 퇴원",002702,F,82,2 ,1 ,,,,,,,,,,20241231,09:08:49,002702,,"** 특수영상 **
+20241221 (3T)L-Spine MRI : General Overview & Alignment
+~Slightly,HIVDs at C-3/4/5/6/7 disc spaces with slightly effacement of ant .theca sac
+~Underlying Deg.Lumbar spondylosis deformans & Facet jt. arthrosis
+~Multiple  intervertebral disc  disease and stenosis ,
+@ At L-2/3, L-3/4 disc level ; diffuse protruded disc,facet jt.arthrosis(both) and LFH with  moderate central stenosis/lateral stenosis
+  --R/O:bilateral L4 N. radiculopathies,combined.
+  --Lt.>Rt.
+@At L-4/5 disc level ; diffuse protruded  disc,facet jt.arthrosis(both) and  LFH with  severe central/lateral  stenosis.
+  ---bilateral L5 N.radiculopathies,combined
+  ---Lt.>Rt.
+@At L-5/S1disc level ; 
+   diffuse protruded  disc ,facet jt.arthrosis/LFH with
+  moderate central/lateral stenosis
+  ---bilateral S1 N.radiculopathies,combined.
+ ~  Deg. interspinous bursitis change (Baarstrup disease)  & post.interspinous enthesitis pattern of L-3/4,L-4/5 /L-5/S-1 levels
+Rec) Clincial correlation with other radiographics 
+       Follow -Up study ,if clinically compatible with.
+
+20241226 L Spine T2 sagittal : S/P Post.Op. ( L-5/S1 Rt.laminectomy with Rt.foraminotomy)
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+20241223 L-Spine CT : ~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.(H.N.P.>> Protruded disc) at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation"
+25,,1125154 ,        ,20241216,I,C1,20241216,20241223,GS,090804,R/O thyroid CA진단 받고 Lt. thyroid lobectomy 위해 adm,1. 갑상선의 악성 신생물,"Lt.thyroid lobectomy,ccnd.",,"외래진료 예정
+$0","R/O thyroid ca 진단으로 2024년 12월 17일 Lt.thyroid lobectomy,ccnd. 수술 후 특별한 complication 없이 퇴원함.op wound clear,drain remove & steri-strip apply.",001319,F,23,1 ,1 ,,,"1. 머리, 얼굴 및 목의 림프절의 이차성 및 상세불명의 악성신생물",,,,,,,20241221,12:13:20,001319,,"** 검체검사 **
+20241221 (선별)갑상선자극홀몬(TSH) : 4.75
+** 병리검사 **
+20241217 Level D(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted are 5 parts. The first specimen is a left lobe of thyroid, measuring 5.0x2.5x1.5cm in dimensions and weighing 13g. Two gray solid nodules (upper 0.2cm, mid 0.7cm) are present. Representative sections are blocked in A and B. The 2nd and 3rd specimens are lymph node with fatty tissue. Blocked in toto in C and D. The 4th specimen is a piece of brown soft tissue, measuring 0.4cm in diameter. Blocked in toto in E. The 5th specimen is lymph node with fatty tissue. Blocked in toto in F.
+Slide keys)
+   A: left thyroid upper,  B: left thyroid mid,  C: left level VI,
+   D: left level VI-1,  E: tumor margin,  F: D&P
+6HE, C,1recut)
+Ink code) green: posterior margin
+DIAGNOSIS:
+Thyroid gland, left, lobectomy:
+   Papillary thyroid carcinoma (x2), 
+     1) Tumor size: 0.2x0.2cm (upper), 0.7x0.6cm (mid)
+     2) Extrathyroidal extension (perithyroidal fat): present
+     3) Lymphovascular invasion: present
+     4) Resection margin: positive posterior margin
+     5) Lymph node status: metastasis in 2 out of 15 lymph nodes (2/15)
+        [ left level VI: 1/10,  left level VI-1: 1/1,  D&P: 0/4 ] 
+        - the largest metastatic deposit: 2mm 
+        - extranodal extension: not identified
+Specimen labeled as ""tumor margin"", biopsy:
+   No tumor"
+26,,1126005 ,        ,20240920,I,C1,20240920,20240926,GY,080606,"whole abdominal pain
+",hemoperitoneum due to corpus luteum rupture,laproscopic left ovary cyst enucleation,,"외래진료 예정
+$0",황체 출혈로 인한 하복통으로 전원 와서 CT 및 초음파 본 결과 왼쪽 난소  황체 있으면서 기형종도 있고  CRP증가 되어 있어 복강경 수술로 황체및 기형종 제거 하고 항생제 치료 한뒤 경과 관찰 후 퇴원 함. 수술 후경과는 양호 하였고 조직검사 결과는 외래에서 확인 하기로 함,001608,F,20,2 ,1 ,,,"Left ovary dermoid cyst
+R/O PID",,,,,,,20240925,09:25:13,001608,,"** 검체검사 **
+20240920 C-반응성단백-정량 : 6.69
+20240924 C-반응성단백-정량 : 1.42
+** 병리검사 **
+20240920 *(씨젠)Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : < Pathological Diagnosis >
+01. Ovary, left (1), cystectomy:
+   Hemorrhagic corpus luteal cyst
+
+02. Ovary, left (2), cystectomy:
+   Mature cystic teratoma
+
+
+< Gross Description >
+
+01. Received in formalin is a gray-white cystic mass,
+    measuring 2x1.4x1 cm in dimension.
+    On section, the cyst is filled with blood clot.
+    In toto in 1.
+02. Received in formalin is a gray-white cystic mass,
+    measuring 3x2.8x1.4 cm in dimension.
+    On section, the cyst is filled with hair and sebum.
+    Representative sections are blocked in 2.
+
+조직번호:BS24- 133865
+전문의 김활웅(병리전문의번호: 671) (의사면허번호:62786) TEL: 1566-6500
+본　진단은　(재)씨젠의료재단에서 씨젠부산의원에　위탁한결과입니다．$$$
+** 초음파 **
+20240920 (OBGY)SONO - PACS 전송용 : 
+U/S   Uterus: AP diameter: 3.37    cm          A/V    
+              endometrium 두께  0.76    cm
+      Right adnexa: WNL    
+      Left adnexa: R/O hemorrhagic corpus luteum  cyst(  4.99*5.02 cm)
+                     & dermoid 2.87*2.86 cm
+      Culdesac: free fluid,scanty
+Imp) R/O hemoperitoneum due to corpus luteum rupture
+     Left ovary dermoid cyst
+
+
+
+"
+27,,1126005 ,        ,20241217,I,C1,20241217,20241222,GY,080601,Lower abdominal pain,난소 낭종 파열,"Laparoscopic right ovarian cystectomy
+Electrocauterization for pelvic endometriotic foci",Ultrasound guidance,"외래진료 예정
+$0","[2024-12-17] 초음파 검사 결과 난소 낭종 파열 및 혈복강으로 진단되어 복강경 수술위해 입원함.
+[2024-12-17] 복강경하 난소 낭종 파열에 대한 난소 낭종 절제술, 골반내 자궁내막증 병소 소작술시행하였으며 수술 중 특이 소견 없었음.
+[2024-12-22] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001639,F,20,2 ,1 ,,,"혈복강
+골반복막의 자궁내막증",,,,,,,20241221,10:52:18,001639,,"** 검체검사 **
+20241217 혈색소(광전비색법) : 10.3
+20241218 혈색소(광전비색법) : 9.6
+** 병리검사 **
+20241217 *(씨젠) Level A - 조직병리검사(1장기당) : < Pathological Diagnosis >
+Ovary, right, endoscopic cystectomy:
+   1. Hemorrhagic corpus luteum
+   2. Inclusion cyst
+
+
+< Gross Description >
+
+Received in formalin is a piece of gray-white cystic wall,
+measuring 1x0.6x0.2 cm in dimension.
+In toto in 1.
+
+조직번호:BS24- 189583
+전문의 김활웅(병리전문의번호: 671) (의사면허번호:62786) TEL: 1566-6500
+본　진단은　(재)씨젠의료재단에서 씨젠부산의원에　위탁한결과입니다．$$$
+"
+28,,1126618 ,        ,20241218,O,C1,20241218,20241221,GS,100301,Both NSM위해 입원함.,1. 유방의 비대,Subcutaneous  Mastectomy,,외래진료 예정$0,"2024 12/18 Subcutaneous Mastectomy done.
+2024 12/19 Rt20cc Lt3cc 
+2024 12/20 Rt20cc Lt35cc 
+2024 12/21 vac R(+) 1point suture(+) discharge OPD FU
+",001316,M,30,1 ,1 ,,,,,,,,,,20241221,07:21:00,001316,,"** 병리검사 **
+20241218 *(이원)Level C (10개 이상) : C5604-
+
+병리번호 : S24-251919
+
+< Diagnosis >
+
+I.  Breast, male, left, nipple-sparing mastectomy: 
+
+      Gynecomastia
+
+II. Breast, male, left, excisional biopsy:
+
+      Almostly fibroadipose tissue
+20241218 *(이원)Level C (10개 이상) : C5604-
+
+병리번호 : S24-251918
+
+< Diagnosis >
+
+I.  Breast, male, right, nipple-sparing mastectomy: 
+
+      Gynecomastia
+
+II. Breast, male, 6h, right, excisional biopsy:
+
+      Almostly fibroadipose tissue"
+29,,1130301 ,        ,20241218,I,C1,20241218,20241220,GY,099903,Abnormal cervical pathology,CIN 3,"LEEP
+IUD removal",,"외래진료 예정
+$0","[2024-12-18] 외래에서 시행한 자궁 경부 조직 검사 결과 전암성 병변으로 진단되어 자궁 경부 원추 절제술 위해 입원함.
+[2024-12-18] 자궁 경부 원추 절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 소량이었음.
+[2024-12-20] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 수술 부위 출혈 없어 퇴원함. 조직 검사 결과 확인하였고, 1주일 후 외래에서 경과 관찰 예정임.",001639,F,29,2 ,1 ,,,,,,,,,,20241220,08:26:07,001639,,"*** 2024-12-18 Pathological diagnosis:
+Uterus, cervix, conization:
+   High grade squamous intraepithelial lesion
+   (severe dysplasia, CIN 3)
+      1) glandular involvement present
+      2) koilocytotic atypia present
+      3) negative exocervical, endocervical and deep margins 
+         (자궁경부 원추생검의 전절편 검사임)"
+30,,1130870 ,        ,20241119,I,C1,20241119,20241207,GS,102003,Rt BCS SLNB  Lt  TE  Both Recon OP 위해 입원,"유방의 중복병변의 악성 신생물, 오른쪽",Rt BCS SLNB  Lt  TE  Both Recon,,"외래진료 예정
+$0","2024 11/19 Rt BCS SLNB  Lt  TE  Both Recon OP위해 내원함
+2024 11/20 Rt BCS SLNB  Lt  TE  Both Recon OP
+2024 11/22 Rt:(40)cc, Lt:(25)cc
+2024 11/24 Rt:(20)cc, Lt:(20)cc
+2024 11/26 Rt:(15)cc vac R(+) 
+2024 11/27 Both vac remove site 1point suture.
+2024 11/28 Dressing 
+2024 11/30 Dressing 
+2024 12/02 Dressing 
+2024 12/04 Dressing 
+2024 12/07 discharge OPD FU",001316,F,48,1 ,1 ,,,"유방의 단발 양성 신생물, 왼쪽",,,,,,,20241206,10:19:48,001316,,"** 검체검사 **
+20241112 HDL 콜레스테롤정량 : 47
+20241112 백혈구 백분율-혈액 - #Neutrophil : 3.30
+20241112 백혈구수 : 6.12
+20241112 알칼리 포스파타제 : 365
+20241112 적혈구수 : 4.71
+20241112 출혈시간 : 3분
+20241112 혈색소(광전비색법) : 14.4
+** 병리검사 **
+20241120 *(이원)Level C (10개 이상) : C5604-
+
+병리번호 : S24-224691
+
+< Diagnosis >
+
+<FINAL DIAGNOSIS> 
+
+I.  Breast, left, total excision:
+
+      - Fibrocystic change
+
+        with 1) usual ductal hyperplasia, florid
+
+             2) papillary apocrine change
+
+             3) apocrine hyperplasia (see note)
+
+      - Fibroepithelial tumor, favoring fibroadenoma 
+
+      - Atypical ductal hyperplasia(see note 1) 
+
+II. Breast, 6h, left, total excision:
+
+      Fibrocystic change
+
+      with 1) usual ductal hyperplasia, moderate (see note 2)
+
+           2) columnar cell change or columnar cell hyperplasia   
+
+<Note>
+
+1. Atypical-looking cribriform-growing lesion is 1.5 mm in extent & 
+
+   immunostains (ER & CK5/6) reveal atypia.
+
+2. In section B1, no evidences of atypia are seen in the immunostains.
+
+3. Please do careful follow-up.
+
+
+
+<Result of Immunohistochemical study>   
+
+- Section A2 
+
+1. ER: Strong (3+5=8)
+
+2. Ck5/6: Almostly nevative
+
+- Section B1 
+
+1. ER: Strong & inhomogenous (3+4=7)
+
+2. CK5/6: Positive (focal)
+
+<Note>
+
+Immunostains (ER & CK5/6) are recommended to exclude ""atypia""(including DCIS).
+20241120 *(이원)Level D(파라핀블록 16개 이상) : C5607-
+
+병리번호 : S24-224690
+
+< Diagnosis >
+
+<FINAL DIAGNOSIS> 
+
+I.  Breast, right, breast conserving surgery:
+
+      Invasive ductal carcinoma (see note 1)
+
+        1) Post-biopsy status (see note 2)
+
+        2) 0.9 cm in diameter (pT1b)
+
+        3) Histologic type (IDC): NOS type
+
+        4) Histologic grade: low grade (2+2+1=5)
+
+        5) Presence of EIC
+
+        6) Presence of necrosis
+
+        7) Absence of microcalcification 
+
+        8) Absence of lymphovascular invasion
+
+        9) Margin status
+
+               Superior margin: clear
+
+               Inferior margin: clear
+
+               Lateral margin: clear
+
+               Medial margin: clear
+
+               Deep margin: clear
+
+       10) Satellite nodule(s) (upto 0.2 cm)
+
+       11) Lymph nodes: Rt, sentinel, dissection:(1A)
+
+             No lymph node recognized
+
+       12) Pathologic TNM stage (AJCC 8th ed.): pT1b NX
+
+Note)
+
+1. In MG4 section, invasive cancer lesion with DCIS lesions are observed.
+
+2. Result of previous biopsy(씨젠 BS24-157815)
+
+    IDC & DCIS(low grade)
+
+3. Addendum for tumor marker study will follow.
+
+<Result of Immunohistochemical study>   
+
+- Section MG4 
+
+1. ER: Strong (2+5=7)
+
+2. PR: Strong (2+5=8)
+
+3. Ki-67: Intermediate (10%-20%) (High (>14%))
+
+4. HER2: Negative (0)
+
+5. EGFR: under processing
+
+# Molecular phenotype: Luminal B type (HER2-negative), compatible with 
+** 단순영상 **
+20241112 Chest PA(1) : Clear both lungs.
+Normal cardiovascular shadows.
+Normal mediastinal shadow.
+Normal airways.
+Normal pulmonary vascularity.
+Normal bony structures.
+Normal chest radiograph."
+31,,1130870 ,        ,20241212,I,C1,20241212,20241216,GS,100201,C-port insertion  &  CTx위해 입원함,1.신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람,C-port insertion,1차 FAC Ctx,"외래진료 예정
+$0","2024 12/12 C-port insertion  &  CTx위해 입원 및 C-port insertion 시행함
+2024 12/13 1차 FAC Ctx시행함
+2024 12/14 A/N/V/D 3/3/3/2 po intake : poor 
+2024 12/16 A/N/V/D 2/2/2/2 po intake : moderate
+        discharge & OPD f/u",001316,F,48,1 ,1 ,,,"2.유방의 중복병변의 악성 신생물, 오른쪽",,,,,,,20241216,08:45:56,001316,,"** 검체검사 **
+20241212 백혈구 백분율-혈액 - #Neutrophil : 3.32
+20241212 백혈구수 : 6.49
+20241212 적혈구수 : 4.30
+20241212 혈색소(광전비색법) : 13.1
+20241212 혈소판수 : 258
+** 단순영상 **
+20241212 Chest PA(1) : s/p drain tube insertion in both breast area, with increase opacity.
+--> Postop finding."
+32,,1130870 ,        ,20250101,I,C1,20250101,20250106,GS,101602,2차 FAC Ctx위해 입원함,1.신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람,,2차 FAC Ctx,외래진료 예정$0,"2025 1/1 2차 FAC Ctx위해 입원함
+2025 1/2 2차 FAC Ctx위해 시행함
+2025 1/4 A/N/V/D 2/3/2/2 po intake : moderate
+2025 1/6 A/N/V/D 2/3/2/2 po intake : moderate
+            discharge & OPD f/u",001316,F,48,1 ,1 ,,,"2.유방의 중복병변의 악성 신생물, 오른쪽",,,,,,,20250104,07:50:58,001316,,"** 검체검사 **
+20250101 백혈구 백분율-혈액 - #Neutrophil : 4.16
+20250101 백혈구수 : 6.81
+20250101 혈색소(광전비색법) : 11.9
+20250101 혈소판수 : 584"
+33,,1130870 ,        ,20250122,I,C1,20250122,20250125,GS,101602,3차 FAC Ctx위해 입원함,1.신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람,,3차 FAC Ctx,"외래진료 예정
+$0","2025 1/22 3차 FAC Ctx위해 입원함
+2025 1/23 3차 FAC Ctx 시행함
+2025 1/25 A/N/V/D 2/2/2/2 po intake : moderate 
+              discharge & OPD f/u",001316,F,48,1 ,1 ,,,"2.유방의 중복병변의 악성 신생물, 오른쪽",,,,,,,20250124,10:48:22,001316,,"** 검체검사 **
+20250122 백혈구 백분율-혈액 - #Neutrophil : 3.32
+20250122 백혈구수 : 5.93
+20250122 혈색소(광전비색법) : 12.0
+20250122 혈소판수 : 332
+** 단순영상 **
+20250122 Chest PA(1) : Chemoport insertion state.
+No active lung lesion."
+34,,1130870 ,        ,20250211,I,C1,20250211,20250211,GS,102002,4차 FAC Ctx위해 입원함,1.신생물에 대한 화학요법기간을 위하여 보건서비스와 접하고 있는 사람,,,"외래진료 예정
+$0","2025 2/11 4차 FAC Ctx위해 입원함
+2025 2/12 4차 FAC Ctx시행함",001316,F,48,1 ,1 ,,,"2.유방의 중복병변의 악성 신생물, 오른쪽",,,,,,,20250211,16:50:58,001316,,
+35,,1131426 ,        ,20241218,I,C1,20241218,20241221,GY,090301,Suspicion of myoma,Myoma,"Robotic myomectomy
+",Ultrasound guidance,"외래진료 예정
+$0","[2024-12-18] 초음파 검사 결과 자궁 근종 진단되어 복강경하 근종 절제술 위해 입원함.
+[2024-12-18] 로봇 수술기를 이용한 복강경하 자궁 근종 절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 200ml 정도였음.
+[2024-12-21] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001639,F,40,2 ,1 ,,,-,,,,,,,20241218,15:30:21,001639,,"** 병리검사 **
+20241218 *(씨젠)Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : < Pathological Diagnosis >
+Uterus, body, robotic myomectomy:
+   Leiomyoma
+
+
+< Gross Description >
+
+Received in formalin are 3 pieces of gray-white fibromuscular tissue,
+measuring from 4.5x3.3x2.5 cm to 7.5x5.5x3 cm in dimension,
+weighing 50 gm in total weight.
+Representative sections are blocked in 1-1 and 1-2.
+
+
+
+조직번호:BS24- 190332
+전문의 손재영(병리전문의번호: 1210) (면허번호:123413) TEL: 1566-6500
+본　진단은　(재)씨젠의료재단에서 씨젠부산의원에　위탁한결과입니다．$$$
+** 특수영상 **
+20241218 (3T)Pelvis-Female MRI(Enhance) : Clinical information: uterine myoma
+
+Pelvic MRI (CE);
+Axial T2WI, T2 fs, T1WI, DWI, coronal and sagittal T2WI, followed by enhanced axial and sagittal T1WI.
+
+자궁전굴상태
+
+1. T2 low SI masses in uterine wall, probably uterine myomas.
+      - anterior: IM type (0.7cm)
+      - posterior: SS type (6.3cm)
+2. Endometrial thickness: 10mm
+3. Corpus luteal cyst in right ovary.
+4. No significant pelvic lymphadenopathy.
+    No hydronephrosis.
+5. 2.6cm T2 high SI lesion in right liver.
+    -> ddx) hepatic cyst, hemangioma.
+         Rec) USG
+6. Small pelvic ascites.
+
+Limited evaluation for scan-covered bowel and upper abdominal solid organs on MRI due to artifact.
+
+
+"
+36,,1131946 ,        ,20241220,I,C1,20241220,20241225,GY,091902,난소혹있어 본원진료위해 내원하심,Right ovary mucin borderline,"Single port endoscopic right ovary cystectomy,
+",sonoguided,"외래진료 예정
+$0","[2024-12-20] 외래에서 경과 관찰 중 초음파 검사 상 자궁 부속기 종양 진단되어 복강경 수술 위해 입원함.
+[2024-12-20] 복강경하 부속기 종양 절제술 시행하였으며 수술 중 특이 소견 없었고 출혈량은 30ml 정도였음.
+[2024-12-25] 입원 기간 동안 특이 소견 없었고 활력 징후 안정적이었고 초음파 검사 및 진찰 결과 이상 소견 없어 퇴원 예정일에 퇴원함. 1주일 후 외래에서 경과 관찰 예정임.",001601,F,28,2 ,1 ,,,,,,,,,,20241224,11:48:29,001601,,"** 병리검사 **
+20241220 Level C(파라핀블록 1~9개) - 조직병리검사(1장기당) : GROSS: Submitted are multiple pieces of ovarian cyst, measuring 7.0x5.5x4.0cm in toto. The external surface is gray smooth. The cyst is multilocular and and shows focal fibrotic portion and filled with mucoid material. Representative sections are blocked in A to I.
+
+9HE)
+
+
+
+DIAGNOSIS:
+
+Ovary, right, endoscopic cystectomy:
+
+   Mucinous borderline tumor, 
+     capsule intact
+
+NOTE: Follow up is recommended.
+** 특수영상 **
+20241203 외부병원영상판독료-Pelvis MRI : 
+외부필름 판독
+oval multiseptate cystic lesions with uneven SI of locules/ dependant high SI  and thick enhacing wall and septa in right adnexa
+ -> r/o borderline ovarian cystic tumor( such as borderline mucinous cystic tumor)
+   1.7cm corpus luteal cyst, left obary
+about 2.2cm uterine leiomyoma, right  wall  
+about 1.2cm r/o cellular uterine leiomyoma, subserosa. right ant. wall 
+endometrial thickness : 1cm
+ ->r/o physiologic thickening 
+scanty pelvic ascites
+mild enlarged LNs at left ext. iliac chain and both inguinal area
+ - indeterminate
+rec> clinical correlation, f/u"
+37,,1131969 ,        ,20241226,I,C1,20241226,20241230,EN,100902,코불편,1. 편위된 비중격,septo rf,,"외래진료 예정
+$0","비중격 만곡증, 만성비염 진단하에 수술위해  입원하여 
+비중격 교정술 및 양측 하비갑개 절제술(24.12.27) 이후 수술부위 이상없음 확인되어 퇴원함
+",002806,M,42,2 ,1 ,,,1. 만성 비염,,,,,,,20241230,10:17:32,002806,,"** 특수영상 **
+20241119 P.N.S CT : CI: 비중격 만곡 수술 예정
+
+Nasal septal deviation with spur formation to the Lt. side.
+
+Periapical lucency with bone remodeling around the root of Lt. upper 2nd molar tooth.
+  -- with bony erosive change.
+  --> suspicion of radicular cyst.
+Mucosal thickening in Lt. maxllary sinus, floor.
+  --> r/o odongogenic sinusitis.
+
+Mild mucosal thickening in Rt. maxllary sinus.
+
+rec> clinical correlation.
+
+
+"
+38,,1132813 ,        ,20241215,I,C1,20241215,20241227,NS,100606,LBP with both buttock/thigh/leg/ foot(sole) pain/ 감각둔화,"1. 척추전방전위증, 요추부","L3-4 ULBD, L4-5 PLIF","Dx
+PT","외래진료 예정
+$0","12/15 입원
+허리 보조기+
+수술후 ICU turn
+수술전 MRI
+입원시 타병원서류 가져오시면 스캔하기 - 보존기간 확인
+CI 협진 (12/16)
+12/16 동의서(환자)
+OP day
+L3-4 ULBD, L4-5 PLIF
+12/17 OP site pain: slight 
+both buttock pain: none 
+both leg numbness: none 
+Rt.JP positive pressure 변경 
+12/18 MR +
+H/V removal 
+수술후 사진 설명함.
+PCA refill 원함 -- 생각해보고 다시 말해준다함 
+12/19 CRP 0.49  LDH 233
+12/20 Dizziness, sweating(+) -> obs
+wound clear 
+복부 불편감 및 불변 호소 - 관장 원하여 시행 
+OP site pain: mild 
+both buttock pain: mild 
+both leg numbness: none 
+12/21 OP site pain: none 
+both buttock pain: slight 
+both leg numbness: none 
+12/23 S/O
+CRP 0.78  ESR 12 
+OP site pain: decrease 
+both buttock pain: decrease 
+both leg numbness: none 
+12/24 OP site pain: none 
+LBP: none 
+both leg numbness: none 
+12/26 CRP 0.27
+Hb 12.1  ESR 17 
+OP site pain: none 
+LBP: none 
+both leg numbness: none 
+12/27 경과 호전되어 퇴원",002702,M,73,2 ,1 ,,,"1. 척추협착, 요추부",,,,,,,20241227,08:37:57,002702,,"** 특수영상 **
+20241218 L Spine T2 sagittal : S/P Post.Op. (L-3/4 ULBD,L-4-5 PLIF  )
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+20241215 L-Spine CT : ~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.s  at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation
+
+20241215 L-spine MRI : General Overview & Alignment
+~Slightly,HIVDs at C-3/4/5/6/7 disc spaces with slightly effacement of ant .theca sac
+~Underlying Deg.Lumbar spondylosis deformans & Facet jt. arthrosis
+~Pseudospondylolithesis of L4 on L5
+~Multiple  intervertebral disc  disease and stenosis ,
+@At L-2/3 disc level ;  mild facet jt.arthrosis (both)  with  mild  bilateral neuroforaminal stenosis 
+@ At L-3/4 disc level ; diffuse protruded disc,facet jt.arthrosis(both) and LFH with severe central stenosis/lateral stenosis
+  --bilateral L4 N. radiculopathies,combined.
+@At L-4/5 disc level ; diffuse protruded  disc + post.off-set of L5 from pseudospondylolithesis ,facet jt.arthrosis(both) and  LFH with  severe central/lateral  stenosis.
+  ---bilateral L5 N.radiculopathies,combined
+@At L-5/S1disc level ; 
+   diffuse protruded  disc ,facet jt.arthrosis/LFH with
+  moderate central/lateral stenosis
+  ---bilateral S1 N.radiculopathies,combined.
+ ~  Deg. interspinous bursitis change (Baarstrup disease)  & post.interspinous enthesitis pattern of L-3/4,L-4/5 /L-5/S-1 levels
+Rec) Clincial correlation with other radiographics 
+       Follow -Up study ,if clinically compatible with."
+39,,1133213 ,        ,20241203,I,C1,20241203,20241209,PS,110901,코뼈 골절,1. 코뼈 골절,비골 골절 재건,,"외래진료 예정
+$0",상기환자 11/29 친구와 장난치다가 넘어지면서 돌에 부딪히면서 코뼈 골절되어 본원 성형외과 진료후 수술적 치료 동의 하에 입원하여 비골 골절 재건 시행하였습니다. 상태호전되어 퇴원합니다. 외래에서 경과 관찰하겠습니다,001419,M,18,2 ,1 ,,,,,,,,,,20241207,09:21:54,001419,,"** 단순영상 **
+20241204 Nasalbone AP.Both Lat(3) : s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+
+20241204 Skull Series(4) : s/p C/R of nasal bone fracture and external nasal splint application.
+no unusual postop. finding.
+
+** 특수영상 **
+20241130 Facial bone CT(3D가산포함) : Clinical information: 코 골절 확인
+Comminuted bilateral nasal bone fractures with displacement.
+
+20241204 Facial bone CT(3D가산포함) : s/p C/R of nasal bone fracture and external nasal splint application.
+Postop. change with packing materials in both nasal cavity.
+Otherwise, no unusual postop. finding."
+40,,1133378 ,        ,20241226,I,C1,20241226,20250103,NS,110104,LBP with both buttock/thigh/leg/foot(sole0 pain/ tingling,"1. 척추협착, 요추부",L4-5 ULBD,"Dx
+PT","외래진료 예정
+$0","12/26 입원
+허리 보조기 확인하기-168/80  (업체연락+)
+12/27 동의서(환자, 보호자)
+OP day 
+L4-5 ULBD 
+12/28 OP site pain: mild 
+both buttock pain: decrease 
+both foot numbness: none 
+MR +
+H/V removal 
+수술후 사진 설명함.
+12/30 CRP 1.04
+r-GTP 85  Hb 12.6
+WBC 11.660  ESR 16 
+Op site pain: on/off
+Rt.buttock pain: slight 
+Rt.leg numbness: none 
+12/31 변비약 원하여 듀락칸, 둘코락스 추가 
+OP site pain: none 
+LBP: none 
+both foot numbness: none 
+1/2 CRP 2.15
+GOT/GPT/r-GTP 36/68/107
+WBC 11.180  Hb 12.7
+ESR 32 
+휴피록심 -> 바난정 SW
+Op site pain: none 
+LBP: none 
+both leg numbness: none 
+1/3 S/O
+경과 호전되어 퇴원",002702,M,63,2 ,1 ,,,,,,,,,,20250103,09:08:33,002702,,"** 특수영상 **
+20241228 L Spine T2 sagittal : S/P Post.Op. ( L-4/5 ULBD                              )
+ ~No remarkable evidence of  Post.Op. immediate  complication 
+
+20241226 L-Spine CT : ~Deg.Spondylosis Deformans with Facet Jt.arthrosis
+~Suggested of H.I.V.D.s at L-3/4.L-4/5,L-5/S-1 disc spaces  with stenosis
+Clinical correlation  is recomm
+Rec) L-Spine MRI for better evaluation"
+41,,1134945 ,        ,20241222,I,C1,20241222,20241230,PS,130303,"1. 왼쪽 코 옆 볼에 찰과상 : 피부 벗겨짐
+2. 왼쪽 안면골 골절
+ 1. 왼쪽 안와 내벽 골절
+ 2. 왼쪽 안와 바닥 골절
+ 3. 왼쪽 위턱과 광대 골절",1. 왼쪽 위턱과 광대 골절,왼쪽 안면 골절 재건 - 관혈적 정복술 + 인공물 (medpor 1mm) 삽입술,,"외래진료 예정
+$0","상기환자 회사에서 일하다가 쇠에 무딪히며 안면 찰과상, 골절 수상하여 본원 성형외과 진료후 수술적 치료 동의 하에 입원하여 왼쪽 안면 골절 재건 - 관혈적 정복술 + 인공물 (medpor 1mm) 삽입술 시행하였습니다. 상태호전되어 퇴원합니다. 외래에서 경과 관찰하겠습니다",001419,M,56,2 ,1 ,,,"1. 왼쪽 안와 내벽, 바닥 골절
+2. 왼쪽 코 옆 볼에 찰과상 : 피부 벗겨짐",,,,,,,20241229,21:50:26,001419,,"** 단순영상 **
+20241223 Skull Series(4) : s/p internal fixation at left maxillary sinus anterior wall.
+s/p patch insertion at left orbital inferior wall.
+- no unusual postop finding.
+
+** 특수영상 **
+20241223 Facial bone CT(3D가산포함) : Clinical information: 골절 수술후 사진
+s/p internal fixation at left maxillary sinus anterior wall.
+s/p patch insertion at left orbital inferior wall.
+- no unusual postop finding."
+42,,1136161 ,        ,20241230,I,C1,20241230,20241231,OS,111701,우측 발목 통증,"1. 외측복사의 골절, 폐쇄성",OR pinning (Rt. ankle),,"외래진료 예정
+$0","12/29  키즈카페에서 놀다가 우측 발목 접지른 후 통증있어 내원하여 정밀검사 상 Fx tip of lateral malleolar process.Rt 소견으로 OR pinning (2024.12.30) 수술 및 항생제치료, 상처소독관리 후 퇴원. ",002517,M,6,2 ,1 ,,,,,,,,,,20241231,09:21:24,002517,,"** 특수영상 **
+20241230 (3T)Ankle joint MRI : Localzied swelling/edema of soft tissue around the lateral malleolar process
+ ~R/O: Acute occult microfracture in tip of lateral malleolar process
+~R/O; Acute occult microfracture /traumatic bony bruise within medial side of talus
+  --R/O: Full,thickness rupture  of ATFL /AITFL
+  --Partial rupture of  Ant.distal tibial syndesmosis
+  --excessive fluid collection in ALG space
+     R/O: Impending into AL impingement Synd.
+  --traumatic tenosynovitis pattern of Peroneal T.
+Clinical correlation is recomm."

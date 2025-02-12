@@ -16,7 +16,7 @@ async def generate_text(request: GenerateRequest):
     try:
         if request.model_name == "gemini-pro":
             # ggenai.configure(api_key="your_api_key")
-            credentials, = google.auth.default()
+            credentials,project = google.auth.default()
             ggenai.configure(credentials=credentials)
             model = ggenai.GenerativeModel('gemini-pro')
             response = model.generate_content(request.prompt)
