@@ -8,5 +8,6 @@ streamlit
 google-cloud-aiplatform
 fastapi
 uvicorn
-google.generativeai
+#google.generativeai
+google-genai
 asyncio
