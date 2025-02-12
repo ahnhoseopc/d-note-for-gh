@@ -22,7 +22,7 @@ def dma_run():
         page="views/gh_dnote.py",
         title="D-Note",
         icon=":material/clinical_notes:",
-        default=False
+        default=True
     )
 
     gh_dqna_page = st.Page(
@@ -36,7 +36,7 @@ def dma_run():
         page="views/gh_dapi.py",
         title="D-API",
         icon=":material/question_exchange:",
-        default=True
+        default=False
     )
 
     # shared on all pages
@@ -46,7 +46,7 @@ def dma_run():
         pg = st.navigation(
             {
                 "Info": [gh_about_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_api_page],
+                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, ],
                 "Configuration (Admin)": [gh_dbquery_page],
             }
         )
