@@ -18,7 +18,9 @@ def streamlit_ui():
     st.header("Test API")
     
     # 모델 선택
-    model = st.selectbox("Select Model", ["gemini-pro", "flash", "medllm"])
+    models = asyncio.run( apiroute.list_models() )
+    
+    model = st.selectbox("Select Model", models["models"])
     
     # 프롬프트 입력
     prompt = st.text_area("Enter prompt:")
@@ -32,7 +34,7 @@ def streamlit_ui():
                 st.success("Generation successful!")
                 st.text_area("Response:", value=response["text"], height=200)
             except Exception as e:
-                st.error(f"Error: {str(e)}")
+                st.error(f"Error: in [streamlit_ui()] - {str(e)}")
 
     # API 사용 예시
     st.header("API Usage Examples")
