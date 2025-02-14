@@ -46,7 +46,7 @@ def dma_run():
         pg = st.navigation(
             {
                 "Info": [gh_about_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, ],
+                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_api_page],
                 "Configuration (Admin)": [gh_dbquery_page],
             }
         )
@@ -57,7 +57,7 @@ def dma_run():
 
 print(f"gh_app.__name__: {__name__}")
 
-import utils.api as api
+import services.dma_api as api
 from threading import Thread
 
 if "Fastapi" not in st.session_state:
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         print(f">>> Fastapi start running")
         api_thread = Thread(target=api.run_fastapi, daemon=True)
         api_thread.start()
-        st.session_state["Fastapi"] = "running"
+        st.session_state["Fastapi"] = "started"
         print(f"Fastapi 3: {st.session_state["Fastapi"]}")
     
     # Streamlit UI 실행

@@ -43,7 +43,7 @@ def get_model(model_name, si=SI):
     if model[model_name] is None:
         model[model_name] = GenerativeModel( MODEL[model_name], system_instruction=[si] )
 
-    print(model_name, model[model_name]._model_name)
+    # print(model_name, model[model_name]._model_name)
     return model[model_name]
 
 def generate(prompts, model_name):

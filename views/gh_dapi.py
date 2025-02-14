@@ -1,7 +1,14 @@
-import services.dma_api as dma_api
+import utils.api as api
+
+from pydantic import BaseModel
+import asyncio
 
 import streamlit as st
-import asyncio
+
+# Pydantic 모델
+class GenerateRequest(BaseModel):
+    prompt: str
+    model_name: str = "gemini-pro"
 
 # Streamlit UI
 def streamlit_ui():
@@ -18,7 +25,10 @@ def streamlit_ui():
     st.header("Test API")
     
     # 모델 선택
-    models = asyncio.run( apiroute.list_models() )
+    models = asyncio.run(api.get_models()) 
+    # loop = asyncio.get_event_loop()
+    # models = loop.run_until_complete(api.get_models())
+    # print(models)
     
     model = st.selectbox("Select Model", models["models"])
     
@@ -28,11 +38,12 @@ def streamlit_ui():
     if st.button("Generate"):
         with st.spinner("Generating..."):
             try:
-                request = dma_api.GenerateRequest(prompt=prompt, model_name=model)
-                response = asyncio.run(dma_api.generate_text(request))
+                # request = GenerateRequest(prompt=prompt, model_name=model)
+                response = asyncio.run(api.generate(prompt, model))
 
                 st.success("Generation successful!")
-                st.text_area("Response:", value=response["text"], height=200)
+                st.text_area("Response:", value=response, height=200)
+                # st.text_area("Response:", value=response["text"], height=200)
             except Exception as e:
                 st.error(f"Error: in [streamlit_ui()] - {str(e)}")
 
