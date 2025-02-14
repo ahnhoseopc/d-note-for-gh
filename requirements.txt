@@ -6,8 +6,8 @@ requests
 SQLAlchemy
 streamlit
 google-cloud-aiplatform
+google-genai
+google-generativeai
 fastapi
 uvicorn
-#google.generativeai
-google-genai
-asyncio
+httpx

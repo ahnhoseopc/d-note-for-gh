@@ -30,8 +30,9 @@ async def generate(prompt, model):
 
     async with httpx.AsyncClient() as client:
         response = await client.post(url, json=data, headers=headers)
+        #response.json
     # response = requests.post(url, json=data, headers=headers)
-    return response
+    return response.json()
 
 async def get_models():
     url = f"{API_BASEURL}/api/models"

@@ -7,7 +7,7 @@ import google.genai as ggenai
 import nest_asyncio
 import uvicorn
 import os
-
+from pathlib import Path
 import streamlit as st
 
 FASTAPI_PORT = 8000
@@ -27,7 +27,7 @@ app.add_middleware(
 # FastAPI 서버 실행 함수
 def run_fastapi():
     nest_asyncio.apply()
-    uvicorn.run(app, host="0.0.0.0", port=FASTAPI_PORT)
+    uvicorn.run(f"services.dma_api:app", host="0.0.0.0", port=FASTAPI_PORT)
 
 # Pydantic 모델
 class GenerateRequest(BaseModel):
@@ -53,14 +53,14 @@ async def generate_text(request: GenerateRequest):
     try:
         models = get_genai_models()
         if request.model_name in models:
-            # client = ggenai.Client(api_key="AIzaSyBTlisr9BRJO0pluf0W2qJkQ7ZGhfeowac")
-            # response = client.models.generate_content(model=request.model_name, contents=request.prompt)
+            client = ggenai.Client(api_key="AIzaSyBTlisr9BRJO0pluf0W2qJkQ7ZGhfeowac")
+            response = client.models.generate_content(model=request.model_name, contents=request.prompt)
 
             # ggenai.configure(api_key="AIzaSyBTlisr9BRJO0pluf0W2qJkQ7ZGhfeowac")
-            credentials,project = google.auth.default()
-            ggenai.configure(credentials=credentials)
-            client = ggenai.Client(vertexai=True, project=project, location="us-central1", credentials=credentials)
-            response = client.models.generate_content(model=request.model_name, contents=request.prompt)
+            # credentials,project = google.auth.default()
+            # ggenai.configure(credentials=credentials)
+            # client = ggenai.Client(vertexai=True, project=project, location="us-central1", credentials=credentials)
+            # response = client.models.generate_content(model=request.model_name, contents=request.prompt)
 
             # model = ggenai.GenerativeModel('gemini-pro')
             # response = model.generate_content(request.prompt)
