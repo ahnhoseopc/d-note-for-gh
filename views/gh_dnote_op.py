@@ -71,9 +71,9 @@ def op_record_source():
 
     return "op-record-source"
 
-OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression"과 "plan"을 확인하여 "operation name"을 추정하라.
-2. 추정된 "operation name"을 참조하여 "protocols of doctor"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
-3. 응답으로 "present illness" 와 "impression" 그리고 "plan", "operation name"과 "code", "code name", "protocol"을 json format으로 제시하라.
+OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression", "plan", "operation name"을 확인하여 "estimated operation name"을 추정하라.
+2. 추정된 "estimated operation name"을 참조하여 "protocols of doctor"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
+3. 응답으로 "present illness" 와 "impression", "plan", "operation name", "estimated operation name"과 "code", "code name", "protocol"을 json format으로 제시하라.
 """
 
 def op_record_target():
