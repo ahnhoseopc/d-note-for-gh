@@ -2,19 +2,30 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import HTTPException
 from pydantic import BaseModel
-import google.auth
+
 import google.genai as ggenai
 import nest_asyncio
 import uvicorn
 import os
-from pathlib import Path
+
 import streamlit as st
 
-FASTAPI_PORT = 8000
+print(f"{__file__.split('\\')[-1]}.__name__: {__name__}")
 
-print(f"gh_dapi.__name__: {__name__}")
+if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
+
+def get_genai_models():
+    try:
+        client = ggenai.Client(api_key="AIzaSyBTlisr9BRJO0pluf0W2qJkQ7ZGhfeowac")
+        models = client.models.list()
+
+        return [model.name for model in models]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"{str(e)}")
 
 # FastAPI 앱 설정
+FASTAPI_PORT = 8000
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -33,18 +44,6 @@ def run_fastapi():
 class GenerateRequest(BaseModel):
     prompt: str
     model_name: str = "gemini-pro"
-
-if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
-
-def get_genai_models():
-    try:
-        client = ggenai.Client(api_key="AIzaSyBTlisr9BRJO0pluf0W2qJkQ7ZGhfeowac")
-        models = client.models.list()
-
-        return [model.name for model in models]
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"{str(e)}")
 
 # FastAPI 라우트
 @app.post("/api/generate")
