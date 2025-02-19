@@ -80,13 +80,24 @@ def generate_or_draft(or_record, or_operation_name, or_protocol):
     return or_instance
 
 def collect_or_source(patient_id, admsn_date, kwa, spth):
+    # 일반 입원기록
     df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
+    # 산부인과 입원기록
     df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
+    # 상병 정보
+    df_il = get_medical_note("query_IL_P", patient_id, admsn_date)
+    # 수술예약 정보
+    df_oy = get_medical_note("query_OY_P", patient_id, admsn_date)
+
+    print(df_il)
+
+    # Protocol of Doctor
     df_pt = get_medical_note("query_PT_O", None, None, kwa, spth)
 
     decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
     df_pt = df_pt.map(decode_rtf)
 
+    #수술기록
     df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
 
     or_source = {
@@ -130,10 +141,10 @@ def collect_or_source(patient_id, admsn_date, kwa, spth):
 
         "assessment": {
             "impression": df_ae["ocm31imp"][0] if len(df_ae) > 0 else df_ay["ocm41imp"][0] if len(df_ay) > 0 else None,
-            "diagnosis": [None],
+            "diagnosis": [df_il[icd][0] for icd in ["icd01","icd02","icd03","icd04","icd05"] if len(df_il[icd][0].strip()) > 0] if len(df_il) > 0 else None,
             },
         "plan": {
-            "operation name": None,
+            "operation name": df_oy["operation_name"][0] if len(df_oy) > 0 else None,
             "plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
             "discharge plan": df_ae["ocm31rtplan"][0] if len(df_ae) > 0 else df_ay["ocm41rtplan"][0] if len(df_ay) > 0 else None,
             "educational plan": df_ae["ocm31edu"][0] if len(df_ae) > 0 else df_ay["ocm41edct"][0] if len(df_ay) > 0 else None,

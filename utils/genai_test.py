@@ -3,7 +3,7 @@ from vertexai.generative_models import GenerativeModel, Part, SafetySetting
 import os
 
 if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = ".streamlit/gcp_credentials_dma_ghmh.json";
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = ".streamlit/gcp_credentials_dk_dnote_ghmh.json";
 
 def generate():
     vertexai.init(
