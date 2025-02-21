@@ -79,34 +79,11 @@ def rt_summary_source():
         #     st.json(rt_info["rt-current"], expanded=1)
 
     with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
-        st.write("퇴원요약지 (Discharge Summary)")
         if rt_info and "rt" in rt_info and len(rt_info["rt"]):
             patient_rt_report = rt_info["rt"][0]
+            display_report(patient_rt_report)
 
-            st.write("주호소/입원사유")
-            st.caption(patient_rt_report["ocm32chiefcomp"])
-            st.write("주진단명 (Final Diagnosis)")
-            st.caption(patient_rt_report["ocm32finaldx"])
-            st.write("부진단명 (Secondary Diagnosis)")
-            st.caption(patient_rt_report["ocm32scnddx"])
 
-            st.write("수술명 (Treatment Op.)")
-            st.caption(patient_rt_report["ocm32op"])
-            st.write("처치명 (Treatment Medical)")
-            st.caption(patient_rt_report["ocm32medical"])
-
-            st.write("중요검사소견 (Abnormal Finding or Lab)")
-            st.caption(patient_rt_report["ocm32problem"])
-            st.write("추후관리계획 (Follow-up Plan)")
-            st.caption(patient_rt_report["ocm32follow"])
-            st.write("경과요약 (Progress Summary)")
-            st.caption(patient_rt_report["ocm32other"])
-
-            st.write("치료결과 (Result)")
-            st.caption(patient_rt_report["ocm32rtrstcd"])
-            st.write("퇴원형태 (Type of Discharge)")
-            st.caption(patient_rt_report["ocm32rttypecd"])
-            st.write("퇴원약 (Medicine)")
 
 
 RT_PROMPT_DEFAULT = """환자의 주호소, 주진단명, 부진단명, 수술명, 처치명, 중요검사소견, 추후관리계획, 경과요약, 치료결과, 퇴원형태, 퇴원약을 확인하여 퇴원요약지를 작성하라.
@@ -168,3 +145,33 @@ def rt_summary_target():
 
     with st.expander("퇴원요약지 신규", expanded=False):
         st.caption(protocol)
+
+
+def display_report(patient_rt_report):
+
+    st.write("퇴원요약지 (Discharge Summary)")
+
+    st.write("주호소/입원사유")
+    st.caption(patient_rt_report["ocm32chiefcomp"])
+    st.write("주진단명 (Final Diagnosis)")
+    st.caption(patient_rt_report["ocm32finaldx"])
+    st.write("부진단명 (Secondary Diagnosis)")
+    st.caption(patient_rt_report["ocm32scnddx"])
+
+    st.write("수술명 (Treatment Op.)")
+    st.caption(patient_rt_report["ocm32op"])
+    st.write("처치명 (Treatment Medical)")
+    st.caption(patient_rt_report["ocm32medical"])
+
+    st.write("중요검사소견 (Abnormal Finding or Lab)")
+    st.caption(patient_rt_report["ocm32problem"])
+    st.write("추후관리계획 (Follow-up Plan)")
+    st.caption(patient_rt_report["ocm32follow"])
+    st.write("경과요약 (Progress Summary)")
+    st.caption(patient_rt_report["ocm32other"])
+
+    st.write("치료결과 (Result)")
+    st.caption(patient_rt_report["ocm32rtrstcd"])
+    st.write("퇴원형태 (Type of Discharge)")
+    st.caption(patient_rt_report["ocm32rttypecd"])
+    st.write("퇴원약 (Medicine)")

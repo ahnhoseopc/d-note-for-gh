@@ -8,17 +8,31 @@ import streamlit as st
 def main():
     tab1, tab2 = st.tabs(["수술기록지", "퇴원요약지"])
 
+    # 수술기록지
     with tab1:
-
         col1, col2 = st.columns([5, 5])
         
+        # Retrieving Source and Generate Target
         with col1:
             op.op_record_source()        
 
         with col2:
             op.op_record_target()
 
+        # Display Report
+        col1, col2 = st.columns([5, 5])
+        
+        with col1:
+            with st.expander("기존 수술기록지 (문서양식))", expanded=False):
+                op.display_report(op.or_info["or-current"] if op.or_info and "or-current" in op.or_info else None)
+    
+        with col2:
+            with st.expander("기존 수술기록지 (문서양식))", expanded=False):
+                op.display_report(op.or_info["or-current"] if op.or_info and "or-current" in op.or_info else None)
+
+    # 퇴원요약지
     with tab2:
+        # Retrieving Source and Generate Target
         col1, col2 = st.columns([5, 5])
 
         with col1:
@@ -26,6 +40,17 @@ def main():
 
         with col2:
             rt.rt_summary_target()
+
+        # Display Report
+        col1, col2 = st.columns([5, 5])
+
+        with col1:
+            #rt.rt_summary_source()
+            pass
+
+        with col2:
+            #rt.rt_summary_target()
+            pass
 
     cols = st.columns(7)
     with cols[3]:
