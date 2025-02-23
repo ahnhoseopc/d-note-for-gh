@@ -2,13 +2,14 @@ import utils.config as config
 import utils.base as base
 import utils.db as db
 import utils.genai as genai
+import utils.note_template as template
 
 import streamlit as st
 
 def run_sql(query_sql):
     return db.run_sql(query_sql)
 
-def get_medical_note(query_name, patient_id, admsn_date, kwa=None, spth=None):
+def get_medical_data(query_name, patient_id, admsn_date, kwa=None, spth=None):
     #admsn_date = admission_date.strftime("%Y%m%d")
     query = config.get_query(query_name)
     if patient_id is not None and admsn_date is not None:
@@ -33,72 +34,262 @@ def get_patient_by_doctor(spth):
     return run_sql(query)
 
 #
-# Operation Report (수술기록지)
+# Lambda functions for data processing
 #
-def generate_or_draft(or_record, or_operation_name, or_protocol):
-    or_instance = {
-        "patient": {
-            "patient id": or_record["ocm06idnoa"],
-            "date of admission": or_record["ocm06lwdat"],
-            },
-        "clinical staff": {
-            "department": or_record["ocm06kwa"],
-            "doctor in charge": or_record["ocm06spth"],
-            "doctor assistant": or_record["ocm06rgcd"],
-            },
+# Protocols are in rtf format
+decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
+# Discharge protocols are in the format of "Chief Complaints|Final Diagnosis|Secondary Diagnosis|Treatment Operation|Treatment Medical|Abnormal Findings and/or Lab Result|Follow-up Plan|Progress Summary"
+split_keys = ["Chief Complaints","Final Diagnosis","Secondary Diagnosis","Treatment Operation","Treatment Medical","Abnormal Findings and/or Lab Result","Follow-up Plan","Progress Summary",]
+split_protocol = lambda x: dict(zip(split_keys, x.split("|") if type(x) == str else x))
 
-        "operation data": ["0","1","2","3","4","5","6","<pre operation diagnosis>","<operation name>","9","10","<post operation diagnosis>","12","13","14","15","16","17"],
-        "preoperative diagnosis": "수술전진단명",
-        "operation name": or_operation_name,
-        "postoperative diagnosis": "수술후진단명",
-        "operation procedures and findings": or_protocol,
-        "operation notes": "N$",
+#
+# Patient records from the database
+#
+def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
+    # 일반 입원기록
+    df_ae = get_medical_data("query_AE_P", patient_id, admsn_date)
+    # 산부인과 입원기록
+    df_ay = get_medical_data("query_AY_P", patient_id, admsn_date)
+    # 상병/진단 정보
+    df_il = get_medical_data("query_IL_P", patient_id, admsn_date)
+    # 수술예약 정보
+    df_oy = get_medical_data("query_OY_P", patient_id, admsn_date)
 
-        "additional data": {
-            "alarm": "",
-            "cmplyn": "",
-            "emdv": "",
-            "pclr": "",
-            },
-        "operation check": {
-            "tissue examination": "",
-            "tissue examination contents": "",
-            "drain pipe": "",
-            "drain pipe contents": "",
-            },
- 
-        "operation date": "today()",
-        "operation start time": "now()",
-        "operation end time": "now()",
-        "report date": "today()",
-        "report time": "now()",
+    # 수술 기록 Operation Report
+    df_or = get_medical_data("query_OR_P", patient_id, admsn_date)
 
-        "medical treatment plan": "<na>",
-        "operation progress": "<na>",
+    # 결과 기록 Progress notes
+    df_pn = get_medical_data("query_PN_P", patient_id, admsn_date)
+    df_pn = df_pn.map(decode_rtf)
+
+    # 퇴원 요약 Discharge Summary
+    df_rt = get_medical_data("query_RT_P", patient_id, admsn_date)
+
+    # 수술 프로토콜 Operation Protocols of Doctor
+    df_pt_o = get_medical_data("query_PT_O", None, None, dept, doctor)
+    df_pt_o = df_pt_o.map(decode_rtf)
+
+    # 퇴원요약 프로토콜 Discharge Protocols of Doctor
+    df_pt_r = get_medical_data("query_PT_R", None, None, dept, doctor)
+    df_pt_r["protocol"] = df_pt_r["protocol"].map(split_protocol)
+    df_pt_r = df_pt_r.map(decode_rtf)
+
+    # Lab results and other tests
+    df_je = get_medical_data("query_JE_P", patient_id, admsn_date)
+    df_te = get_medical_data("query_TE_P", patient_id, admsn_date)
+    df_ce = get_medical_data("query_CE_P", patient_id, admsn_date)
+    df_yt = get_medical_data("query_YT_P", patient_id, admsn_date)
+
+    mr_info = {
+        "ae":df_ae.to_dict(orient="records"), 
+        "ay":df_ay.to_dict(orient="records"), 
+        "il":df_il.to_dict(orient="records"), 
+        "oy":df_oy.to_dict(orient="records"), 
+        "or":df_or.to_dict(orient="records"), 
+        "pn":df_pn.to_dict(orient="records"), 
+        "rt":df_rt.to_dict(orient="records"), 
+
+        "pt_o":df_pt_o.to_dict(orient="records"), 
+        "pt_r":df_pt_r.to_dict(orient="records"), 
+
+        "te":df_te.to_dict(orient="records"), 
+        "ce":df_ce.to_dict(orient="records"), 
+        "yt":df_yt.to_dict(orient="records"), 
+        "je":df_je.to_dict(orient="records"), 
     }
 
-    return or_instance
+    return mr_info
 
-def collect_or_source(patient_id, admsn_date, kwa, spth):
-    # 일반 입원기록
-    df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
-    # 산부인과 입원기록
-    df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
-    # 상병 정보
-    df_il = get_medical_note("query_IL_P", patient_id, admsn_date)
+#
+# Medical Record (진료기록)
+#
+def get_patient_mr_json(mr_info):
+    mr = template.get_medical_record_template()
+
+    # Admission Report
+    mr["patient"]["patient id"] = mr_info["ae"][0]["ocm31idnoa"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41idnoa"] if len(mr_info["ay"]) > 0 else None
+    mr["patient"]["date of admission"] = mr_info["ae"][0]["ocm31lwdat"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41lwdat"] if len(mr_info["ay"]) > 0 else None
+    mr["patient"]["sex"] = mr_info["ae"][0]["ocm31sex"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41sex"] if len(mr_info["ay"]) > 0 else None
+    mr["patient"]["age"] = mr_info["ae"][0]["ocm31age"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41age"] if len(mr_info["ay"]) > 0 else None
+
+    mr["clinical staff"]["department"] = mr_info["ae"][0]["ocm31kwa"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41kwa"] if len(mr_info["ay"]) > 0 else None
+    mr["clinical staff"]["doctor in charge"] = mr_info["ae"][0]["ocm31spth"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41spth"] if len(mr_info["ay"]) > 0 else None
+
+    # Admission Report
+    mr["subjective"]["chief complaints"] = mr_info["ae"][0]["ocm31cc"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41cc"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["pain"] = mr_info["ae"][0]["ocm31pain2"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41pain2"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["onset"] = mr_info["ae"][0]["ocm31onset"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41onset"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["present illness"] = mr_info["ae"][0]["ocm31pi"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41pi"] if len(mr_info["ay"]) > 0 else None
+
+    mr["subjective"]["obsteric gpal"] = mr_info["ay"][0]["ocm41ohg"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["menstrual history"] = mr_info["ay"][0]["ocm41lmp"] if len(mr_info["ay"]) > 0 else None
+
+    mr["subjective"]["past medical history"] = mr_info["ae"][0]["ocm31pmhx"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41phx"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["admission-operation history"] = mr_info["ay"][0]["ocm41adm"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["social history"] = mr_info["ae"][0]["ocm31soc"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41shx"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["family history"] = mr_info["ae"][0]["ocm31family"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41fhx"] if len(mr_info["ay"]) > 0 else None
+
+    mr["objective"]["review of systems"] = mr_info["ay"][0]["ocm41ros"] if len(mr_info["ay"]) > 0 else None
+    mr["objective"]["other review of systems"] = mr_info["ae"][0]["ocm31rosother"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41rosother"] if len(mr_info["ay"]) > 0 else None
+
+    mr["assessment"]["impression"] = mr_info["ae"][0]["ocm31imp"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41imp"] if len(mr_info["ay"]) > 0 else None
+
+    mr["plan"]["treatment plan"] = mr_info["ae"][0]["ocm31plan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41planop"] if len(mr_info["ay"]) > 0 else None
+    mr["plan"]["discharge plan"] = mr_info["ae"][0]["ocm31rtplan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41rtplan"] if len(mr_info["ay"]) > 0 else None
+    mr["plan"]["educational plan"] = mr_info["ae"][0]["ocm31edu"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41edct"] if len(mr_info["ay"]) > 0 else None
+
+
+    # 상병/진단 정보
+    mr["assessment"]["diagnosis"] = [mr_info["il"][0][icd] for icd in ["icd01","icd02","icd03","icd04","icd05"] if len(mr_info["il"][0][icd].strip()) > 0] if len(mr_info["il"]) > 0 else None
     # 수술예약 정보
-    df_oy = get_medical_note("query_OY_P", patient_id, admsn_date)
+    mr["plan"]["operation plan"] = mr_info["oy"][0]["operation_name"] if len(mr_info["oy"]) > 0 else None
 
-    print(df_il)
+    # Lab Results
+    mr["objective"]["lab-result"]["biopsy test"] = []
+    for te in mr_info["te"]:
+        mr["objective"]["lab-result"]["biopsy test"].append({
+            "order date": te["sap06odrdat"], 
+            "result date": te["sap06rstdat"], 
+            "test result": te["sap06gross"],
+            "test note": te["sap06note"]
+            })
+    mr["objective"]["lab-result"]["cytology test"] = []
+    for ce in mr_info["ce"]:
+        mr["objective"]["lab-result"]["cytology test"].append({
+            "order date": ce["sap08odrdat"], 
+            "result date": ce["sap08rstdat"], 
+            "test result": ce["sap08diag"]
+        })
+    mr["objective"]["lab-result"]["video reading"] = []
+    for yt in mr_info["yt"]:
+        mr["objective"]["lab-result"]["video reading"].append({
+            "order date": yt["srd04odrdat"], 
+            "reading date": yt["srd04rddat"], 
+            "findings": yt["srd04find"],
+            "impression": yt["srd04imp"]
+        })
 
-    # Protocol of Doctor
-    df_pt = get_medical_note("query_PT_O", None, None, kwa, spth)
+    mr["objective"]["lab-result"]["diagnostic test"] = []
+    for je in mr_info["je"]:
+        mr["objective"]["lab-result"]["diagnostic test"].append({
+            "order date": je["scp42odrdat"], 
+            "result date": je["scp42tstdat"], 
+            "test code": je["scp42sugacd"],
+            "test name": "",
+            "test result": je["scp42result"],
+            "test comment": je["scp42cmt"],
+            "test comment rst": je["scp42rstcmt"],
+            "test comment lis": je["scp42liscmt"],
+            "test upper limit": "",
+            "test lower limit": "",
+            "test unit": ""
+        })
 
-    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
-    df_pt = df_pt.map(decode_rtf)
+    mr["objective"]["lab-result"]["vital signs"] = []
+    for vs in mr_info["vs"] if "vs" in mr_info else []:
+        mr["objective"]["lab-result"]["vital signs"].append({
+            "reading date": vs["rddate"], 
+            "reading time": vs["rdtime"], 
+            "temperature": vs["temperature"],
+            "pulse": vs["pulse"],
+            "heart rate": vs["hr"],
+            "respiratory rate": vs["rr"],
+            "systolic blood pressure": vs["sbp"],
+            "diastolic  blood pressure": vs["dbp"]
+        })
 
-    #수술기록
-    df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
+    # Operation Reports
+    mr["operation records"] = []
+    for op in mr_info["or"]:
+        mr["operation records"].append({
+            "surgeon": op["cmta01spth"],
+            "assistant": None,
+            "nurse": None,
+            "anesthesiologist": None,
+            "method of anesthesia": None,
+
+            "operation date": op["ocm06opdat"],
+            "operation start time": op["ocm06opstarttm"], 
+            "operation end time": op["ocm06opendtm"], 
+
+            "operation name": op["cmta08opname"],
+            "preoperative diagnosis": op["cmta07predx"],
+            "postoperative diagnosis": op["cmta11postdx"],
+
+            "operation procedures and findings": op["ocm06cmtb"],
+            "operation notes": op["ocm06memo"],
+            "medical treatment plan": op["ocm06mdtrplan"],
+            "operation progress": op["ocm06opprgr"],
+
+            "additional data": {
+                "alarm": op["ocm06alarm"],
+                "cmplyn": op["cmplyn"],
+                "emdv": op["ocm06emdv"],
+                "pclr": op["ocm06pclr"],
+            },
+        
+            "operation check": {
+                "tissue examination": op["ocm06tissueexmn"],
+                "tissue examination contents": op["ocm06tissueexmncnts"],
+                "drain pipe": op["ocm06drngpipe"],
+                "drain pipe contents": op["ocm06drngpipecnts"]
+                },
+        
+        "report date": op["ocm06sysdat"],
+        "report time": op["ocm06systm"],
+        })
+
+    # Progress Notes
+    mr["progress notes"] = []
+    for pn in mr_info["pn"]:
+        mr["progress notes"].append({
+            "order date":pn["odr03odrdat"], 
+            "order note":pn["odr03odrcmt"]})
+
+    # Discharge Summary
+    mr["discharge summary"] = {}
+    for rt in mr_info["rt"]:
+        mr["discharge summary"] = {
+            "date of discharge": rt["ocm32rtdat"],
+
+            "chief complaints": rt["ocm32chiefcomp"],
+            "final diagnosis": rt["ocm32finaldx"],
+            "secondary diagnosis": rt["ocm32scnddx"],
+            "treatment operation": rt["ocm32op"],
+            "treatment medication": rt["ocm32medical"],
+            "abnormal findings and lab result": rt["ocm32problem"],
+
+            "follow-up plan": rt["ocm32follow"],
+            "progress summary": rt["ocm32other"],
+            "treatment result": rt["ocm32rtrstcd"],
+            "type of discharge": rt["ocm32rttypecd"],
+            "discharge comments": rt["ocm32rtcmt"],
+            "medicine": [],
+
+            "report date": rt["ocm32sysdat"],
+            "report time": rt["ocm32systm"],
+            }
+    
+    # Protocols
+    mr["operation protocols"] = mr_info["pt_o"]
+    mr["discharge protocols"] = mr_info["pt_r"]
+
+    return mr
+
+#
+# Operation Report (수술기록지)
+#
+def fill_or_source(patient_id, admsn_date, kwa, spth, mr_info):
+    # 일반 입원기록
+    df_ae = mr_info.get("ae")
+    # 산부인과 입원기록
+    df_ay = mr_info.get("ay")
+    # 상병 정보
+    df_il = mr_info.get("il")
+    # 수술예약 정보
+    df_oy = mr_info.get("oy")
+   # Protocol of Doctor
+    df_pt = mr_info.get("pt_o")
 
     or_source = {
         "patient": {
@@ -111,7 +302,7 @@ def collect_or_source(patient_id, admsn_date, kwa, spth):
         "clinical staff": {
             "department": df_ae["ocm31kwa"][0] if len(df_ae) > 0 else df_ay["ocm41kwa"][0] if len(df_ay) > 0 else None,
             "doctor in charge": df_ae["ocm31spth"][0] if len(df_ae) > 0 else df_ay["ocm41spth"][0] if len(df_ay) > 0 else None,
-            "physician assistant": None,
+            "doctor assistant": None,
             "nurse": None,
             "anesthesiologist": None,
             "method of anesthesia": None,
@@ -156,83 +347,72 @@ def collect_or_source(patient_id, admsn_date, kwa, spth):
         "protocols of doctor": df_pt.to_dict(orient="records")
     }
 
-    or_current = {
-        "patient": {
-            "patient id": patient_id,
-            "date of admission": admsn_date,
-            },
-        "clinical staff": {
-            "department": df_or["ocm06kwa"][0] if len(df_or) > 0 else None,
-            "doctor in charge": df_or["ocm06spth"][0] if len(df_or) > 0 else None,
-            "doctor assistant": str(df_or["ocm06rgcd"][0]) if len(df_or) > 0 else None,
-            },
+    return or_source
 
-        "operation data": df_or["ocm06cmta"][0].split('|') if len(df_or) > 0 else None,
-        "operation procedures and findings": df_or["ocm06cmtb"][0] if len(df_or) > 0 else None,
-        "operation notes": df_or["ocm06memo"][0] if len(df_or) > 0 else None,
+#
+# Operation Report (수술기록지)
+#
+def fill_op_record_from_db(df_or):
+    if len(df_or) == 0:
+        return None
+    
+    op_record = template.get_medical_record_template().get("operation records")[0]
 
-        "additional data": {
-            "alarm": df_or["ocm06alarm"][0] if len(df_or) > 0 else None,
-            "cmplyn": df_or["cmplyn"][0] if len(df_or) > 0 else None,
-            "emdv": df_or["ocm06emdv"][0] if len(df_or) > 0 else None,
-            "pclr": df_or["ocm06pclr"][0] if len(df_or) > 0 else None,
-            },
-        "operation check": {
-            "tissue examination": df_or["ocm06tissueexmn"][0] if len(df_or) > 0 else None,
-            "tissue examination contents": df_or["ocm06tissueexmncnts"][0] if len(df_or) > 0 else None,
-            "drain pipe": df_or["ocm06drngpipe"][0] if len(df_or) > 0 else None,
-            "drain pipe contents": df_or["ocm06drngpipecnts"][0] if len(df_or) > 0 else None,
-            },
- 
-        "operation date": df_or["ocm06opdat"][0] if len(df_or) > 0 else None,
-        "operation start time": df_or["ocm06opstarttm"][0] if len(df_or) > 0 else None,
-        "operation end time": df_or["ocm06opendtm"][0] if len(df_or) > 0 else None,
-        "report date": df_or["ocm06sysdat"][0] if len(df_or) > 0 else None,
-        "report time": df_or["ocm06systm"][0] if len(df_or) > 0 else None,
+    op_record["staff"] = {
+        "surgeon": df_or["cmta08spth"][0],
+        "assistant": None,
+        "nurse": None,
+        "anesthesiologist": None,
+        "method of anesthesia": None,
+    },
 
-        "medical treatment plan": df_or["ocm06mdtrplan"][0] if len(df_or) > 0 else None,
-        "operation progress": df_or["ocm06opprgr"][0] if len(df_or) > 0 else None,
-    }
+    op_record["operation date"] = df_or["ocm06opdat"][0] if len(df_or) > 0 else None
+    op_record["operation start time"] = df_or["ocm06opstarttm"][0] if len(df_or) > 0 else None
+    op_record["operation end time"] = df_or["ocm06opendtm"][0] if len(df_or) > 0 else None
 
-    or_info = {
-        "ae":df_ae.to_dict(orient="records"), 
-        "ay":df_ay.to_dict(orient="records"), 
-        "pt":df_pt.to_dict(orient="records"), 
-        "or":df_or.to_dict(orient="records"), 
+    op_record["operation name"] = df_or["cmta08opname"][8] if len(df_or) > 0 else None
+    op_record["preoperative diagnosis"] = df_or["cmta08predx"][7] if len(df_or) > 0 else None
+    op_record["postoperative diagnosis"] = df_or["cmta08postdx"][11] if len(df_or) > 0 else None
 
-        "or-source": or_source,
-        "or-current": or_current
-    }
+    op_record["operation procedures and findings"] = df_or["ocm06cmtb"][0] if len(df_or) > 0 else None
+    op_record["operation notes"] = df_or["ocm06memo"][0] if len(df_or) > 0 else None
+    op_record["medical treatment plan"] = df_or["ocm06mdtrplan"][0] if len(df_or) > 0 else None
+    op_record["operation progress"] = df_or["ocm06opprgr"][0] if len(df_or) > 0 else None
 
-    return or_info
+    op_record["additional data"] = {
+        "alarm": df_or["ocm06alarm"][0] if len(df_or) > 0 else None,
+        "cmplyn": df_or["cmplyn"][0] if len(df_or) > 0 else None,
+        "emdv" :df_or["ocm06emdv"][0] if len(df_or) > 0 else None,
+        "pclr": df_or["ocm06pclr"][0] if len(df_or) > 0 else None,
+        }
+    
+    op_record["operation check"] = {
+        "tissue examination": df_or["ocm06tissueexmn"][0] if len(df_or) > 0 else None,
+        "tissue examination contents": df_or["ocm06tissueexmncnts"][0] if len(df_or) > 0 else None,
+        "drain pipe": df_or["ocm06drngpipe"][0] if len(df_or) > 0 else None,
+        "drain pipe contents": df_or["ocm06drngpipecnts"][0] if len(df_or) > 0 else None,
+        }
+
+    op_record["report date"] = df_or["ocm06sysdat"][0] if len(df_or) > 0 else None
+    op_record["report time"] = df_or["ocm06systm"][0] if len(df_or) > 0 else None
+
+    return op_record
 
 #
 # Discharge Summary Report (퇴원요약지)
 #
-def collect_rt_source(patient_id, admsn_date, kwa, spth):
-    df_ae = get_medical_note("query_AE_P", patient_id, admsn_date)
-    df_ay = get_medical_note("query_AY_P", patient_id, admsn_date)
-    df_or = get_medical_note("query_OR_P", patient_id, admsn_date)
-    df_pn = get_medical_note("query_PN_P", patient_id, admsn_date)
+def fill_rt_source(patient_id, admsn_date, kwa, spth, mr_info):
+    df_ae = mr_info.get("ae")
+    df_ay = mr_info.get("ay")
+    df_or = mr_info.get("or")
+    df_pn = mr_info.get("pn")
 
-    df_pt_r = get_medical_note("query_PT_R", None, None, kwa, spth)
+    df_pt_r = mr_info.get("pt_r")
 
-    split_keys = ["Chief Complaints","Final Diagnosis","Secondary Diagnosis","Treatment Operation","Treatment Medical","Abnormal Findings and/or Lab Result","Follow-up Plan","Progress Summary",]
-    split_protocol = lambda x: dict(zip(split_keys, x.split("|") if type(x) == str else x))
-    df_pt_r["protocol"] = df_pt_r["protocol"].map(split_protocol)
-
-    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
-    df_pt_r = df_pt_r.map(decode_rtf)
-
-    df_je = get_medical_note("query_JE_P", patient_id, admsn_date)
-    df_te = get_medical_note("query_TE_P", patient_id, admsn_date)
-    df_ce = get_medical_note("query_CE_P", patient_id, admsn_date)
-    df_yt = get_medical_note("query_YT_P", patient_id, admsn_date)
-
-    df_rt = get_medical_note("query_RT_P", patient_id, admsn_date)
-
-    decode_rtf = lambda x: base.decode_rtf(x) if type(x) == str and base.is_rtf_format(x) else x
-    df_pn = df_pn.map(decode_rtf)
+    df_je = mr_info.get("je")
+    df_te = mr_info.get("te")
+    df_ce = mr_info.get("ce")
+    df_yt = mr_info.get("yt")
 
     rt_source = {
         "patient": {
@@ -307,6 +487,19 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
         "protocols of doctor": df_pt_r.to_dict(orient="records")
     }
 
+    return rt_source
+
+#
+# Discharge Summary (퇴원요약지)
+#
+def fill_rt_record_from_db(patient_id, admsn_date, mr_info):
+    df_rt = mr_info.get("rt")
+
+    rt_current = template.get_discharge_summary_template()
+
+    if df_rt is None or len(df_rt) == 0:
+        return rt_current
+    
     rt_current = {
         "patient": {
             "patient id": patient_id,
@@ -345,24 +538,7 @@ def collect_rt_source(patient_id, admsn_date, kwa, spth):
         }
     }
 
-    rt_info = {
-        "ae":df_ae.to_dict(orient="records"), 
-        "ay":df_ay.to_dict(orient="records"), 
-        "or":df_or.to_dict(orient="records"), 
-        "pn":df_pn.to_dict(orient="records"), 
-
-        "je":df_je.to_dict(orient="records"), 
-        "te":df_te.to_dict(orient="records"), 
-        "ce":df_ce.to_dict(orient="records"), 
-        "yt":df_yt.to_dict(orient="records"), 
-
-        "rt":df_rt.to_dict(orient="records"),
-
-        "rt-source": rt_source,
-        "rt-current": rt_current
-        }
-
-    return rt_info
+    return rt_current
 
 def call_api(prompt, data, model):
     reponses = genai.generate([prompt, data], model)

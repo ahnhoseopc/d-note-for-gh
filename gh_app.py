@@ -4,9 +4,16 @@ def dma_run():
     st.set_page_config(layout="wide")
 
     # page setup
-    gh_about_page = st.Page(
-        page="views/gh_about.py",
-        title="About Good Hospitals",
+    gh_about_dma_page = st.Page(
+        page="views/gh_about_dma.py",
+        title="DMA",
+        icon=":material/account_circle:",
+        default=False
+    )
+
+    gh_about_gh_page = st.Page(
+        page="views/gh_about_gh.py",
+        title="Good Hospitals",
         icon=":material/account_circle:",
         default=False
     )
@@ -32,6 +39,13 @@ def dma_run():
         default=False
     )
 
+    gh_dchat_page = st.Page(
+        page="views/gh_dchat.py",
+        title="D-Chat",
+        icon=":material/chat:",
+        default=False
+    )
+
     # gh_api_page = st.Page(
     #     page="views/gh_dapi.py",
     #     title="D-API",
@@ -40,13 +54,13 @@ def dma_run():
     # )
 
     # shared on all pages
-    st.logo("assets/gh_logo.png", size="large")
+    st.logo("assets/dma.jpg", size="large")
 
     with st.sidebar.container():
         pg = st.navigation(
             {
-                "Info": [gh_about_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page],
+                "About": [gh_about_dma_page, gh_about_gh_page],
+                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page],
                 "Configuration (Admin)": [gh_dbquery_page],
             }
         )

@@ -15,10 +15,10 @@ def main():
     #
     # Page title for D-QnA
     #
-    st.title("D-QnA, 전문 의료지식 정보 Agent")
+    st.title("D-Chat, 전문 의료업무 정보 Agent")
 
     # 저장된 챗 메시지 출력 
-    st.text(st.session_state.chat_name, help="대화의 제목")
+    st.text(st.session_state.chat_name, help="채팅 제목")
     # Display chat messages from history on app rerun
     for i, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):

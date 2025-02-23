@@ -24,9 +24,17 @@ set REGION=asia-northeast3
 set APP=dk-ghmh
 set TAG=gcr.io/%PROJECT_ID%/%APP%
 
+$env:PROJECT_ID='dk-medical-solutions'
+$env:REGION='asia-northeast3'
+$env:APP='dk-ghmh'
+$env:TAG="gcr.io/$env:PROJECT_ID/$env:APP"
+
 # Cloud build
 gcloud builds submit --secret id=creds,src=.streamlits/secrets.toml --project=%PROJECT_ID% --tag %TAG%
 gcloud builds submit --project=%PROJECT_ID% --tag %TAG%
+gcloud builds submit --project=$env:PROJECT_ID --tag $env:TAG
 
 # Cloud Run deployment
 gcloud run deploy %APP% --project %PROJECT_ID% --image %TAG% --platform managed --region %REGION% --allow-unauthenticated --port 8501
+
+gcloud run deploy %APP% --project $env:PROJECT_ID --image $env:TAG --platform managed --region $env:REGION --allow-unauthenticated --port 8501

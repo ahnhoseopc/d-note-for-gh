@@ -1,73 +1,33 @@
-import datetime
-import re
 import utils.base as base
 import utils.note as note
+import utils.note_template as template
+
 import json
+import re
 
 import streamlit as st
 
-or_info = None
-
 def op_record_source():
-    global or_info
-    
-    # Get the list of doctors by department
-    if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
-        st.session_state.doctors_by_dept = note.get_doctors_by_dept()
+    with st.expander("소스 의료정보 (API입력데이터)", expanded=False):
+        if st.session_state.get("mr_json"):
+            st.json(st.session_state["mr_json"], expanded=1)
 
-    col11,col12 = st.columns([1, 1])
-    with col11:
-        # Get the list of departments
-        depts = st.session_state.doctors_by_dept["kwa"].unique()
-        kwa = st.selectbox("진료과", options=depts, key="op-dept", placeholder="진료과", label_visibility="collapsed")
-
-    with col12:
-        # Get the list of doctors for the selected department
-        doctors = st.session_state.doctors_by_dept[st.session_state.doctors_by_dept["kwa"]==st.session_state["op-dept"]]["spth"]
-        spth = st.selectbox("진료의", options=doctors, key="op-doctor", placeholder="진료의", label_visibility="collapsed")
-
-        # Get the list of patients for the selected doctor
-        st.session_state.op_patients = note.get_patient_by_doctor(spth)
-
-    # Display the list of patients
-    selected_row = st.dataframe(st.session_state.op_patients, on_select="rerun", selection_mode="single-row", height=140, use_container_width=True, key="selected-patient-op")
-
-    # Collect the operation record source from source data
-    if selected_row and len(selected_row.selection.rows)>0:
-        idnoa = st.session_state.op_patients["idnoa"][selected_row["selection"]["rows"][0]]
-        lwdat = st.session_state.op_patients["lwdat"][selected_row["selection"]["rows"][0]]
-
-        or_info = note.collect_or_source(idnoa, lwdat, kwa, spth)
-
-    st.divider()
-
-    with st.expander("소스 의료정보 (API입력데이터)", expanded=True):
-        if or_info:
-            st.json(or_info["or-source"], expanded=1)
-
-    with st.expander("소스 의료정보 (DB원본)", expanded=False):
         # Source data display
-        if or_info is not None:
+        if st.session_state.get("mr_info"):
             st.write("입원기록지")
-            if len(or_info["ae"]):
-                st.json(or_info["ae"], expanded=1)
-            if len(or_info["ay"]):
-                st.json(or_info["ay"], expanded=1)
+            st.json(st.session_state["mr_info"]["ae"], expanded=1)
+            st.write("입원기록지 GY")
+            st.json(st.session_state["mr_info"]["ay"], expanded=1)
+            st.write("상병")
+            st.json(st.session_state["mr_info"]["il"], expanded=1)
+            st.write("수술예약")
+            st.json(st.session_state["mr_info"]["oy"], expanded=1)
+
             st.write("프로토콜")
-            if len(or_info["pt"]):
-                st.json(or_info["pt"], expanded=1)
+            st.json(st.session_state["mr_info"]["pt_o"], expanded=1)
 
-    with st.expander("기존 수술기록지 (DB)", expanded=False):
-        if or_info is not None:
-            st.write("수술기록지 (DB)")
-            if "or" in or_info and len(or_info["or"]):
-                st.json(or_info["or"], expanded=1)
-            # st.write("수술기록지 표시항목")
-            # if len(or_info["or-current"]):
-            #     st.json(or_info["or-current"], expanded=1)
-
-    with st.expander("기존 수술기록지 (문서양식))", expanded=False):
-        display_report(or_info["or-current"] if or_info and "or-current" in or_info else None)
+    with st.expander("수술기록지(기존)", expanded=True):
+        display_report(st.session_state.get("mr_json"))
 
     return "op-record-source"
 
@@ -88,6 +48,18 @@ def op_record_target():
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
+    mr_json = st.session_state.get("mr_json")
+    mr_json_new = template.get_medical_record_template()
+    mr_json_new["patient"] = mr_json["patient"]
+    mr_json_new["clinical staff"] = mr_json["clinical staff"]
+
+    mr_json_new["subjective"] = mr_json["subjective"]
+    mr_json_new["objective"] = mr_json["objective"]
+    mr_json_new["assessment"] = mr_json["assessment"]
+    mr_json_new["plan"] = mr_json["plan"]
+
+    mr_json_new["operation protocols"] = mr_json["operation protocols"]
+
     operation_name, operation_protocol = "", ""
     
     if or_write:
@@ -96,7 +68,7 @@ def op_record_target():
             response_text = ""
             response_container = st.empty()
             try:
-                responses = note.call_api(st.session_state["or-prompt"], json.dumps(or_info["or-source"], indent=4), st.session_state["ai-model-or"].lower())
+                responses = note.call_api(st.session_state["or-prompt"], json.dumps(mr_json_new), st.session_state["ai-model-or"].lower())
                 for response in responses:
                     response_text += response.text
                     response_container.caption(response_text)
@@ -107,38 +79,218 @@ def op_record_target():
 
                 if base.is_json_format(response_text):
                     json_result = json.loads(response_text)
-                    operation_name = json_result["operation name"] if "operation name" in json_result else response_text
+                    operation_name = json_result["estimated operation name"] if "estimated operation name" in json_result else response_text
                     operation_protocol = json_result["protocol"] if "protocol" in json_result else response_text
                     response_container.json(json_result)
 
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
 
-    # 수술기록지 결과 비교: 기존 vs 신규
-    or_draft = None
-    with st.expander("수술기록지 신규", expanded=False):
-        if "or-result" in st.session_state:
-            result = st.session_state["or-result"]
-            st.caption(result)
+    op_record = mr_json_new["operation records"][0]
+    op_record["operation name"] = operation_name
+    op_record["operation procedures and findings"] = operation_protocol
 
-            if or_info and "or" in or_info and len(or_info["or"]):
-                or_draft = note.generate_or_draft(or_info["or"][0], operation_name, operation_protocol)
-                st.json(or_draft)
+    mr_json_new["operation records"] = []
+    mr_json_new["operation records"].append(op_record)
 
     # 수술기록지 결과 포맷
     with st.expander("수술기록지 신규", expanded=False):
-        display_report(or_draft)
+        display_report(mr_json_new, "new")
 
-def display_report(or_instance):
-    st.header("수술기록지 (Operation Record)")
+OP_01_HEADER = """
+<table width="100%">
+<tr>
+<td align="left" width="25%">
 
-    if or_instance is None:
+**등록번호**: {}  
+**진 료 과**: {}  
+
+</td>
+<td align="center" width="50%">
+
+### 수술기록지 ( Operation Record )
+Date of Operation: {}
+
+</td>
+<td align="right" width="25%">
+<img src="../assets/gh_logo.png" alt="좋은병원들" width="120">  
+</td>
+</tr>
+</table>
+
+"""
+OP_02_STAFF = """
+<table width="100%">
+<tr>
+<td colspan="2" align="left" width="25%">
+<b>Surgeon</b>: {}
+</td>
+<td colspan="2" align="left" width="25%">
+<b>PA</b>:   {}
+</td>
+<td colspan="2" align="left" width="25%">
+<b>Nurse</b>:  {}
+</td>
+<td colspan="2" align="left" width="25%">
+<b>Anesthesiologist</b>:   {}
+</td>
+</tr>
+<tr>
+<td colspan="6" align="left">
+</td>
+<td colspan="2" align="left">
+<b>Method of Anesthesia</b>: {}
+</td>
+</tr>
+</table>
+"""
+OP_03_DIAGNOSIS = """
+#### Preoperative diagnosis:  
+{}  
+
+#### Postoperative diagnosis:  
+{}  
+
+#### Name of Operation:  
+{}  
+
+---
+"""
+OP_04_PROCEDURES = """
+
+#### Procedures & Findings:  
+
+"""
+OP_05_MEMO = """
+#### 특이사항:
+{}
+"""
+OP_06_ADDITIONAL = """
+<table width="100%">
+<tr>
+<td width="33%" align="center">
+
+##### 출혈정도:   
+패드 확인:  ☐ 유  ■ 무  
+</td>
+<td width="33%" align="center">
+
+##### **Tissue of path.**:  
+■ Yes   ☐ No 
+</td>
+<td width="33%" align="center">
+
+##### **Drains**:  
+☐ Yes (      )   ■ No  
+</td>
+</tr>
+</table>
+
+##### 수술일시:   
+- {} **2024년10월22일 10시40분 ~ 11시00분 종료**  
+"""
+OP_07_TAIL = """
+<table width="100%">
+<tr>
+<td width="50%">
+<b>Dictated Written by</b>: {}
+</td>
+<td width="25%" align="right">
+<b>Surgeon's Signatures</b>: {}   
+</td>
+<td width="25%" align="right">
+</td>
+</tr>
+</table>
+
+---
+
+**작성일시**: {} {} 2024-10-22 11:00  
+"""
+
+def display_report(mr_instance, param="0"):
+    if mr_instance is None or "operation records" not in mr_instance or len(mr_instance["operation records"]) == 0:
         st.write("수술기록지가 없습니다.")
         return
 
+    op_record = mr_instance["operation records"][0]
+    print(op_record)
+
+    # CSS를 이용하여 테이블의 테두리 제거
+    st.markdown("""
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: none !important;
+                padding: 10px;
+                text-align: left;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+
+    st.write(OP_01_HEADER.format(
+        mr_instance["patient"]["patient id"], 
+        mr_instance["clinical staff"]["department"], 
+        op_record["operation date"]), unsafe_allow_html = True)
+    st.write(OP_02_STAFF.format(
+        base.ifnull(op_record["surgeon"], "<na>"), 
+        base.ifnull(op_record["assistant"], "<na>"), 
+        base.ifnull(op_record["nurse"], "<na>"), 
+        base.ifnull(op_record["anesthesiologist"], "<na>"), 
+        base.ifnull(op_record["method of anesthesia"], "<na>")), unsafe_allow_html = True)
+    st.write(OP_03_DIAGNOSIS.format(
+        base.ifnull(op_record["preoperative diagnosis"], "<na>"), 
+        base.ifnull(op_record["postoperative diagnosis"], "<na>"),
+        base.ifnull(op_record["operation name"], "<na>")))
+    st.write(OP_04_PROCEDURES.format(
+        base.ifnull("", "<na>")), unsafe_allow_html = True)
+    st.text_area("procedures",op_record["operation procedures and findings"], height=300, label_visibility= "collapsed")
+
+    st.write(OP_05_MEMO.format(
+        base.ifnull(op_record["operation notes"], "무")), unsafe_allow_html = True)
+    cols = st.columns([1,4])
+    with cols[0]:
+        st.radio("특이사항 유무", ["유", "무"], key=f"abnormality_{param}", index=1, horizontal=True, label_visibility="collapsed")
+    with cols[1]:
+        st.text_input("특이사항", op_record["operation notes"], label_visibility= "collapsed")
+
+    st.write(OP_06_ADDITIONAL.format(
+        base.ifnull(op_record["additional data"]["alarm"], "<na>"), 
+        base.ifnull(op_record["additional data"]["cmplyn"], "<na>"), 
+        base.ifnull(op_record["additional data"]["emdv"], "<na>"), 
+        base.ifnull(op_record["additional data"]["pclr"], "<na>"), 
+
+        base.ifnull(op_record["operation check"]["tissue examination"], "<na>"), 
+        base.ifnull(op_record["operation check"]["tissue examination contents"], "<na>"), 
+        base.ifnull(op_record["operation check"]["drain pipe"], "<na>"), 
+        base.ifnull(op_record["operation check"]["drain pipe contents"], "<na>"), 
+
+        base.ifnull(op_record["operation date"], "<na>")), unsafe_allow_html = True)
+    st.write(OP_07_TAIL.format(
+        base.ifnull(mr_instance["clinical staff"]["doctor in charge"], "<na>"), 
+        base.ifnull(mr_instance["clinical staff"]["doctor in charge"], 0), 
+        base.ifnull(op_record["report date"], "<na>"),
+        base.ifnull(op_record["report time"], "<na>")), unsafe_allow_html = True)
+    
+    # st.markdown(OP_01_HEADER)
+    # st.markdown(OP_02_STAFF)
+    # st.markdown(OP_03_DIAGNOSIS)
+    # st.markdown(OP_04_PROCEDURES)
+    # st.markdown(OP_05_MEMO)
+    # st.markdown(OP_06_ADDITIONAL)
+    # st.markdown(OP_07_TAIL)
+
+    pass
+
+def display_report_old(mr_instance):
+    st.divider()
+
     st.subheader("환자정보")
     st.write("등록번호")
-    st.caption(or_instance["patient"]["patient id"])
+    st.caption(mr_instance["patient"]["patient id"])
 
     st.subheader("의료진정보")
     cols = st.columns(3)

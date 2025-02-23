@@ -4,8 +4,8 @@
 <tr>
 <td align="left" width=150>
 
-**등록번호**: 1231234  
-**진 료 과**: GS  
+**등록번호**: {} 1231234  
+**진 료 과**: {} GS  
 
 </td>
 <td align="center" width=300>
@@ -56,11 +56,11 @@ Date of Operation: {operation_date}
 1. LUO-1  
 2. LUO-2 breast mass  
 
----
-
 ### Name of Operation:  
 - {operation_name}
 - Vacuum Assist Breast Excision (VABB, VABE, MMT)
+
+---
 
 ### Procedures & Findings:  
 {procedure_findings}
@@ -86,14 +86,28 @@ Date of Operation: {operation_date}
 - {operation_memo} 무  {}
 
 ---
+<table width="100%">
+<tr>
+<td width="33%" align="center">
 
 #### 출혈정도:   
-- 패드 확인: ☐ 유  ■ 무  
+패드 확인:  ☐ 유  ■ 무  
+</td>
+<td width="33%" align="center">
+
+#### **Tissue of path.**:  
+&nbsp;&nbsp; ■ Yes &nbsp;&nbsp;&nbsp; ☐ No 
+</td>
+<td width="33%" align="center">
+
+#### **Drains**:  
+&nbsp;&nbsp;&nbsp; ☐ Yes (      ) &nbsp;&nbsp;&nbsp; ■ No  
+</td>
+</tr>
+</table>
 
 #### 수술일시:   
 - {operation_time} **2024년10월22일 10시40분 ~ 11시00분 종료**  
-
-#### **Tissue of path.**:  &nbsp;&nbsp; ■ Yes &nbsp;&nbsp;&nbsp; ☐ No  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Drains**:  &nbsp;&nbsp;&nbsp; ☐ Yes (      ) &nbsp;&nbsp;&nbsp; ■ No  
 
 ---
 
@@ -109,5 +123,7 @@ Date of Operation: {operation_date}
 </td>
 </tr>
 </table>
+
+---
 
 **작성일시**: {report_datetime} 2024-10-22 11:00  

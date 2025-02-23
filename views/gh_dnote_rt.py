@@ -1,88 +1,41 @@
 import utils.base as base
 import utils.note as note
+import utils.note_template  as template
+
 import json
 
 import streamlit as st
 
-rt_info = None
-
 def rt_summary_source():
-    global rt_info
-
-    # Get the list of doctors by department
-    if "doctors_by_dept" not in st.session_state or st.session_state.doctors_by_dept is None:
-        st.session_state.doctors_by_dept = note.get_doctors_by_dept()
-
-    col11,col12 = st.columns([1, 1])
-    with col11:
-        # Get the list of departments
-        depts = st.session_state.doctors_by_dept["kwa"].unique()
-        kwa = st.selectbox("진료과", options=depts, key="rt-dept", placeholder="진료과", label_visibility="collapsed")
-
-    with col12:
-        # Get the list of doctors for the selected department
-        doctors = st.session_state.doctors_by_dept[st.session_state.doctors_by_dept["kwa"]==st.session_state["rt-dept"]]["spth"]
-        spth = st.selectbox("진료의", options=doctors, key="rt-doctor", placeholder="진료의", label_visibility="collapsed")
-        
-        # Get the list of patients for the selected doctor
-        st.session_state.rt_patients = note.get_patient_by_doctor(spth)
-
-    # Display the list of patients
-    selected_row = st.dataframe(st.session_state.rt_patients, key="rt-selected-patient", on_select="rerun", selection_mode="single-row", height=140, use_container_width=True)
-
-    # Collect the discharge summary source from source data
-    if selected_row and len(selected_row.selection.rows)>0:
-        idnoa = st.session_state.rt_patients["idnoa"][selected_row["selection"]["rows"][0]]
-        lwdat = st.session_state.rt_patients["lwdat"][selected_row["selection"]["rows"][0]]
-
-        rt_info = note.collect_rt_source(idnoa, lwdat, kwa, spth)
-
-    st.divider()
-
     with st.expander("소스 의료정보 (API입력데이터)", expanded=True):
-        if rt_info:
-            st.json(rt_info["rt-source"], expanded=1)
+        if st.session_state.get("mr_json"):
+            st.json(st.session_state["mr_json"], expanded=1)
 
-    with st.expander("소스 의료정보 (DB원본)", expanded=False):
         # Source data display
-        if rt_info:
+        if st.session_state.get("mr_info"):
             st.write("입원기록지")
-            if "ae" in rt_info and len(rt_info["ae"]) > 0:
-                st.json(rt_info["ae"], expanded=1)
-            if "ay" in rt_info and len(rt_info["ay"]) > 0:
-                st.json(rt_info["ay"], expanded=1)
+            st.json(st.session_state["mr_info"]["ae"], expanded=1)
+            st.write("입원기록지 GY")
+            st.json(st.session_state["mr_info"]["ay"], expanded=1)
+            st.write("상병/진단")
+            st.json(st.session_state["mr_info"]["il"], expanded=1)    
 
+            st.write("수술예약")
+            st.json(st.session_state["mr_info"]["oy"], expanded=1)    
             st.write("수술기록지")
-            if "or" in rt_info and len(rt_info["or"]) > 0:
-                st.json(rt_info["or"], expanded=1)    
+            st.json(st.session_state["mr_info"]["or"], expanded=1)    
+
             st.write("경과기록지")
-            if "pn" in rt_info and len(rt_info["pn"]) > 0:
-                st.json(rt_info["pn"], expanded=1)
+            st.json(st.session_state["mr_info"]["pn"], expanded=1)
 
             st.write("검사결과")
-            if "je" in rt_info and len(rt_info["je"]) > 0:
-                st.json(rt_info["je"], expanded=1)
-            if "te" in rt_info and len(rt_info["te"]) > 0:
-                st.json(rt_info["te"], expanded=1)
-            if "ce" in rt_info and len(rt_info["ce"]) > 0:
-                st.json(rt_info["ce"], expanded=1)
-            if "yt" in rt_info and len(rt_info["yt"]) > 0:
-                st.json(rt_info["yt"], expanded=1)
-
-    with st.expander("기존 퇴원요약지 (DB)", expanded=False):
-        st.write("퇴원요약지 (DB)")
-        if rt_info and "rt" in rt_info and len(rt_info["rt"]) > 0:
-            st.json(rt_info["rt"], expanded=1)
-
-        # st.write("퇴원요약지 (항목)")
-        # if rt_info and "rt-current" in rt_info and len(rt_info["rt-current"]) > 0:
-        #     st.json(rt_info["rt-current"], expanded=1)
+            st.json(st.session_state["mr_info"]["je"], expanded=1)
+            st.json(st.session_state["mr_info"]["te"], expanded=1)
+            st.json(st.session_state["mr_info"]["ce"], expanded=1)
+            st.json(st.session_state["mr_info"]["yt"], expanded=1)
 
     with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
-        if rt_info and "rt" in rt_info and len(rt_info["rt"]):
-            patient_rt_report = rt_info["rt"][0]
-            display_report(patient_rt_report)
-
+        display_report(st.session_state.get("mr_json"))
 
 
 
@@ -124,6 +77,23 @@ def rt_summary_target():
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
 
+    mr_json = st.session_state.get("mr_json")
+    mr_json_new = template.get_medical_record_template()
+    mr_json_new["patient"] = mr_json["patient"]
+    mr_json_new["clinical staff"] = mr_json["clinical staff"]
+
+    mr_json_new["subjective"] = mr_json["subjective"]
+    mr_json_new["objective"] = mr_json["objective"]
+    mr_json_new["assessment"] = mr_json["assessment"]
+    mr_json_new["plan"] = mr_json["plan"]
+
+    mr_json_new["operation records"] = mr_json["operation records"]
+    mr_json_new["progress notes"] = mr_json["progress notes"]
+
+    mr_json_new["discharge protocols"] = mr_json["discharge protocols"]
+
+    operation_name, operation_protocol = "", ""
+
     protocol = ""
     if rt_write:
         with st.expander("AI지원 퇴원요약지 초안", expanded=True):
@@ -131,7 +101,7 @@ def rt_summary_target():
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
             try:
-                responses = note.call_api(st.session_state["rt-prompt"], json.dumps(rt_info["rt-source"], indent=4), st.session_state["ai-model-rt"].lower())
+                responses = note.call_api(st.session_state["rt-prompt"], json.dumps(mr_json, indent=4), st.session_state["ai-model-rt"].lower())
                 for response in responses:
                     st.session_state["rt-result"] += response.text
                     response_container.caption(st.session_state["rt-result"])
@@ -143,35 +113,46 @@ def rt_summary_target():
                 response_container.caption(f"error when calling api: {e}")
             print("rt-result= ", st.session_state["rt-result"])
 
+
     with st.expander("퇴원요약지 신규", expanded=False):
-        st.caption(protocol)
+        display_report(mr_json_new, "new")
 
 
-def display_report(patient_rt_report):
+def display_report(mr_json, param="old"):
+    ds = mr_json["discharge summary"]
 
     st.write("퇴원요약지 (Discharge Summary)")
 
     st.write("주호소/입원사유")
-    st.caption(patient_rt_report["ocm32chiefcomp"])
+    st.caption(ds["chief complaints"])
+
     st.write("주진단명 (Final Diagnosis)")
-    st.caption(patient_rt_report["ocm32finaldx"])
+    st.caption(ds["final diagnosis"])
     st.write("부진단명 (Secondary Diagnosis)")
-    st.caption(patient_rt_report["ocm32scnddx"])
+    st.caption(ds["secondary diagnosis"])
 
     st.write("수술명 (Treatment Op.)")
-    st.caption(patient_rt_report["ocm32op"])
+    st.caption(ds["treatment operation"])
     st.write("처치명 (Treatment Medical)")
-    st.caption(patient_rt_report["ocm32medical"])
+    st.caption(ds["treatment medication"])
 
     st.write("중요검사소견 (Abnormal Finding or Lab)")
-    st.caption(patient_rt_report["ocm32problem"])
+    st.text_area(ds["abnormal findings and lab result"], key=f"findings_{param}")
     st.write("추후관리계획 (Follow-up Plan)")
-    st.caption(patient_rt_report["ocm32follow"])
+    st.text_area(ds["follow-up plan"], key=f"follow_up_plan_{param}")
     st.write("경과요약 (Progress Summary)")
-    st.caption(patient_rt_report["ocm32other"])
+    st.text_area(ds["progress summary"], key=f"progress_summary_{param}")
 
     st.write("치료결과 (Result)")
-    st.caption(patient_rt_report["ocm32rtrstcd"])
+    st.caption(ds["treatment result"])
     st.write("퇴원형태 (Type of Discharge)")
-    st.caption(patient_rt_report["ocm32rttypecd"])
+    st.caption(ds["type of discharge"])
+    st.write("비고 (Discharge Comments)")
+    st.caption(ds["discharge comments"])
+
+    st.write("퇴원일)")
+    st.caption(ds["report date"])
+    st.write("퇴원시간)")
+    st.caption(ds["report time"])
+
     st.write("퇴원약 (Medicine)")
