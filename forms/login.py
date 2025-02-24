@@ -22,7 +22,7 @@ def login_form(authenticate):
                     st.session_state.user_id = user_id
                     st.rerun()
                 else:
-                    st.switch_page("views/gh_about.py")                
+                    st.switch_page("views/gh_about_dma.py")                
             else:
                 st.error("Please enter a valid id. Refresh this page. (F5)", icon="📧")
                 st.stop()

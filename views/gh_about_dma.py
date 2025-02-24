@@ -1,9 +1,56 @@
 import streamlit as st
 
+import base64
+
+# 이미지 파일을 Base64로 변환하는 함수
+def get_base64_encoded_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode()
+
 def main():
     st.header("DK Medical Agents - DMA", anchor="network", divider="orange")
 
-    st.image("assets/00_dma_main.jpg", use_container_width=True)
+    # 프로젝트 내부 이미지 경로
+    image_files = ["assets/dma/00_dma_main.jpg", "assets/dma/00_dma_main-1chat.jpg", "assets/dma/00_dma_main-2qna.jpg", "assets/dma/00_dma_main-3note.jpg", "assets/dma/00_dma_main-4inq.jpg"]
+
+    # Base64 변환
+    base64_images = [get_base64_encoded_image(img) for img in image_files]
+
+    # HTML + CSS 애니메이션
+    st.markdown(
+        f"""
+        <style>
+        @keyframes slide {{
+            0% {{ transform: translateX(000%); }}
+            100% {{ transform: translateX(-500%); }}
+        }}
+
+        .slider {{
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }}
+
+        .slider img {{
+            width: 50%;
+            flex-shrink: 0;
+            animation: slide 12s linear infinite alternate;
+        }}
+        </style>
+        
+        <div class="slider">
+            <img src="data:image/png;base64,{base64_images[0]}" />
+            <img src="data:image/png;base64,{base64_images[1]}" />
+            <img src="data:image/png;base64,{base64_images[2]}" />
+            <img src="data:image/png;base64,{base64_images[3]}" />
+            <img src="data:image/png;base64,{base64_images[4]}" />
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # st.image("assets/dma/00_dma_main.jpg", use_container_width=True)
 
     cols = st.columns(2)
     with cols[0]:

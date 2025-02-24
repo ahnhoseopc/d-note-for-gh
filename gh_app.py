@@ -54,7 +54,7 @@ def dma_run():
     # )
 
     # shared on all pages
-    st.logo("assets/dma.jpg", size="large")
+    st.logo("assets/dma/dma.png", size="large")
 
     with st.sidebar.container():
         pg = st.navigation(
@@ -71,8 +71,8 @@ def dma_run():
 
 print(f"gh_app.__name__: {__name__}")
 
-import services.dma_api as api
-from threading import Thread
+# import services.dma_api as api
+# from threading import Thread
 
 # if "Fastapi" not in st.session_state:
 #     st.session_state["Fastapi"] = "stopped"

@@ -38,19 +38,28 @@ OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression
 
 def op_record_target():
     # 수술기록지 생성 프롬프트
-    st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
+    # st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
 
     # 수술기록지 작성 버튼
-    cols = st.columns([3, 4])
+    cols = st.columns([3, 3, 4])
     with cols[0]:
         or_write = st.button("➡️ 수술기록지 Protocol AI 검색", key="or-write")
 
     with cols[1]:
+        with st.popover("⚙️ Prompt", use_container_width=True):
+            # 퇴원요약지 생성 프롬프트
+            st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
+
+    with cols[2]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
     if or_write:
         mr_json = st.session_state.get("mr_json")
+        if "mr_json" not in st.session_state or "patient" not in mr_json:
+            return
+
         mr_json_new = template.get_medical_record_template()
+
         mr_json_new["patient"] = mr_json["patient"]
         mr_json_new["clinical staff"] = mr_json["clinical staff"]
 
