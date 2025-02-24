@@ -8,24 +8,6 @@ import re
 import streamlit as st
 
 def op_record_source():
-    with st.expander("소스 의료정보 (API입력데이터)", expanded=False):
-        if st.session_state.get("mr_json"):
-            st.json(st.session_state["mr_json"], expanded=1)
-
-        # Source data display
-        if st.session_state.get("mr_info"):
-            st.write("입원기록지")
-            st.json(st.session_state["mr_info"]["ae"], expanded=1)
-            st.write("입원기록지 GY")
-            st.json(st.session_state["mr_info"]["ay"], expanded=1)
-            st.write("상병")
-            st.json(st.session_state["mr_info"]["il"], expanded=1)
-            st.write("수술예약")
-            st.json(st.session_state["mr_info"]["oy"], expanded=1)
-
-            st.write("프로토콜")
-            st.json(st.session_state["mr_info"]["pt_o"], expanded=1)
-
     with st.expander("수술기록지(기존)", expanded=True):
         display_report(st.session_state.get("mr_json"))
 
@@ -220,7 +202,11 @@ OP_07_TAIL = """
 """
 
 def display_report(mr_instance, param="0"):
-    if mr_instance is None or "operation records" not in mr_instance or len(mr_instance["operation records"]) == 0:
+    if mr_instance is None:
+        st.write("의무기록이 없습니다.")
+        return
+
+    if "operation records" not in mr_instance or len(mr_instance["operation records"]) == 0:
         st.write("수술기록지가 없습니다.")
         return
 

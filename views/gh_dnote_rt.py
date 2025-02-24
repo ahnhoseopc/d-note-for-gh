@@ -8,33 +8,6 @@ import json
 import streamlit as st
 
 def rt_summary_source():
-    with st.expander("소스 의료정보 (API입력데이터)", expanded=True):
-        if st.session_state.get("mr_json"):
-            st.json(st.session_state["mr_json"], expanded=1)
-
-        # Source data display
-        if st.session_state.get("mr_info"):
-            st.write("입원기록지")
-            st.json(st.session_state["mr_info"]["ae"], expanded=1)
-            st.write("입원기록지 GY")
-            st.json(st.session_state["mr_info"]["ay"], expanded=1)
-            st.write("상병/진단")
-            st.json(st.session_state["mr_info"]["il"], expanded=1)    
-
-            st.write("수술예약")
-            st.json(st.session_state["mr_info"]["oy"], expanded=1)    
-            st.write("수술기록지")
-            st.json(st.session_state["mr_info"]["or"], expanded=1)    
-
-            st.write("경과기록지")
-            st.json(st.session_state["mr_info"]["pn"], expanded=1)
-
-            st.write("검사결과")
-            st.json(st.session_state["mr_info"]["je"], expanded=1)
-            st.json(st.session_state["mr_info"]["te"], expanded=1)
-            st.json(st.session_state["mr_info"]["ce"], expanded=1)
-            st.json(st.session_state["mr_info"]["yt"], expanded=1)
-
     with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
         display_discharge_summary(st.session_state.get("mr_json"))
 
@@ -128,9 +101,14 @@ def rt_summary_target():
     pass
 
 def display_discharge_summary(mr_json, param="old"):
-    if mr_json is None or "discharge summary" not in mr_json:
+    if mr_json is None:
+        st.write("의무기록이 없습니다.")
         return
     
+    if "discharge summary" not in mr_json:
+        st.write("퇴원요약지가 없습니다.")
+        return
+
     ds = mr_json["discharge summary"]
 
     st.write("퇴원요약지 (Discharge Summary)")

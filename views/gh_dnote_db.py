@@ -4,6 +4,9 @@ def db_record_source():
     with st.expander("소스 의료정보 (API입력데이터)", expanded=False):
         if st.session_state.get("mr_json"):
             st.json(st.session_state["mr_json"], expanded=1)
+        else:
+            st.write("의무기록이 없습니다.")
+            return
 
         # Source data display
         if st.session_state.get("mr_info"):

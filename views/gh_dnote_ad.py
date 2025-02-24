@@ -133,7 +133,7 @@ AD_07_TAIL_3 = """
 
 def display_report(mr_instance, param="0"):
     if mr_instance is None:
-        st.write("입원기록지가 없습니다.")
+        st.write("의무기록이 없습니다.")
         return
 
     # CSS를 이용하여 테이블의 테두리 제거

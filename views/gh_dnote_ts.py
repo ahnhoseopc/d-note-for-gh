@@ -46,6 +46,10 @@ Date of Admission: {}
 
 
 def display_report(mr_instance):
+    if mr_instance is None:
+        st.write("의무기록이 없습니다.")
+        return
+
     if not mr_instance or not mr_instance.get("objective") or not mr_instance["objective"].get("lab-result"):
         st.write("검사기록이 없습니다.")
         return

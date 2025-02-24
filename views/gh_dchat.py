@@ -1,29 +1,9 @@
 import utils.auth as auth
 import forms.sidebar_qna as sidebar_qna
 import utils.qna as qna
+import views.gh_dchat_00 as intro
 
 import streamlit as st
-
-DCHAT_HELP = """병원의 다양한 부서중에서 수익창출과 직접적으로 연관되어 있는 보험심사팀은 
-
-아주 중요한 업무를 담당하고 있습니다.
-
-수시로 개정되는 고시를 Update하고, 임상과별 진료내역을 집계/청구하며, 
-
-심평원으로부터 통보된 다양한 feedback의 결과를 처리하는 
-
-병원의 매출과 제일 직접적으로 연관된 부서입니다.
-
-이에 D-Chat을 통해, 
-
-1) 개정된 고시 정보 Update 와
-2) 심사부서 및 병원내 의료진에 대한 보험료 청구/삭감에 대한 문답서비스를 제공하고자 합니다.
-3) 특히 업무중 의료진으로부터 많은 질의에 대한 응답에 우선 대응함으로써 
-
-   보험심사팀 직원들의 업무집중도를 제고할 수 있습니다.
-
-4) 필요할 경우, 병원의 DB와 연결을 통해 병원만의 특화된 서비스도 가능합니다.
-"""
 
 @auth.login_required
 def main():
@@ -37,12 +17,12 @@ def main():
     #
     # Page title for D-QnA
     #
-    st.title("D-Chat, 전문 의료업무 정보 Agent", help=DCHAT_HELP)
+    st.title("D-Chat, 전문 의료업무 정보 Agent")
 
-    tab0, tab1, tab2, tab3 = st.tabs(["의료업무 정보화 Agent", "**요양급여규정 안내**", "보험심사청구 업무", ""])
+    tab0, tab1, tab2 = st.tabs(["의료업무 정보화 Agent", "**요양급여규정 안내**", "보험심사청구 업무"])
 
     with tab0:
-        st.markdown(DCHAT_HELP)
+        intro.intro_record_source()
 
     with tab1:
         chat_container = st.container()

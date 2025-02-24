@@ -34,7 +34,7 @@ PN_01_HEADER_3 = """
 <td align="center" width="50%">
 
 ### 경과기록지 ( Progress Note )
-Date of Admission: {}
+Date of Admission: {}<br>
 Date of Note: {}
 
 </td>
@@ -70,7 +70,7 @@ PN_07_TAIL_2 = """
 
 def display_report(mr_instance, param="0"):
     if mr_instance is None:
-        st.write("입원기록지가 없습니다.")
+        st.write("의무기록이 없습니다.")
         return
 
     notes = mr_instance.get("progress notes")
