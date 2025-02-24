@@ -1,7 +1,7 @@
 import utils.auth as auth
-import utils.qna as qna
 import forms.sidebar_qna as sidebar_qna
-import views.gh_dqna_00 as intro
+import utils.qna as qna
+import views.gh_dchat_00 as intro
 
 import streamlit as st
 
@@ -17,9 +17,9 @@ def main():
     #
     # Page title for D-QnA
     #
-    st.title("D-QnA, 전문 의료지식 정보화 Agent")
+    st.title("D-Chat, 전문 의료업무 정보 Agent")
 
-    tab0, tab1, tab2, tab4 = st.tabs(["의료지식 정보화 Agent", "**Doctor's**", "Expert's", "Researcher's"])
+    tab0, tab1, tab2 = st.tabs(["의료업무 정보화 Agent", "**요양급여규정 안내**", "보험심사청구 업무"])
 
     with tab0:
         intro.intro_record_source()
@@ -28,12 +28,13 @@ def main():
         chat_container = st.container()
 
         with chat_container:
+        
             # 저장된 챗 메시지 출력 
-            st.text(st.session_state.chat_name, help="대화의 제목")
+            st.text(st.session_state.chat_name, help="채팅 제목")
             # Display chat messages from history on app rerun
             for i, message in enumerate(st.session_state.messages):
                 with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
-                    st.write(str(i) + ": " + message["parts"][0]["text"])
+                    st.markdown(str(i) + ": " + message["parts"][0]["text"])
 
     #
     # 사용자 Prompt 입력
@@ -75,7 +76,7 @@ def main():
 
             # Add assistant response to chat history
             st.session_state.messages.append({"role": "assistant", "parts": [{"text": response_text}]})
-    # END OF CHAT INPUT
+        # END OF CHAT INPUT
 
 import forms.sidebar as sidebar
 

@@ -45,6 +45,6 @@ def display():
     with st.sidebar.container():
         cols = st.columns([3,1])
         with cols[0]: st.text("Provided by ")
-        with cols[1]: st.image("assets/dk_logo.png", width=40)
+        with cols[1]: st.image("assets/dma/dk_logo.png", width=40)
 
     st.markdown('</div>', unsafe_allow_html=True)
