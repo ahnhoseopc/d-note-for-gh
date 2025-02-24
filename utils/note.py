@@ -123,9 +123,9 @@ def get_patient_mr_json(mr_info):
 
     mr["subjective"]["obsteric gpal"] = mr_info["ay"][0]["ocm41ohg"] if len(mr_info["ay"]) > 0 else None
     mr["subjective"]["menstrual history"] = mr_info["ay"][0]["ocm41lmp"] if len(mr_info["ay"]) > 0 else None
+    mr["subjective"]["admission-operation history"] = mr_info["ay"][0]["ocm41adm"] if len(mr_info["ay"]) > 0 else None
 
     mr["subjective"]["past medical history"] = mr_info["ae"][0]["ocm31pmhx"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41phx"] if len(mr_info["ay"]) > 0 else None
-    mr["subjective"]["admission-operation history"] = mr_info["ay"][0]["ocm41adm"] if len(mr_info["ay"]) > 0 else None
     mr["subjective"]["social history"] = mr_info["ae"][0]["ocm31soc"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41shx"] if len(mr_info["ay"]) > 0 else None
     mr["subjective"]["family history"] = mr_info["ae"][0]["ocm31family"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41fhx"] if len(mr_info["ay"]) > 0 else None
 

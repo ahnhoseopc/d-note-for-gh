@@ -1,3 +1,4 @@
+import re
 import utils.base as base
 import utils.note as note
 import utils.note_template  as template
@@ -35,7 +36,7 @@ def rt_summary_source():
             st.json(st.session_state["mr_info"]["yt"], expanded=1)
 
     with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
-        display_report(st.session_state.get("mr_json"))
+        display_discharge_summary(st.session_state.get("mr_json"))
 
 
 
@@ -57,28 +58,21 @@ RT_PROMPT_DEFAULT = """
 
 1. 중요검사소견은 입원기간내에 시행한 조직검사결과를 원본 데이터 그대로 옮겨오도록 한다.
 
-2. 경과요약은 입원사유와 수술내용, 검사결과, 경과기록을 각 한줄씩 작성하도록 한다. 
+2. 경과요약은 입원사유와 수술내용, 검사결과, 경과기록을 각 한줄씩 작성하도록 한다. 평문으로 작성하라.
 첫번쨰  줄은 "date of admission", "chief compaints" 와 "present illness", "impression" 등을 참고하여 입원사유를 입원날짜와 함께 작성한다. 
 두번쨰 줄은 "operation"속성 내의 "operation date", "operation data", "operation procedures and findings", "operation notes"등을 참고하여 "[수술일자] 수술내용 요약"을  작성한다.  "operation"속성이 없으면 이 줄은 작성하지 않는다.
 세번째 줄은 검사결과는 [검사일] 입원기간내의 조직검사결과를 요약하여 특이사항여부를 한줄로 요약한다.
 네번째 줄은 경과기록은 [퇴원일]과 함께 "progress notes"내의 날짜별 기록을 참고하여 환자의 경과의 변화를 한줄로 요약한다. 검사결과와 이상소견여부를 확인하도록 한다.
 
-3. 날짜는 "[2025-01-01]" 형식으로 표시한다."""
+3. 날짜는 "[2025-01-01]" 형식으로 표시한다.
 
-def rt_summary_target():
-    # 퇴원요약지 생성 프롬프트
-    st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
+4. 출력은 JSON으로 아래 형식으로 출력하라.
+{"환자의 주호소":"", "주진단명":"", "부진단명":"", "수술명":"", "처치명":"", "중요검사소견":"", "추후관리계획":"", "경과요약":"", "치료결과":"", "퇴원형태":"", "퇴원약":""}
+"""
 
-    # 수술기록지 작성 버튼
-    cols = st.columns([3, 4])
-    with cols[0]:
-        rt_write = st.button("➡️ 퇴원요약지 경과 요약", key="rt-write")
-
-    with cols[1]:
-        st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
-
-    mr_json = st.session_state.get("mr_json")
+def prepare_request_data(mr_json):
     mr_json_new = template.get_medical_record_template()
+
     mr_json_new["patient"] = mr_json["patient"]
     mr_json_new["clinical staff"] = mr_json["clinical staff"]
 
@@ -92,33 +86,74 @@ def rt_summary_target():
 
     mr_json_new["discharge protocols"] = mr_json["discharge protocols"]
 
-    operation_name, operation_protocol = "", ""
+    return mr_json_new
 
-    protocol = ""
+def fill_in_discharge_summary(mr_json, findings, progress_summary):
+    mr_json_new = prepare_request_data(mr_json)
+
+    mr_json_new["discharge summary"] = mr_json["discharge summary"]
+    mr_json_new["discharge summary"]["abnormal findings and lab result"] = findings
+    mr_json_new["discharge summary"]["progress summary"] = progress_summary
+
+    return mr_json_new
+
+def rt_summary_target():
+    # 수술기록지 작성 버튼
+    cols = st.columns([5, 1, 4])
+    with cols[0]:
+        rt_write = st.button("➡️ 퇴원요약지 경과 요약", key="rt-write")
+
+    with cols[1]:
+        # st.markdown("""
+        #     <style>
+        #     .streamlit-popover {
+        #         width: 500px !important;  /* 원하는 너비로 설정 */
+        #         max-width: 50% !important;  /* 최대 너비 제한 해제 */
+        #         height: 100px !important;  /* 원하는 높이로 설정 */
+        #     }
+        #     </style>
+        # """, unsafe_allow_html=True)
+        with st.popover("⚙️ Prompt", use_container_width=True):
+            # 퇴원요약지 생성 프롬프트
+            st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
+
+    with cols[2]:
+        st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
+
     if rt_write:
+        mr_json = st.session_state.get("mr_json")
+        mr_json_new = prepare_request_data(mr_json)
+
         with st.expander("AI지원 퇴원요약지 초안", expanded=True):
             st.session_state["rt-result"] = ""
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
             try:
                 responses = note.call_api(st.session_state["rt-prompt"], json.dumps(mr_json, indent=4), st.session_state["ai-model-rt"].lower())
+
                 for response in responses:
                     st.session_state["rt-result"] += response.text
                     response_container.caption(st.session_state["rt-result"])
 
+                st.session_state["rt-result"] = re.sub(r"```json\s*|\s*```", "", st.session_state["rt-result"]).strip()
+                
                 if base.is_json_format(st.session_state["rt-result"]):
                     result_json = json.loads(st.session_state["rt-result"])
                     response_container.json(result_json)
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
-            print("rt-result= ", st.session_state["rt-result"])
+                pass
+        
+        mr_json_new = fill_in_discharge_summary(mr_json, result_json["중요검사소견"], result_json["경과요약"])
 
+        with st.expander("퇴원요약지 신규", expanded=False):
+            display_discharge_summary(mr_json_new, "new")
+    pass
 
-    with st.expander("퇴원요약지 신규", expanded=False):
-        display_report(mr_json_new, "new")
-
-
-def display_report(mr_json, param="old"):
+def display_discharge_summary(mr_json, param="old"):
+    if mr_json is None or "discharge summary" not in mr_json:
+        return
+    
     ds = mr_json["discharge summary"]
 
     st.write("퇴원요약지 (Discharge Summary)")
@@ -137,11 +172,11 @@ def display_report(mr_json, param="old"):
     st.caption(ds["treatment medication"])
 
     st.write("중요검사소견 (Abnormal Finding or Lab)")
-    st.text_area(ds["abnormal findings and lab result"], key=f"findings_{param}")
+    st.text_area(label="중요검사소견", height=300, value=ds["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
     st.write("추후관리계획 (Follow-up Plan)")
-    st.text_area(ds["follow-up plan"], key=f"follow_up_plan_{param}")
+    st.text_input(label="추후관리계획", value=ds["follow-up plan"], key=f"follow_up_plan_{param}", label_visibility= "collapsed")
     st.write("경과요약 (Progress Summary)")
-    st.text_area(ds["progress summary"], key=f"progress_summary_{param}")
+    st.text_area(label="경과요약", height=200, value=ds["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
 
     st.write("치료결과 (Result)")
     st.caption(ds["treatment result"])

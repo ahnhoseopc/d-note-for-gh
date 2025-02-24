@@ -48,21 +48,22 @@ def op_record_target():
     with cols[1]:
         st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
-    mr_json = st.session_state.get("mr_json")
-    mr_json_new = template.get_medical_record_template()
-    mr_json_new["patient"] = mr_json["patient"]
-    mr_json_new["clinical staff"] = mr_json["clinical staff"]
-
-    mr_json_new["subjective"] = mr_json["subjective"]
-    mr_json_new["objective"] = mr_json["objective"]
-    mr_json_new["assessment"] = mr_json["assessment"]
-    mr_json_new["plan"] = mr_json["plan"]
-
-    mr_json_new["operation protocols"] = mr_json["operation protocols"]
-
-    operation_name, operation_protocol = "", ""
-    
     if or_write:
+        mr_json = st.session_state.get("mr_json")
+        mr_json_new = template.get_medical_record_template()
+        mr_json_new["patient"] = mr_json["patient"]
+        mr_json_new["clinical staff"] = mr_json["clinical staff"]
+
+        mr_json_new["subjective"] = mr_json["subjective"]
+        mr_json_new["objective"] = mr_json["objective"]
+        mr_json_new["assessment"] = mr_json["assessment"]
+        mr_json_new["plan"] = mr_json["plan"]
+
+        mr_json_new["operation protocols"] = mr_json["operation protocols"]
+
+        operation_name, operation_protocol = "", ""
+        
+
         with st.expander("AI지원 프로토콜 선택", expanded=True):
             st.session_state["or-result"] = ""
             response_text = ""
@@ -86,16 +87,17 @@ def op_record_target():
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
 
-    op_record = mr_json_new["operation records"][0]
-    op_record["operation name"] = operation_name
-    op_record["operation procedures and findings"] = operation_protocol
+        op_record = mr_json_new["operation records"][0]
+        op_record["operation name"] = operation_name
+        op_record["operation procedures and findings"] = operation_protocol
 
-    mr_json_new["operation records"] = []
-    mr_json_new["operation records"].append(op_record)
+        mr_json_new["operation records"] = []
+        mr_json_new["operation records"].append(op_record)
 
-    # 수술기록지 결과 포맷
-    with st.expander("수술기록지 신규", expanded=False):
-        display_report(mr_json_new, "new")
+        # 수술기록지 결과 포맷
+        with st.expander("수술기록지 신규", expanded=False):
+            display_report(mr_json_new, "new")
+    pass
 
 OP_01_HEADER = """
 <table width="100%">

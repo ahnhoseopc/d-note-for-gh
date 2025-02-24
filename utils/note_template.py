@@ -17,15 +17,13 @@ MEDICAL_RECORD_TEMPLATE = {
         "chief complaints": "",
         "pain": "",
         "onset": "",
-
         "present illness": "",
 
         "obsteric gpal": "",
         "menstrual history": "",
-
-        "past medical history": "",
         "admission-operation history": "",
 
+        "past medical history": "",
         "social history": "",
         "family history": "",
         },
