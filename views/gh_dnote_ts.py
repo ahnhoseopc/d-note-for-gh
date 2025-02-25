@@ -64,7 +64,11 @@ def display_report(mr_instance):
         st.write("검사기록이 없습니다.")
         return
 
-    lab = st.select_slider("검사종류",options=options)
+    if len(options) == 1:
+        lab = st.select_slider("검사종류", options=options, value=options[0], disabled=True)
+    else:
+        lab = st.select_slider("검사종류", options=options)
+
     lab_name = {
         "biopsy test":"병리검사",
         "cytology test":"세포검사",

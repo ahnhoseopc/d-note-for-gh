@@ -78,11 +78,19 @@ def display_report(mr_instance, param="0"):
         st.write("경과기록이 없습니다.")
         return
 
-    order_date = st.select_slider(
-        "기록일",
-        options=[note["order date"] for note in notes],
-        # value=(notes[0]["order date"], notes[-1]["order date"]),
-    )
+    options = [note["order date"] for note in notes]
+    if len(options) == 0:
+        st.write("경과기록이 없습니다.")
+        return
+
+    if len(options) == 1:
+        lab = st.select_slider("기록일", options=options, value=options[0], disabled=True)
+    else:
+        order_date = st.select_slider(
+            "기록일",
+            options=options,
+            # value=(notes[0]["order date"], notes[-1]["order date"]),
+        )
 
     note = next((note for note in notes if note["order date"] == order_date), None)
     if note is None:
