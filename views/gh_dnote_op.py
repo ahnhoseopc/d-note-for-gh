@@ -25,7 +25,7 @@ def op_record_target():
     # 수술기록지 작성 버튼
     cols = st.columns([3, 3, 4])
     with cols[0]:
-        or_write = st.button("➡️ 수술기록지 Protocol AI 검색", key="or-write")
+        or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write", use_container_width=True)
 
     with cols[1]:
         with st.popover("⚙️ Prompt", use_container_width=True):
@@ -106,7 +106,7 @@ Date of Operation: {}
 
 </td>
 <td align="right" width="25%">
-<img src="../assets/gh_logo.png" alt="좋은병원들" width="120">  
+<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -293,9 +293,9 @@ def display_report_old(mr_instance):
     cols = st.columns(3)
     with cols[0]:
         st.write("Surgeon")
-        st.caption(base.ifnull(or_instance["clinical staff"]["department"], "<na>") + " / "
-                 + base.ifnull(or_instance["clinical staff"]["doctor in charge"], "<na>") + " / "
-             + str(base.ifnull(or_instance["clinical staff"]["doctor assistant"], 0)))
+        st.caption(base.ifnull(mr_instance["clinical staff"]["department"], "<na>") + " / "
+                 + base.ifnull(mr_instance["clinical staff"]["doctor in charge"], "<na>") + " / "
+             + str(base.ifnull(mr_instance["clinical staff"]["doctor assistant"], 0)))
     with cols[1]:
         st.write("PA")
         st.write("Nurse")
@@ -305,18 +305,18 @@ def display_report_old(mr_instance):
 
     st.subheader("진단정보")
     st.write("Preoperative Diagnosis")
-    st.caption(or_instance["operation data"][7] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else or_instance["operation data"])
+    st.caption(mr_instance["operation data"][7] if mr_instance["operation data"] and len(mr_instance["operation data"])>=11 else mr_instance["operation data"])
     st.write("Postoperative Diagnosis")
-    st.caption(or_instance["operation data"][11] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else None)
+    st.caption(mr_instance["operation data"][11] if mr_instance["operation data"] and len(mr_instance["operation data"])>=11 else None)
 
     st.subheader("수술정보")
     st.write("Name of Operation")
-    st.caption(or_instance["operation data"][8] if or_instance["operation data"] and len(or_instance["operation data"])>=11 else None)
+    st.caption(mr_instance["operation data"][8] if mr_instance["operation data"] and len(mr_instance["operation data"])>=11 else None)
     st.write("Procedures & Findings")
-    st.caption(or_instance["operation procedures and findings"])
+    st.caption(mr_instance["operation procedures and findings"])
 
     st.write("수술 중 특이사항")
-    memo = or_instance["operation notes"]
+    memo = mr_instance["operation notes"]
     if memo is None or memo[0] == 'N':
         memo = "무"
     else:
@@ -327,33 +327,33 @@ def display_report_old(mr_instance):
     cols = st.columns(4)
     with cols[0]:
         st.caption("alarm: <>")
-        st.caption(or_instance["additional data"]["alarm"])
+        st.caption(mr_instance["additional data"]["alarm"])
     with cols[1]:
         st.write("패드확인 (유/무)")
         st.caption("cmplyn: <>")
-        st.caption(or_instance["additional data"]["cmplyn"])
+        st.caption(mr_instance["additional data"]["cmplyn"])
         st.caption("emdv: <>")
-        st.caption(or_instance["additional data"]["emdv"])
+        st.caption(mr_instance["additional data"]["emdv"])
         st.caption("pclr: <>")
-        st.caption(or_instance["additional data"]["pclr"])
+        st.caption(mr_instance["additional data"]["pclr"])
     with cols[2]:
         st.write("Tissue of Path. (Y/N)")
-        st.caption(or_instance["operation check"]["tissue examination"])
-        st.caption(or_instance["operation check"]["tissue examination contents"])
+        st.caption(mr_instance["operation check"]["tissue examination"])
+        st.caption(mr_instance["operation check"]["tissue examination contents"])
     with cols[3]:
         st.write("Drains (Y/N)")
-        st.caption(or_instance["operation check"]["drain pipe"])
-        st.caption(or_instance["operation check"]["drain pipe contents"])
+        st.caption(mr_instance["operation check"]["drain pipe"])
+        st.caption(mr_instance["operation check"]["drain pipe contents"])
     
     cols = st.columns(2)
     with cols[0]:
         st.write("수술일시")
-        st.caption(f"{or_instance['operation date']} {or_instance['operation start time']} ~ {or_instance['operation end time']}") 
+        st.caption(f"{mr_instance['operation date']} {mr_instance['operation start time']} ~ {mr_instance['operation end time']}") 
     with cols[1]:
         st.write("작성일시")
-        st.caption(f"{or_instance['report date']} {or_instance['report time']}")
+        st.caption(f"{mr_instance['report date']} {mr_instance['report time']}")
     
     st.write("치료계획")
-    st.caption(or_instance["medical treatment plan"])
+    st.caption(mr_instance["medical treatment plan"])
     st.write("수술경과")
-    st.caption(or_instance["operation progress"])
+    st.caption(mr_instance["operation progress"])

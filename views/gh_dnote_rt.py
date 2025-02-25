@@ -7,8 +7,23 @@ import json
 
 import streamlit as st
 
+def extract_discharge(mr_json):
+    if mr_json is None:
+        return None
+    
+    if "discharge summary" not in mr_json and keys:
+        return None
+
+    discharge = mr_json["discharge summary"]
+    if len(discharge.keys()) == 0:
+        return None
+
+    return discharge
+
 def rt_summary_source():
-    with st.expander("기존 퇴원요약지 (문서양식)", expanded=False):
+    mr_json = st.session_state.get("mr_json")
+    discharge = extract_discharge(mr_json)
+    with st.expander("퇴원요약지", expanded=discharge is None):
         display_discharge_summary(st.session_state.get("mr_json"))
 
 
@@ -57,14 +72,12 @@ def fill_in_discharge_summary(mr_json, findings, progress_summary):
     return mr_json_new
 
 def rt_summary_target():
-    # 수술기록지 작성 버튼
-    cols = st.columns([5, 1, 4])
+    cols = st.columns([3, 3, 3])
     with cols[0]:
-        rt_write = st.button("➡️ 퇴원요약지 경과 요약", key="rt-write")
+        rt_write = st.button("➡️ 퇴원요약지 초안 작성", key="rt-write", use_container_width=True)
 
     with cols[1]:
         with st.popover("⚙️ Prompt", use_container_width=True):
-            # 퇴원요약지 생성 프롬프트
             st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
 
     with cols[2]:
@@ -74,7 +87,7 @@ def rt_summary_target():
         mr_json = st.session_state.get("mr_json")
         mr_json_new = prepare_request_data(mr_json)
 
-        with st.expander("AI지원 퇴원요약지 초안", expanded=True):
+        with st.expander("AI 결과", expanded=True):
             st.session_state["rt-result"] = ""
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
@@ -96,56 +109,93 @@ def rt_summary_target():
         
         mr_json_new = fill_in_discharge_summary(mr_json, result_json["중요검사소견"], result_json["경과요약"])
 
-        with st.expander("퇴원요약지 신규", expanded=False):
+        with st.expander("퇴원요약지 초안", expanded=False):
             display_discharge_summary(mr_json_new, "new")
     pass
 
+RT_00_STYLE_0 = """
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: none !important;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+"""
+RT_01_HEADER_4 = """
+<table width="100%">
+<tr>
+<td align="left" width="25%">
+
+**등록번호**: {}  
+**입 원 일**: {}  
+**진 료 과**: {}  
+
+</td>
+<td align="center" width="50%">
+
+### 퇴원요약지 (Discharge Summary)
+Date of Discharge: {}
+
+</td>
+<td align="right" width="25%">
+<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+</td>
+</tr>
+</table>
+
+"""
+
 def display_discharge_summary(mr_json, param="old"):
-    if mr_json is None:
-        st.write("의무기록이 없습니다.")
-        return
-    
-    if "discharge summary" not in mr_json and keys:
+    discharge = extract_discharge(mr_json)
+    if discharge is None:
         st.write("퇴원요약지가 없습니다.")
         return
 
-    ds = mr_json["discharge summary"]
-    if len(ds.keys()) == 0:
-        st.write("퇴원요약지가 없습니다.")
-        return
 
-    st.markdown("#### 퇴원요약지 (Discharge Summary)")
+    # CSS를 이용하여 테이블의 테두리 제거
+    st.markdown(RT_00_STYLE_0, unsafe_allow_html=True)
+
+    st.write(RT_01_HEADER_4.format(
+        mr_json["patient"]["patient id"], 
+        mr_json["patient"]["date of admission"],
+        mr_json["clinical staff"]["department"], 
+        discharge["date of discharge"]), unsafe_allow_html = True)
 
     st.markdown("##### 주호소/입원사유")
-    st.caption(ds["chief complaints"])
+    st.caption(discharge["chief complaints"])
 
     st.markdown("##### 주진단명 (Final Diagnosis)")
-    st.caption(ds["final diagnosis"])
+    st.caption(discharge["final diagnosis"])
     st.markdown("##### 부진단명 (Secondary Diagnosis)")
-    st.caption(ds["secondary diagnosis"])
+    st.caption(discharge["secondary diagnosis"])
 
     st.markdown("##### 수술명 (Treatment Op.)")
-    st.caption(ds["treatment operation"])
+    st.caption(discharge["treatment operation"])
     st.markdown("##### 처치명 (Treatment Medical)")
-    st.caption(ds["treatment medication"])
+    st.caption(discharge["treatment medication"])
 
     st.markdown("##### 중요검사소견 (Abnormal Finding or Lab)")
-    st.text_area(label="중요검사소견", height=300, value=ds["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
+    st.text_area(label="중요검사소견", height=180, value=discharge["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
     st.markdown("##### 추후관리계획 (Follow-up Plan)")
-    st.text_input(label="추후관리계획", value=ds["follow-up plan"], key=f"follow_up_plan_{param}", label_visibility= "collapsed")
+    st.text_input(label="추후관리계획", value=discharge["follow-up plan"], key=f"follow_up_plan_{param}", label_visibility= "collapsed")
     st.markdown("##### 경과요약 (Progress Summary)")
-    st.text_area(label="경과요약", height=200, value=ds["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
+    st.text_area(label="경과요약", height=180, value=discharge["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
 
     st.markdown("##### 치료결과 (Result)")
-    st.caption(ds["treatment result"])
+    st.caption(discharge["treatment result"])
     st.markdown("##### 퇴원형태 (Type of Discharge)")
-    st.caption(ds["type of discharge"])
+    st.caption(discharge["type of discharge"])
     st.markdown("##### 비고 (Discharge Comments)")
-    st.caption(ds["discharge comments"])
+    st.caption(discharge["discharge comments"])
 
-    st.markdown("##### 퇴원일")
-    st.caption(ds["report date"])
-    st.markdown("##### 퇴원시간")
-    st.caption(ds["report time"])
+    st.markdown("##### 기록일")
+    st.caption(discharge["report date"])
+    st.markdown("##### 기록시간")
+    st.caption(discharge["report time"])
 
-    st.markdown("##### 퇴원약 (Medicine)")
+    # st.markdown("##### 퇴원약 (Medicine)")

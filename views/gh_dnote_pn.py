@@ -39,7 +39,7 @@ Date of Note: {}
 
 </td>
 <td align="right" width="25%">
-<img src="../assets/gh_logo.png" alt="좋은병원들" width="120">  
+<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -47,9 +47,8 @@ Date of Note: {}
 """
 
 PN_02_NOTES_1= """
-
 #### Progress Note:  
-{}  
+
 """
 
 PN_07_TAIL_2 = """
@@ -92,17 +91,18 @@ def display_report(mr_instance, param="0"):
     # CSS를 이용하여 테이블의 테두리 제거
     st.markdown(PN_00_STYLE_0, unsafe_allow_html=True)
 
-    st.write(PN_01_HEADER_3.format(
+    st.markdown(PN_01_HEADER_3.format(
         mr_instance["patient"]["patient id"], 
         mr_instance["clinical staff"]["department"], 
         mr_instance["patient"]["date of admission"],
         note["order date"]), unsafe_allow_html = True)
     
-    st.write(PN_02_NOTES_1.format(
-        base.ifnull(note["order note"], "")), unsafe_allow_html = True)
+    st.markdown(PN_02_NOTES_1, unsafe_allow_html = True)
+        
+    st.code(base.ifnull(note["order note"], ""))
 
     if note.get("report date"):
-        st.write(PN_07_TAIL_2.format(
+        st.markdown(PN_07_TAIL_2.format(
             base.ifnull(note["report date"], ""), 
             base.ifnull(note["report time"], "")), unsafe_allow_html = True)
     
