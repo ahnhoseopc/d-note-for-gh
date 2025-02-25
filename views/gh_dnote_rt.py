@@ -57,7 +57,7 @@ def prepare_request_data(mr_json):
 def fill_in_discharge_summary(mr_json, findings, progress_summary):
     mr_json_new = prepare_request_data(mr_json)
 
-    mr_json_new["discharge summary"] = mr_json["discharge summary"]
+    mr_json_new["discharge summary"] = copy.deepcopy(mr_json["discharge summary"])
     mr_json_new["discharge summary"]["abnormal findings and lab result"] = findings
     mr_json_new["discharge summary"]["progress summary"] = progress_summary
 

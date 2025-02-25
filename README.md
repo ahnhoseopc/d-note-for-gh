@@ -37,4 +37,4 @@ gcloud builds submit --project=$env:PROJECT_ID --tag $env:TAG
 # Cloud Run deployment
 gcloud run deploy %APP% --project %PROJECT_ID% --image %TAG% --platform managed --region %REGION% --allow-unauthenticated --port 8501
 
-gcloud run deploy %APP% --project $env:PROJECT_ID --image $env:TAG --platform managed --region $env:REGION --allow-unauthenticated --port 8501
+gcloud run deploy $env:APP --project $env:PROJECT_ID --image $env:TAG --platform managed --region $env:REGION --allow-unauthenticated --port 8501
