@@ -148,6 +148,7 @@ Date of Discharge: {}
 </tr>
 </table>
 
+---
 """
 
 def display_discharge_summary(mr_json, param="old"):

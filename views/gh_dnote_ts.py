@@ -21,19 +21,20 @@ TS_00_STYLE_0 = """
     </style>
 """
 
-TS_01_HEADER_4 = """
+TS_01_HEADER_5 = """
 <table width="100%">
 <tr>
 <td align="left" width="25%">
 
 **등록번호**: {}  
+**입 원 일**: {}  
 **진 료 과**: {}  
 
 </td>
 <td align="center" width="50%">
 
 ### {}
-Date of Admission: {}
+Date of Result: {}
 
 </td>
 <td align="right" width="25%">
@@ -42,6 +43,7 @@ Date of Admission: {}
 </tr>
 </table>
 
+---
 """
 
 
@@ -56,7 +58,11 @@ def display_report(mr_instance):
 
     lab_result = mr_instance.get("objective").get("lab-result")
 
-    options = [lab for lab in lab_result.keys() if len(lab)>0]
+    options = [lab for lab in lab_result.keys() if len(lab_result[lab])>0]
+
+    if len(options) == 0:
+        st.write("검사기록이 없습니다.")
+        return
 
     lab = st.select_slider("검사종류",options=options)
     lab_name = {
@@ -70,11 +76,12 @@ def display_report(mr_instance):
     # CSS를 이용하여 테이블의 테두리 제거
     st.markdown(TS_00_STYLE_0, unsafe_allow_html=True)
 
-    st.write(TS_01_HEADER_4.format(
+    st.write(TS_01_HEADER_5.format(
         mr_instance["patient"]["patient id"], 
+        mr_instance["patient"]["date of admission"],        
         mr_instance["clinical staff"]["department"], 
         lab_name[lab],
-        mr_instance["patient"]["date of admission"]), unsafe_allow_html = True)
+        lab_result[lab][0]["result date"] if "result date" in lab_result[lab][0].keys() else "reading date"), unsafe_allow_html = True)
 
     for result in lab_result[lab]:
         if lab == "biopsy test":

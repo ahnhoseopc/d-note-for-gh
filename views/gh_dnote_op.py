@@ -96,6 +96,7 @@ OP_01_HEADER = """
 <td align="left" width="25%">
 
 **등록번호**: {}  
+**입 원 일**: {}  
 **진 료 과**: {}  
 
 </td>
@@ -230,6 +231,7 @@ def display_report(mr_instance, param="0"):
 
     st.write(OP_01_HEADER.format(
         mr_instance["patient"]["patient id"], 
+        mr_instance["patient"]["date of admission"], 
         mr_instance["clinical staff"]["department"], 
         op_record["operation date"]), unsafe_allow_html = True)
     st.write(OP_02_STAFF.format(

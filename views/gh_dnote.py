@@ -28,12 +28,16 @@ def main():
     # 입원기록지
     with tab1:
         ad.ad_record_source()
+        st.divider()
     with tab3:
         pn.pn_record_source()
+        st.divider()
     with tab4:
         ts.ts_record_source()
+        st.divider()
     with tab6:
         db.db_record_source()
+        st.divider()
 
     # 수술기록지
     with tab2:
@@ -65,6 +69,8 @@ def main():
         rt.rt_summary_source()
 
         rt.rt_summary_target()
+        
+        st.divider()
 
         # Display Report
         col1, col2 = st.columns([5, 5])

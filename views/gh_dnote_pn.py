@@ -28,13 +28,13 @@ PN_01_HEADER_3 = """
 <td align="left" width="25%">
 
 **등록번호**: {}  
+**입 원 일**: {}  
 **진 료 과**: {}  
 
 </td>
 <td align="center" width="50%">
 
 ### 경과기록지 ( Progress Note )
-Date of Admission: {}<br>
 Date of Note: {}
 
 </td>
@@ -44,6 +44,7 @@ Date of Note: {}
 </tr>
 </table>
 
+---
 """
 
 PN_02_NOTES_1= """
@@ -93,8 +94,8 @@ def display_report(mr_instance, param="0"):
 
     st.markdown(PN_01_HEADER_3.format(
         mr_instance["patient"]["patient id"], 
-        mr_instance["clinical staff"]["department"], 
         mr_instance["patient"]["date of admission"],
+        mr_instance["clinical staff"]["department"], 
         note["order date"]), unsafe_allow_html = True)
     
     st.markdown(PN_02_NOTES_1, unsafe_allow_html = True)
