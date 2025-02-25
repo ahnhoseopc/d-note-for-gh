@@ -1,24 +1,12 @@
-import re
 import utils.base as base
 import utils.note as note
 import utils.note_template  as template
 
 import json
+import re
+import copy
 
 import streamlit as st
-
-def extract_discharge(mr_json):
-    if mr_json is None:
-        return None
-    
-    if "discharge summary" not in mr_json and keys:
-        return None
-
-    discharge = mr_json["discharge summary"]
-    if len(discharge.keys()) == 0:
-        return None
-
-    return discharge
 
 def rt_summary_source():
     mr_json = st.session_state.get("mr_json")
@@ -51,18 +39,18 @@ RT_PROMPT_DEFAULT = """
 def prepare_request_data(mr_json):
     mr_json_new = template.get_medical_record_template()
 
-    mr_json_new["patient"] = mr_json["patient"]
-    mr_json_new["clinical staff"] = mr_json["clinical staff"]
+    mr_json_new["patient"] = copy.deepcopy(mr_json["patient"])
+    mr_json_new["clinical staff"] = copy.deepcopy(mr_json["clinical staff"])
 
-    mr_json_new["subjective"] = mr_json["subjective"]
-    mr_json_new["objective"] = mr_json["objective"]
-    mr_json_new["assessment"] = mr_json["assessment"]
-    mr_json_new["plan"] = mr_json["plan"]
+    mr_json_new["subjective"] = copy.deepcopy(mr_json["subjective"])
+    mr_json_new["objective"] = copy.deepcopy(mr_json["objective"])
+    mr_json_new["assessment"] = copy.deepcopy(mr_json["assessment"])
+    mr_json_new["plan"] = copy.deepcopy(mr_json["plan"])
 
-    mr_json_new["operation records"] = mr_json["operation records"]
-    mr_json_new["progress notes"] = mr_json["progress notes"]
+    mr_json_new["operation records"] = copy.deepcopy(mr_json["operation records"])
+    mr_json_new["progress notes"] = copy.deepcopy(mr_json["progress notes"])
 
-    mr_json_new["discharge protocols"] = mr_json["discharge protocols"]
+    mr_json_new["discharge protocols"] = copy.deepcopy(mr_json["discharge protocols"])
 
     return mr_json_new
 
@@ -85,7 +73,8 @@ def rt_summary_target():
             st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
 
     with cols[2]:
-        st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
+        with st.popover("⚙️ AI 모델", use_container_width=True):
+            st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
 
     if rt_write:
         mr_json = st.session_state.get("mr_json")
@@ -115,56 +104,71 @@ def rt_summary_target():
 
         with st.expander("퇴원요약지 초안", expanded=False):
             display_discharge_summary(mr_json_new, "new")
+
+        cols = st.columns(2)
+        with cols[0]:
+            display_discharge_summary(mr_json, "o1")
+        with cols[1]:
+            display_discharge_summary(mr_json_new, "n2")
+        
     pass
 
-RT_00_STYLE_0 = """
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: none !important;
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
-"""
-RT_01_HEADER_4 = """
-<table width="100%">
-<tr>
-<td align="left" width="25%">
-
-**등록번호**: {}  
-**입 원 일**: {}  
-**진 료 과**: {}  
-
-</td>
-<td align="center" width="50%">
-
-### 퇴원요약지 (Discharge Summary)
-Date of Discharge: {}
-
-</td>
-<td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
-</td>
-</tr>
-</table>
-
----
-"""
-
 def display_discharge_summary(mr_json, param="old"):
-    discharge = extract_discharge(mr_json)
-    if discharge is None:
-        st.write("퇴원요약지가 없습니다.")
-        return
 
+    if mr_json is None:
+        st.write("의무기록이 없습니다.")
+        return None
+    
+    if "discharge summary" not in mr_json and keys:
+        st.write("퇴원요약지가 없습니다.")
+        return None
+
+    discharge = mr_json["discharge summary"]
+    if discharge is None or len(discharge.keys()) == 0:
+        st.write("퇴원요약지가 없습니다.")
+        return None
+
+    RT_00_STYLE_0 = """
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: none !important;
+                padding: 10px;
+                text-align: left;
+            }
+        </style>
+    """
 
     # CSS를 이용하여 테이블의 테두리 제거
     st.markdown(RT_00_STYLE_0, unsafe_allow_html=True)
 
+    RT_01_HEADER_4 = """
+    <table width="100%">
+    <tr>
+    <td align="left" width="25%">
+
+    **등록번호**: {}  
+    **입 원 일**: {}  
+    **진 료 과**: {}  
+
+    </td>
+    <td align="center" width="50%">
+
+    ### 퇴원요약지 (Discharge Summary)
+    Date of Discharge: {}
+
+    </td>
+    <td align="right" width="25%">
+    <img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+    </td>
+    </tr>
+    </table>
+
+    ---
+    """
     st.write(RT_01_HEADER_4.format(
         mr_json["patient"]["patient id"], 
         mr_json["patient"]["date of admission"],
