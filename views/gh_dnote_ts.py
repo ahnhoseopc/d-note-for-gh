@@ -81,80 +81,81 @@ def display_report(mr_instance):
         mr_instance["patient"]["date of admission"],        
         mr_instance["clinical staff"]["department"], 
         lab_name[lab],
-        lab_result[lab][0]["result date"] if "result date" in lab_result[lab][0].keys() else "reading date"), unsafe_allow_html = True)
+        lab_result[lab][0]["result date"] if "result date" in lab_result[lab][0].keys() 
+        else lab_result[lab][0]["reading date"]), unsafe_allow_html = True)
 
     for result in lab_result[lab]:
         if lab == "biopsy test":
             st.markdown("#### Order Date")
-            st.caption(result["order date"])
+            st.code(result["order date"])
             st.markdown("#### Result Date")
-            st.caption(result["result date"])
+            st.code(result["result date"])
 
             st.markdown("#### Test Result")
-            st.caption(result["test result"])
+            st.code(result["test result"])
             st.markdown("#### Comments")
-            st.caption(result["test note"])
+            st.code(result["test note"])
 
         if lab == "cytology test":
             st.markdown("#### Order Date")
-            st.caption(result["order date"])
+            st.code(result["order date"])
             st.markdown("#### Result Date")
-            st.caption(result["result date"])
+            st.code(result["result date"])
 
             st.markdown("#### Test Result")
-            st.caption(result["test result"])
+            st.code(result["test result"])
 
         if lab == "diagnostic test":
             st.markdown("#### Order Date")
-            st.caption(result["order date"])
+            st.code(result["order date"])
             st.markdown("#### Result Date")
-            st.caption(result["result date"])
+            st.code(result["result date"])
 
             st.markdown("#### Test Code")
-            st.caption(result["test code"])
+            st.code(result["test code"])
             st.markdown("#### Test Name")
-            st.caption(result["test name"])
+            st.code(result["test name"])
 
             st.markdown("#### Test Result")
-            st.caption(result["test result"])
+            st.code(result["test result"])
 
             st.markdown("#### Upper Limit")
-            st.caption(result["test upper limit"])
+            st.code(result["test upper limit"])
             st.markdown("#### Lower Limit")
-            st.caption(result["test lower limit"])
+            st.code(result["test lower limit"])
 
             st.markdown("#### Test Unit")
-            st.caption(result["test unit"])
+            st.code(result["test unit"])
 
         if lab == "vital signs":
             st.markdown("#### Reading Date")
-            st.caption(result["reading date"])
+            st.code(result["reading date"])
             st.markdown("#### Reading Time")
-            st.caption(result["reading time"])
+            st.code(result["reading time"])
 
             st.markdown("#### Temperature")
-            st.caption(result["temperature"])
+            st.code(result["temperature"])
             st.markdown("#### Pulse")
-            st.caption(result["pulse"])
+            st.code(result["pulse"])
 
             st.markdown("#### Heart Rate")
-            st.caption(result["heart rate"])
+            st.code(result["heart rate"])
             st.markdown("#### Respiratory Rate")
-            st.caption(result["respiratory rate"])
+            st.code(result["respiratory rate"])
 
             st.markdown("#### Systolic Blood Pressure")
-            st.caption(result["systolic blood pressure"])
+            st.code(result["systolic blood pressure"])
             st.markdown("#### Diastolic Blood Pressure")
-            st.caption(result["diastolic blood pressure"])
+            st.code(result["diastolic blood pressure"])
 
         if lab == "video reading":
             st.markdown("#### Order Date")
-            st.caption(result["order date"])
+            st.code(result["order date"])
             st.markdown("#### Reading Date")
-            st.caption(result["reading date"])
+            st.code(result["reading date"])
 
             st.markdown("#### Findings")
-            st.caption(result["findings"])
+            st.code(result["findings"])
             st.markdown("#### Impression")
-            st.caption(result["impression"])
+            st.code(result["impression"])
     pass
