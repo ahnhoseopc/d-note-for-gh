@@ -8,7 +8,13 @@ import re
 import streamlit as st
 
 def op_record_source():
-    with st.expander("수술기록지(기존)", expanded=True):
+    mr_json = st.session_state.get("mr_json")
+
+    postfix = ""
+    if mr_json is None or "operation records" not in mr_json or len(mr_json["operation records"]) == 0:
+        postfix = " (기록없음)"
+
+    with st.expander("수술기록지" + postfix, expanded=False):
         display_report(st.session_state.get("mr_json"))
 
     return "op-record-source"
@@ -95,15 +101,15 @@ OP_01_HEADER = """
 <tr>
 <td align="left" width="25%">
 
-**등록번호**: {}  
-**입 원 일**: {}  
-**진 료 과**: {}  
+**등록번호**: `{} `  
+**입 원 일**: `{} `  
+**진 료 과**: `{} `  
 
 </td>
 <td align="center" width="50%">
 
 ### 수술기록지 ( Operation Record )
-Date of Operation: {}
+Date of Operation: `{} `
 
 </td>
 <td align="right" width="25%">
@@ -117,37 +123,37 @@ OP_02_STAFF = """
 <table width="100%">
 <tr>
 <td colspan="2" align="left" width="25%">
-<b>Surgeon</b>: {}
+<b>Surgeon</b>: {}  
 </td>
 <td colspan="2" align="left" width="25%">
-<b>PA</b>:   {}
+<b>PA</b>:   {} 
 </td>
 <td colspan="2" align="left" width="25%">
-<b>Nurse</b>:  {}
+<b>Nurse</b>:  {}  
 </td>
 <td colspan="2" align="left" width="25%">
-<b>Anesthesiologist</b>:   {}
+<b>Anesthesiologist</b>:   {} 
 </td>
 </tr>
 <tr>
 <td colspan="6" align="left">
 </td>
 <td colspan="2" align="left">
-<b>Method of Anesthesia</b>: {}
+<b>Method of Anesthesia</b>: {} 
 </td>
 </tr>
 </table>
 """
 OP_03_DIAGNOSIS = """
 #### Preoperative diagnosis:  
-{}  
-
+```{}  
+```
 #### Postoperative diagnosis:  
-{}  
-
+```{}  
+```
 #### Name of Operation:  
-{}  
-
+```{}  
+```
 ---
 """
 OP_04_PROCEDURES = """
@@ -157,8 +163,8 @@ OP_04_PROCEDURES = """
 """
 OP_05_MEMO = """
 #### 특이사항:
-{}
-"""
+```{}
+```"""
 OP_06_ADDITIONAL = """
 <table width="100%">
 <tr>
@@ -181,7 +187,7 @@ OP_06_ADDITIONAL = """
 </table>
 
 ##### 수술일시:   
-- {} **2024년10월22일 10시40분 ~ 11시00분 종료**  
+- `{} `  **2024년10월22일 10시40분 ~ 11시00분 종료**  
 """
 OP_07_TAIL = """
 <table width="100%">
@@ -190,16 +196,15 @@ OP_07_TAIL = """
 <b>Dictated Written by</b>: {}
 </td>
 <td width="25%" align="right">
-<b>Surgeon's Signatures</b>: {}   
+<b>Surgeon's Signatures</b>: {} 
 </td>
 <td width="25%" align="right">
 </td>
 </tr>
 </table>
 
----
 
-**작성일시**: {} {} 2024-10-22 11:00  
+**작성일시**: `{} {} `  
 """
 
 def display_report(mr_instance, param="0"):
@@ -212,7 +217,6 @@ def display_report(mr_instance, param="0"):
         return
 
     op_record = mr_instance["operation records"][0]
-    print(op_record)
 
     # CSS를 이용하여 테이블의 테두리 제거
     st.markdown("""

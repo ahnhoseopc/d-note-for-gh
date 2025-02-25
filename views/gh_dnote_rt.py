@@ -22,8 +22,12 @@ def extract_discharge(mr_json):
 
 def rt_summary_source():
     mr_json = st.session_state.get("mr_json")
-    discharge = extract_discharge(mr_json)
-    with st.expander("퇴원요약지", expanded=discharge is None):
+
+    postfix = ""
+    if mr_json is None or "operation records" not in mr_json or len(mr_json["operation records"]) == 0:
+        postfix = " (기록없음)"
+
+    with st.expander("퇴원요약지" + postfix, expanded=False):
         display_discharge_summary(st.session_state.get("mr_json"))
 
 
@@ -168,35 +172,35 @@ def display_discharge_summary(mr_json, param="old"):
         discharge["date of discharge"]), unsafe_allow_html = True)
 
     st.markdown("##### 주호소/입원사유")
-    st.caption(discharge["chief complaints"])
+    st.code(discharge["chief complaints"])
 
     st.markdown("##### 주진단명 (Final Diagnosis)")
-    st.caption(discharge["final diagnosis"])
+    st.code(discharge["final diagnosis"])
     st.markdown("##### 부진단명 (Secondary Diagnosis)")
-    st.caption(discharge["secondary diagnosis"])
+    st.code(discharge["secondary diagnosis"])
 
     st.markdown("##### 수술명 (Treatment Op.)")
-    st.caption(discharge["treatment operation"])
+    st.code(discharge["treatment operation"])
     st.markdown("##### 처치명 (Treatment Medical)")
-    st.caption(discharge["treatment medication"])
+    st.code(discharge["treatment medication"])
 
     st.markdown("##### 중요검사소견 (Abnormal Finding or Lab)")
     st.text_area(label="중요검사소견", height=180, value=discharge["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
     st.markdown("##### 추후관리계획 (Follow-up Plan)")
-    st.text_input(label="추후관리계획", value=discharge["follow-up plan"], key=f"follow_up_plan_{param}", label_visibility= "collapsed")
+    st.code(discharge["follow-up plan"])
     st.markdown("##### 경과요약 (Progress Summary)")
     st.text_area(label="경과요약", height=180, value=discharge["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
 
     st.markdown("##### 치료결과 (Result)")
-    st.caption(discharge["treatment result"])
+    st.code(discharge["treatment result"])
     st.markdown("##### 퇴원형태 (Type of Discharge)")
-    st.caption(discharge["type of discharge"])
+    st.code(discharge["type of discharge"])
     st.markdown("##### 비고 (Discharge Comments)")
-    st.caption(discharge["discharge comments"])
+    st.code(discharge["discharge comments"])
 
     st.markdown("##### 기록일")
-    st.caption(discharge["report date"])
+    st.code(discharge["report date"])
     st.markdown("##### 기록시간")
-    st.caption(discharge["report time"])
+    st.code(discharge["report time"])
 
     # st.markdown("##### 퇴원약 (Medicine)")

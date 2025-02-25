@@ -47,72 +47,74 @@ Date of Admission: {}
 
 AD_02_SUBJECTIVE_4 = """
 #### Chief Complaints:  
+```
 {}  
-
+```
 #### Pain:  
+```
 {}  
-
+```
 #### Onset:  
+```
 {}  
-
+```
 #### Present Illness:  
+```
 {}
-"""
+```"""
 
 AD_03_NICU_HISTORY_2 = """
 #### Maternal History:
-{}
+```{}```
 
 #### Neonatal History:
-{}
-"""
+```{}
+```"""
 
 AD_03_OBGY_HISTORY_3 = """
 #### Obsteric History:
-{}
-
+```{}
+```
 #### Obsteric History:
-{}
-
+```{}
+```
 #### Admission/Operation History:
-{}
-
-"""
+```{}
+```"""
 
 AD_03_HISTORY_3 = """
 #### Past History:
-{}
-
+```{}
+```
 #### Social History:
-{}
-
+```{}
+```
 #### Family History:
-{}
-"""
+```{}
+```"""
 
 
 AD_04_OBJECTIVE_2 = """
 
 #### Review of Systems:
-{}
-
+```{}
+```
 #### Physical Examination:   
-{}
-
-"""
+```{}
+```"""
 
 AD_05_ASSESSMENT_1 = """
 
 #### Impression:
-{}
-"""
+```{}
+```"""
 
 AD_06_PLAN_3 = """
 
 #### Plan:   
-- **치료계획**: {}
-- **퇴원계획**: {}
-- **환자교육**: {}
+- **치료계획**: `{}`
+- **퇴원계획**: `{}`
+- **환자교육**: `{} `
 """
 
 AD_07_TAIL_3 = """
@@ -128,7 +130,7 @@ AD_07_TAIL_3 = """
 
 ---
 
-**작성일시**: {} {} 2024-10-22 11:00  
+**작성일시**: {} {}
 """
 
 def display_report(mr_instance, param="0"):
