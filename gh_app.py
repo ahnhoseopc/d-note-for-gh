@@ -46,6 +46,13 @@ def dma_run():
         default=False
     )
 
+    gh_dinq_page = st.Page(
+        page="views/gh_dinq.py",
+        title="D-INQuiry",
+        icon=":material/medical_information:",
+        default=False
+    )
+
     # gh_api_page = st.Page(
     #     page="views/gh_dapi.py",
     #     title="D-API",
@@ -60,7 +67,7 @@ def dma_run():
         pg = st.navigation(
             {
                 "About": [gh_about_dma_page, gh_about_gh_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page],
+                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
                 "Configuration (Admin)": [gh_dbquery_page],
             }
         )
