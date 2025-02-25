@@ -105,44 +105,47 @@ def display_discharge_summary(mr_json, param="old"):
         st.write("의무기록이 없습니다.")
         return
     
-    if "discharge summary" not in mr_json:
+    if "discharge summary" not in mr_json and keys:
         st.write("퇴원요약지가 없습니다.")
         return
 
     ds = mr_json["discharge summary"]
+    if len(ds.keys()) == 0:
+        st.write("퇴원요약지가 없습니다.")
+        return
 
-    st.write("퇴원요약지 (Discharge Summary)")
+    st.markdown("#### 퇴원요약지 (Discharge Summary)")
 
-    st.write("주호소/입원사유")
+    st.markdown("##### 주호소/입원사유")
     st.caption(ds["chief complaints"])
 
-    st.write("주진단명 (Final Diagnosis)")
+    st.markdown("##### 주진단명 (Final Diagnosis)")
     st.caption(ds["final diagnosis"])
-    st.write("부진단명 (Secondary Diagnosis)")
+    st.markdown("##### 부진단명 (Secondary Diagnosis)")
     st.caption(ds["secondary diagnosis"])
 
-    st.write("수술명 (Treatment Op.)")
+    st.markdown("##### 수술명 (Treatment Op.)")
     st.caption(ds["treatment operation"])
-    st.write("처치명 (Treatment Medical)")
+    st.markdown("##### 처치명 (Treatment Medical)")
     st.caption(ds["treatment medication"])
 
-    st.write("중요검사소견 (Abnormal Finding or Lab)")
+    st.markdown("##### 중요검사소견 (Abnormal Finding or Lab)")
     st.text_area(label="중요검사소견", height=300, value=ds["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
-    st.write("추후관리계획 (Follow-up Plan)")
+    st.markdown("##### 추후관리계획 (Follow-up Plan)")
     st.text_input(label="추후관리계획", value=ds["follow-up plan"], key=f"follow_up_plan_{param}", label_visibility= "collapsed")
-    st.write("경과요약 (Progress Summary)")
+    st.markdown("##### 경과요약 (Progress Summary)")
     st.text_area(label="경과요약", height=200, value=ds["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
 
-    st.write("치료결과 (Result)")
+    st.markdown("##### 치료결과 (Result)")
     st.caption(ds["treatment result"])
-    st.write("퇴원형태 (Type of Discharge)")
+    st.markdown("##### 퇴원형태 (Type of Discharge)")
     st.caption(ds["type of discharge"])
-    st.write("비고 (Discharge Comments)")
+    st.markdown("##### 비고 (Discharge Comments)")
     st.caption(ds["discharge comments"])
 
-    st.write("퇴원일)")
+    st.markdown("##### 퇴원일")
     st.caption(ds["report date"])
-    st.write("퇴원시간)")
+    st.markdown("##### 퇴원시간")
     st.caption(ds["report time"])
 
-    st.write("퇴원약 (Medicine)")
+    st.markdown("##### 퇴원약 (Medicine)")

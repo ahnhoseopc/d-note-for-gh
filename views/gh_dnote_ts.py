@@ -144,7 +144,7 @@ def display_report(mr_instance):
             st.markdown("#### Order Date")
             st.caption(result["order date"])
             st.markdown("#### Reading Date")
-            st.caption(result["result date"])
+            st.caption(result["reading date"])
 
             st.markdown("#### Findings")
             st.caption(result["findings"])
