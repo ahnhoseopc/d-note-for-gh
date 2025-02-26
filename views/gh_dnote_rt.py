@@ -110,7 +110,7 @@ def rt_summary_target():
         mr_json = st.session_state.get("mr_json")
         mr_json_new = prepare_request_data(mr_json)
 
-        with st.expander("AI 결과", expanded=True):
+        with st.expander("AI 결과", expanded=False):
             st.session_state["rt-result"] = ""
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
