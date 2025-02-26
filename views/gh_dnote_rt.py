@@ -55,7 +55,12 @@ def prepare_request_data(mr_json):
     return mr_json_new
 
 def fill_in_discharge_summary(mr_json_new, mr_json, findings, progress_summary):
-    mr_json_new["discharge summary"] = copy.deepcopy(mr_json["discharge summary"])
+    if "discharge summary" not in mr_json or mr_json["discharge summary"] is None or "date of discharge" not in mr_json["discharge summary"]:
+        discharge = template.get_discharge_summary_template()
+    else:
+        discharge = copy.deepcopy(mr_json["discharge summary"])
+
+    mr_json_new["discharge summary"] = discharge
     mr_json["discharge summary"]
     mr_json_new["discharge summary"]["abnormal findings and lab result"] = findings
     mr_json_new["discharge summary"]["progress summary"] = progress_summary
