@@ -88,7 +88,7 @@ def display_report(mr_instance):
         mr_instance["clinical staff"]["department"], 
         lab_name[lab],
         lab_result[lab][0]["result date"] if "result date" in lab_result[lab][0].keys() 
-        else lab_result[lab][0]["reading date"]), unsafe_allow_html = True)
+        else lab_result[lab][0]["result date"]), unsafe_allow_html = True)
 
     for result in lab_result[lab]:
         if lab == "biopsy test":
@@ -134,10 +134,10 @@ def display_report(mr_instance):
             st.code(result["test unit"])
 
         if lab == "vital signs":
-            st.markdown("#### Reading Date")
-            st.code(result["reading date"])
-            st.markdown("#### Reading Time")
-            st.code(result["reading time"])
+            st.markdown("#### Result Date")
+            st.code(result["result date"])
+            st.markdown("#### Result Time")
+            st.code(result["result time"])
 
             st.markdown("#### Temperature")
             st.code(result["temperature"])
@@ -157,8 +157,8 @@ def display_report(mr_instance):
         if lab == "video reading":
             st.markdown("#### Order Date")
             st.code(result["order date"])
-            st.markdown("#### Reading Date")
-            st.code(result["reading date"])
+            st.markdown("#### Result Date")
+            st.code(result["result date"])
 
             st.markdown("#### Findings")
             st.code(result["findings"])

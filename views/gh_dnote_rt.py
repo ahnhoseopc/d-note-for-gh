@@ -54,10 +54,9 @@ def prepare_request_data(mr_json):
 
     return mr_json_new
 
-def fill_in_discharge_summary(mr_json, findings, progress_summary):
-    mr_json_new = prepare_request_data(mr_json)
-
+def fill_in_discharge_summary(mr_json_new, mr_json, findings, progress_summary):
     mr_json_new["discharge summary"] = copy.deepcopy(mr_json["discharge summary"])
+    mr_json["discharge summary"]
     mr_json_new["discharge summary"]["abnormal findings and lab result"] = findings
     mr_json_new["discharge summary"]["progress summary"] = progress_summary
 
@@ -100,7 +99,7 @@ def rt_summary_target():
                 response_container.caption(f"error when calling api: {e}")
                 pass
         
-        mr_json_new = fill_in_discharge_summary(mr_json, result_json["중요검사소견"], result_json["경과요약"])
+        mr_json_new = fill_in_discharge_summary(mr_json_new, mr_json, result_json["중요검사소견"], result_json["경과요약"])
 
         with st.expander("퇴원요약지 초안", expanded=False):
             display_discharge_summary(mr_json_new, "new")
