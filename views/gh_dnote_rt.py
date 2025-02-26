@@ -118,12 +118,12 @@ def display_discharge_summary(mr_json, param="old"):
         st.write("의무기록이 없습니다.")
         return None
     
-    if "discharge summary" not in mr_json and keys:
+    if "discharge summary" not in mr_json:
         st.write("퇴원요약지가 없습니다.")
         return None
 
     discharge = mr_json["discharge summary"]
-    if discharge is None or len(discharge.keys()) == 0:
+    if discharge is None or "date of discharge" not in discharge:
         st.write("퇴원요약지가 없습니다.")
         return None
 
