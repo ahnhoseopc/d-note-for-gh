@@ -25,7 +25,7 @@ set APP=dk-ghmh
 set TAG=gcr.io/%PROJECT_ID%/%APP%
 
 $env:PROJECT_ID='dk-medical-solutions'
-$env:REGION='asia-northeast3'
+$env:REGION='asia-northeast1'
 $env:APP='dk-ghmh'
 $env:TAG="gcr.io/$env:PROJECT_ID/$env:APP"
 
