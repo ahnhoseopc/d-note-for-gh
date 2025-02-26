@@ -63,14 +63,20 @@ def dma_run():
     # shared on all pages
     st.logo("assets/dma/dma.png", size="large")
 
-    with st.sidebar.container():
-        pg = st.navigation(
-            {
+    if "user_id" in st.session_state and st.session_state.user_id == "dma":
+        menu = {
                 "About": [gh_about_dma_page, gh_about_gh_page],
                 "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
                 "Configuration (Admin)": [gh_dbquery_page],
             }
-        )
+    else:
+        menu = {
+                "About": [gh_about_dma_page, gh_about_gh_page],
+                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
+            }
+
+    with st.sidebar.container():
+        pg = st.navigation(menu)
 
     # Run Navigation
     pg.run()

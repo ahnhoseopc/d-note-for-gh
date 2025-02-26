@@ -35,8 +35,8 @@ MEDICAL_RECORD_TEMPLATE = {
             "biopsy test": [{"order date": "", "result date": "", "test result": "", "test note": ""}],
             "cytology test": [{"order date": "", "result date": "", "test result": ""}],
             "diagnostic test": [{"order date": "", "result date": "", "test code": "", "test name": "", "test result": "", "test upper limit":"", "test lower limit":"", "test unit":""}],
-            "vital signs": [{"reading date":"", "reading time": "", "temperature": "", "pulse": "", "heart rate": "", "respiratory rate": "", "systolic blood pressure": "", "diastolic blood pressure": ""}],
-            "video reading": [{"order date": "", "reading date": "", "findings": "", "impression": ""}],
+            "vital signs": [{"result date":"", "result time": "", "temperature": "", "pulse": "", "heart rate": "", "respiratory rate": "", "systolic blood pressure": "", "diastolic blood pressure": ""}],
+            "video reading": [{"order date": "", "result date": "", "findings": "", "impression": ""}],
             },
         },
 
@@ -122,3 +122,30 @@ MEDICAL_RECORD_TEMPLATE = {
 
 def get_medical_record_template():
     return copy.deepcopy(MEDICAL_RECORD_TEMPLATE)
+
+def get_patient_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["patient"])
+
+def get_clinical_staff_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["clinical staff"])
+
+def get_subjective_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["subjective"])
+
+def get_objective_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["objective"])
+
+def get_assessment_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["assessment"])
+
+def get_plan_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["plan"])
+
+def get_operation_record_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["operation records"][0])
+
+def get_progess_note_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["progress notes"][0])
+
+def get_discharge_summary_template():
+    return copy.deepcopy(MEDICAL_RECORD_TEMPLATE["discharge summary"])

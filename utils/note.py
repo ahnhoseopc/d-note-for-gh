@@ -164,7 +164,7 @@ def get_patient_mr_json(mr_info):
     for yt in mr_info["yt"]:
         mr["objective"]["lab-result"]["video reading"].append({
             "order date": yt["srd04odrdat"], 
-            "reading date": yt["srd04rddat"], 
+            "result date": yt["srd04rddat"], 
             "findings": yt["srd04find"],
             "impression": yt["srd04imp"]
         })
@@ -188,8 +188,8 @@ def get_patient_mr_json(mr_info):
     mr["objective"]["lab-result"]["vital signs"] = []
     for vs in mr_info["vs"] if "vs" in mr_info else []:
         mr["objective"]["lab-result"]["vital signs"].append({
-            "reading date": vs["rddate"], 
-            "reading time": vs["rdtime"], 
+            "result date": vs["rddate"], 
+            "result time": vs["rdtime"], 
             "temperature": vs["temperature"],
             "pulse": vs["pulse"],
             "heart rate": vs["hr"],

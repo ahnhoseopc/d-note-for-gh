@@ -5,6 +5,7 @@ import utils.note_template  as template
 import json
 import re
 import copy
+from datetime import datetime
 
 import streamlit as st
 
@@ -54,10 +55,39 @@ def prepare_request_data(mr_json):
 
     return mr_json_new
 
-def fill_in_discharge_summary(mr_json, findings, progress_summary):
-    mr_json_new = prepare_request_data(mr_json)
+def fill_in_discharge_summary(mr_json_new, mr_json, findings, progress_summary):
+    if "discharge summary" not in mr_json or mr_json["discharge summary"] is None or "date of discharge" not in mr_json["discharge summary"]:
+        discharge = template.get_discharge_summary_template()
+        discharge["date of discharge"] = datetime.now().strftime("%Y-%m-%d")
+        discharge["chief complaints"] = mr_json_new["subjective"]["chief complaints"]
 
-    mr_json_new["discharge summary"] = copy.deepcopy(mr_json["discharge summary"])
+        discharge["treatment result"] = ""
+        discharge["final diagnosis"] = "\n".join(mr_json_new["assessment"]["diagnosis"])
+        discharge["secondary diagnosis"] = "\n".join(mr_json_new["assessment"]["diagnosis"])
+
+        if len(mr_json_new["operation records"]) > 0:
+            op_name = mr_json_new["operation records"][0]["operation name"]
+        else:
+            op_name = mr_json_new["plan"]["operation plan"]
+
+        discharge["treatment operation"] = op_name
+        discharge["treatment medication"] = ""
+
+        discharge["follow-up plan"] = "외래진료 예정"
+
+        discharge["abnormal findings and lab result"] = ""
+        discharge["progress summary"] = ""
+        discharge["treatment result"] = "2 경쾌"
+
+        discharge["type of discharge"] = "1 퇴원"
+        discharge["discharge comments"] = ""
+
+        discharge["report date"] = datetime.now().strftime("%Y-%m-%d")
+        discharge["report time"] = datetime.now().strftime("%H:%M:%S")
+    else:
+        discharge = copy.deepcopy(mr_json["discharge summary"])
+
+    mr_json_new["discharge summary"] = discharge
     mr_json_new["discharge summary"]["abnormal findings and lab result"] = findings
     mr_json_new["discharge summary"]["progress summary"] = progress_summary
 
@@ -80,7 +110,7 @@ def rt_summary_target():
         mr_json = st.session_state.get("mr_json")
         mr_json_new = prepare_request_data(mr_json)
 
-        with st.expander("AI 결과", expanded=True):
+        with st.expander("AI 결과", expanded=False):
             st.session_state["rt-result"] = ""
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
@@ -100,7 +130,7 @@ def rt_summary_target():
                 response_container.caption(f"error when calling api: {e}")
                 pass
         
-        mr_json_new = fill_in_discharge_summary(mr_json, result_json["중요검사소견"], result_json["경과요약"])
+        mr_json_new = fill_in_discharge_summary(mr_json_new, mr_json, result_json["중요검사소견"], result_json["경과요약"])
 
         with st.expander("퇴원요약지 초안", expanded=False):
             display_discharge_summary(mr_json_new, "new")
@@ -119,12 +149,12 @@ def display_discharge_summary(mr_json, param="old"):
         st.write("의무기록이 없습니다.")
         return None
     
-    if "discharge summary" not in mr_json and keys:
+    if "discharge summary" not in mr_json:
         st.write("퇴원요약지가 없습니다.")
         return None
 
     discharge = mr_json["discharge summary"]
-    if discharge is None or len(discharge.keys()) == 0:
+    if discharge is None or "date of discharge" not in discharge:
         st.write("퇴원요약지가 없습니다.")
         return None
 
@@ -179,28 +209,30 @@ def display_discharge_summary(mr_json, param="old"):
     st.code(discharge["chief complaints"])
 
     st.markdown("##### 주진단명 (Final Diagnosis)")
-    st.code(discharge["final diagnosis"])
+    st.text_area(label="주진단명", key=f"pdiagnosis_{param}", height=68, value=discharge["final diagnosis"], label_visibility="collapsed")
     st.markdown("##### 부진단명 (Secondary Diagnosis)")
-    st.code(discharge["secondary diagnosis"])
+    st.text_area(label="부진단명", key=f"sdiagnosis_{param}", height=68, value=discharge["secondary diagnosis"], label_visibility="collapsed")
 
     st.markdown("##### 수술명 (Treatment Op.)")
-    st.code(discharge["treatment operation"])
+    st.text_area(label="수술명", key=f"operation_{param}", height=68, value=discharge["treatment operation"], label_visibility="collapsed")
     st.markdown("##### 처치명 (Treatment Medical)")
-    st.code(discharge["treatment medication"])
+    st.text_area(label="처치명", key=f"treatment_{param}", height=68, value=discharge["treatment medication"], label_visibility="collapsed")
 
     st.markdown("##### 중요검사소견 (Abnormal Finding or Lab)")
-    st.text_area(label="중요검사소견", height=180, value=discharge["abnormal findings and lab result"], key=f"findings_{param}", label_visibility= "collapsed")
+    st.text_area(label="중요검사소견", key=f"findings_{param}", height=180, value=discharge["abnormal findings and lab result"], label_visibility= "collapsed")
     st.markdown("##### 추후관리계획 (Follow-up Plan)")
-    st.code(discharge["follow-up plan"])
+    st.text_area(label="추후관리계획", key=f"follow_up_{param}", height=68, value=discharge["follow-up plan"], label_visibility= "collapsed")
     st.markdown("##### 경과요약 (Progress Summary)")
-    st.text_area(label="경과요약", height=180, value=discharge["progress summary"], key=f"progress_summary_{param}", label_visibility= "collapsed")
+    st.text_area(label="경과요약", key=f"progress_summary_{param}", height=180, value=discharge["progress summary"], label_visibility= "collapsed")
 
     st.markdown("##### 치료결과 (Result)")
-    st.code(discharge["treatment result"])
+    discharge["treatment result"] = "1 완쾌" if discharge["treatment result"].strip() == "1" else "2 경쾌" if discharge["treatment result"].strip() == "2" else discharge["treatment result"]
+    st.text_area(label="치료결과", key=f"treatment_result_{param}", height=68, value=discharge["treatment result"], label_visibility= "collapsed")
     st.markdown("##### 퇴원형태 (Type of Discharge)")
-    st.code(discharge["type of discharge"])
+    discharge["type of discharge"] = "1 퇴원" if discharge["type of discharge"].strip() == "1" else discharge["type of discharge"]
+    st.text_area(label="퇴원형태", key=f"discharge_type_{param}", height=68, value=discharge["type of discharge"], label_visibility= "collapsed")
     st.markdown("##### 비고 (Discharge Comments)")
-    st.code(discharge["discharge comments"])
+    st.text_area(label="비고", key=f"discharge_comments_{param}", height=68, value=discharge["discharge comments"], label_visibility= "collapsed")
 
     st.markdown("##### 기록일")
     st.code(discharge["report date"])
