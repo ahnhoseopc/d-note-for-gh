@@ -1,4 +1,3 @@
-import datetime
 import utils.base as base
 import utils.note as note
 import utils.note_template  as template
@@ -6,6 +5,7 @@ import utils.note_template  as template
 import json
 import re
 import copy
+from datetime import datetime
 
 import streamlit as st
 
