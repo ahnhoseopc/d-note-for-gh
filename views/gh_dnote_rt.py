@@ -65,7 +65,12 @@ def fill_in_discharge_summary(mr_json_new, mr_json, findings, progress_summary):
         discharge["final diagnosis"] = "\n".join(mr_json_new["assessment"]["diagnosis"])
         discharge["secondary diagnosis"] = "\n".join(mr_json_new["assessment"]["diagnosis"])
 
-        discharge["treatment operation"] = mr_json_new["plan"]["operation name"]
+        if len(mr_json_new["operation records"]) > 0:
+            op_name = mr_json_new["operation records"][0]["operation name"]
+        else:
+            op_name = mr_json_new["plan"]["operation plan"]
+
+        discharge["treatment operation"] = op_name
         discharge["treatment medication"] = ""
 
         discharge["follow-up plan"] = "외래진료 예정"
