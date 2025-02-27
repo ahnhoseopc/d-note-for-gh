@@ -13,7 +13,7 @@ def rt_summary_source():
     mr_json = st.session_state.get("mr_json")
 
     postfix = ""
-    if mr_json is None or "operation records" not in mr_json or len(mr_json["operation records"]) == 0:
+    if mr_json is None or "discharge summary" not in mr_json or len(mr_json["discharge summary"].keys()) == 0 or "date of discharge" not in mr_json["discharge summary"]:
         postfix = " (기록없음)"
 
     with st.expander("퇴원요약지" + postfix, expanded=False):
