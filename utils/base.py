@@ -1,5 +1,6 @@
 import random
 import string
+import logging
 
 def get_random_string(length):
     # With combination of lower and upper case
@@ -10,12 +11,12 @@ def get_random_string(length):
 import json
 
 def is_json_format(data):
-    # print("json output: ", data)
+    # logging.info("json output: ", data)
     try:
         json.loads(data)
         return True
     except (ValueError, TypeError) as ex:
-        print("json error", ex)
+        logging.error("json error", ex)
         return False
 
 import re

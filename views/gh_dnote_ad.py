@@ -38,7 +38,7 @@ Date of Admission: {}
 
 </td>
 <td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -151,10 +151,6 @@ def display_report(mr_instance, param="0"):
         base.ifnull(mr_instance["subjective"]["pain"], "<na>"),
         base.ifnull(mr_instance["subjective"]["onset"], "<na>"),
         base.ifnull(mr_instance["subjective"]["present illness"], "<na>")), unsafe_allow_html = True)
-
-    # st.write(AD_03_NICU_HISTORY_2.format(
-    #     base.ifnull(mr_instance["subjective"]["maternal history"], "<na>"),
-    #     base.ifnull(mr_instance["subjective"]["neonatal history"], "<na>")), unsafe_allow_html = True)
 
     if mr_instance["clinical staff"]["department"] == "GY":
         st.write(AD_03_OBGY_HISTORY_3.format(

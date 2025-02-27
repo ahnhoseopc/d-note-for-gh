@@ -63,7 +63,7 @@ def main():
 
     cols = st.columns(7)
     with cols[3]:
-        st.image("https://www.moonhwa.or.kr/moonhwa/images/main02/img_symbol0302.png", width=300)
+        st.image("assets/dma/femaledoctor.svg", width=300)
 
 import forms.sidebar as sidebar
 

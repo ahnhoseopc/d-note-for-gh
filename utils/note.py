@@ -4,6 +4,8 @@ import utils.db as db
 import utils.genai as genai
 import utils.note_template as template
 
+import logging
+
 import streamlit as st
 
 def run_sql(query_sql):
@@ -16,7 +18,7 @@ def get_medical_data(query_name, patient_id, admsn_date, kwa=None, spth=None):
         query = query.replace("$patient_id", patient_id).replace("$admsn_date", admsn_date)
     if kwa is not None and spth is not None:
         query = query.replace("$kwa", kwa).replace("$spth", spth)
-    print("query_name" , "=" , query_name)
+    logging.info("query_name" , "=" , query_name)
     return run_sql(query)
 
 @st.cache_data()

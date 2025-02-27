@@ -1,13 +1,14 @@
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting
+import os
+import google.auth
+import logging
 
 import streamlit as st
 
-import os
 if 'GOOGLE_APPLICATION_CREDENTIALS' not in os.environ:
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets.GCP_CREDENTIALS;
 
-import google.auth
 def get_access_token():
     """
     Retrieves an access token using Google default credentials.
@@ -37,13 +38,13 @@ model = {"gemini-flash":None, "gemini-pro":None, "medlm":None}
 def get_model(model_name, si=SI):
     global model
     if model_name not in model.keys():
-        print(f"{model_name} not valid, use ")
+        # logging.info(f"{model_name} not valid, use ")
         model_name = list(model.keys())[0]
 
     if model[model_name] is None:
         model[model_name] = GenerativeModel( MODEL[model_name], system_instruction=[si] )
 
-    # print(model_name, model[model_name]._model_name)
+    # logging.info(model_name, model[model_name]._model_name)
     return model[model_name]
 
 def generate(prompts, model_name):
@@ -176,5 +177,5 @@ if __name__ == "__main__":
 
     responses = generate([prompt, data])
     for response in responses:
-        print(dir(response)) # candidates, from_dict, to_dict, prompt_feedback, usage_metadata, text
-        print(response.text, end="\t\t")
+        logging.info(dir(response)) # candidates, from_dict, to_dict, prompt_feedback, usage_metadata, text
+        logging.info(response.text, end="\t\t")

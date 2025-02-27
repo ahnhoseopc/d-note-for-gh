@@ -1,3 +1,4 @@
+import logging
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting
 import os
@@ -22,7 +23,7 @@ def generate():
     )
 
     for response in responses:
-        print(response.text, end="")
+        logging.info(response.text, end="")
 
 text1 = """local에서 산전 진찰 받으시던분으로 오늘 아침 설사 있어 진료 받던중 질 출혈 있어 타병원 방문하여 자궁 문이 다 열렸다고 하여 태아 치료 위해 전원 되어 옴 5:00pm 경 bethamethasone은 맞고 옴, 분만실 도착시 산모 맥박 120회 정도 됨
 이런 환자에게 어떤 진료를 제공하여야 하는가"""

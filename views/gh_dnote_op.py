@@ -161,7 +161,7 @@ def display_report(mr_instance, param="0"):
 
     </td>
     <td align="right" width="25%">
-    <img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+    <img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
     </td>
     </tr>
     </table>

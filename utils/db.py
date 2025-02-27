@@ -36,9 +36,9 @@ except:
 
 def get_sql_engine():
     DSN = ora.makedsn(host=HOST,port=PORT,service_name=SVCN)
-    #print(DSN) # (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.1.1.71)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=JAINOCS)))
+    #logging.info(DSN) # (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.1.1.71)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=JAINOCS)))
     con = ora.connect(user=USER, password=PASS, dsn=DSN)
-    #print(con.version) # 10.2.0.4.0
+    #logging.info(con.version) # 10.2.0.4.0
     engine = sqlalchemy.create_engine("oracle+cx_oracle://", creator= lambda : con)
     #engine = sqlalchemy.create_engine("oracle+oracledb://", creator= lambda : con)
     return engine
