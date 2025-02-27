@@ -17,10 +17,10 @@ def intro_record_source():
     cols = st.columns(2)
     with cols[0]:
         st.markdown("### D-QnA 설명서")
-        st.markdown("    상단 Doctor's QnA 탭에서 의료관련 질문을 입력하세요.")
-        st.markdown("    상단 Expert's QnA 탭에서 의료관련 질문을 입력하세요. (서비스 준비중)")
-        st.markdown("    상단 Researcher's QnA 탭에서 의료논문 질문을 입력하세요. (서비스 준비중)")
-        st.markdown("    왼쪽 사이드바에서 현재 질문 내용을 저장할 수 있습니다.")
+        st.markdown("    - 상단 Doctor's QnA 탭에서 의료관련 질문을 입력하세요.")
+        st.markdown("    - 상단 Expert's QnA 탭에서 의료관련 질문을 입력하세요. (서비스 준비중)")
+        st.markdown("    - 상단 Researcher's QnA 탭에서 의료논문 질문을 입력하세요. (서비스 준비중)")
+        st.markdown("    - 왼쪽 사이드바에서 현재 질문 내용을 저장할 수 있습니다.")
     with cols[1]:
         st.markdown("### D-QnA 서비스는")
         st.markdown(DQNA_HELP)

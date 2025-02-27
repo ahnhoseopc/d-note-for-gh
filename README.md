@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 
 ## Environment setup
 set PROJECT_ID=dk-medical-solutions
-set REGION=asia-northeast3
+set REGION=asia-northeast1
 set APP=dk-dma
 set TAG=gcr.io/%PROJECT_ID%/%APP%
 
@@ -38,8 +38,8 @@ gcloud run deploy %APP% --project %PROJECT_ID% --image %TAG% --platform managed 
 
 ## Environment setup for powershell
 $env:PROJECT_ID='dk-medical-solutions'
-$env:REGION='asia-northeast1'
-$env:APP='dk-dma'
+$env:REGION='asia-northeast3'
+$env:APP='dk-ghmh'
 $env:TAG="gcr.io/$env:PROJECT_ID/$env:APP"
 
 ## Cloud build
