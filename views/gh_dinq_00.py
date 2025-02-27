@@ -16,8 +16,11 @@ def intro_record_source():
     cols = st.columns(2)
     with cols[0]:
         st.markdown("### D-INQ 설명서")
-        st.markdown("    왼쪽 사이드바에서 먼저 진료과와 진료의를 선택하세요.")
-        st.markdown("    담당환자 목록이 표시되면 테이블의 왼쪽 체크박스를 선택하세요.")
+        st.markdown("    사용을 위해서는 DMA 담당자에게 연락 부탁드립니다.")
+        st.markdown("    - DK와 협의를 거친후 고객를 위한 사이트 주소가 할당이 됩니다.")
+        st.markdown("    - 의료진 및 관리자가 사용할 계정이 할당이 됩니다.")
+        st.markdown("    - 환자에게 안내할 모바일 앱 및 QR코드가 안내됩니다.")
+        st.markdown("    - 보안을 위해 사이트 접속이 특정 장소 또는 IP로 한정됩니다.")
     with cols[1]:
         st.markdown("### D-INQ 서비스는")
         st.markdown(DINQ_HELP)

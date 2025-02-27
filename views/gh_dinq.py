@@ -1,6 +1,6 @@
 import utils.auth as auth
 import utils.qna as qna
-import forms.sidebar_qna as sidebar_qna
+import forms.sidebar as sidebar
 import views.gh_dinq_00 as intro
 
 import streamlit as st
@@ -10,9 +10,6 @@ def main():
     # Initialize user id
     # if "user_id" not in st.session_state:
     #     st.session_state.user_id = "munhwa_user"
-
-    # Side bar for chat history
-    sidebar_qna.display()
 
     #
     # Page title for D-QnA
@@ -27,16 +24,15 @@ def main():
     with tab1:
         st.image("assets/dma/dinq-admin-serviceflow.png")
 
-        st.image("assets/dma/dinq-admin.png")
-        st.image("assets/dma/dinq-admin-detail.png")
+        st.markdown("## 의료진용 서비스 화면")
+        st.image("assets/dma/dinq-admin.png", use_container_width=True, )
+        st.image("assets/dma/dinq-admin-detail.png", use_container_width=True)
 
     with tab2:
         st.image("assets/dma/dinq-app-serviceflow.png")
-
-        st.image("assets/dma/dinq-app.png")
 
 # import forms.sidebar as sidebar
 
 if __name__ == "__page__":
     main()
-    # sidebar.display()
+    sidebar.display()

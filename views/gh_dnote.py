@@ -50,17 +50,6 @@ def main():
         
         st.divider()
 
-        # Display Report Comparison
-        # col1, col2 = st.columns([5, 5])
-        
-        # with col1:
-        #     with st.expander("기존 수술기록지 (문서양식))", expanded=False):
-        #         op.display_report(op.or_info["or-current"] if op.or_info and "or-current" in op.or_info else None)
-    
-        # with col2:
-        #     with st.expander("기존 수술기록지 (문서양식))", expanded=False):
-        #         op.display_report(op.or_info["or-current"] if op.or_info and "or-current" in op.or_info else None)
-
     # 퇴원요약지
     with tab5:
         # Retrieving Source and Generate Target
@@ -71,17 +60,6 @@ def main():
         rt.rt_summary_target()
         
         st.divider()
-
-        # Display Report
-        col1, col2 = st.columns([5, 5])
-
-        with col1:
-            #rt.rt_summary_source()
-            pass
-
-        with col2:
-            #rt.rt_summary_target()
-            pass
 
     cols = st.columns(7)
     with cols[3]:

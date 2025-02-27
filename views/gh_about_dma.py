@@ -12,45 +12,23 @@ def main():
 
     # 프로젝트 내부 이미지 경로
     image_files = ["assets/dma/00_dma_main.jpg", "assets/dma/00_dma_main-1chat.jpg", "assets/dma/00_dma_main-2qna.jpg", "assets/dma/00_dma_main-3note.jpg", "assets/dma/00_dma_main-4inq.jpg"]
+    if "image_index" not in st.session_state:
+        st.session_state.image_index = 1
 
-    # Base64 변환
-    base64_images = [get_base64_encoded_image(img) for img in image_files]
-
-    # HTML + CSS 애니메이션
-    st.markdown(
-        f"""
-        <style>
-        @keyframes slide {{
-            0% {{ transform: translateX(000%); }}
-            100% {{ transform: translateX(-500%); }}
-        }}
-
-        .slider {{
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
-        }}
-
-        .slider img {{
-            width: 50%;
-            flex-shrink: 0;
-            animation: slide 12s linear infinite alternate;
-        }}
-        </style>
-        
-        <div class="slider">
-            <img src="data:image/png;base64,{base64_images[0]}" />
-            <img src="data:image/png;base64,{base64_images[1]}" />
-            <img src="data:image/png;base64,{base64_images[2]}" />
-            <img src="data:image/png;base64,{base64_images[3]}" />
-            <img src="data:image/png;base64,{base64_images[4]}" />
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    # st.image("assets/dma/00_dma_main.jpg", use_container_width=True)
+    cols = st.columns([2,4,2], vertical_alignment="center")
+    with cols[0]:
+        col0 = st.columns(3, vertical_alignment="center")
+        with col0[1]:
+            if st.button("<"):
+                st.session_state.image_index = (st.session_state.image_index - 1) % len(image_files)
+    with cols[1]:
+        image_index = st.session_state.get("image_index", 0)
+        st.image(image_files[image_index], use_container_width=True)
+    with cols[2]:
+        col2 = st.columns(3, vertical_alignment="center")
+        with col2[1]:
+            if st.button("\>"):
+                st.session_state.image_index = (st.session_state.image_index + 1) % len(image_files)
 
     cols = st.columns(2)
     with cols[0]:

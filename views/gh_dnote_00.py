@@ -25,8 +25,12 @@ def intro_record_source():
     cols = st.columns(2)
     with cols[0]:
         st.markdown("### D-Note 설명서")
-        st.markdown("    왼쪽 사이드바에서 먼저 진료과와 진료의를 선택하세요.")
-        st.markdown("    담당환자 목록이 표시되면 테이블의 왼쪽 체크박스를 선택하세요.")
+        st.markdown("    - 왼쪽 사이드바에서 먼저 진료과와 진료의를 선택하세요.")
+        st.markdown("    - 담당환자 목록이 표시되면 테이블의 왼쪽 체크박스를 선택하세요.")
+        st.markdown("    - 입원기록지 등 상단 탭에서 환자의 기록을 확인하세요.")
+        st.markdown("    - **수술기록지**와 **퇴원요약지**는 초안 작성 기능을 이용할 수 있습니다.")
+        st.markdown("    - 초안 작성을 하면 각 기록지의 🔵표시된 항목에 AI결과가 반영됩니다.")
+        
     with cols[1]:
         st.markdown("### D-Note 서비스는")
         st.markdown(DNOTE_HELP)
