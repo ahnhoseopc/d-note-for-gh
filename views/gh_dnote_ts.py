@@ -101,7 +101,7 @@ def display_report(mr_instance):
                 st.code(result["result date"])
 
             cols = st.columns(2)
-            with cols[1]:
+            with cols[0]:
                 st.markdown("#### Test Result")
                 st.code(result["test result"])
             with cols[1]:
