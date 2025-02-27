@@ -34,12 +34,14 @@ def op_record_target():
         or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write", use_container_width=True)
 
     with cols[1]:
-        with st.popover("⚙️ Prompt", use_container_width=True):
-            st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
+        if "user_id" in st.session_state and st.session_state.user_id == "dma":
+            with st.popover("⚙️ Prompt", use_container_width=True):
+                st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
 
     with cols[2]:
-        with st.popover("⚙️ AI 모델", use_container_width=True):
-            st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
+        if "user_id" in st.session_state and st.session_state.user_id == "dma":
+            with st.popover("⚙️ AI 모델", use_container_width=True):
+                st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
     if or_write:
         mr_json = st.session_state.get("mr_json")

@@ -99,12 +99,14 @@ def rt_summary_target():
         rt_write = st.button("➡️ 퇴원요약지 초안 작성", key="rt-write", use_container_width=True)
 
     with cols[1]:
-        with st.popover("⚙️ Prompt", use_container_width=True):
-            st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
+        if "user_id" in st.session_state and st.session_state.user_id == "dma":
+            with st.popover("⚙️ Prompt", use_container_width=True):
+                st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
 
     with cols[2]:
-        with st.popover("⚙️ AI 모델", use_container_width=True):
-            st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
+        if "user_id" in st.session_state and st.session_state.user_id == "dma":
+            with st.popover("⚙️ AI 모델", use_container_width=True):
+                st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
 
     if rt_write:
         mr_json = st.session_state.get("mr_json")
