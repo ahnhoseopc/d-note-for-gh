@@ -40,6 +40,9 @@ RT_PROMPT_DEFAULT = """
 def prepare_request_data(mr_json):
     mr_json_new = template.get_medical_record_template()
 
+    if mr_json is None or mr_json["patient"] is None:
+        return None
+
     mr_json_new["patient"] = copy.deepcopy(mr_json["patient"])
     mr_json_new["clinical staff"] = copy.deepcopy(mr_json["clinical staff"])
 
@@ -94,19 +97,25 @@ def fill_in_discharge_summary(mr_json_new, mr_json, findings, progress_summary):
     return mr_json_new
 
 def rt_summary_target():
+    ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]
+    ai_model = ai_models[-1]
+    rt_prompt = RT_PROMPT_DEFAULT
+
     cols = st.columns([3, 3, 3])
     with cols[0]:
-        rt_write = st.button("➡️ 퇴원요약지 초안 작성", key="rt-write", use_container_width=True)
+        rt_write = st.button("➡️ 퇴원요약지 초안 작성", key="rt-write", use_container_width=True, disabled=not st.session_state.get("mr_json"))
 
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ Prompt", use_container_width=True):
-                st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
+                prompt = st.text_area("Prompt", value=RT_PROMPT_DEFAULT, height=150, key="rt-prompt")
+                if prompt:
+                    rt_prompt = prompt
 
     with cols[2]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ AI 모델", use_container_width=True):
-                st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
+                ai_model = st.radio("AI 모델 선택", ai_models, key="ai-model-rt", index=2, horizontal=True, label_visibility="collapsed")
 
     if rt_write:
         mr_json = st.session_state.get("mr_json")
@@ -117,7 +126,7 @@ def rt_summary_target():
             response_container = st.empty()
             response_container.caption(st.session_state["rt-result"])
             try:
-                responses = note.call_api(st.session_state["rt-prompt"], json.dumps(mr_json, indent=4), st.session_state["ai-model-rt"].lower())
+                responses = note.call_api(rt_prompt, json.dumps(mr_json, indent=4), ai_model.lower())
 
                 for response in responses:
                     st.session_state["rt-result"] += response.text
@@ -220,12 +229,15 @@ def display_discharge_summary(mr_json, param="old"):
     st.markdown("##### 처치명 (Treatment Medical)")
     st.text_area(label="처치명", key=f"treatment_{param}", height=68, value=discharge["treatment medication"], label_visibility="collapsed")
 
-    st.markdown("##### 중요검사소견 (Abnormal Finding or Lab)")
+    st.markdown("##### 🔵 중요검사소견 (Abnormal Finding or Lab) ")
     st.text_area(label="중요검사소견", key=f"findings_{param}", height=180, value=discharge["abnormal findings and lab result"], label_visibility= "collapsed")
+
     st.markdown("##### 추후관리계획 (Follow-up Plan)")
     st.text_area(label="추후관리계획", key=f"follow_up_{param}", height=68, value=discharge["follow-up plan"], label_visibility= "collapsed")
-    st.markdown("##### 경과요약 (Progress Summary)")
-    st.text_area(label="경과요약", key=f"progress_summary_{param}", height=180, value=discharge["progress summary"], label_visibility= "collapsed")
+
+    st.markdown("##### 🔵 경과요약 (Progress Summary) ")
+    with st.container():
+        st.text_area(label="경과요약", key=f"progress_summary_{param}", height=180, value=discharge["progress summary"], label_visibility= "collapsed")
 
     st.markdown("##### 치료결과 (Result)")
     discharge["treatment result"] = "1 완쾌" if discharge["treatment result"].strip() == "1" else "2 경쾌" if discharge["treatment result"].strip() == "2" else discharge["treatment result"]

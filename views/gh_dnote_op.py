@@ -25,23 +25,29 @@ OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression
 """
 
 def op_record_target():
+    ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]
+    ai_model = ai_models[-1]
+    or_prompt = OR_PROMPT_DEFAULT
+
     # 수술기록지 생성 프롬프트
     # st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
 
     # 수술기록지 작성 버튼
     cols = st.columns([3, 3, 3])
     with cols[0]:
-        or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write", use_container_width=True)
+        or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write", use_container_width=True, disabled=not st.session_state.get("mr_json"))
 
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ Prompt", use_container_width=True):
-                st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
+                prompt = st.text_area("Prompt", value=or_prompt, height=150, key="or-prompt")
+                if prompt:
+                    or_prompt = prompt
 
     with cols[2]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ AI 모델", use_container_width=True):
-                st.radio("AI 모델 선택", ["MedLM", "Gemini-Pro", "Gemini-Flash"], key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
+                ai_model = st.radio("AI 모델 선택", ai_models, key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
     if or_write:
         mr_json = st.session_state.get("mr_json")
@@ -66,12 +72,12 @@ def op_record_target():
         operation_name, operation_protocol = "", ""
         
 
-        with st.expander("AI 결과", expanded=True):
+        with st.expander("AI 결과", expanded=False):
             st.session_state["or-result"] = ""
             response_text = ""
             response_container = st.empty()
             try:
-                responses = note.call_api(st.session_state["or-prompt"], json.dumps(mr_json_new), st.session_state["ai-model-or"].lower())
+                responses = note.call_api(or_prompt, json.dumps(mr_json_new), ai_model.lower())
                 for response in responses:
                     response_text += response.text
                     response_container.caption(response_text)
@@ -212,9 +218,8 @@ def display_report(mr_instance, param="0"):
     st.text_input(label="Operation Name", key=f"operation_name_{param}", value=base.ifnull(op_record["operation name"], "<na>"), label_visibility= "collapsed")
 
     # Procedures
-    st.markdown("###### Procedures & Findings: ", unsafe_allow_html = True)
+    st.markdown("###### 🔵 Procedures & Findings: ", unsafe_allow_html = True)
     st.text_area("procedures", key=f"procedures{param}", value=op_record["operation procedures and findings"], height=280, label_visibility= "collapsed")
-
 
     # TEST
     VALUE = "{} / {} {} {} {} / {} {} {} {}".format(

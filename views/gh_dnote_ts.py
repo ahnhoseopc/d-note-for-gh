@@ -92,76 +92,117 @@ def display_report(mr_instance):
 
     for result in lab_result[lab]:
         if lab == "biopsy test":
-            st.markdown("#### Order Date")
-            st.code(result["order date"])
-            st.markdown("#### Result Date")
-            st.code(result["result date"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Order Date")
+                st.code(result["order date"])
+            with cols[1]:
+                st.markdown("#### Result Date")
+                st.code(result["result date"])
 
-            st.markdown("#### Test Result")
-            st.code(result["test result"])
-            st.markdown("#### Comments")
-            st.code(result["test note"])
+            cols = st.columns(2)
+            with cols[1]:
+                st.markdown("#### Test Result")
+                st.code(result["test result"])
+            with cols[1]:
+                st.markdown("#### Comments")
+                st.code(result["test note"])
+
+            st.divider()
 
         if lab == "cytology test":
-            st.markdown("#### Order Date")
-            st.code(result["order date"])
-            st.markdown("#### Result Date")
-            st.code(result["result date"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Order Date")
+                st.code(result["order date"])
+            with cols[1]:
+                st.markdown("#### Result Date")
+                st.code(result["result date"])
 
             st.markdown("#### Test Result")
             st.code(result["test result"])
+
+            st.divider()
 
         if lab == "diagnostic test":
-            st.markdown("#### Order Date")
-            st.code(result["order date"])
-            st.markdown("#### Result Date")
-            st.code(result["result date"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Order Date")
+                st.code(result["order date"])
+            with cols[1]:
+                st.markdown("#### Result Date")
+                st.code(result["result date"])
 
-            st.markdown("#### Test Code")
-            st.code(result["test code"])
-            st.markdown("#### Test Name")
-            st.code(result["test name"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Test Code")
+                st.code(result["test code"])
+            with cols[1]:
+                st.markdown("#### Test Name")
+                st.code(result["test name"])
 
-            st.markdown("#### Test Result")
-            st.code(result["test result"])
+            cols = st.columns(2)
+            with cols[1]:
+                st.markdown("#### Test Result")
+                st.code(result["test result"])
 
-            st.markdown("#### Upper Limit")
-            st.code(result["test upper limit"])
-            st.markdown("#### Lower Limit")
-            st.code(result["test lower limit"])
+            with cols[1]:
+                st.markdown("#### Upper Limit")
+                st.code(result["test upper limit"])
+                st.markdown("#### Lower Limit")
+                st.code(result["test lower limit"])
 
-            st.markdown("#### Test Unit")
-            st.code(result["test unit"])
+                st.markdown("#### Test Unit")
+                st.code(result["test unit"])
+
+            st.divider()
 
         if lab == "vital signs":
-            st.markdown("#### Result Date")
-            st.code(result["result date"])
-            st.markdown("#### Result Time")
-            st.code(result["result time"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Result Date")
+                st.code(result["result date"])
+            with cols[1]:
+                st.markdown("#### Result Time")
+                st.code(result["result time"])
 
-            st.markdown("#### Temperature")
-            st.code(result["temperature"])
-            st.markdown("#### Pulse")
-            st.code(result["pulse"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Temperature")
+                st.code(result["temperature"])
 
-            st.markdown("#### Heart Rate")
-            st.code(result["heart rate"])
-            st.markdown("#### Respiratory Rate")
-            st.code(result["respiratory rate"])
+            with cols[1]:
+                st.markdown("#### Pulse")
+                st.code(result["pulse"])
+                st.markdown("#### Heart Rate")
+                st.code(result["heart rate"])
+                st.markdown("#### Respiratory Rate")
+                st.code(result["respiratory rate"])
 
-            st.markdown("#### Systolic Blood Pressure")
-            st.code(result["systolic blood pressure"])
-            st.markdown("#### Diastolic Blood Pressure")
-            st.code(result["diastolic blood pressure"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Systolic Blood Pressure")
+                st.code(result["systolic blood pressure"])
+            with cols[1]:
+                st.markdown("#### Diastolic Blood Pressure")
+                st.code(result["diastolic blood pressure"])
+
+            st.divider()
 
         if lab == "video reading":
-            st.markdown("#### Order Date")
-            st.code(result["order date"])
-            st.markdown("#### Result Date")
-            st.code(result["result date"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Order Date")
+                st.code(result["order date"])
+            with cols[1]:
+                st.markdown("#### Result Date")
+                st.code(result["result date"])
 
             st.markdown("#### Findings")
             st.code(result["findings"])
             st.markdown("#### Impression")
             st.code(result["impression"])
+
+            st.divider()
+
     pass
