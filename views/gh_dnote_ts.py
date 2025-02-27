@@ -142,7 +142,7 @@ def display_report(mr_instance):
                 st.code(result["test name"])
 
             cols = st.columns(2)
-            with cols[1]:
+            with cols[0]:
                 st.markdown("#### Test Result")
                 st.code(result["test result"])
 
@@ -198,10 +198,13 @@ def display_report(mr_instance):
                 st.markdown("#### Result Date")
                 st.code(result["result date"])
 
-            st.markdown("#### Findings")
-            st.code(result["findings"])
-            st.markdown("#### Impression")
-            st.code(result["impression"])
+            cols = st.columns(2)
+            with cols[0]:
+                st.markdown("#### Findings")
+                st.code(result["findings"])
+            with cols[1]:
+                st.markdown("#### Impression")
+                st.code(result["impression"])
 
             st.divider()
 
