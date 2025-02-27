@@ -67,7 +67,6 @@ def display_report(mr_instance):
     if len(options) == 1:
         lab = options[0]
         st.write(f"검사종류: {lab}")
-        # lab = st.select_slider("검사종류", options=options, value=options[0], disabled=True)
     else:
         lab = st.select_slider("검사종류", options=options)
 
