@@ -33,7 +33,7 @@ AD_01_HEADER_3 = """
 </td>
 <td align="center" width="50%">
 
-### 입원기록지 ( Operation Record )
+### 입원기록지 ( Addmission Note )
 Date of Admission: {}
 
 </td>
