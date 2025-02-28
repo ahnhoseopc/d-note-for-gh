@@ -1,7 +1,7 @@
 import streamlit as st
 
 def dma_run():
-    st.set_page_config(page_title="DK Medical Agents", page_icon="🏥", layout="wide")
+    st.set_page_config(page_title="Good Hospitals - DK Medical Agents", page_icon="🏥", layout="wide")
 
     # page setup
     gh_about_dma_page = st.Page(
