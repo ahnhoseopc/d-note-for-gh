@@ -25,6 +25,9 @@ def intro_record_source():
     cols = st.columns(2)
     with cols[0]:
         st.markdown("### D-Note 설명서")
+        st.markdown("    D-Note 서비스는 병원의 EMR/OCS와의 연동이 필요합니다.")
+        st.markdown("    사용을 위해서 담당자와의 상담을 예약하세요.")
+        st.markdown("    여기서는 `샘플데이터`를 이용해서 자동화 기능을 확인하세요.")
         st.markdown("    - 왼쪽 사이드바에서 먼저 진료과와 진료의를 선택하세요.")
         st.markdown("    - 담당환자 목록이 표시되면 테이블의 왼쪽 체크박스를 선택하세요.")
         st.markdown("    - 입원기록지 등 상단 탭에서 환자의 기록을 확인하세요.")
