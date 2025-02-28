@@ -3,6 +3,9 @@ import streamlit as st
 def dma_run():
     st.set_page_config(page_title="Good Hospitals - DK Medical Agents", page_icon="🏥", layout="wide")
 
+    # shared on all pages
+    st.logo("assets/gh/gh_logo.png", size="large")
+    
     # page setup
     gh_about_dma_page = st.Page(
         page="views/gh_about_dma.py",
@@ -53,9 +56,6 @@ def dma_run():
         default=False
     )
 
-    # shared on all pages
-    st.logo("assets/dma/dma.png", size="large")
-    
     # Main menu for DMA
     menu = {
             "About": [gh_about_dma_page, gh_about_gh_page],
