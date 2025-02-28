@@ -58,7 +58,7 @@ def dma_run():
     
     # Main menu for DMA
     menu = {
-            "About": [gh_about_dma_page],
+            "About": [gh_about_dma_page, gh_about_gh_page],
             "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
         }
 
