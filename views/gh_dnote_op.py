@@ -156,7 +156,7 @@ def display_report(mr_instance, param="0"):
     </td>
     <td align="center" width="50%">
 
-    ### 수술기록지 ( Operation Record )
+    ### 수술기록지 ( Operation Report )
     Date of Operation: `{} `
 
     </td>
