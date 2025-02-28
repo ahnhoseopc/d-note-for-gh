@@ -8,7 +8,7 @@ def dma_run():
         page="views/gh_about_dma.py",
         title="DMA",
         icon=":material/account_circle:",
-        default=False
+        default=True
     )
 
     gh_about_gh_page = st.Page(
@@ -29,7 +29,7 @@ def dma_run():
         page="views/gh_dnote.py",
         title="D-Note",
         icon=":material/clinical_notes:",
-        default=True
+        default=False
     )
 
     gh_dqna_page = st.Page(
@@ -48,32 +48,23 @@ def dma_run():
 
     gh_dinq_page = st.Page(
         page="views/gh_dinq.py",
-        title="D-INQuiry",
+        title="D-INQ",
         icon=":material/medical_information:",
         default=False
     )
 
-    # gh_api_page = st.Page(
-    #     page="views/gh_dapi.py",
-    #     title="D-API",
-    #     icon=":material/question_exchange:",
-    #     default=False
-    # )
-
     # shared on all pages
     st.logo("assets/dma/dma.png", size="large")
 
+    # Main menu for DMA
+    menu = {
+            "About": [gh_about_dma_page],
+            "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
+        }
+
+    # Menu for admin
     if "user_id" in st.session_state and st.session_state.user_id == "dma":
-        menu = {
-                "About": [gh_about_dma_page, gh_about_gh_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
-                "Configuration (Admin)": [gh_dbquery_page],
-            }
-    else:
-        menu = {
-                "About": [gh_about_dma_page, gh_about_gh_page],
-                "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
-            }
+        menu["Configuration (Admin)"] = [gh_dbquery_page]
 
     with st.sidebar.container():
         pg = st.navigation(menu)
@@ -82,26 +73,7 @@ def dma_run():
     pg.run()
     pass
 
-print(f"gh_app.__name__: {__name__}")
-
-# import services.dma_api as api
-# from threading import Thread
-
-# if "Fastapi" not in st.session_state:
-#     st.session_state["Fastapi"] = "stopped"
-# print(f"Fastapi 1: {st.session_state["Fastapi"]}")
-
 # 메인 실행
 if __name__ == "__main__":
-    # print(f"Fastapi 2: {st.session_state["Fastapi"]}")
-    # # FastAPI 서버 실행 (별도 스레드)
-    # if st.session_state["Fastapi"] == "stopped":
-    #     print(f">>> Fastapi start running")
-    #     api_thread = Thread(target=api.run_fastapi, daemon=True)
-    #     api_thread.start()
-    #     st.session_state["Fastapi"] = "started"
-    #     print(f"Fastapi 3: {st.session_state["Fastapi"]}")
-    
-    # Streamlit UI 실행
     dma_run()
     pass

@@ -243,11 +243,11 @@ def display_report(mr_instance, param="0"):
     # ADDITIONAL INFO
     cols = st.columns(7)
     with cols[0]: st.write("###### 패드확인:")
-    with cols[1]: st.radio("", ["유", "무"], key=f"padyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
+    with cols[1]: st.radio("pad", ["유", "무"], key=f"padyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
     with cols[2]: st.write("###### Tissue of path.:") 
-    with cols[3]: st.radio("", ["유", "무"], key=f"pathyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
+    with cols[3]: st.radio("path", ["유", "무"], key=f"pathyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
     with cols[4]: st.write("###### Drains:")
-    with cols[5]: st.radio("", ["유", "무"], key=f"drainyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
+    with cols[5]: st.radio("drain", ["유", "무"], key=f"drainyn_{param}", index=1, horizontal=True, label_visibility="collapsed")
     with cols[6]: st.text_input("Drains", key=f"drain_value_{param}", value=op_record["operation check"]["drain pipe contents"], label_visibility= "collapsed")
 
     cols = st.columns([1,5])
