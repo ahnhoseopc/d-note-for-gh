@@ -27,7 +27,7 @@ def main():
     with cols[2]:
         col2 = st.columns(3, vertical_alignment="center")
         with col2[1]:
-            if st.button("\>"):
+            if st.button("\\>"):
                 st.session_state.image_index = (st.session_state.image_index + 1) % len(image_files)
 
     cols = st.columns(2)
