@@ -107,8 +107,6 @@ def display_report(mr_instance):
                 st.markdown("#### Comments")
                 st.code(result["test note"])
 
-            st.divider()
-
         if lab == "cytology test":
             cols = st.columns(2)
             with cols[0]:
@@ -120,8 +118,6 @@ def display_report(mr_instance):
 
             st.markdown("#### Test Result")
             st.code(result["test result"])
-
-            st.divider()
 
         if lab == "diagnostic test":
             cols = st.columns(2)
@@ -154,8 +150,6 @@ def display_report(mr_instance):
                 st.markdown("#### Test Unit")
                 st.code(result["test unit"])
 
-            st.divider()
-
         if lab == "vital signs":
             cols = st.columns(2)
             with cols[0]:
@@ -186,8 +180,6 @@ def display_report(mr_instance):
                 st.markdown("#### Diastolic Blood Pressure")
                 st.code(result["diastolic blood pressure"])
 
-            st.divider()
-
         if lab == "video reading":
             cols = st.columns(2)
             with cols[0]:
@@ -205,6 +197,6 @@ def display_report(mr_instance):
                 st.markdown("#### Impression")
                 st.code(result["impression"])
 
-            st.divider()
+        st.divider()
 
     pass

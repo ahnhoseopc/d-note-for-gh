@@ -38,8 +38,8 @@ gcloud run deploy %APP% --project %PROJECT_ID% --image %TAG% --platform managed 
 
 ## Environment setup for powershell
 $env:PROJECT_ID='dk-medical-solutions'
-$env:REGION='asia-northeast3'
-$env:APP='dk-ghmh'
+$env:REGION='asia-northeast1'
+$env:APP='dk-dma'
 $env:TAG="gcr.io/$env:PROJECT_ID/$env:APP"
 
 ## Cloud build
