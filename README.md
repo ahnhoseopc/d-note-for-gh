@@ -23,7 +23,7 @@ pip freeze > requirements.txt
 
 ## Environment setup
 set PROJECT_ID=dk-medical-solutions
-set REGION=asia-northeast3
+set REGION=asia-northeast1
 set APP=dk-dma
 set TAG=gcr.io/%PROJECT_ID%/%APP%
 

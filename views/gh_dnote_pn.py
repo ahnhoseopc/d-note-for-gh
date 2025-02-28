@@ -86,13 +86,8 @@ def display_report(mr_instance, param="0"):
     if len(options) == 1:
         order_date = options[0]
         st.write(f"기록일: {order_date}")
-        # order_date = st.select_slider("기록일", options=options, value=options[0], disabled=True)
     else:
-        order_date = st.select_slider(
-            "기록일",
-            options=options,
-            # value=(notes[0]["order date"], notes[-1]["order date"]),
-        )
+        order_date = st.select_slider("기록일", options=options)
 
     note = next((note for note in notes if note["order date"] == order_date), None)
     if note is None:

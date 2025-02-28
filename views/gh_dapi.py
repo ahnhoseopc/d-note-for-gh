@@ -28,7 +28,6 @@ def streamlit_ui():
     models = asyncio.run(api.get_models()) 
     # loop = asyncio.get_event_loop()
     # models = loop.run_until_complete(api.get_models())
-    # logging.info(models)
     
     model = st.selectbox("Select Model", models["models"])
     
@@ -60,7 +59,6 @@ def streamlit_ui():
             "model_name": "gemini-pro"
         }
     )
-    logging.info(response.json())
     """)
 
 

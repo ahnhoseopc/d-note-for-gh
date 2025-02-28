@@ -1,7 +1,7 @@
 import random
 import string
 import logging
-
+ 
 def get_random_string(length):
     # With combination of lower and upper case
     result_str = ''.join(random.choice(string.ascii_lowercase) for i in range(length))
@@ -11,7 +11,6 @@ def get_random_string(length):
 import json
 
 def is_json_format(data):
-    # logging.info("json output: ", data)
     try:
         json.loads(data)
         return True
