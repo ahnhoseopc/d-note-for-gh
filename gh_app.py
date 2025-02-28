@@ -11,13 +11,6 @@ def dma_run():
         default=True
     )
 
-    gh_about_gh_page = st.Page(
-        page="views/gh_about_gh.py",
-        title="Good Hospitals",
-        icon=":material/account_circle:",
-        default=False
-    )
-
     gh_dbquery_page = st.Page(
         page="views/gh_dbquery.py",
         title="Database Query",
