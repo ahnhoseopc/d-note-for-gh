@@ -37,13 +37,11 @@ model = {"gemini-flash":None, "gemini-pro":None, "medlm":None}
 def get_model(model_name, si=SI):
     global model
     if model_name not in model.keys():
-        print(f"{model_name} not valid, use ")
         model_name = list(model.keys())[0]
 
     if model[model_name] is None:
         model[model_name] = GenerativeModel( MODEL[model_name], system_instruction=[si] )
 
-    # print(model_name, model[model_name]._model_name)
     return model[model_name]
 
 def generate(prompts, model_name):

@@ -6,6 +6,8 @@ import views.gh_dnote_ts as ts
 import views.gh_dnote_op as op
 import views.gh_dnote_rt as rt
 import views.gh_dnote_db as db
+
+import forms.sidebar as sidebar
 import forms.sidebar_note as sidebar_note
 
 import streamlit as st
@@ -28,27 +30,21 @@ def main():
     # 입원기록지
     with tab1:
         ad.ad_record_source()
-        st.divider()
+
     with tab3:
         pn.pn_record_source()
-        st.divider()
+
     with tab4:
         ts.ts_record_source()
-        st.divider()
+
     with tab6:
         db.db_record_source()
-        st.divider()
 
     # 수술기록지
     with tab2:
-        # col1, col2 = st.columns([5, 5])
-        
         # Retrieving Source and Generate Target
         op.op_record_source()        
-
         op.op_record_target()
-        
-        st.divider()
 
     # 퇴원요약지
     with tab5:
@@ -56,16 +52,13 @@ def main():
         # col1, col2 = st.columns([5, 5])
 
         rt.rt_summary_source()
-
         rt.rt_summary_target()
         
-        st.divider()
+    st.divider()
 
     cols = st.columns(7)
     with cols[3]:
-        st.image("https://www.moonhwa.or.kr/moonhwa/images/main02/img_symbol0302.png", width=300)
-
-import forms.sidebar as sidebar
+        st.image("assets/gh/gh_doctor.png", width=300)
 
 if __name__ == "__page__":
     main()
