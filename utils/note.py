@@ -57,6 +57,9 @@ def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
     # 수술 기록 Operation Report
     df_or = get_medical_data("query_OR_P", patient_id, admsn_date)
 
+    # 수술 기록 Operation Report
+    df_orpr = get_medical_data("query_ORPR", patient_id, admsn_date, dept, doctor)
+
     # 결과 기록 Progress notes
     df_pn = get_medical_data("query_PN_P", patient_id, admsn_date)
     df_pn = df_pn.map(decode_rtf)
@@ -85,6 +88,7 @@ def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
         "il":df_il.to_dict(orient="records"), 
         "oy":df_oy.to_dict(orient="records"), 
         "or":df_or.to_dict(orient="records"), 
+        "orpr": df_orpr.to_dict(orient="records"),
         "pn":df_pn.to_dict(orient="records"), 
         "rt":df_rt.to_dict(orient="records"), 
 
@@ -270,6 +274,7 @@ def get_patient_mr_json(mr_info):
             }
     
     # Protocols
+    mr["operation procedures"] = mr_info["orpr"]
     mr["operation protocols"] = mr_info["pt_o"]
     mr["discharge protocols"] = mr_info["pt_r"]
 
@@ -287,6 +292,8 @@ def fill_or_source(patient_id, admsn_date, kwa, spth, mr_info):
     df_il = mr_info.get("il")
     # 수술예약 정보
     df_oy = mr_info.get("oy")
+   # Procedures of Doctor
+    df_pr = mr_info.get("orpr")
    # Protocol of Doctor
     df_pt = mr_info.get("pt_o")
 
@@ -343,6 +350,7 @@ def fill_or_source(patient_id, admsn_date, kwa, spth, mr_info):
         "report date": df_ae["ocm31sysdat"][0] if len(df_ae) > 0 else df_ay["ocm41sysdat"][0] if len(df_ay) > 0 else None,
         "report time": df_ae["ocm31systm"][0] if len(df_ae) > 0 else df_ay["ocm41systime"][0] if len(df_ay) > 0 else None,
 
+        "operation procedures": df_pr.to_dict(orient="records"),
         "protocols of doctor": df_pt.to_dict(orient="records")
     }
 
