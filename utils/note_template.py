@@ -50,6 +50,7 @@ MEDICAL_RECORD_TEMPLATE = {
         "treatment plan": "",
         "discharge plan": "",
         "educational plan": "",
+        "operation name reserved": "",
         },
 
     "operation records": [{
@@ -117,6 +118,10 @@ MEDICAL_RECORD_TEMPLATE = {
 
         "report date": "",
         "report time": "",
+
+        "operation procedures": [],
+        "operation protocols": [],
+        "discharge protocols": [],
     }
 }
 

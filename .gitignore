@@ -6,3 +6,4 @@
 .streamlit/secrets.toml
 .streamlit/gcp_credentials*.json
 resources/install
+resources/procedures/

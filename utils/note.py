@@ -60,6 +60,9 @@ def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
     # 수술 기록 Operation Report
     df_or = get_medical_data("query_OR_P", patient_id, admsn_date)
 
+    # 수술 기록 Operation Report
+    df_orpr = get_medical_data("query_ORPR", patient_id, admsn_date, dept, doctor)
+
     # 결과 기록 Progress notes
     df_pn = get_medical_data("query_PN_P", patient_id, admsn_date)
     df_pn = df_pn.map(decode_rtf)
@@ -67,11 +70,11 @@ def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
     # 퇴원 요약 Discharge Summary
     df_rt = get_medical_data("query_RT_P", patient_id, admsn_date)
 
-    # 수술 프로토콜 Operation Protocols of Doctor
+    # 수술 프로토콜 Operation protocols
     df_pt_o = get_medical_data("query_PT_O", None, None, dept, doctor)
     df_pt_o = df_pt_o.map(decode_rtf)
 
-    # 퇴원요약 프로토콜 Discharge Protocols of Doctor
+    # 퇴원요약 프로토콜 Discharge protocols
     df_pt_r = get_medical_data("query_PT_R", None, None, dept, doctor)
     df_pt_r["protocol"] = df_pt_r["protocol"].map(split_protocol)
     df_pt_r = df_pt_r.map(decode_rtf)
@@ -88,6 +91,7 @@ def get_patient_mr_data(patient_id, admsn_date, dept, doctor):
         "il":df_il.to_dict(orient="records"), 
         "oy":df_oy.to_dict(orient="records"), 
         "or":df_or.to_dict(orient="records"), 
+        "orpr": df_orpr.to_dict(orient="records"),
         "pn":df_pn.to_dict(orient="records"), 
         "rt":df_rt.to_dict(orient="records"), 
 
@@ -273,6 +277,7 @@ def get_patient_mr_json(mr_info):
             }
     
     # Protocols
+    mr["operation procedures"] = mr_info["orpr"]
     mr["operation protocols"] = mr_info["pt_o"]
     mr["discharge protocols"] = mr_info["pt_r"]
 
@@ -290,6 +295,8 @@ def fill_or_source(patient_id, admsn_date, kwa, spth, mr_info):
     df_il = mr_info.get("il")
     # 수술예약 정보
     df_oy = mr_info.get("oy")
+   # Procedures of Doctor
+    df_pr = mr_info.get("orpr")
    # Protocol of Doctor
     df_pt = mr_info.get("pt_o")
 
@@ -337,16 +344,18 @@ def fill_or_source(patient_id, admsn_date, kwa, spth, mr_info):
             "diagnosis": [df_il[icd][0] for icd in ["icd01","icd02","icd03","icd04","icd05"] if len(df_il[icd][0].strip()) > 0] if len(df_il) > 0 else None,
             },
         "plan": {
-            "operation name": df_oy["operation_name"][0] if len(df_oy) > 0 else None,
-            "plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
+            "operation plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
+            "treatment plan": df_ae["ocm31plan"][0] if len(df_ae) > 0 else df_ay["ocm41planop"][0] if len(df_ay) > 0 else None,
             "discharge plan": df_ae["ocm31rtplan"][0] if len(df_ae) > 0 else df_ay["ocm41rtplan"][0] if len(df_ay) > 0 else None,
             "educational plan": df_ae["ocm31edu"][0] if len(df_ae) > 0 else df_ay["ocm41edct"][0] if len(df_ay) > 0 else None,
+            "operation name reserved": df_oy["operation_name"][0] if len(df_oy) > 0 else None,
             },
 
         "report date": df_ae["ocm31sysdat"][0] if len(df_ae) > 0 else df_ay["ocm41sysdat"][0] if len(df_ay) > 0 else None,
         "report time": df_ae["ocm31systm"][0] if len(df_ae) > 0 else df_ay["ocm41systime"][0] if len(df_ay) > 0 else None,
 
-        "protocols of doctor": df_pt.to_dict(orient="records")
+        "operation procedures": df_pr.to_dict(orient="records"),
+        "operation protocols": df_pt.to_dict(orient="records")
     }
 
     return or_source
@@ -486,7 +495,7 @@ def fill_rt_source(patient_id, admsn_date, kwa, spth, mr_info):
 
         "progress notes": df_pn[['odr03odrdat', 'odr03odrcmt']].to_dict(orient="records"),
 
-        "protocols of doctor": df_pt_r.to_dict(orient="records")
+        "discharge protocols": df_pt_r.to_dict(orient="records")
     }
 
     return rt_source

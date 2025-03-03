@@ -16,6 +16,16 @@ def save_query(query_name, query):
     with open(config_path, "w", encoding="utf-8") as f:
         toml.dump(config_data, f)
 
+def delete_query(query_name):
+    config_path = Path(".streamlit", QUERY_CONFIG_TOML)
+    with open(config_path, "r", encoding="utf-8") as f:
+        config_data = toml.load(f)
+        if query_name in config_data["database"]:
+            del config_data["database"][query_name]
+
+    with open(config_path, "w", encoding="utf-8") as f:
+        toml.dump(config_data, f)
+
 def save_query_list(query_list): # NEW FUNCTION TO PERSIST THE QUERY LIST
     config_path = Path(".streamlit", QUERY_CONFIG_TOML)
     with open(config_path, "r", encoding="utf-8") as f:
@@ -28,6 +38,8 @@ def get_query(query_name):
     config_path = Path(".streamlit", QUERY_CONFIG_TOML)
     with open(config_path, "r", encoding="utf-8") as f:
         config_data = toml.load(f)
+        if query_name not in config_data["database"]:
+            return None
         return config_data["database"][query_name]
 
 def get_query_list(): # MODIFY TO RETRIEVE THE LIST DIRECTLY

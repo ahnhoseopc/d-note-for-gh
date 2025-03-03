@@ -23,6 +23,12 @@ OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression
 2. 추정된 "estimated operation name"을 참조하여 "protocols of doctor"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
 3. 응답으로 다음과 같은 json format으로 제시하라. {"present illness":"", "impression":"", "plan":"", "operation name":"", "estimated operation name":"", "code":"", "code name":"", "protocol":""}
 """
+OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "operation name"을 확인하여 "estimated operation name"으로 사용하라.
+2. "estimated operation name"은 여러개의 수술명을 포함할 수 있다. 
+3. "operation procedures"는 operation name = "ocm06opname" 에 따른 procedures and findings = "ocm06cmtb"의 예시이다. "ocm06opname"는 여러개의 세부수술명이 포함되어 있을수 있다.  "ocm06cmtb"에는 적혀져 있는 수술의 procedures and findings가 저장되어 있다.
+4. "estimated operation name"에 포함되어 있는 세부수술명에 대한 procedures and findings를 "ocm06cmtb"에서 공통적인 부분을 추출하고 수술마다 변경되는 부분은 []으로 구분하여 표시해서 "proctocol"로 정의하라.
+5. 응답으로 다음과 같은 json format으로 제시하라. {"present illness":"", "impression":"", "plan":"", "operation name":"", "estimated operation name":"", "code":"", "code name":"", "protocol":""}
+"""
 
 def op_record_target():
     ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]

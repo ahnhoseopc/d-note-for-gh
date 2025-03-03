@@ -13,7 +13,7 @@ def main():
     # 프로젝트 내부 이미지 경로
     image_files = ["assets/dma/00_dma_main.jpg", "assets/dma/00_dma_main-1chat.jpg", "assets/dma/00_dma_main-2qna.jpg", "assets/dma/00_dma_main-3note.jpg", "assets/dma/00_dma_main-4inq.jpg"]
     if "image_index" not in st.session_state:
-        st.session_state.image_index = 1
+        st.session_state.image_index = 3
 
     cols = st.columns([2,4,2], vertical_alignment="center")
     with cols[0]:
