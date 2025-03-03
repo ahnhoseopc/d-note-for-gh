@@ -137,6 +137,7 @@ def get_patient_mr_json(mr_info):
 
     mr["assessment"]["impression"] = mr_info["ae"][0]["ocm31imp"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41imp"] if len(mr_info["ay"]) > 0 else None
 
+    mr["plan"]["operation plan"] = mr_info["ae"][0]["ocm31plan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41planop"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["treatment plan"] = mr_info["ae"][0]["ocm31plan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41planop"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["discharge plan"] = mr_info["ae"][0]["ocm31rtplan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41rtplan"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["educational plan"] = mr_info["ae"][0]["ocm31edu"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41edct"] if len(mr_info["ay"]) > 0 else None
