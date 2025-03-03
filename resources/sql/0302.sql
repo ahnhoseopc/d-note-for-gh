@@ -1,0 +1,73 @@
+    SELECT DISTINCT OEY07IDNOA, OEY07LWDAT, OEY07KWA, OEY07SPTH,
+        REPLACE(REPLACE(REPLACE(
+        TRIM(BOTH CHR(10) FROM (TRIM(BOTH CHR(9) FROM 
+        SUBSTR(OEY07CMTA, 
+                INSTR(OEY07CMTA, '|', 1, 6)+1, 
+                INSTR(OEY07CMTA, '|', 1, 7)-INSTR(OEY07CMTA, '|', 1, 6)-1
+            )
+        ))), CHR(9)), CHR(13)), CHR(10), CHR(10))  OP07NAME
+    FROM JAIN_OCS.OEYOPR07 OPR07 
+    WHERE 1=1 --AND ROWNUM < 100
+    -- AND OEY07IDNOA = '0642544'
+    -- AND OEY07LWDAT = '20241205'
+    AND OEY07SPTH IN ('002806' , '001639')
+    AND OEY07LWDAT >= TO_CHAR(ADD_MONTHS(SYSDATE, -6), 'YYYYMMDD')
+    ORDER BY OEY07LWDAT DESC
+    ;
+/*
+002806 1139044 20250228 septo rf
+002806 0606479 20250227 ESS&septo rf
+
+*/
+
+WITH NN as (SELECT LEVEL NNPOS FROM DUAL CONNECT BY LEVEL < 20)
+    ,OP07 AS (
+        SELECT DISTINCT 
+            LOWER(REPLACE(REPLACE(REPLACE(
+            TRIM(BOTH CHR(10) FROM (TRIM(BOTH CHR(9) FROM 
+            SUBSTR(OEY07CMTA, 
+                    INSTR(OEY07CMTA, '|', 1, 6)+1, 
+                    INSTR(OEY07CMTA, '|', 1, 7)-INSTR(OEY07CMTA, '|', 1, 6)-1
+                )
+            ))), CHR(9)), CHR(13)), CHR(10), CHR(10)))  OP07NAME
+        FROM JAIN_OCS.OEYOPR07 OPR07 
+        WHERE 1=1 AND ROWNUM < 100
+        AND OEY07IDNOA = '0606479'
+        AND OEY07LWDAT = '20250227'
+        AND OEY07SPTH IN ('002806' , '001639')
+    )
+    ,OP06 AS (
+        SELECT OCM06IDNOA, OCM06LWDAT,OCM06OPDAT,
+            SUBSTR(OCM06CMTA, 
+                    1, 
+                    INSTR(OCM06CMTA, '|', 1, 1)-1
+                ) SPTH,
+            LOWER(REPLACE(REPLACE(REPLACE(
+            TRIM(BOTH CHR(10) FROM (TRIM(BOTH CHR(10) FROM 
+            SUBSTR(OCM06CMTA, 
+                    INSTR(OCM06CMTA, '|', 1, 8)+1, 
+                    INSTR(OCM06CMTA, '|', 1, 9)-INSTR(OCM06CMTA, '|', 1, 8)-1
+                )
+            ))), CHR(9)), CHR(13)), CHR(10), CHR(10)))  OP06NAME
+            , OCM06CMTB 
+            , OCM06CMTC 
+        FROM JAIN_OCS.OCMOPR06
+        WHERE 1=1 -- AND ROWNUM < 100
+        AND OCM06STATUS IN ('OP2','OPG')
+        AND OCM06LWDAT >= TO_CHAR(ADD_MONTHS(SYSDATE, -6), 'YYYYMMDD')
+        And SUBSTR(OCM06CMTA, 
+                    1, 
+                    INSTR(OCM06CMTA, '|', 1, 1)-1
+                ) IN ('002806' , '001639')
+        ORDER BY OCM06OPDAT DESC
+    )
+-- SELECT NNPOS, regexp_substr(OP07NAME, '[^'||CHR(10)||']+', 1, NNPOS) AOP
+--     ,OCM06IDNOA, OCM06LWDAT, OP06NAME, OP07NAME
+SELECT DISTINCT regexp_substr(OP07NAME, '[^'||CHR(10)||'\&]+', 1, NNPOS) OPNAMESUB, OP07NAME, OP06NAME, OCM06CMTB, OCM06CMTC
+FROM OP07
+CROSS JOIN NN
+LEFT JOIN OP06 ON OP06NAME like '%' || regexp_substr(OP07NAME, '[^'||CHR(10)||'\&]+', 1, NNPOS) || '%'
+WHERE regexp_substr(OP07NAME, '[^'||CHR(10)||'\&]+', 1, NNPOS) IS NOT NULL
+-- ORdER BY OCM06IDNOA, OCM06LWDAT;
+--AND ROWNUM < 10
+ORDER BY OP06NAME;
