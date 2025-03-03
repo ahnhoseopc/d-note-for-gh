@@ -34,7 +34,7 @@ def op_record_target():
     ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]
     ai_model = ai_models[-1]
     or_prompt_proto = OR_PROMPT_DEFAULT_PROTO
-    or_prompt_proc = OR_PROMPT_DEFAULT_PROTO
+    or_prompt_proc = OR_PROMPT_DEFAULT_PREV
 
     # 수술기록지 생성 프롬프트
     # st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
