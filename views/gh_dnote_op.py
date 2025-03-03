@@ -44,9 +44,9 @@ def op_record_target():
     with cols[0]:
         cols2 = st.columns(2)
         with cols2[0]:
-            or_write_1 = st.button("➡️ 수술기록지 초안 작성1", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
+            or_write_1 = st.button("➡️ 수술기록지 초안작성 (프로토콜)", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
         with cols2[1]:
-            or_write_2 = st.button("➡️ 수술기록지 초안 작성2", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
+            or_write_2 = st.button("➡️ 수술기록지 초안작성 (수술기록)", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
 
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
