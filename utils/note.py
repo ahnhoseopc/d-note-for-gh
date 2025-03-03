@@ -146,7 +146,7 @@ def get_patient_mr_json(mr_info):
     # 상병/진단 정보
     mr["assessment"]["diagnosis"] = [mr_info["il"][0][icd] for icd in ["icd01","icd02","icd03","icd04","icd05"] if len(mr_info["il"][0][icd].strip()) > 0] if len(mr_info["il"]) > 0 else None
     # 수술예약 정보
-    mr["plan"]["operation plan"] = mr_info["oy"][0]["operation_name"] if len(mr_info["oy"]) > 0 else None
+    mr["plan"]["operation name reserved"] = mr_info["oy"][0]["operation_name"] if len(mr_info["oy"]) > 0 else None
 
     # Lab Results
     mr["objective"]["lab-result"]["biopsy test"] = []
