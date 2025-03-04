@@ -19,11 +19,11 @@ def op_record_source():
 
     return "op-record-source"
 
-OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "present illness" , "impression", "plan", "operation name"을 확인하여 "estimated operation name"을 추정하라.
-2. 추정된 "estimated operation name"을 참조하여 "protocols of doctor"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
+OR_PROMPT_DEFAULT_PROTO = """1. 입력된 데이터의 "present illness" , "impression", "plan", "operation name"을 확인하여 "estimated operation name"을 추정하라.
+2. 추정된 "estimated operation name"을 참조하여 "operation protocols"의 "code" 또는 "code name"과 대응하는 것을 찾아서 해당하는 "protocol"을 찾아라.
 3. 응답으로 다음과 같은 json format으로 제시하라. {"present illness":"", "impression":"", "plan":"", "operation name":"", "estimated operation name":"", "code":"", "code name":"", "protocol":""}
 """
-OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "operation name"을 확인하여 "estimated operation name"으로 사용하라.
+OR_PROMPT_DEFAULT_PREV = """1. 입력된 데이터의 "operation name"을 확인하여 "estimated operation name"으로 사용하라.
 2. "estimated operation name"은 여러개의 수술명을 포함할 수 있다. 
 3. "operation procedures"는 operation name = "ocm06opname" 에 따른 procedures and findings = "ocm06cmtb"의 예시이다. "ocm06opname"는 여러개의 세부수술명이 포함되어 있을수 있다.  "ocm06cmtb"에는 적혀져 있는 수술의 procedures and findings가 저장되어 있다.
 4. "estimated operation name"에 포함되어 있는 세부수술명에 대한 procedures and findings를 "ocm06cmtb"에서 공통적인 부분을 추출하고 수술마다 변경되는 부분은 []으로 구분하여 표시해서 "proctocol"로 정의하라.
@@ -33,7 +33,8 @@ OR_PROMPT_DEFAULT = """1. 입력된 데이터의 "operation name"을 확인하�
 def op_record_target():
     ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]
     ai_model = ai_models[-1]
-    or_prompt = OR_PROMPT_DEFAULT
+    or_prompt_proto = OR_PROMPT_DEFAULT_PROTO
+    or_prompt_proc = OR_PROMPT_DEFAULT_PROTO
 
     # 수술기록지 생성 프롬프트
     # st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
@@ -41,21 +42,28 @@ def op_record_target():
     # 수술기록지 작성 버튼
     cols = st.columns([3, 3, 3])
     with cols[0]:
-        or_write = st.button("➡️ 수술기록지 초안 작성", key="or-write", use_container_width=True, disabled=not st.session_state.get("mr_json"))
+        cols2 = st.columns(2)
+        with cols2[0]:
+            or_write_1 = st.button("➡️ 수술기록지 초안작성 (프로토콜)", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
+        with cols2[1]:
+            or_write_2 = st.button("➡️ 수술기록지 초안작성 (수술기록)", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
 
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ Prompt", use_container_width=True):
-                prompt = st.text_area("Prompt", value=or_prompt, height=150, key="or-prompt")
+                prompt = st.text_area("Prompt for protocols", value=or_prompt_proto, height=150, key="or-prompt-proto")
                 if prompt:
-                    or_prompt = prompt
+                    or_prompt_proto = prompt
+                prompt = st.text_area("Prompt for procedures", value=or_prompt_proc, height=150, key="or-prompt-proc")
+                if prompt:
+                    or_prompt_proc = prompt
 
     with cols[2]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ AI 모델", use_container_width=True):
                 ai_model = st.radio("AI 모델 선택", ai_models, key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
-    if or_write:
+    if or_write_1: # Protocol 이용
         mr_json = st.session_state.get("mr_json")
         if "mr_json" not in st.session_state or "patient" not in mr_json:
             return
@@ -65,10 +73,10 @@ def op_record_target():
         mr_json_new["patient"] = mr_json["patient"]
         mr_json_new["clinical staff"] = mr_json["clinical staff"]
 
-        mr_json_new["subjective"] = mr_json["subjective"]
-        mr_json_new["objective"] = mr_json["objective"]
-        mr_json_new["assessment"] = mr_json["assessment"]
-        mr_json_new["plan"] = mr_json["plan"]
+        mr_json_new["subjective"] = mr_json["subjective"] ## CC PI PX SX FX
+        mr_json_new["objective"] = mr_json["objective"]   ## LAB
+        mr_json_new["assessment"] = mr_json["assessment"] ## IMP DX
+        mr_json_new["plan"] = mr_json["plan"]             ## OP TR DS ED ONR
 
         mr_json_new["operation protocols"] = mr_json["operation protocols"]
 
@@ -76,7 +84,34 @@ def op_record_target():
         postoperative_diagnosis = preoperative_diagnosis
 
         operation_name, operation_protocol = "", ""
+
+        or_prompt = or_prompt_proto
+
+    if or_write_2:
+        mr_json = st.session_state.get("mr_json")
+        if "mr_json" not in st.session_state or "patient" not in mr_json:
+            return
+
+        mr_json_new = template.get_medical_record_template()
+
+        mr_json_new["patient"] = mr_json["patient"]
+        mr_json_new["clinical staff"] = mr_json["clinical staff"]
+
+        mr_json_new["subjective"] = mr_json["subjective"] ## CC PI PX SX FX
+        mr_json_new["objective"] = mr_json["objective"]   ## LAB
+        mr_json_new["assessment"] = mr_json["assessment"] ## IMP DX
+        mr_json_new["plan"] = mr_json["plan"]             ## OP TR DS ED ONR
+
+        mr_json_new["operation procedures"] = mr_json["operation procedures"]
+
+        preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
+        postoperative_diagnosis = preoperative_diagnosis
+
+        operation_name, operation_protocol = "", ""
         
+        or_prompt = or_prompt_proc
+
+    if or_write_1 or or_write_2:
 
         with st.expander("AI 결과", expanded=False):
             st.session_state["or-result"] = ""
@@ -162,7 +197,8 @@ def display_report(mr_instance, param="0"):
     </td>
     <td align="center" width="50%">
 
-    ### 수술기록지 ( Operation Report )
+    ### 수술기록지  
+    #### ( Operation Report )  
     Date of Operation: `{} `
 
     </td>

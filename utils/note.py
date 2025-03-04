@@ -140,6 +140,7 @@ def get_patient_mr_json(mr_info):
 
     mr["assessment"]["impression"] = mr_info["ae"][0]["ocm31imp"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41imp"] if len(mr_info["ay"]) > 0 else None
 
+    mr["plan"]["operation plan"] = mr_info["ae"][0]["ocm31plan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41planop"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["treatment plan"] = mr_info["ae"][0]["ocm31plan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41planop"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["discharge plan"] = mr_info["ae"][0]["ocm31rtplan"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41rtplan"] if len(mr_info["ay"]) > 0 else None
     mr["plan"]["educational plan"] = mr_info["ae"][0]["ocm31edu"] if len(mr_info["ae"]) > 0 else mr_info["ay"][0]["ocm41edct"] if len(mr_info["ay"]) > 0 else None
@@ -148,7 +149,7 @@ def get_patient_mr_json(mr_info):
     # 상병/진단 정보
     mr["assessment"]["diagnosis"] = [mr_info["il"][0][icd] for icd in ["icd01","icd02","icd03","icd04","icd05"] if len(mr_info["il"][0][icd].strip()) > 0] if len(mr_info["il"]) > 0 else None
     # 수술예약 정보
-    mr["plan"]["operation plan"] = mr_info["oy"][0]["operation_name"] if len(mr_info["oy"]) > 0 else None
+    mr["plan"]["operation name reserved"] = mr_info["oy"][0]["operation_name"] if len(mr_info["oy"]) > 0 else None
 
     # Lab Results
     mr["objective"]["lab-result"]["biopsy test"] = []
