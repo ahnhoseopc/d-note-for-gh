@@ -19,22 +19,90 @@ def main():
     #
     st.title("D-Chat, 전문 의료업무 정보 Agent")
 
-    tab0, tab1, tab2 = st.tabs(["의료업무 정보화 Agent", "**요양급여규정 안내**", "보험심사청구 업무"])
+    tab0, tab1, tab2, tab3 = st.tabs(["의료업무 정보화 Agent", "**요양급여규정 안내**", "보험심사청구 업무", "상병코드 매핑"])
 
     with tab0:
         intro.intro_record_source()
 
     with tab1:
-        chat_container = st.container()
+        col1, col2 = st.columns([8,2])
+        with col1:
+            chat_container = st.container()
+            with chat_container:
+            
+                # 저장된 챗 메시지 출력 
+                st.text(st.session_state.chat_name, help="채팅 제목")
+                # Display chat messages from history on app rerun
+                for i, message in enumerate(st.session_state.messages):
+                    with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
+                        st.markdown(str(i) + ": " + message["parts"][0]["text"])
+        with col2:
+            st.markdown("#### Recommended questions")
+            st.markdown("1. Questions 2")
+            st.markdown("2. Questions 3")
+            st.markdown("3. Questions 4")
+            st.markdown("4. Questions 5")
+            pass
 
-        with chat_container:
-        
-            # 저장된 챗 메시지 출력 
-            st.text(st.session_state.chat_name, help="채팅 제목")
-            # Display chat messages from history on app rerun
-            for i, message in enumerate(st.session_state.messages):
-                with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
-                    st.markdown(str(i) + ": " + message["parts"][0]["text"])
+    with tab3:
+        col1, col2 = st.columns([8,2])
+        with col1:
+            st.markdown("""
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: none !important;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+""", unsafe_allow_html=True)
+            st.markdown("""
+<table width="100%">
+<tr>
+<td align="left" width="25%">
+
+**등록번호**: {}  
+**진 료 과**: {}  
+
+</td>
+<td align="center" width="50%">
+
+### 입원기록지 ( Addmission Note )
+Date of Admission: {}
+
+</td>
+<td align="right" width="25%">
+<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+</td>
+</tr>
+</table>
+
+""", unsafe_allow_html=True)
+            st.markdown("##### 상병코드  ")
+            st.caption(f"KCD 001002")
+            st.markdown("##### 상병코드상세  ")
+            st.caption(f"KCD 상병명 한글")
+            st.caption(f"KCD 상병명 영문")
+            if "chief_complaint" not in st.session_state: st.session_state.chief_complaint = ""
+            if "present_illness" not in st.session_state: st.session_state.present_illness = ""
+            if "impression" not in st.session_state: st.session_state.impression = ""
+            st.text_area("주호소", value=st.session_state.chief_complaint, height=100, key="cc")
+            st.text_area("현증상", value=st.session_state.present_illness, height=100, key="pi")
+            st.text_area("소견", value=st.session_state.impression, height=100, key="imp")
+            pass
+
+        with col2:
+            st.markdown("#### Recommended questions")
+            st.markdown("1. Questions 2")
+            st.markdown("2. Questions 3")
+            st.markdown("3. Questions 4")
+            st.markdown("4. Questions 5")
+            pass
+
 
     #
     # 사용자 Prompt 입력
