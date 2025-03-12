@@ -1,4 +1,6 @@
 import time
+
+import urllib
 import utils.auth as auth
 import utils.base as base
 import utils.chat as chat
@@ -6,6 +8,22 @@ import forms.sidebar_qna as sidebar_qna
 import views.gh_dchat_00 as intro
 
 import streamlit as st
+
+def show_references_filter(references, filter_text, filter_answer):
+    cols = st.columns(5)
+    with cols[0]:
+        if references:
+            with st.popover("References"):
+                for ref in references:
+                    st.markdown(f"* [{base.make_short(ref['title'], 60)}]({urllib.parse.quote(ref['url_page'], safe=":/?#=", encoding="utf-8")})")
+                    st.markdown(f"  `page: {ref['pageIdentifier']}` `relevance: {ref['relevanceScore']}`")
+                    st.markdown(f"  `{ref['content']}`")
+    with cols[1]:
+        if filter_text:
+            with st.popover("Filtered Text"):
+                st.markdown(f"{filter_text}")
+                st.write("##### Filter answer:")
+                st.json(filter_answer)
 
 @auth.login_required
 def main():
@@ -38,35 +56,16 @@ def main():
                 for i, message in enumerate(st.session_state.messages):
                     with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
                         st.markdown(str(i) + ": " + message["parts"][0]["text"])
+                        show_references_filter(message["references"] if "references" in message else []
+                                        , message["filter_text"] if "filter_text" in message else None
+                                        , message["filter_answer"] if "filter_answer" in message else None)
+
         with col2:
-            st.markdown(
-                """
-                <style>
-                    .bottom-container {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-end;
-                        height: 300px; /* 원하는 높이 설정 */
-                    }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
             sub_container = st.container()
             with sub_container:
-                st.markdown('<div class="bottom-container">', unsafe_allow_html=True)
                 st.markdown("##### 관련 규정")
                 st.markdown("* 요양급여의 적용기준 및 방법에 관한 세부사항")
 
-                st.markdown("##### Related Q*A")
-                if "chat_response" in st.session_state:
-                    if "related_qna_list" in st.session_state.chat_response:
-                        for i, qna in enumerate(st.session_state["chat_response"]["related_qna_list"]):
-                            st.markdown(f"{i+1}. {base.make_short(qna["question"])}")
-                            st.markdown(f"* [{base.make_short(qna["document_title"])}]({qna["document_uri"]}) ")
-                else:
-                    st.markdown("* No related Q&A")
-                st.markdown('</div>', unsafe_allow_html=True)
                 pass
 
     #
@@ -90,19 +89,23 @@ def main():
             #
             chat_response = chat.generate_content(doctor_message["parts"][0]["text"])
             if chat_response:
-                st.session_state.chat_response = chat_response
+                st.session_state.related_qna_list = chat_response["related_qna_list"]
 
-                print(chat_response)
-                # if "answer_text" in chat_response:
-                #     st.write(chat_response["answer_text"])
+                # Add assistant response to chat history
+                st.session_state.messages.append({"role": "assistant"
+                                                  , "parts": [{"text": chat_response["answer_text"]}]
+                                                  , "references": chat_response["references"]
+                                                  , "filter_text": chat_response["filter_text"] if "filter_text" in chat_response else None
+                                                  , "filter_answer": chat_response["filter_answer"] if "filter_answer" in chat_response else None})
 
                 # LLM 응답을 Stream 형식으로 출력 
                 with st.chat_message("assistant", avatar="💻"):
                     if "answer_text" in chat_response:
                         st.markdown(f"{len(st.session_state.messages)}: {chat_response["answer_text"]}")
-
-                # Add assistant response to chat history
-                st.session_state.messages.append({"role": "assistant", "parts": [{"text": chat_response["answer_text"]}]})
+                    if "references" in chat_response:
+                        show_references_filter(chat_response["references"]
+                                                , chat_response["filter_text"] if "filter_text" in chat_response else None
+                                                , chat_response["filter_answer"] if "filter_answer" in chat_response else None)
 
     if "chat_response" in st.session_state:
         if "related_qna_list" in st.session_state.chat_response:
@@ -110,7 +113,8 @@ def main():
                 cols = st.columns(qna_num)
                 for i, qna in enumerate(st.session_state["chat_response"]["related_qna_list"]):
                     with cols[i]:
-                        interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", use_container_width=True)
+                        interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
+                        st.link_button(f"[{base.make_short(qna['document_title'])}]", qna["document_uri"], help=qna["document_title"], use_container_width=True)
                         if interested:
                             # 사용자 Prompt 출력
                             with chat_container.chat_message("user", avatar="👩‍⚕️",):
