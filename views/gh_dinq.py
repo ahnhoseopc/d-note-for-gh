@@ -29,7 +29,15 @@ def main():
         st.image("assets/dma/dinq-admin-detail.png", use_container_width=True)
 
     with tab2:
-        st.image("assets/dma/dinq-app-serviceflow.png")
+        st.markdown("#### 환자용 서비스 화면")
+
+        cols = st.columns([1,4])
+        cols[0].markdown(" ")
+        cols[0].markdown("###  진료정보 조회")
+        cols[0].image("assets/dma/dinq_qr_dk.png", width=300)
+        cols[0].link_button("진료정보 앱","https://devloginside.azurewebsites.net/dk", use_container_width=True)
+        cols[1].image("assets/dma/dinq-app-serviceflow.png", use_container_width=True)
+
 
 # import forms.sidebar as sidebar
 
