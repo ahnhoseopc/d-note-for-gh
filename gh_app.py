@@ -4,7 +4,7 @@ def dma_run():
     st.set_page_config(page_title="Good Hospitals - DK Medical Agents", page_icon="🏥", layout="wide")
 
     # shared on all pages
-    st.logo("assets/gh/gh_logo.png", size="large")
+    st.logo("assets/dma/dk_hospital_logo.png", size="large")
     
     # page setup
     gh_about_dma_page = st.Page(
@@ -12,6 +12,13 @@ def dma_run():
         title="DMA",
         icon=":material/account_circle:",
         default=True
+    )
+
+    gh_about_partners_page = st.Page(
+        page="views/gh_about_partners.py",
+        title="Partners",
+        icon=":material/partner_exchange:",
+        default=False
     )
 
     gh_dbquery_page = st.Page(
@@ -51,7 +58,7 @@ def dma_run():
 
     # Main menu for DMA
     menu = {
-            "About": [gh_about_dma_page, gh_about_gh_page],
+            "About": [gh_about_dma_page, gh_about_partners_page],
             "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
         }
 
