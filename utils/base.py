@@ -46,3 +46,6 @@ def ifnull(value1, value2):
         return value2 if value1 is None else value1
     except Exception:
         return None
+    
+def make_short(sentense, length=16):
+    return sentense[:length] + "..." if len(sentense) > length else sentense
