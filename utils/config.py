@@ -5,7 +5,7 @@ from pathlib import Path
 # -----------------------------------------------------------------------
 # DB Query Collection
 # -----------------------------------------------------------------------
-QUERY_CONFIG_TOML = "dbquery.toml"
+QUERY_CONFIG_TOML = "dma_query.toml"
 
 def save_query(query_name, query):
     config_path = Path(".streamlit", QUERY_CONFIG_TOML)

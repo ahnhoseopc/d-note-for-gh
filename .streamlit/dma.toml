@@ -8,3 +8,7 @@ logo_url = "https://storage.googleapis.com/dk-dma-resources/images/dk_hospital_l
 [apis]
 kcd_api = "https://ark-ai-healthcare-diagnosis-661430115304.us-central1.run.app/"
 chat_api = "https://demo-app-dk-556320446019.us-central1.run.app/"
+
+[prompts]
+OPPROC = "수술명이 주어지면 나누어질수 있는 세부수술로 구분하라. 예시가 주어지면 그런 스타일로 작성하라.\n각 세부수술마다 일반적인 Procedure와 Findings를 템플릿으로 사용할 수 있게 제시하라. 템플릿에서 수술마다 달라질 수 있는 부분은 강조표시를 해서 수정할 수 있게 하라. 강조위치는 []으로 감싸고 강조위치의 이름과 가능한 값을 적어라. 각 Procedure와 Findings는 전문용어와 전문약어를 사용하여 한줄씩 작성하라. 마지막으로 각 세부수술의 Procedures를 먼저 출력하고 그 다음 Findings를 출력하라. 수술명은 \" conization of Cx후 cervicectomy RSO \" 이다. 예시는 다음과 같다. \"자궁경부상부 자궁절제술 상태이다.omentum의 복벽과의 유착이 심하다.양측 난소는 퇴화되어있고,좌측난소는 장과 복벽과의 심한 유착이 있다.@4trochar 방광과 stump를 박리하고,양측 자궁동맥 suture,cut and endo loop함. AP colpotomy후 자궁경부 제거후 cuff closure함. RSO 시행함. EBL;50ml irrigation:500ml Gauze:OK No Drain cystoscopy:OK\"
+OPPROC2= "수술명이 주어지면 나누어질수 있는 세부수술로 구분하라. 각 세부수술마다 일반적인 Procedure와 Findings를 템플릿으로 사용할 수 있게 제시하라. 각 Procedure와 Findings는 전문용어와 전문약어를 사용하여 한줄씩 작성하라. 마지막으로 각 세부수술의 Procedures를 먼저 출력하고 그 다음 Findings를 출력하라. 이 결과를 아래의 json 형식으로 표시하라. { \"Procedures\": [{\"Suboperation\": \"procedures template in markdown format\"}] , \"Findings\": [{\"Suboperation\": \"findings template in markdown format\"}] } 수술명은 \" conization of Cx후 cervicectomy RSO \" 이다."

@@ -27,7 +27,7 @@ WORKDIR $APP_HOME
 
 #  Credentials
 COPY resources/install/config.toml $APP_HOME/.streamlit/config.toml
-COPY resources/install/dbquery.toml $APP_HOME/.streamlit/dbquery.toml
+COPY resources/install/dma_query.toml $APP_HOME/.streamlit/dma_query.toml
 COPY resources/install/secrets.toml $APP_HOME/.streamlit/secrets.toml
 COPY resources/install/gcp_credentials.json $APP_HOME/.streamlit/gcp_credentials.json
 
