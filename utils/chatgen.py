@@ -1,9 +1,10 @@
 import requests
+import utils.config as config
 
 CHATURL = None
-def init_chatgen(project="dk-medical-solutions"):
+def init_chatgen():
     global CHATURL
-    CHATURL = "https://demo-app-dk-556320446019.us-central1.run.app/"
+    CHATURL = config.get_option("apis.chat_api")
 
 init_chatgen()
 

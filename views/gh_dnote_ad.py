@@ -1,3 +1,4 @@
+from utils import config
 import utils.base as base
 
 import streamlit as st
@@ -38,7 +39,7 @@ Date of Admission: {}
 
 </td>
 <td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
+<img src="{}" alt="나의병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -144,7 +145,8 @@ def display_report(mr_instance, param="0"):
     st.write(AD_01_HEADER_3.format(
         mr_instance["patient"]["patient id"], 
         mr_instance["clinical staff"]["department"], 
-        mr_instance["patient"]["date of admission"]), unsafe_allow_html = True)
+        mr_instance["patient"]["date of admission"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
     st.write(AD_02_SUBJECTIVE_4.format(
         base.ifnull(mr_instance["subjective"]["chief complaints"], "<na>"), 

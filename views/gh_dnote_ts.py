@@ -1,5 +1,7 @@
 import streamlit as st
 
+from utils import config
+
 def ts_record_source():
     with st.expander("검사기록", expanded=True):
         display_report(st.session_state.get("mr_json"))
@@ -38,7 +40,7 @@ Date of Result: {}
 
 </td>
 <td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
+<img src="{}" alt="나의병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -87,7 +89,8 @@ def display_report(mr_instance):
         mr_instance["clinical staff"]["department"], 
         lab_name[lab],
         lab_result[lab][0]["result date"] if "result date" in lab_result[lab][0].keys() 
-        else lab_result[lab][0]["result date"]), unsafe_allow_html = True)
+        else lab_result[lab][0]["result date"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
     for result in lab_result[lab]:
         if lab == "biopsy test":

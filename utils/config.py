@@ -89,3 +89,16 @@ def get_chat_content(user_id, chat_name):
         return chat
     else:
         return None
+
+DMA_CONFIG_TOML = "dma.toml"
+def get_option(key):
+    config_path = Path(".streamlit", DMA_CONFIG_TOML)
+    with open(config_path, "r", encoding="utf-8") as f:
+        config_data = toml.load(f)
+        print(config_data)
+        keys = key.split(".")
+        if keys[0] in config_data and keys[1] in config_data[keys[0]]:
+            option_value = config_data[keys[0]][keys[1]]
+            return option_value
+
+    return None

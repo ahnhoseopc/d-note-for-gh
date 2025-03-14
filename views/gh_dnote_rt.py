@@ -1,3 +1,4 @@
+from utils import config
 import utils.base as base
 import utils.note as note
 import utils.note_template  as template
@@ -204,7 +205,7 @@ def display_discharge_summary(mr_json, param="old"):
 
     </td>
     <td align="right" width="25%">
-    <img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
+    <img src="{}" alt="나의병원들" width="120">  
     </td>
     </tr>
     </table>
@@ -215,7 +216,8 @@ def display_discharge_summary(mr_json, param="old"):
         mr_json["patient"]["patient id"], 
         mr_json["patient"]["date of admission"],
         mr_json["clinical staff"]["department"], 
-        discharge["date of discharge"]), unsafe_allow_html = True)
+        discharge["date of discharge"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
     st.markdown("##### 주호소/입원사유")
     st.code(discharge["chief complaints"])

@@ -1,3 +1,4 @@
+from utils import config
 import utils.base as base
 
 import streamlit as st
@@ -39,7 +40,7 @@ Date of Note: {}
 
 </td>
 <td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="나의병원들" width="120">  
+<img src="{}" alt="나의병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -101,7 +102,8 @@ def display_report(mr_instance, param="0"):
         mr_instance["patient"]["patient id"], 
         mr_instance["patient"]["date of admission"],
         mr_instance["clinical staff"]["department"], 
-        note["order date"]), unsafe_allow_html = True)
+        note["order date"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
     
     st.markdown(PN_02_NOTES_1, unsafe_allow_html = True)
         

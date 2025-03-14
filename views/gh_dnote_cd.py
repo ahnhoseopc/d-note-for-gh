@@ -1,3 +1,4 @@
+from utils import config
 import utils.base as base
 import utils.cdgen as cdgen
 import json
@@ -40,7 +41,7 @@ Date of Admission: {}
 
 </td>
 <td align="right" width="25%">
-<img src="http://www.goodhospital.or.kr/goodtimes/images_new/logo.png" alt="좋은병원들" width="120">  
+<img src="{}" alt="좋은병원들" width="120">  
 </td>
 </tr>
 </table>
@@ -91,7 +92,8 @@ def display_report(mr_instance, cd_json=None, param="0"):
     st.markdown(CD_01_HEADER_3.format(
         mr_instance["patient"]["patient id"], 
         mr_instance["clinical staff"]["department"], 
-        mr_instance["patient"]["date of admission"]), unsafe_allow_html = True)
+        mr_instance["patient"]["date of admission"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
     col1, col2 = st.columns(2)
     with col1:
@@ -171,7 +173,8 @@ def display_report_old(mr_instance, param="0"):
     st.markdown(CD_01_HEADER_3.format(
         mr_instance["patient"]["patient id"], 
         mr_instance["clinical staff"]["department"], 
-        mr_instance["patient"]["date of admission"]), unsafe_allow_html = True)
+        mr_instance["patient"]["date of admission"],
+        config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
     st.markdown("##### 상병코드  ")
     cd = st.session_state["mr_info"]["il"]

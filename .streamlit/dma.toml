@@ -1,0 +1,9 @@
+
+[customer]
+name = "DK Hospital"
+logo = "assets/dma/dk_hospital_logo.png"
+logo_url = "https://storage.googleapis.com/dk-dma-resources/images/dk_hospital_logo.png"
+
+[apis]
+kcd_api = "https://ark-ai-healthcare-diagnosis-661430115304.us-central1.run.app/"
+chat_api = "https://demo-app-dk-556320446019.us-central1.run.app/"

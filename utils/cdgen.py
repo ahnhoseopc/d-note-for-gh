@@ -1,9 +1,10 @@
 import requests
+import utils.config as config
 
 API_URL = None
-def init_cdgen(project="dk-medical-solutions"):
+def init_cdgen():
     global API_URL
-    API_URL = "https://ark-ai-healthcare-diagnosis-661430115304.us-central1.run.app/"
+    API_URL = config.get_option("apis.kcd_api")
 
 init_cdgen()
 
