@@ -7,7 +7,7 @@ import re
 import streamlit as st
 
 def cd_record_source():
-    with st.expander("상병정보", expanded=True):
+    with st.expander("상병정보", expanded=False):
         mr_json = st.session_state.get("mr_json")
         display_report(mr_json)
 

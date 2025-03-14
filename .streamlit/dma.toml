@@ -1,5 +1,6 @@
 
 [customer]
+id = "DMAC0001"
 name = "DK Hospital"
 logo = "assets/dma/dk_hospital_logo.png"
 logo_url = "https://storage.googleapis.com/dk-dma-resources/images/dk_hospital_logo.png"

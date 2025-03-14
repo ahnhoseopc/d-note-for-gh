@@ -23,7 +23,7 @@ def main():
     #
     st.title("D-Note, 의무기록 자동화 Agent")
 
-    tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["의무기록 자동화 Agent", "상병정보", "입원기록지", "***수술기록지**", "경과기록지", "검사기록", "***퇴원요약지**", "(의무기록DB)"])
+    tab0, tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["의무기록 자동화 Agent", "***상병정보**", "입원기록지", "***수술기록지**", "경과기록지", "검사기록", "***퇴원요약지**", "(의무기록DB)"])
 
     with tab0:
         intro.intro_record_source()
