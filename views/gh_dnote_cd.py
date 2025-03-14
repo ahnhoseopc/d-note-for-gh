@@ -93,41 +93,68 @@ def display_report(mr_instance, cd_json=None, param="0"):
         mr_instance["clinical staff"]["department"], 
         mr_instance["patient"]["date of admission"]), unsafe_allow_html = True)
 
-    st.markdown("##### 상병코드  ")
-    if cd_json:
-        cols = st.columns(2)
-#❌❎✖️💛⭐
-        with cols[1]:
-            for cd in cd_json:
-                with st.container():
-                    st.markdown(f"#### {cd["description"]}")
-                    len_cdsub = len(cd["subCodes"])
-                    cols_cdsub = st.columns(len_cdsub)
-                    for i,cdsub in enumerate(cd["subCodes"]):
-                        with cols_cdsub[i]:
-                            if st.button(("⭐" if i==0 else "") + cdsub["code"], key="sub_"+cdsub["code"], help=f"({cdsub["relevance_score"]}) {cdsub["description"]}"):
-                                st.session_state.cd_list.append(cdsub)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("##### 상병코드  ")
+    with col2:
+        with st.popover("AI추천 상병코드", icon=":material/microbiology:" ,disabled=cd_json==None, use_container_width=True):
+            #❌❎✖️💛⭐
+            if cd_json:
+                for cd in cd_json:
+                    with st.container(border=True):
+                        st.markdown(f"###### {cd["description"]}")
+                        # len_cdsub = len(cd["subCodes"])
+                        len_maxcd = 4
+                        cols_cdsub = st.columns(len_maxcd)
+                        for i,cdsub in enumerate(cd["subCodes"]):
+                            with cols_cdsub[i%len_maxcd]:
+                                if st.button(("⭐" if i==0 else "") + cdsub["code"], key="sub_"+cdsub["code"], help=f"({cdsub["relevance_score"]}) {cdsub["description"]}", use_container_width=True):
+                                    print(cdsub["code"] , [cd["code"] for cd in st.session_state.cd_list])
+                                    if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
+                                        st.session_state.cd_list.append(cdsub)
+                                    pass
                                 pass
-
-        with cols[0]:
-            for cd in st.session_state.cd_list:
-                cols_cd = st.columns([2,8,1])
-                with cols_cd[2]:
-                    if st.button("❎", key=cd["code"]):
-                        st.session_state.cd_list.remove(cd)
+                            pass
                         pass
                     pass
-                with cols_cd[0]:
-                    st.caption(cd["code"])
-                with cols_cd[1]:
-                    st.caption(cd["description"])
+                pass
             pass
+            with st.container(border=True):
+                cdman = st.text_input("질병분류 기호", key="aa"+param, help="질병 분류기호와 설명을 입력하세요.")
+                if st.button("수기입력", key="cd_input_"+param):
+                    if cdman:
+                        cdsub = {"code": cdman.split()[0], "description": " ".join(cdman.split()[1:]), "relevance_score":0}
+                        if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
+                            st.session_state.cd_list.append(cdsub)
+                        pass
+                    pass
+                pass
+            pass
+        pass
+    pass
 
+    if cd_json:
+        st.markdown("**선택 상병코드**")
+        with st.container(border=True):
+            for cd in st.session_state.cd_list:
+                if st.button(f"**{cd["code"]}** {cd["description"]} ❎", key=cd["code"]):
+                    st.session_state.cd_list.remove(cd)
+                    st.rerun()
+                pass
+            pass
+        st.markdown("**참조 상병코드**")
     else:
+        st.markdown("**기존 상병코드**")
+    pass
+
+    with st.container(border=True):
         for cd in st.session_state["mr_info"]["il"]:
             for key in cd.keys():
                 if key.startswith("icd0") and len(cd[key].strip()) > 0:
                     st.caption(f"{cd[key]}")
+                pass
+            pass
+        pass
 
     st.text_area("주호소", value=mr_instance["subjective"]["chief complaints"], height=100, key="cc"+param)
     st.text_area("현증상", value=mr_instance["subjective"]["present illness"], height=100, key="pi"+param)
