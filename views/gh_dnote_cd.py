@@ -110,7 +110,7 @@ def display_report(mr_instance, cd_json=None, param="0"):
                         cols_cdsub = st.columns(len_maxcd)
                         for i,cdsub in enumerate(cd["subCodes"]):
                             with cols_cdsub[i%len_maxcd]:
-                                if st.button(("⭐" if i==0 else "") + cdsub["code"], key="sub_"+cdsub["code"], help=f"({cdsub["relevance_score"]}) {cdsub["description"]}", use_container_width=True):
+                                if st.button(("⭐" if i==0 else "") + cdsub["code"], key="sub_"+cd["code"] + "_" + cdsub["code"], help=f"({cdsub["relevance_score"]}) {cdsub["description"]}", use_container_width=True):
                                     print(cdsub["code"] , [cd["code"] for cd in st.session_state.cd_list])
                                     if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
                                         st.session_state.cd_list.append(cdsub)
