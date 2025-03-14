@@ -30,6 +30,7 @@ def main():
 
     with tab1:
         cd.cd_record_source()
+        cd.cd_record_target()
 
     # 입원기록지
     with tab2:
