@@ -26,10 +26,13 @@ WORKDIR $APP_HOME
 
 
 #  Credentials
-COPY resources/install/config.toml $APP_HOME/.streamlit/config.toml
-COPY resources/install/dma_query.toml $APP_HOME/.streamlit/dma_query.toml
 COPY resources/install/secrets.toml $APP_HOME/.streamlit/secrets.toml
 COPY resources/install/gcp_credentials.json $APP_HOME/.streamlit/gcp_credentials.json
+
+COPY resources/install/config.toml $APP_HOME/.streamlit/config.toml
+COPY resources/install/dma_query.toml $APP_HOME/.streamlit/dma_query.toml
+COPY resources/install/dma_users.toml $APP_HOME/.streamlit/dma_users.toml
+COPY resources/install/dma.toml $APP_HOME/.streamlit/dma.toml
 
 ENV GOOGLE_APPLICATION_CREDENTIALS=$APP_HOME/.streamlit/gcp_credentials.json
 
