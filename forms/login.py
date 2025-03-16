@@ -18,8 +18,6 @@ def login_form(authenticate):
         if submitted:
             if is_valid_id(user_id):
                 if authenticate(user_id, password):
-                    st.session_state.logged_in = True
-                    st.session_state.user_id = user_id
                     st.rerun()
                 else:
                     st.switch_page("views/gh_about_dma.py")                

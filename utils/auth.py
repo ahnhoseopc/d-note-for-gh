@@ -5,6 +5,8 @@ import streamlit as st
 
 def authenticate(user_id, password):
     # authenticate user
+    st.session_state.logged_in = True
+    st.session_state.user_id = user_id
     return True
 
 def check_auth():
