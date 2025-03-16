@@ -1,3 +1,4 @@
+import logging
 from utils import config
 import utils.base as base
 import utils.cdgen as cdgen
@@ -100,7 +101,7 @@ def display_report(mr_instance, cd_json=None, param="0"):
         st.markdown("##### 상병코드  ")
     with col2:
         with st.popover("AI추천 상병코드", icon=":material/microbiology:" ,disabled=cd_json==None, use_container_width=True):
-            #❌❎✖️💛⭐
+            #❌✖️❎💛⭐
             if cd_json:
                 for cd in cd_json:
                     with st.container(border=True):
@@ -111,7 +112,7 @@ def display_report(mr_instance, cd_json=None, param="0"):
                         for i,cdsub in enumerate(cd["subCodes"]):
                             with cols_cdsub[i%len_maxcd]:
                                 if st.button(("⭐" if i==0 else "") + cdsub["code"], key="sub_"+cd["code"] + "_" + cdsub["code"], help=f"({cdsub["relevance_score"]}) {cdsub["description"]}", use_container_width=True):
-                                    print(cdsub["code"] , [cd["code"] for cd in st.session_state.cd_list])
+                                    logging.debug(cdsub["code"] , [cd["code"] for cd in st.session_state.cd_list])
                                     if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
                                         st.session_state.cd_list.append(cdsub)
                                     pass

@@ -1,3 +1,4 @@
+import logging
 import requests
 import utils.config as config
 
@@ -17,23 +18,23 @@ def generate(query):
         response.raise_for_status()
 
         # 응답 데이터 출력
-        print("응답 코드:", response.status_code)
-        print("응답 본문:", response.json())
+        # logging.info("응답 코드:", response.status_code)
+        # logging.info("응답 본문:", response.json())
         return response.json()
 
     except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP 오류 발생: {http_err}")
-        print("응답 코드:", response.status_code)
-        print("응답 본문:", response.text)
+        logging.error(f"HTTP 오류 발생: {http_err}")
+        logging.error("응답 코드:", response.status_code)
+        logging.error("응답 본문:", response.text)
 
     except requests.exceptions.ConnectionError:
-        print("연결 오류 발생. 서버에 접근할 수 없습니다.")
+        logging.error("연결 오류 발생. 서버에 접근할 수 없습니다.")
 
     except requests.exceptions.Timeout:
-        print("요청 시간이 초과되었습니다.")
+        logging.error("요청 시간이 초과되었습니다.")
 
     except requests.exceptions.RequestException as err:
-        print(f"알 수 없는 오류 발생: {err}")
+        logging.error(f"알 수 없는 오류 발생: {err}")
 
     return None
 
@@ -133,5 +134,5 @@ if __name__ == "__main__":
     prompt = "최근 고시를 알려줘"
     data = "2024년도 고시"
     response = generate([prompt, data])
-    print(dir(response))
-    print(response, end="\t")
+    logging.info(dir(response))
+    logging.info(response, end="\t")
