@@ -19,10 +19,15 @@ def main():
     #
     st.title("D-QnA, 전문 의료지식 정보화 Agent")
 
-    tab0, tab1, tab2, tab4 = st.tabs(["의료지식 정보화 Agent", "**Doctor's**", "Expert's", "Researcher's"])
+    tab0, tab1, tab2, tab3 = st.tabs(["의료지식 정보화 Agent", "**Doctor's**", "Expert's", "Researcher's"])
 
     with tab0:
         intro.intro_record_source()
+
+    with tab2:
+        st.write("서비스 준비중입니다.")
+    with tab3:
+        st.write("서비스 준비중입니다.")
 
     with tab1:
         chat_container = st.container()
