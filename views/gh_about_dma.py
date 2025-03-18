@@ -21,14 +21,16 @@ def main():
         with col0[1]:
             if st.button("<"):
                 st.session_state.image_index = (st.session_state.image_index - 1) % len(image_files)
-    with cols[1]:
-        image_index = st.session_state.get("image_index", 0)
-        st.image(image_files[image_index], use_container_width=True)
     with cols[2]:
+        # 변경된 이미지 인덱스가 이미지 출력에 여향을 주도록 cols[1] 보다 cols[2]가 먼저 위치함.
         col2 = st.columns(3, vertical_alignment="center")
         with col2[1]:
             if st.button("\\>"):
                 st.session_state.image_index = (st.session_state.image_index + 1) % len(image_files)
+    with cols[1]:
+        # 이미지 출력
+        image_index = st.session_state.get("image_index", 0)
+        st.image(image_files[image_index], use_container_width=True)
 
     cols = st.columns(2)
     with cols[0]:
