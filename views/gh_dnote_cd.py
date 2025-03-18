@@ -104,7 +104,6 @@ def display_report(mr_instance, cd_json=None, param="0"):
     with col2:
         if cd_json:
             with st.popover("AI검색 상병코드", icon=":material/microbiology:" ,disabled=cd_json==None, use_container_width=True):
-            #❌✖️❎💛⭐
                 for cd in cd_json:
                     with st.container(border=True):
                         st.markdown(f"###### {cd["description"]}")
@@ -161,6 +160,8 @@ def display_report(mr_instance, cd_json=None, param="0"):
                         st.rerun()
                     pass
                 pass
+                if not st.session_state.cd_list:
+                    st.markdown(".")
             pass
         pass
 
