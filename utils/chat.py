@@ -1,7 +1,6 @@
 import utils.base as base
 import utils.config as config
 import utils.chatgen as chatgen
-import utils.genai as genai
 import datetime
 
 def generate_chat_id(user_id):
@@ -20,32 +19,31 @@ def summarize_title(messages):
     summary_prompt = """
                     메시지에 저장된 사용자의 첫 3개의 질문을 요약하여 5단어 이내로 제목을 작성하시오.
                     제목은 영어로 표시하고 특수문자는 포함하지 마시오.
+
                     """
-    summarize_message = {"role": "user", "parts": [{"text": summary_prompt}]}
-    responses = genai.generate( messages + [summarize_message] , model)
+    summary_target = ""
+    for i, message in enumerate(messages):
+        summary_target = f"message {i}. {message}\n"
 
-    summary_title = ""
-    for response in responses:
-        summary_title += response.text
-
+    summary_title = chatgen.generate(summary_prompt + summary_target)
     return summary_title
 
-def delete_history(user_id, chat_id):
-    config.delete_chat_history(user_id, chat_id)
+def delete_history(user_id, chat_id, chat_group="CHAT00"):
+    config.delete_chat_history(f"{chat_group}_{user_id}", chat_id)
     return
 
-def save_history(user_id, chat_id, chat_name, messages):
-    conversation = {"chat_name": chat_name, "messages": messages}
+def save_history(user_id, chat_id, chat_name, messages, chat_group="CHAT00"):
+    conversation = {"user_id": user_id, "chat_group":chat_group, "chat_name": chat_name, "messages": messages}
 
-    config.save_chat_history(user_id, chat_id, conversation)
+    config.save_chat_history(f"CHAT_{user_id}", chat_id, conversation)
     return chat_name
 
-def get_chat_list(user_id):
-    chat_list = config.get_chat_list(user_id)
+def get_chat_list(user_id, chat_group="CHAT00"):
+    chat_list = config.get_chat_list(f"{chat_group}_{user_id}")
     return chat_list
 
-def get_chat_messages(user_id, chat_id):
-    conversation = config.get_chat_content(user_id, chat_id)
+def get_chat_messages(user_id, chat_id, chat_group="CHAT00"):
+    conversation = config.get_chat_content(f"{chat_group}_{user_id}", chat_id)
     if conversation is None:
         return [], ""
     else:
