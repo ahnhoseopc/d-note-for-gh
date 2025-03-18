@@ -28,6 +28,7 @@ def main():
                 st.session_state.partner_index = (st.session_state.partner_index - 1) % len(partners)
 
     with cols[2]:
+        # 변경된 이미지 인덱스가 이미지 출력에 여향을 주도록 cols[1] 보다 cols[2]가 먼저 위치함.
         col2 = st.columns(3, vertical_alignment="center")
         with col2[1]:
             if st.button("\\>"):
