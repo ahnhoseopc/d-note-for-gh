@@ -21,8 +21,11 @@ def summarize_content(messages):
     model = "medlm"
     summary_prompt = """
                     이전 메시지를 사용자의 질문과 응답내용을 요약하시오.
-                    사용자의 의도에 따라 여러 개의 주제가 있으면 주제별로 요약하시오. 
+                    사용자의 의도에 따라 여러 개의 주제가 있으면 주제별로 요약하되 
+                    각 주제는 markdown 형식으로 제6단계의 header로 표시하시오.
                     이전 메시지에 Summary 정보가 있으면 이후 메시지와 주제 단위에서 통합하여 요약하시오.
+                    최대한 폰트 크기를 작게 하시오.
+                    500자 이내로 요약하시오.
                     """
     summarize_message = {"role": "user", "parts": [{"text": summary_prompt}]}
     responses = genai.generate( messages + [summarize_message] , model)
