@@ -23,7 +23,7 @@ def main():
     with tab1:
         st.markdown("### 의료진용 서비스 화면")
         with st.expander("의료진용 서비스 화면", expanded=False):
-            dinq_doctor_url = "https://ma.gradehc.com/"
+            dinq_doctor_url = "https://devma.azurewebsites.net/dk"
             html_code = f"""
             <iframe src="{dinq_doctor_url}" style="width:100%; height:900px; border:none;"></iframe>
             """

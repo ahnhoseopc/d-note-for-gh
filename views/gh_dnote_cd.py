@@ -80,7 +80,8 @@ def cd_record_target():
 
     cd_json = st.session_state.get("cd_json")
     if cd_json:
-        display_report(mr_json, cd_json, "n2")
+        with st.expander("상병정보 AI검색 선택", expanded=True):
+            display_report(mr_json, cd_json, "n2")
 
 def display_report(mr_instance, cd_json=None, param="0"):
     if mr_instance is None:
@@ -96,13 +97,14 @@ def display_report(mr_instance, cd_json=None, param="0"):
         mr_instance["patient"]["date of admission"],
         config.get_option("customer.logo_url")), unsafe_allow_html = True)
 
+    st.markdown("##### 🔵상병코드  ")
+
     col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("##### 상병코드  ")
+
     with col2:
-        with st.popover("AI추천 상병코드", icon=":material/microbiology:" ,disabled=cd_json==None, use_container_width=True):
+        if cd_json:
+            with st.popover("AI검색 상병코드", icon=":material/microbiology:" ,disabled=cd_json==None, use_container_width=True):
             #❌✖️❎💛⭐
-            if cd_json:
                 for cd in cd_json:
                     with st.container(border=True):
                         st.markdown(f"###### {cd["description"]}")
@@ -121,40 +123,55 @@ def display_report(mr_instance, cd_json=None, param="0"):
                         pass
                     pass
                 pass
-            pass
-            with st.container(border=True):
-                cdman = st.text_input("질병분류 기호", key="aa"+param, help="질병 분류기호와 설명을 입력하세요.")
-                if st.button("수기입력", key="cd_input_"+param):
-                    if cdman:
-                        cdsub = {"code": cdman.split()[0], "description": " ".join(cdman.split()[1:]), "relevance_score":0}
-                        if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
-                            st.session_state.cd_list.append(cdsub)
+                with st.container(border=True):
+                    cdman = st.text_input("질병분류 기호", key="aa"+param, help="질병 분류기호와 설명을 입력하세요.")
+                    if st.button("수기입력", key="cd_input_"+param):
+                        if cdman:
+                            cdsub = {"code": cdman.split()[0], "description": " ".join(cdman.split()[1:]), "relevance_score":0}
+                            if cdsub["code"] not in [cd["code"] for cd in st.session_state.cd_list]:
+                                st.session_state.cd_list.append(cdsub)
+                            pass
                         pass
                     pass
                 pass
             pass
         pass
-    pass
-
-    if cd_json:
-        st.markdown("**선택 상병코드**")
-        with st.container(border=True):
-            for cd in st.session_state.cd_list:
-                if st.button(f"**{cd["code"]}** {cd["description"]} ❎", key=cd["code"]):
-                    st.session_state.cd_list.remove(cd)
-                    st.rerun()
+        if cd_json:
+            with st.popover(label="의사가 진단한 상병코드", icon=":material/diagnosis:" , use_container_width=True):
+                with st.container(border=True):
+                    for cd in st.session_state["mr_info"]["il"]:
+                        for key in cd.keys():
+                            if key.startswith("icd0") and len(cd[key].strip()) > 0:
+                                st.caption(f"{cd[key]}")
+                            pass
+                        pass
+                    pass
                 pass
             pass
-        st.markdown("**참조 상병코드**")
-    else:
-        st.markdown("**기존 상병코드**")
+        pass
+
     pass
 
-    with st.container(border=True):
-        for cd in st.session_state["mr_info"]["il"]:
-            for key in cd.keys():
-                if key.startswith("icd0") and len(cd[key].strip()) > 0:
-                    st.caption(f"{cd[key]}")
+    with col1:
+        if cd_json:
+            with st.container(border=True):
+                for cd in st.session_state.cd_list:
+                    if st.button(f"**{cd["code"]}** {cd["description"]} ❎", key=cd["code"]):
+                        st.session_state.cd_list.remove(cd)
+                        st.rerun()
+                    pass
+                pass
+            pass
+        pass
+
+        if not cd_json:
+            with st.container(border=True):
+                for cd in st.session_state["mr_info"]["il"]:
+                    for key in cd.keys():
+                        if key.startswith("icd0") and len(cd[key].strip()) > 0:
+                            st.caption(f"{cd[key]}")
+                        pass
+                    pass
                 pass
             pass
         pass
