@@ -64,16 +64,37 @@ def show_references(references, filter_text, filter_answer):
                 st.write("##### Filter answer:")
                 st.json(filter_answer)
 
-def show_related_qna(chat_container, dchat, related_qna_list):
-    with chat_container:
-        qna_num = len(related_qna_list)
-        cols = st.columns(qna_num)
-        for i, qna in enumerate(related_qna_list):
-            with cols[i]:
-                interested = st.button(f"{i+1}. {base.make_short(qna["question"])} [{qna["document_title"]}]({urllib.parse.quote(qna["document_uri"], safe=":/?=#", encoding="utf-8")})", help=qna["question"], use_container_width=True)
-                st.link_button(f"[{base.make_short(qna['document_title'])}]", qna["document_uri"], help=qna["document_title"], use_container_width=True)
+# def show_related_qna(chat_container, dchat, related_qna_list):
+#     with chat_container:
+#         st.markdown("###### 관련 질문")
+#         qna_num = len(related_qna_list)
+#         cols = st.columns(qna_num)
+#         for i, qna in enumerate(related_qna_list):
+#             with cols[i]:
+#                 interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
 
-                if interested:
+#                 if interested:
+#                     # 사용자 Prompt 출력
+#                     user_message = {"role": "user", "parts": [{"text": qna["question"]}]}
+#                     show_chat_input(user_message)
+
+#                     # 잠시 대기
+#                     time.sleep(0.4)
+
+#                     # 시스템 Content 출력
+#                     reference_text = f" [ [참조]({urllib.parse.quote(qna['document_uri'], safe=':/?=#', encoding='utf-8')}) ]"
+#                     assistant_message = {"role": "assistant", "parts": [{"text": qna["answer"] + reference_text}]}
+#                     show_chat_response(assistant_message)
+#     pass
+
+def show_related_qna(this_container, chat_container, related_qna_list):
+    with this_container:
+        st.markdown("###### 관련 질문")
+        for i, qna in enumerate(related_qna_list):
+            interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
+
+            if interested:
+                with chat_container:
                     # 사용자 Prompt 출력
                     user_message = {"role": "user", "parts": [{"text": qna["question"]}]}
                     show_chat_input(user_message)
@@ -82,9 +103,17 @@ def show_related_qna(chat_container, dchat, related_qna_list):
                     time.sleep(0.4)
 
                     # 시스템 Content 출력
-                    assistant_message = {"role": "assistant", "parts": [{"text": qna["answer"]}]}
+                    # reference_text = f" [ [참조]({urllib.parse.quote(qna['document_uri'], safe=':/?=#', encoding='utf-8')}) ]"
+                    reference_text = f" [ [참조]({qna['document_uri']}) ]"
+                    assistant_message = {
+                        "role": "assistant", 
+                        "parts": [{"text": qna["answer"] + reference_text}],
+                        "related_qna_list": related_qna_list
+                        }
                     show_chat_response(assistant_message)
-    pass
+
+                    return user_message, assistant_message
+    return None, None
 
 @auth.login_required
 def main():
@@ -110,15 +139,16 @@ def main():
         intro.intro_record_source()
 
     with tab1:
-        col1, col2 = st.columns([8,2])
+        col1, col2 = st.columns([8,2], vertical_alignment='bottom')
         with col1:
             chat_container = st.container()
             with chat_container:
                 # 저장된 챗 메시지 출력 
                 st.text(dchat["chat_name"], help="채팅 제목")
+                print(dchat["chat_name"])
 
                 # Display chat messages from history on app rerun
-                for i, message in enumerate(dchat["messages"]):
+                for i, message in enumerate(dchat["chat_msgs"]):
                     if message["role"] == "user":
                         show_chat_input(message)
                     else:
@@ -126,8 +156,15 @@ def main():
         with col2:
             sub_container = st.container()
             with sub_container:
-                st.markdown("##### 관련 규정")
+                st.markdown("###### 관련 규정")
                 st.markdown("* 요양급여의 적용기준 및 방법에 관한 세부사항")
+
+                if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
+                    related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
+                    a,b = show_related_qna(sub_container, chat_container, related_qna_list)
+                    if a and b:
+                        dchat["chat_msgs"].append(a)
+                        dchat["chat_msgs"].append(b)
 
     #
     # 사용자 Prompt 입력
@@ -142,7 +179,7 @@ def main():
             user_message = {"role": "user", "parts": [{"text": chat_prompt}]}
 
             # 사용자 Content 저장
-            dchat["messages"].append(user_message)
+            dchat["chat_msgs"].append(user_message)
 
             # 사용자 Prompt 출력
             show_chat_input(user_message)
@@ -161,15 +198,16 @@ def main():
                                     , "filter_answer": chat_response["filter_answer"] if "filter_answer" in chat_response else None
                                     }
 
-                dchat["messages"].append(response_message)
+                dchat["chat_msgs"].append(response_message)
 
                 # LLM 응답을 Stream 형식으로 출력 
                 # with st.chat_message("assistant", avatar="💻"):
                 show_chat_response(response_message)
+                st.rerun()
 
-    if dchat["messages"] and "related_qna_list" in dchat["messages"][-1]:
-        related_qna_list = dchat["messages"][-1]["related_qna_list"]
-        show_related_qna(chat_container, dchat, related_qna_list)
+    # if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
+    #     related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
+    #     show_related_qna(sub_container, chat_container, related_qna_list)
     # END OF CHAT INPUT
 
 import forms.sidebar as sidebar
