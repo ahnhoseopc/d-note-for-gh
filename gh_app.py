@@ -1,7 +1,7 @@
 import streamlit as st
 
 def dma_run():
-    st.set_page_config(page_title="Good Hospitals - DK Medical Agents", page_icon="🏥", layout="wide")
+    st.set_page_config(page_title="DK Hospital - DK Medical Agents", page_icon="🏥", layout="wide")
 
     # shared on all pages
     st.logo("assets/dma/dk_hospital_logo.png", size="large")

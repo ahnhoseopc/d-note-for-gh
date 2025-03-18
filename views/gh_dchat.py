@@ -1,15 +1,54 @@
 import time
-
 import urllib
+
 import utils.auth as auth
 import utils.base as base
 import utils.chat as chat
-import forms.sidebar_qna as sidebar_qna
+
+import forms.sidebar_chat as sidebar_chat
 import views.gh_dchat_00 as intro
 
 import streamlit as st
 
-def show_references_filter(references, filter_text, filter_answer):
+# Initialize messages
+def initialize_messages(chat_group):
+    # Initialize chat history
+    st.session_state[chat_group] = {
+         "user_id": st.session_state.user_id
+        ,"chat_group": chat_group # current chat group
+        ,"chat_id": "" # current chat
+        ,"chat_name": "New Chat" # current chat
+        ,"chat_msgs": [] # current chat
+        ,"chat_list": chat.get_chat_list(st.session_state.user_id) # saved chat list 
+    }
+
+def show_chat_input(chat_input):
+    # 사용자 Prompt 출력
+    with st.chat_message("user", avatar="👩‍⚕️",):
+        st.markdown(chat_input["parts"][0]["text"])
+
+def show_chat_response(chat_response):
+    # 시스템 Response 출력
+    with st.chat_message("assistant", avatar="💻"):
+        if "filter_text" in chat_response and chat_response["filter_text"]:
+            st.markdown( f"{1}: {chat_response["filter_text"]}" )
+            with st.container(border=True):
+                if "filter_answer" in chat_response and chat_response["filter_answer"] and "citedChunks" in chat_response["filter_answer"]:
+                    chunks = chat_response["filter_answer"]["citedChunks"]
+                else:
+                    chunks = []
+                for chunk in chunks:
+                    st.markdown( f"{chunk['chunkText']} [참조 {chunk['source']}]({urllib.parse.quote(chunk['url_page'], safe=':/?#=', encoding='utf-8')})" )
+        else:
+            st.markdown( chat_response["parts"][0]["text"] )
+
+        if "references" in chat_response:
+            show_references(chat_response["references"]
+                            , chat_response["filter_text"] if "filter_text" in chat_response else None
+                            , chat_response["filter_answer"] if "filter_answer" in chat_response else None)
+        pass
+
+def show_references(references, filter_text, filter_answer):
     cols = st.columns(5)
     with cols[0]:
         if references:
@@ -25,14 +64,69 @@ def show_references_filter(references, filter_text, filter_answer):
                 st.write("##### Filter answer:")
                 st.json(filter_answer)
 
+# def show_related_qna(chat_container, dchat, related_qna_list):
+#     with chat_container:
+#         st.markdown("###### 관련 질문")
+#         qna_num = len(related_qna_list)
+#         cols = st.columns(qna_num)
+#         for i, qna in enumerate(related_qna_list):
+#             with cols[i]:
+#                 interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
+
+#                 if interested:
+#                     # 사용자 Prompt 출력
+#                     user_message = {"role": "user", "parts": [{"text": qna["question"]}]}
+#                     show_chat_input(user_message)
+
+#                     # 잠시 대기
+#                     time.sleep(0.4)
+
+#                     # 시스템 Content 출력
+#                     reference_text = f" [ [참조]({urllib.parse.quote(qna['document_uri'], safe=':/?=#', encoding='utf-8')}) ]"
+#                     assistant_message = {"role": "assistant", "parts": [{"text": qna["answer"] + reference_text}]}
+#                     show_chat_response(assistant_message)
+#     pass
+
+def show_related_qna(this_container, chat_container, related_qna_list):
+    with this_container:
+        st.markdown("###### 관련 질문")
+        for i, qna in enumerate(related_qna_list):
+            interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
+
+            if interested:
+                with chat_container:
+                    # 사용자 Prompt 출력
+                    user_message = {"role": "user", "parts": [{"text": qna["question"]}]}
+                    show_chat_input(user_message)
+
+                    # 잠시 대기
+                    time.sleep(0.4)
+
+                    # 시스템 Content 출력
+                    # reference_text = f" [ [참조]({urllib.parse.quote(qna['document_uri'], safe=':/?=#', encoding='utf-8')}) ]"
+                    reference_text = f" [ [참조]({qna['document_uri']}) ]"
+                    assistant_message = {
+                        "role": "assistant", 
+                        "parts": [{"text": qna["answer"] + reference_text}],
+                        "related_qna_list": related_qna_list
+                        }
+                    show_chat_response(assistant_message)
+
+                    return user_message, assistant_message
+    return None, None
+
 @auth.login_required
 def main():
-    # Initialize user id
-    # if "user_id" not in st.session_state:
-    #     st.session_state.user_id = "munhwa_user"
+    # Initialize messages
+    #
+    # For first tab: 
+    CHATGROUP01 = "DCHAT01"
+    if CHATGROUP01 not in st.session_state:
+        initialize_messages(CHATGROUP01)
+    dchat = st.session_state[CHATGROUP01]
 
     # Side bar for chat history
-    sidebar_qna.display()
+    sidebar_chat.display(dchat)
 
     #
     # Page title for D-QnA
@@ -45,97 +139,76 @@ def main():
         intro.intro_record_source()
 
     with tab1:
-        col1, col2 = st.columns([8,2])
+        col1, col2 = st.columns([8,2], vertical_alignment='bottom')
         with col1:
             chat_container = st.container()
             with chat_container:
-            
                 # 저장된 챗 메시지 출력 
-                st.text(st.session_state.chat_name, help="채팅 제목")
-                # Display chat messages from history on app rerun
-                for i, message in enumerate(st.session_state.messages):
-                    with st.chat_message(message["role"], avatar="👩‍⚕️" if message["role"] == "user" else "💻"):
-                        st.markdown(str(i) + ": " + message["parts"][0]["text"])
-                        show_references_filter(message["references"] if "references" in message else []
-                                        , message["filter_text"] if "filter_text" in message else None
-                                        , message["filter_answer"] if "filter_answer" in message else None)
+                st.text(dchat["chat_name"], help="채팅 제목")
+                print(dchat["chat_name"])
 
+                # Display chat messages from history on app rerun
+                for i, message in enumerate(dchat["chat_msgs"]):
+                    if message["role"] == "user":
+                        show_chat_input(message)
+                    else:
+                        show_chat_response(message)
         with col2:
             sub_container = st.container()
             with sub_container:
-                st.markdown("##### 관련 규정")
+                st.markdown("###### 관련 규정")
                 st.markdown("* 요양급여의 적용기준 및 방법에 관한 세부사항")
 
-                pass
+                if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
+                    related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
+                    a,b = show_related_qna(sub_container, chat_container, related_qna_list)
+                    if a and b:
+                        dchat["chat_msgs"].append(a)
+                        dchat["chat_msgs"].append(b)
 
     #
     # 사용자 Prompt 입력
     #
-    SUMMARY_CHAT_COUNT  =10
-    if st.chat_input("Medical assistance?", key="prompt"):
-        with chat_container:
-            # Prompt로 질의용 Content를 만든다.
-            doctor_message = {"role": "user", "parts": [{"text": st.session_state.prompt}]}
+    SUMMARY_CHAT_COUNT = 10
+    if st.chat_input("Any assistance?", key="chat_prompt"):
+        chat_prompt = st.session_state.chat_prompt
 
-            # 사용자 Prompt 출력
-            with st.chat_message("user", avatar="👩‍⚕️",):
-                st.markdown(str(len(st.session_state.messages)) + ": " + st.session_state.prompt)
+        with chat_container:
+            
+            # Prompt로 질의용 Content를 만든다.
+            user_message = {"role": "user", "parts": [{"text": chat_prompt}]}
 
             # 사용자 Content 저장
-            st.session_state.messages.append(doctor_message)
+            dchat["chat_msgs"].append(user_message)
+
+            # 사용자 Prompt 출력
+            show_chat_input(user_message)
 
             #
             # LLM에 의한 응답 Content 생성
             #
-            chat_response = chat.generate_content(doctor_message["parts"][0]["text"])
+            chat_response = chat.generate_content(chat_prompt)
             if chat_response:
-                st.session_state.related_qna_list = chat_response["related_qna_list"]
-
                 # Add assistant response to chat history
-                st.session_state.messages.append({"role": "assistant"
-                                                  , "parts": [{"text": chat_response["answer_text"]}]
-                                                  , "references": chat_response["references"]
-                                                  , "filter_text": chat_response["filter_text"] if "filter_text" in chat_response else None
-                                                  , "filter_answer": chat_response["filter_answer"] if "filter_answer" in chat_response else None})
+                response_message = {"role": "assistant"
+                                    , "parts": [{"text": chat_response["answer_text"]}]
+                                    , "related_qna_list": chat_response["related_qna_list"]
+                                    , "references": chat_response["references"]
+                                    , "filter_text": chat_response["filter_text"] if "filter_text" in chat_response else None
+                                    , "filter_answer": chat_response["filter_answer"] if "filter_answer" in chat_response else None
+                                    }
+
+                dchat["chat_msgs"].append(response_message)
 
                 # LLM 응답을 Stream 형식으로 출력 
-                with st.chat_message("assistant", avatar="💻"):
-                    if "answer_text" in chat_response:
-                        st.markdown(f"{len(st.session_state.messages)}: {chat_response["answer_text"]}")
-                    if "references" in chat_response:
-                        show_references_filter(chat_response["references"]
-                                                , chat_response["filter_text"] if "filter_text" in chat_response else None
-                                                , chat_response["filter_answer"] if "filter_answer" in chat_response else None)
+                # with st.chat_message("assistant", avatar="💻"):
+                show_chat_response(response_message)
+                st.rerun()
 
-    if "chat_response" in st.session_state:
-        if "related_qna_list" in st.session_state.chat_response:
-                qna_num = len(st.session_state["chat_response"]["related_qna_list"])
-                cols = st.columns(qna_num)
-                for i, qna in enumerate(st.session_state["chat_response"]["related_qna_list"]):
-                    with cols[i]:
-                        interested = st.button(f"{i+1}. {base.make_short(qna["question"])}", help=qna["question"], use_container_width=True)
-                        st.link_button(f"[{base.make_short(qna['document_title'])}]", qna["document_uri"], help=qna["document_title"], use_container_width=True)
-                        if interested:
-                            # 사용자 Prompt 출력
-                            with chat_container.chat_message("user", avatar="👩‍⚕️",):
-                                st.markdown(f"{len(st.session_state.messages)}: {qna["question"]}")
-
-                            # 사용자 Content 저장
-                            doctor_message = {"role": "user", "parts": [{"text": qna["question"]}]}
-                            st.session_state.messages.append(doctor_message)
-
-                            time.sleep(0.4)
-
-                            # 시스템 Content 출력
-                            with chat_container.chat_message("assistant", avatar="💻"):
-                                st.markdown(f"{len(st.session_state.messages)}: {qna["answer"]}")
-
-                            # 시스템 Content 저장
-                            assistant_message = {"role": "assistant", "parts": [{"text": qna["answer"]}]}
-                            st.session_state.messages.append(assistant_message)
-
-                    # st.markdown(f"* [{base.make_short(qna["document_title"])}]({qna["document_uri"]}) ")
-        # END OF CHAT INPUT
+    # if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
+    #     related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
+    #     show_related_qna(sub_container, chat_container, related_qna_list)
+    # END OF CHAT INPUT
 
 import forms.sidebar as sidebar
 
