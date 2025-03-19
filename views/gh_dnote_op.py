@@ -43,12 +43,12 @@ def op_record_target():
     # 수술기록지 작성 버튼
     cols = st.columns([3, 3, 3])
     with cols[0]:
-        cols2 = st.columns(2)
-        with cols2[0]:
+        # cols2 = st.columns(2)
+        # with cols2[0]:
             or_write_1 = st.button("➡️ 수술기록지 초안작성 (프로토콜)", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
-        with cols2[1]:
-            or_write_2 = st.button("➡️ 수술기록지 초안작성 (수술기록)", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
-
+        # with cols2[1]:
+        #     or_write_2 = st.button("➡️ 수술기록지 초안작성 (수술기록)", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
+            or_write_2 = False
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ Prompt", use_container_width=True):
@@ -88,29 +88,29 @@ def op_record_target():
 
         or_prompt = or_prompt_proto
 
-    if or_write_2:
-        mr_json = st.session_state.get("mr_json")
-        if "mr_json" not in st.session_state or "patient" not in mr_json:
-            return
+    # if or_write_2:
+    #     mr_json = st.session_state.get("mr_json")
+    #     if "mr_json" not in st.session_state or "patient" not in mr_json:
+    #         return
 
-        mr_json_new = template.get_medical_record_template()
+    #     mr_json_new = template.get_medical_record_template()
 
-        mr_json_new["patient"] = mr_json["patient"]
-        mr_json_new["clinical staff"] = mr_json["clinical staff"]
+    #     mr_json_new["patient"] = mr_json["patient"]
+    #     mr_json_new["clinical staff"] = mr_json["clinical staff"]
 
-        mr_json_new["subjective"] = mr_json["subjective"] ## CC PI PX SX FX
-        mr_json_new["objective"] = mr_json["objective"]   ## LAB
-        mr_json_new["assessment"] = mr_json["assessment"] ## IMP DX
-        mr_json_new["plan"] = mr_json["plan"]             ## OP TR DS ED ONR
+    #     mr_json_new["subjective"] = mr_json["subjective"] ## CC PI PX SX FX
+    #     mr_json_new["objective"] = mr_json["objective"]   ## LAB
+    #     mr_json_new["assessment"] = mr_json["assessment"] ## IMP DX
+    #     mr_json_new["plan"] = mr_json["plan"]             ## OP TR DS ED ONR
 
-        mr_json_new["operation procedures"] = mr_json["operation procedures"]
+    #     mr_json_new["operation procedures"] = mr_json["operation procedures"]
 
-        preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
-        postoperative_diagnosis = preoperative_diagnosis
+    #     preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
+    #     postoperative_diagnosis = preoperative_diagnosis
 
-        operation_name, operation_protocol = "", ""
+    #     operation_name, operation_protocol = "", ""
         
-        or_prompt = or_prompt_proc
+    #     or_prompt = or_prompt_proc
 
     if or_write_1 or or_write_2:
 
