@@ -14,13 +14,6 @@ def dma_run():
         default=True
     )
 
-    gh_about_partners_page = st.Page(
-        page="views/gh_about_partners.py",
-        title="Partners",
-        icon=":material/partner_exchange:",
-        default=False
-    )
-
     gh_dbquery_page = st.Page(
         page="views/gh_dbquery.py",
         title="Database Query",
@@ -58,7 +51,7 @@ def dma_run():
 
     # Main menu for DMA
     menu = {
-            "About": [gh_about_dma_page, gh_about_partners_page],
+            "About": [gh_about_dma_page],
             "DK Medical Agents": [gh_dnote_page, gh_dqna_page, gh_dchat_page, gh_dinq_page ],
         }
 
