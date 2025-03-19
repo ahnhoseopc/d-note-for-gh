@@ -28,11 +28,11 @@ def summarize_title(messages):
     summary_title = chatgen.generate(summary_prompt + summary_target)
     return summary_title
 
-def delete_history(user_id, chat_id, chat_group="CHAT00"):
+def delete_history(user_id, chat_id, chat_group="CHAT"):
     config.delete_chat_history(f"{chat_group}_{user_id}", chat_id)
     return
 
-def save_history(user_id, chat_id, chat_name, messages, chat_group="CHAT00"):
+def save_history(user_id, chat_id, chat_name, messages, chat_group="CHAT"):
     conversation = {"user_id": user_id, "chat_group":chat_group, "chat_name": chat_name, "messages": messages}
 
     config.save_chat_history(f"CHAT_{user_id}", chat_id, conversation)

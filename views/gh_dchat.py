@@ -120,7 +120,7 @@ def main():
     # Initialize messages
     #
     # For first tab: 
-    CHATGROUP01 = "DCHAT01"
+    CHATGROUP01 = "CHAT"
     if CHATGROUP01 not in st.session_state:
         initialize_messages(CHATGROUP01)
     dchat = st.session_state[CHATGROUP01]
@@ -145,7 +145,6 @@ def main():
             with chat_container:
                 # 저장된 챗 메시지 출력 
                 st.text(dchat["chat_name"], help="채팅 제목")
-                print(dchat["chat_name"])
 
                 # Display chat messages from history on app rerun
                 for i, message in enumerate(dchat["chat_msgs"]):
