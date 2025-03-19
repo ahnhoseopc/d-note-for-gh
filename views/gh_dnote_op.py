@@ -32,23 +32,22 @@ OR_PROMPT_DEFAULT_PREV = """1. 입력된 데이터의 "operation name"을 확인
 """
 
 def op_record_target():
+    mr_json = st.session_state.get("mr_json")
+    if "mr_json" not in st.session_state or "patient" not in mr_json:
+        return
+
     ai_models =  ["MedLM", "Gemini-Pro", "Gemini-Flash"]
     ai_model = ai_models[-1]
     or_prompt_proto = OR_PROMPT_DEFAULT_PROTO
     or_prompt_proc = OR_PROMPT_DEFAULT_PROTO
+    mr_json_new = None
+
 
     # 수술기록지 생성 프롬프트
     # st.text_area("Prompt", value=OR_PROMPT_DEFAULT, height=150, key="or-prompt")
 
     # 수술기록지 작성 버튼
     cols = st.columns([3, 3, 3])
-    with cols[0]:
-        # cols2 = st.columns(2)
-        # with cols2[0]:
-            or_write_1 = st.button("➡️ 수술기록지 초안작성 (프로토콜)", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
-        # with cols2[1]:
-        #     or_write_2 = st.button("➡️ 수술기록지 초안작성 (수술기록)", key="or-write-2", use_container_width=True, disabled=not st.session_state.get("mr_json"))
-            or_write_2 = False
     with cols[1]:
         if "user_id" in st.session_state and st.session_state.user_id == "dma":
             with st.popover("⚙️ Prompt", use_container_width=True):
@@ -64,11 +63,12 @@ def op_record_target():
             with st.popover("⚙️ AI 모델", use_container_width=True):
                 ai_model = st.radio("AI 모델 선택", ai_models, key="ai-model-or", index=2, horizontal=True, label_visibility="collapsed")
 
-    if or_write_1: # Protocol 이용
-        mr_json = st.session_state.get("mr_json")
-        if "mr_json" not in st.session_state or "patient" not in mr_json:
-            return
+    with cols[0]:
+        or_write_1 = st.button("➡️ 수술기록지 초안작성 (프로토콜)", key="or-write-1", use_container_width=True, disabled=not st.session_state.get("mr_json"))
 
+    if "mr_json_new" in st.session_state:
+        mr_json_new = st.session_state.mr_json_new
+    else:
         mr_json_new = template.get_medical_record_template()
 
         mr_json_new["patient"] = mr_json["patient"]
@@ -81,83 +81,60 @@ def op_record_target():
 
         mr_json_new["operation protocols"] = mr_json["operation protocols"]
 
-        preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
-        postoperative_diagnosis = preoperative_diagnosis
+        st.session_state.mr_json_new = mr_json_new
+    pass
 
-        operation_name, operation_protocol = "", ""
+    preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
+    postoperative_diagnosis = preoperative_diagnosis
+    operation_name, operation_protocol = "", ""
 
-        or_prompt = or_prompt_proto
+    with st.expander("AI 결과", expanded=False):
+        response_container = st.empty()
 
-    # if or_write_2:
-    #     mr_json = st.session_state.get("mr_json")
-    #     if "mr_json" not in st.session_state or "patient" not in mr_json:
-    #         return
+        if or_write_1:
+            or_prompt = or_prompt_proto
 
-    #     mr_json_new = template.get_medical_record_template()
-
-    #     mr_json_new["patient"] = mr_json["patient"]
-    #     mr_json_new["clinical staff"] = mr_json["clinical staff"]
-
-    #     mr_json_new["subjective"] = mr_json["subjective"] ## CC PI PX SX FX
-    #     mr_json_new["objective"] = mr_json["objective"]   ## LAB
-    #     mr_json_new["assessment"] = mr_json["assessment"] ## IMP DX
-    #     mr_json_new["plan"] = mr_json["plan"]             ## OP TR DS ED ONR
-
-    #     mr_json_new["operation procedures"] = mr_json["operation procedures"]
-
-    #     preoperative_diagnosis = "\n".join(mr_json_new["assessment"]["diagnosis"])
-    #     postoperative_diagnosis = preoperative_diagnosis
-
-    #     operation_name, operation_protocol = "", ""
-        
-    #     or_prompt = or_prompt_proc
-
-    if or_write_1 or or_write_2:
-
-        with st.expander("AI 결과", expanded=False):
             st.session_state["or-result"] = ""
             response_text = ""
-            response_container = st.empty()
             try:
                 responses = note.call_api(or_prompt, json.dumps(mr_json_new), ai_model.lower())
                 for response in responses:
                     response_text += response.text
                     response_container.caption(response_text)
 
-                st.session_state["or-result"] = response_text
-
                 response_text = re.sub(r"```json\s*|\s*```", "", response_text).strip()
 
-                if base.is_json_format(response_text):
-                    json_result = json.loads(response_text)
-                    operation_name = json_result["estimated operation name"] if "estimated operation name" in json_result else response_text
-                    operation_protocol = json_result["protocol"] if "protocol" in json_result else response_text
-                    response_container.json(json_result)
+                st.session_state["or-result"] = response_text
 
             except Exception as e:
                 response_container.caption(f"error when calling api: {e}")
 
+        if "or-result" in st.session_state:
+            if base.is_json_format(st.session_state["or-result"]):
+                json_result = json.loads(st.session_state["or-result"])
+                operation_name = json_result["estimated operation name"] if "estimated operation name" in json_result else response_text
+                operation_protocol = json_result["protocol"] if "protocol" in json_result else response_text
+                response_container.json(json_result)
+            else:
+                response_container.caption(st.session_state["or-result"])
+        
         op_record = mr_json_new["operation records"][0]
         op_record["preoperative diagnosis"] = preoperative_diagnosis
         op_record["postoperative diagnosis"] = postoperative_diagnosis
         op_record["operation name"] = operation_name
         op_record["operation procedures and findings"] = operation_protocol
 
-        mr_json_new["operation records"] = []
-        mr_json_new["operation records"].append(op_record)
+        mr_json_new["operation records"] = [op_record]
 
         st.session_state.mr_json_new = mr_json_new
 
-        # 수술기록지 결과 포맷
-        with st.expander("수술기록지 초안", expanded=False):
-            display_report(mr_json_new, "new")
-        
-        cols = st.columns(2)
-        with cols[0]:
-            display_report(mr_json, "o1")
-        with cols[1]:
-            display_report(mr_json_new, "n2")
     pass
+
+    if "mr_json_new" in st.session_state:
+        # 수술기록지 결과 포맷
+        with st.expander("수술기록지 초안", expanded=True):
+            display_report(st.session_state.mr_json, "new")
+
 
 def display_report(mr_instance, param="0"):
     if mr_instance is None:
@@ -244,12 +221,12 @@ def display_report(mr_instance, param="0"):
     </tr>
     </table>
     """
-    st.markdown(OP_02_STAFF.format(
-        base.ifnull(op_record["surgeon"], mr_instance["clinical staff"]["doctor in charge"]), 
-        base.ifnull(op_record["assistant"], "112025"), 
-        base.ifnull(op_record["nurse"], "002312"), 
-        base.ifnull(op_record["anesthesiologist"], "102912"), 
-        base.ifnull(op_record["method of anesthesia"], "Endo")), unsafe_allow_html = True)
+    # st.markdown(OP_02_STAFF.format(
+    #     base.ifnull(op_record["surgeon"], mr_instance["clinical staff"]["doctor in charge"]), 
+    #     base.ifnull(op_record["assistant"], "112025"), 
+    #     base.ifnull(op_record["nurse"], "002312"), 
+    #     base.ifnull(op_record["anesthesiologist"], "102912"), 
+    #     base.ifnull(op_record["method of anesthesia"], "Endo")), unsafe_allow_html = True)
 
     # DIAGNOSIS & OPERATION NAME
     st.markdown("###### Preoperative diagnosis: ")
@@ -263,7 +240,31 @@ def display_report(mr_instance, param="0"):
 
     # Procedures
     st.markdown("###### 🔵 Procedures & Findings: ", unsafe_allow_html = True)
-    st.text_area("procedures", key=f"procedures{param}", value=op_record["operation procedures and findings"], height=280, label_visibility= "collapsed")
+    if param == "0":
+        st.text_area("procedures", key=f"procedures{param}", value=op_record["operation procedures and findings"], height=280, label_visibility= "collapsed")
+    else:
+        operation_name = None
+        operation_protocol = None
+
+        if base.is_json_format(st.session_state["or-result"]):
+            json_result = json.loads(st.session_state["or-result"])
+            operation_name = json_result["estimated operation name"] if "estimated operation name" in json_result else None
+            operation_protocol = json_result["protocol"] if "protocol" in json_result else None
+
+        cols = st.columns(2)
+        with cols[1]:
+            op_record_new = mr_instance["operation records"][0]
+            with st.popover("AI 추천 프로토콜", help="AI 추천 프로토콜을 확인하고 수정하세요.", use_container_width=True):
+                st.text_input("AI 추정 수술명", key=f"estimated_operation_name_{param}", value=operation_name, label_visibility= "visible")
+                st.text_area("AI 추정 프로토콜", key=f"procedures{param}_ai", value=operation_protocol, height=280, label_visibility= "visible")
+                if st.button("프로토콜 적용", key=f"procedures{param}_ai_apply"):
+                    st.session_state[f"procedures{param}_supported"] = st.session_state[f"procedures{param}_ai"]
+                
+            with st.popover("직접 작성 프로토콜", help="직접 작성한 프로토콜을 확인하고 비교하세요.", use_container_width=True):
+                st.text_area("직접 작성 프로토콜", key=f"procedures{param}", value=op_record["operation procedures and findings"], height=280, label_visibility= "visible")
+
+        with cols[0]:
+            st.text_area("procedures", key=f"procedures{param}_supported", value="", height=280, label_visibility= "collapsed")
 
     # TEST
     VALUE = "{} / {} {} {} {} / {} {} {} {}".format(
