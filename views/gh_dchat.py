@@ -1,3 +1,4 @@
+import logging
 import time
 import urllib
 
@@ -9,18 +10,8 @@ import forms.sidebar_chat as sidebar_chat
 import views.gh_dchat_00 as intro
 
 import streamlit as st
-
-# Initialize messages
 def initialize_messages(chat_group):
-    # Initialize chat history
-    st.session_state[chat_group] = {
-         "user_id": st.session_state.user_id
-        ,"chat_group": chat_group # current chat group
-        ,"chat_id": "" # current chat
-        ,"chat_name": "New Chat" # current chat
-        ,"chat_msgs": [] # current chat
-        ,"chat_list": chat.get_chat_list(st.session_state.user_id) # saved chat list 
-    }
+    st.session_state[chat_group] = sidebar_chat.initialize_messages(chat_group)
 
 def show_chat_input(chat_input):
     # 사용자 Prompt 출력
@@ -88,6 +79,7 @@ def show_references(references, filter_text, filter_answer):
 #     pass
 
 def show_related_qna(this_container, chat_container, related_qna_list):
+    logging.debug("enetered")
     with this_container:
         st.markdown("###### 관련 질문")
         for i, qna in enumerate(related_qna_list):
@@ -103,7 +95,6 @@ def show_related_qna(this_container, chat_container, related_qna_list):
                     time.sleep(0.4)
 
                     # 시스템 Content 출력
-                    # reference_text = f" [ [참조]({urllib.parse.quote(qna['document_uri'], safe=':/?=#', encoding='utf-8')}) ]"
                     reference_text = f" [ [참조]({qna['document_uri']}) ]"
                     assistant_message = {
                         "role": "assistant", 
@@ -117,16 +108,10 @@ def show_related_qna(this_container, chat_container, related_qna_list):
 
 @auth.login_required
 def main():
-    # Initialize messages
-    #
-    # For first tab: 
-    CHATGROUP01 = "CHAT"
-    if CHATGROUP01 not in st.session_state:
-        initialize_messages(CHATGROUP01)
-    dchat = st.session_state[CHATGROUP01]
-
+    logging.debug("enetered")
     # Side bar for chat history
-    sidebar_chat.display(dchat)
+    sidebar_chat.display()
+    dchat = st.session_state.dchat
 
     #
     # Page title for D-QnA
@@ -164,6 +149,8 @@ def main():
                     if a and b:
                         dchat["chat_msgs"].append(a)
                         dchat["chat_msgs"].append(b)
+                        logging.debug(f"chat_msgs appended {len(dchat["chat_msgs"])} messages")
+                        st.rerun()
 
     #
     # 사용자 Prompt 입력
@@ -203,11 +190,6 @@ def main():
                 # with st.chat_message("assistant", avatar="💻"):
                 show_chat_response(response_message)
                 st.rerun()
-
-    # if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
-    #     related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
-    #     show_related_qna(sub_container, chat_container, related_qna_list)
-    # END OF CHAT INPUT
 
 import forms.sidebar as sidebar
 

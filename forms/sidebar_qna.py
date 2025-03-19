@@ -10,6 +10,15 @@ def initialize_messages():
     st.session_state.summary_index = 0
     st.session_state.chat_id = qna.generate_chat_id(st.session_state.user_id)
     st.session_state.chat_name = "New Chat"
+    pass
+
+def load_chat_history(selected_chat):
+    msgs, name = qna.get_chat_messages(selected_chat["prefix"], selected_chat["chat_id"])
+    st.session_state.messages = msgs
+    st.session_state.chat_name = name
+    st.session_state.chat_id = selected_chat["chat_id"]
+    st.session_state.summary_index = min(0, len(st.session_state.messages) - 1)
+    pass
 
 # SIDEBAR for CHAT HISTORY
 def delete_chat_history():
@@ -67,8 +76,4 @@ def display():
                 if selected_chat["chat_name"] == "New chat":
                     initialize_messages()
                 else:
-                    msgs, name = qna.get_chat_messages(selected_chat["prefix"], selected_chat["chat_id"])
-                    st.session_state.messages = msgs
-                    st.session_state.chat_name = name
-                    st.session_state.chat_id = selected_chat["chat_id"]
-                    st.session_state.summary_index = min(0, len(st.session_state.messages) - 1)
+                    load_chat_history(selected_chat)

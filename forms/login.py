@@ -1,3 +1,4 @@
+import logging
 import re
 import streamlit as st
 
@@ -10,6 +11,7 @@ def is_valid_id(user_id):
 
 @st.dialog("Login to DMA!")
 def login_form(authenticate):
+    logging.debug("enetered")
     with st.form("login_form"):
         user_id = st.text_input("Login Id", key="id", placeholder="구글 ID를 사용하세요.")
         password = st.text_input("Password", key="pw", type="password", placeholder="비밀번호는 비워두세요.")

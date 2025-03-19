@@ -1,28 +1,61 @@
 import utils.chat as chat
 
+import logging
+
 import streamlit as st
 
 # SIDEBAR for CHAT HISTORY
+
+# Initialize messages
+def initialize_messages(user_id, chat_group):
+    logging.debug("enetered")
+    # Initialize chat history
+    dchat = {
+         "user_id": user_id
+        ,"chat_group": chat_group # current chat group
+        ,"chat_id": "" # current chat
+        ,"chat_name": "New Chat" # current chat
+        ,"chat_msgs": [] # current chat
+        ,"chat_list": chat.get_chat_list(user_id, chat_group) # saved chat list 
+    }
+    return dchat
+
+def load_chat_messages(user_id, chat_group, selected_chat_id):
+    logging.debug("enetered")
+    msgs, name = chat.get_chat_messages(user_id, chat_group, selected_chat_id)
+    dchat = {}
+    dchat["user_id"] = user_id
+    dchat["chat_group"] = chat_group
+    dchat["chat_id"] = selected_chat_id
+    dchat["chat_list"] = chat.get_chat_list(user_id, chat_group)
+    dchat["chat_name"] = name
+    dchat["chat_msgs"] = msgs
+    logging.debug(f"chat_msgs loaded {len(msgs)} messages")
+    return dchat
+
 def delete_chat_history(dchat):
-    chat.delete_history(dchat["user_id"], dchat["chat_id"])
-    dchat["chat_list"] = chat.get_chat_list(dchat["user_id"]) # to refresh chat list
+    logging.debug("enetered")
+    chat.delete_history(dchat["user_id"], dchat["chat_group"], dchat["chat_id"])
+    dchat["chat_list"] = chat.get_chat_list(dchat["user_id"], dchat["chat_group"]) # to refresh chat list
 
 def save_chat_history(dchat):
+    logging.debug("enetered")
     if dchat["chat_id"] == "":
         dchat["chat_id"] = chat.generate_chat_id(dchat["user_id"])
         dchat["chat_name"] = chat.summarize_title(dchat["chat_msgs"])
+        logging.debug(f"{dchat["chat_id"]}: {dchat["chat_name"]}")
 
-    chat.save_history(dchat["user_id"], dchat["chat_id"], dchat["chat_name"], dchat["chat_msgs"])
-    dchat["chat_list"] = chat.get_chat_list(dchat["user_id"]) # to refresh chat list
+    chat.save_history(dchat["user_id"], dchat["chat_group"], dchat["chat_id"], dchat["chat_name"], dchat["chat_msgs"])
+    dchat["chat_list"] = chat.get_chat_list(dchat["user_id"], dchat["chat_group"]) # to refresh chat list
+    logging.debug(f"chat_list saved")
 
-def load_chat_history(dchat, selected_chat):
-    if selected_chat["chat_id"] != "":
-        msgs, name = chat.get_chat_messages(selected_chat["prefix"], selected_chat["chat_id"])
-        dchat["chat_id"] = selected_chat["chat_id"]
-        dchat["chat_name"] = name
-        dchat["chat_msgs"] = msgs
+def display():
+    logging.debug("enetered")
+    # Initialize messages
+    if "dchat" not in st.session_state:
+        st.session_state.dchat = initialize_messages(st.session_state.user_id, "CHAT")
+    dchat = st.session_state.dchat
 
-def display(dchat):
     with st.sidebar.container(height=200):
         # Chat History Management
         st.caption("Chat Management")
@@ -35,16 +68,17 @@ def display(dchat):
                 if len(dchat["chat_msgs"]):
                     save_chat_history(dchat)
 
-        # Chat History Selector
-        selected_index = 0
-        indices = [i for i, item in enumerate(dchat["chat_list"]) if item['chat_id'] == dchat["chat_id"]]
-        if len(indices):
-            selected_index = indices[0]
-
         new_chat = {"user_id":dchat["user_id"], "chat_id": "", "chat_name":"New chat"}
 
-        selected_chat = st.selectbox("Chat History", [new_chat] + dchat["chat_list"], key="chat_history", index=selected_index, format_func=lambda x: x["chat_name"])
+        selected_chat = st.selectbox("Chat History", [new_chat] + dchat["chat_list"], key="chat_history", format_func=lambda x: x["chat_name"])
         if selected_chat is not None:
             if selected_chat["chat_id"] != dchat["chat_id"]:
-                if selected_chat["chat_name"] != "New chat":
-                    load_chat_history(selected_chat)
+                if selected_chat["chat_name"] == "New chat":
+                    dchat = initialize_messages(dchat["user_id"], dchat["chat_group"])
+                else:
+                    dchat = load_chat_messages(dchat["user_id"], dchat["chat_group"], selected_chat["chat_id"])
+
+                st.session_state.dchat = dchat
+            pass
+        pass
+    pass
