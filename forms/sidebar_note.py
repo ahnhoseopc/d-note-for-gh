@@ -40,4 +40,8 @@ def display():
 
                 st.session_state.mr_info = note.get_patient_mr_data(patient_id, adm_date, dept, doctor)
                 st.session_state.mr_json = note.get_patient_mr_json(st.session_state.mr_info)
+
+                # reset ai result
+                st.session_state.cd_json = None
+                st.session_state.cd_list = []
     pass
