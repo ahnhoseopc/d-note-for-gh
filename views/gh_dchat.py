@@ -132,7 +132,7 @@ def main():
                 st.text(dchat["chat_name"], help="채팅 제목")
 
                 # Display chat messages from history on app rerun
-                for i, message in enumerate(dchat["chat_msgs"]):
+                for i, message in enumerate(dchat["messages"]):
                     if message["role"] == "user":
                         show_chat_input(message)
                     else:
@@ -143,13 +143,13 @@ def main():
                 st.markdown("###### 관련 규정")
                 st.markdown("* 요양급여의 적용기준 및 방법에 관한 세부사항")
 
-                if dchat["chat_msgs"] and "related_qna_list" in dchat["chat_msgs"][-1]:
-                    related_qna_list = dchat["chat_msgs"][-1]["related_qna_list"]
+                if dchat["messages"] and "related_qna_list" in dchat["messages"][-1]:
+                    related_qna_list = dchat["messages"][-1]["related_qna_list"]
                     a,b = show_related_qna(sub_container, chat_container, related_qna_list)
                     if a and b:
-                        dchat["chat_msgs"].append(a)
-                        dchat["chat_msgs"].append(b)
-                        logging.debug(f"chat_msgs appended {len(dchat["chat_msgs"])} messages")
+                        dchat["messages"].append(a)
+                        dchat["messages"].append(b)
+                        logging.debug(f"messages appended {len(dchat["messages"])} messages")
                         st.rerun()
 
     #
@@ -165,7 +165,7 @@ def main():
             user_message = {"role": "user", "parts": [{"text": chat_prompt}]}
 
             # 사용자 Content 저장
-            dchat["chat_msgs"].append(user_message)
+            dchat["messages"].append(user_message)
 
             # 사용자 Prompt 출력
             show_chat_input(user_message)
@@ -174,6 +174,7 @@ def main():
             # LLM에 의한 응답 Content 생성
             #
             chat_response = chat.generate_content(chat_prompt)
+            logging.info(f"chat_response: {chat_response}")
             if chat_response:
                 # Add assistant response to chat history
                 response_message = {"role": "assistant"
@@ -184,7 +185,7 @@ def main():
                                     , "filter_answer": chat_response["filter_answer"] if "filter_answer" in chat_response else None
                                     }
 
-                dchat["chat_msgs"].append(response_message)
+                dchat["messages"].append(response_message)
 
                 # LLM 응답을 Stream 형식으로 출력 
                 # with st.chat_message("assistant", avatar="💻"):

@@ -18,7 +18,11 @@ def generate_content(message, previous_messages=[]):
 
 def summarize_title(messages):
     logging.debug("entered")
-    summary_title = qna.generate(messages)
+    vertexai_messages = [ {"role": message["role"], "parts": message["parts"]} for message in messages]
+    logging.info(messages)
+    logging.info(vertexai_messages)
+    summary_title = qna.summarize_content(vertexai_messages)
+    logging.info(summary_title)
     return summary_title
 
 def delete_history(user_id, chat_group, chat_id):

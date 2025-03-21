@@ -18,8 +18,8 @@ def generate(query):
         response.raise_for_status()
 
         # 응답 데이터 출력
-        # logging.info("응답 코드:", response.status_code)
-        # logging.info("응답 본문:", response.json())
+        logging.info("응답 코드:", response.status_code)
+        logging.info("응답 본문:", response.json())
         return response.json()
 
     except requests.exceptions.HTTPError as http_err:
@@ -133,6 +133,6 @@ if __name__ == "__main__":
 
     prompt = "최근 고시를 알려줘"
     data = "2024년도 고시"
-    response = generate([prompt, data])
+    response = generate(prompt + data)
     logging.info(dir(response))
     logging.info(response, end="\t")
